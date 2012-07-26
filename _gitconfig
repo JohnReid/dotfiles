@@ -1,6 +1,6 @@
 [user]
-    name = John Anderson
-    email = sontek@gmail.com
+	name = JohnReid
+	email = johnbaronreid@netscape.net
 
 [color]
     diff = auto
@@ -28,3 +28,5 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
 
+[credential]
+	helper = cache --timeout=3600
