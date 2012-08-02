@@ -1,0 +1,131 @@
+dtmail*background:	white
+*acroread.lprCommand:	/usr/local/bin/lpr 
+*acroread.lprStyle:	BSD
+dt.obsolete:	true
+dtcm*background:	white
+xautolock.locker:	/usr/local/bin/xlockmore -mode blank
+xautolock.cornerdelay:	1
+xautolock.corners:	0+0-
+xautolock.time:	5
+xautolock.cornersize:	10
+dtfile*background:	white
+OpenWindows.PopupJumpCursor:	True
+OpenWindows.ScrollbarPlacement:	right
+OpenWindows.SetInput:	followmouse
+OpenWindows.IconLocation:	bottom
+OpenWindows.Beep:	always
+OpenWindows.SelectDisplaysMenu:	False
+OpenWindows.DragRightDistance:	25
+OpenWindows.MultiClickTimeout:	4
+dtpad*background:	white
+Scrollbar.JumpCursor:	True                          
+text.extrasMenuFilename:	/usr/openwin/lib/locale/C/xview/.text_extras_menu
+text.maxDocumentSize:	200000
+dtterm*background:	white
+*printCommand:	lpr
+
+XTerm*faceName: Inconsolata
+XTerm*faceSize: 10 
+XTerm*faceSize1: 8 
+XTerm*faceSize2: 9 
+XTerm*faceSize3: 10 
+XTerm*faceSize4: 12 
+XTerm*faceSize5: 16 
+XTerm*faceSize6: 20 
+xterm*loginShell: true
+xterm*scrollTtyOutput: false
+xterm*vt100*geometry: 80x50
+xterm*saveLines: 2000
+xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48
+xterm*termName: xterm-color
+xterm*eightBitInput: false
+xterm*foreground: rgb:a8/a8/a8
+xterm*background: rgb:00/00/00
+xterm*color0: rgb:00/00/00
+xterm*color1: rgb:a8/00/00
+xterm*color2: rgb:00/a8/00
+xterm*color3: rgb:a8/54/00
+xterm*color4: rgb:00/00/a8
+xterm*color5: rgb:a8/00/a8
+xterm*color6: rgb:00/a8/a8
+xterm*color7: rgb:a8/a8/a8
+xterm*color8: rgb:54/54/54
+xterm*color9: rgb:fc/54/54
+xterm*color10: rgb:54/fc/54
+xterm*color11: rgb:fc/fc/54
+xterm*color12: rgb:54/54/fc
+xterm*color13: rgb:fc/54/fc
+xterm*color14: rgb:54/fc/fc
+xterm*color15: rgb:fc/fc/fc
+xterm*boldMode: false
+xterm*colorBDMode: true
+xterm*colorBD: rgb:fc/fc/fc
+
+!URxvt.buffered:         true
+!URxvt.background:       black
+!URxvt.foreground:       white
+!URxvt.cursorColor:      green
+!URxvt.perl-ext-common:  default,matcher
+!URxvt.urlLauncher:      /usr/bin/chromium
+!URxvt.matcher.button:   1
+!URxvt.scrollBar:        false
+
+! urxvt defaults:
+! color0       (black)            = Black
+! color1       (red)              = Red3
+! color2       (green)            = Green3
+! color3       (yellow)           = Yellow3
+! color4       (blue)             = Blue3
+! color5       (magenta)          = Magenta3
+! color6       (cyan)             = Cyan3
+! color7       (white)            = AntiqueWhite
+! color8       (bright black)     = Grey25
+! color9       (bright red)       = Red
+! color10      (bright green)     = Green
+! color11      (bright yellow)    = Yellow
+! color12      (bright blue)      = Blue
+! color13      (bright magenta)   = Magenta
+! color14      (bright cyan)      = Cyan
+! color15      (bright white)     = White
+
+! Black
+!URxvt.color1:          Black
+! Red
+!URxvt.color1:           brown2
+! Green
+!URxvt.color2:           SpringGreen2
+! Yellow
+!URxvt.color3:           yellow2
+! Blue
+!URxvt.color4:           DeepSkyBlue2
+! Magenta
+!URxvt.color5:           magenta2
+! Cyan
+!URxvt.color6:           DarkSlateGray1
+! White
+!URxvt.color7:           MintCream
+! Bright black
+!URxvt.color8:          Grey25
+! Bright red
+!URxvt.color9:           firebrick1
+! Bright green
+!URxvt.color10:          SpringGreen1
+! Bright yellow
+!URxvt.color11:          yellow1
+! Bright blue
+!URxvt.color12:          DeepSkyBlue1
+! Bright magenta
+!URxvt.color13:          magenta1
+! Bright cyan
+!URxvt.color14:          cyan1
+! Bright white
+!URxvt.color15:         White
+
+! Alternatives
+! Blue: lighter (looks closer to cyan, but it is an option if deepsky is too
+! dark to read (it might be a good idea to make symlinks green))
+!URxvt.color4:          SteelBlue2
+!URxvt.color12:         SteelBlue1
+!URxvt.color6:          cyan1
+!
+!

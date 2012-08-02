@@ -182,3 +182,52 @@ function pwf-download() {
     scp pwf:Downloads/$FILE ~/Downloads
   done
 }
+
+# Set up perl environment variables
+eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+export PERL5LIB=/home/john/perl5/lib/perl5/:/home/john/local/perl/lib/perl5/:$PERL5LIB
+
+# ANSI color codes
+RS="\[\033[0m\]"    # reset
+HC="\[\033[1m\]"    # hicolor
+UL="\[\033[4m\]"    # underline
+INV="\[\033[7m\]"   # inverse background and foreground
+FBLK="\[\033[30m\]" # foreground black
+FRED="\[\033[31m\]" # foreground red
+FGRN="\[\033[32m\]" # foreground green
+FYEL="\[\033[33m\]" # foreground yellow
+FBLE="\[\033[34m\]" # foreground blue
+FMAG="\[\033[35m\]" # foreground magenta
+FCYN="\[\033[36m\]" # foreground cyan
+FWHT="\[\033[37m\]" # foreground white
+BBLK="\[\033[40m\]" # background black
+BRED="\[\033[41m\]" # background red
+BGRN="\[\033[42m\]" # background green
+BYEL="\[\033[43m\]" # background yellow
+BBLE="\[\033[44m\]" # background blue
+BMAG="\[\033[45m\]" # background magenta
+BCYN="\[\033[46m\]" # background cyan
+BWHT="\[\033[47m\]" # background white
+
+# Personal additions should be added ABOVE this line.
+[ -f /BSU/sitewide/sys.bashrc ] && . /BSU/sitewide/sys.bashrc
+
+# >>>>>>>>>>>>>>>>>>>>>>> Enabling Biopieces if installed <<<<<<<<<<<<<<<<<<<<<<
+
+# Installation instructions:
+# http://code.google.com/p/biopieces/wiki/Installation
+
+# Modify the below paths according to your settings.
+# If you have followed the installation instructions step-by-step
+# the below should work just fine.
+
+export BP_DIR="$HOME/local/src/biopieces"  # Installation dir
+export BP_DATA="$HOME/Data/biopieces"   # Contains genomic data etc.
+export BP_TMP="$HOME/tmp"        # Required temporary directory.
+export BP_LOG="$BP_DATA/log"     # Required log directory.
+
+if [ -f "$BP_DIR/bp_conf/bashrc" ]; then
+    source "$BP_DIR/bp_conf/bashrc"
+fi  
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
