@@ -1,6 +1,6 @@
 [user]
-	name = JohnReid
-	email = johnbaronreid@netscape.net
+    name = JohnReid
+    email = johnbaronreid@netscape.net
 
 [color]
     diff = auto
@@ -29,4 +29,4 @@
     ls = ls-files
 
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
