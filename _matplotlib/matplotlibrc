@@ -134,11 +134,11 @@ interactive  : True      # see http://matplotlib.sourceforge.net/interactive.htm
 #text.color          : black
 
 ### LaTeX customizations. See http://www.scipy.org/Wiki/Cookbook/Matplotlib/UsingTex
-font.family        : serif
-font.serif         : Times, Palatino, New Century Schoolbook, Bookman, Computer Modern Roman
-font.sans-serif    : Helvetica, Avant Garde, Computer Modern Sans serif
-font.cursive       : Zapf Chancery
-font.monospace     : Courier, Computer Modern Typewriter
+#font.family        : serif
+#font.serif         : Times, Palatino, New Century Schoolbook, Bookman, Computer Modern Roman
+#font.sans-serif    : Helvetica, Avant Garde, Computer Modern Sans serif
+#font.cursive       : Zapf Chancery
+#font.monospace     : Courier, Computer Modern Typewriter
 
 text.usetex         : True  # use latex for all text handling. The following fonts
                               # are supported through the usual rc parameter settings:
@@ -217,7 +217,7 @@ text.usetex         : True  # use latex for all text handling. The following fon
                                # rather than hypen.  See http://en.wikipedia.org/wiki/Plus_sign#Plus_sign
 
 #polaraxes.grid      : True    # display grid on polar axes
-axes.color_cycle    : k, b, g, r, c, m, y   # color cycle for plot lines
+#axes.color_cycle    : k, b, g, r, c, m, y   # color cycle for plot lines
                                             # as list of string colorspecs:
                                             # single letter, long name, or
                                             # web-style hex
