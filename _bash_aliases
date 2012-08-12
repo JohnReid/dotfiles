@@ -1,0 +1,28 @@
+alias svnignore='svn propedit svn:ignore'
+
+SSH_CONFIG_DIR=/home/john/.ssh
+for machine in securid wsbc lassus xenakis axon pwf pc118 rwui
+do
+  alias $machine="ssh $machine"
+done
+
+alias pwf-firefox="ssh pwf -XYC firefox"
+alias pc118-mozilla="ssh pc118 -XYC /usr/local/seamonkey/seamonkey"
+alias add-ssh="ssh-add $SSH_CONFIG_DIR/*.ssh"
+#alias all-ssh="ssh-add $SSH_CONFIG_DIR/*.ssh; for m in securid susato xenakis axon; do ssh -fN \$m; done"
+alias all-ssh="for m in securid lassus xenakis zemlinsky; do ssh -fN \$m; done"
+alias pc118-vncserver="ssh pc118 vncserver -geometry 1900x1100 :5"
+alias get-pwf-pdfs="scp pwf:Downloads/*.pdf ~/Downloads && ssh pwf /bin/rm Downloads/*.pdf"
+
+
+#
+# VNC aliases
+#
+#VNC_CMD="vncviewer -depth 24 -encodings \"tight hextile zlib corre rre raw\""
+VNC_CMD="vncviewer -encodings CoRRE -bgr233"
+alias vnc-xenakis="$VNC_CMD localhost::5902"
+alias vnc-hendrix="$VNC_CMD localhost::5903"
+alias vnc-josquin="$VNC_CMD localhost::5904"
+alias vnc-lully="$VNC_CMD localhost::5905"
+alias vnc-zemlinsky="$VNC_CMD localhost::5906"
+
