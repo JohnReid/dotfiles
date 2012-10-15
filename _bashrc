@@ -183,9 +183,6 @@ function pwf-download() {
   done
 }
 
-# Set up perl environment variables
-eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
-export PERL5LIB=/home/john/perl5/lib/perl5/:/home/john/local/perl/lib/perl5/:$PERL5LIB
 
 # ANSI color codes
 RS="\[\033[0m\]"    # reset
@@ -231,3 +228,9 @@ if [ -f "$BP_DIR/bp_conf/bashrc" ]; then
 fi  
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+export PERL_LOCAL_LIB_ROOT="/home/john/local/perl5";
+export PERL_MB_OPT="--install_base /home/john/local/perl5";
+export PERL_MM_OPT="INSTALL_BASE=/home/john/local/perl5";
+export PERL5LIB="/home/john/local/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/john/local/perl5/lib/perl5";
+export PATH="/home/john/local/perl5/bin:$PATH";

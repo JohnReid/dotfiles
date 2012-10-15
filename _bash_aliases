@@ -10,7 +10,7 @@ alias pwf-firefox="ssh pwf -XYC firefox"
 alias pc118-mozilla="ssh pc118 -XYC /usr/local/seamonkey/seamonkey"
 alias add-ssh="ssh-add $SSH_CONFIG_DIR/*.ssh"
 #alias all-ssh="ssh-add $SSH_CONFIG_DIR/*.ssh; for m in securid susato xenakis axon; do ssh -fN \$m; done"
-alias all-ssh="for m in securid lassus xenakis zemlinsky; do ssh -fN \$m; done"
+alias all-ssh="for m in securid lassus zemlinsky; do ssh -fN \$m; done"
 alias pc118-vncserver="ssh pc118 vncserver -geometry 1900x1100 :5"
 alias get-pwf-pdfs="scp pwf:Downloads/*.pdf ~/Downloads && ssh pwf /bin/rm Downloads/*.pdf"
 
