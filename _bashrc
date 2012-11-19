@@ -166,7 +166,6 @@ parse_svn_url() {
 parse_svn_repository_root() {
   svn info 2>/dev/null | sed -ne 's#^Repository Root: ##p'
 }
-set -o emacs
 export EDITOR="$vim"
 export GIT_EDITOR="$vim"
 
@@ -183,6 +182,28 @@ function pwf-download() {
   done
 }
 
+
+#
+# Extract a range of pages from a PDF
+# http://www.linuxjournal.com/content/tech-tip-extract-pages-pdf
+#
+function pdfextractpages()
+{
+    # this function uses 3 arguments:
+    #     $1 is the first page of the range to extract
+    #     $2 is the last page of the range to extract
+    #     $3 is the input file
+    #     output file will be named "inputfile_pXX-pYY.pdf"
+    USAGE="USAGE: $0 <pdf file> <first page> <last page>"
+    PDF=${1:?$USAGE}
+    FIRST=${2:?$USAGE}
+    LAST=${3:?$USAGE}
+    gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dSAFER \
+       -dFirstPage=$FIRST \
+       -dLastPage=$LAST \
+       -sOutputFile=${PDF%.pdf}_p$FIRST-p$LAST.pdf \
+       $PDF
+}
 
 # ANSI color codes
 RS="\[\033[0m\]"    # reset
@@ -234,3 +255,6 @@ export PERL_MB_OPT="--install_base /home/john/local/perl5";
 export PERL_MM_OPT="INSTALL_BASE=/home/john/local/perl5";
 export PERL5LIB="/home/john/local/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/john/local/perl5/lib/perl5";
 export PATH="/home/john/local/perl5/bin:$PATH";
+ANDROID_PLATFORM_TOOLS=/home/john/src/android-sdk-linux/platform-tools
+[ -d $ANDROID_PLATFORM_TOOLS ] && PATH=$PATH:$ANDROID_PLATFORM_TOOLS
+

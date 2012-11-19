@@ -26,3 +26,6 @@ alias vnc-josquin="$VNC_CMD localhost::5904"
 alias vnc-lully="$VNC_CMD localhost::5905"
 alias vnc-zemlinsky="$VNC_CMD localhost::5906"
 
+# NoteII MTP fuse stuff
+alias android-connect="mtpfs -o allow_other /media/NoteII"
+alias android-disconnect="fusermount -u /media/NoteII"
