@@ -140,7 +140,7 @@ interactive  : True      # see http://matplotlib.sourceforge.net/interactive.htm
 #font.cursive       : Zapf Chancery
 #font.monospace     : Courier, Computer Modern Typewriter
 
-text.usetex         : True  # use latex for all text handling. The following fonts
+text.usetex         : False  # use latex for all text handling. The following fonts
                               # are supported through the usual rc parameter settings:
                               # new century schoolbook, bookman, times, palatino,
                               # zapf chancery, charter, serif, sans-serif, helvetica,
