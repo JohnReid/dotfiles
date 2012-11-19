@@ -42,5 +42,5 @@ shortcutkey_minimize=65478
 shortcutkey_disconnect=65473
 shortcutkey_toolbar=116
 vte_font=
-vte_allow_bold_text=true
+vte_allow_bold_text=false
 vte_lines=512

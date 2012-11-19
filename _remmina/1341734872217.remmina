@@ -30,3 +30,4 @@ disableserverinput=0
 disableclipboard=0
 colordepth=8
 viewmode=1
+keyboard_grab=0
