@@ -61,3 +61,6 @@
 [submodule "_vim/bundle/snippets"]
 	path = _vim/bundle/snippets
 	url = https://github.com/honza/snipmate-snippets.git
+[submodule "python-mode"]
+	path = python-mode
+	url = git://github.com/klen/python-mode.git
