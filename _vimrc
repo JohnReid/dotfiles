@@ -47,6 +47,7 @@
 " MakeGreen
 "    Generic test runner that works with nose
 "
+"
 " ==========================================================
 " Shortcuts
 " ==========================================================
@@ -307,6 +308,13 @@ endif
 " set colorcolumn=79
 
 " Mappings for LaTeX paragraph formatting
-map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
-omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
+"map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
+"omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 
+" Settings for vim-latex (http://vim-latex.sourceforge.net)
+set shellslash                                " Convert backward slashes to forward ones in filename references
+set grepprg=grep\ -nH\ $*                     " Force grep to display file name even in single-file searches
+let g:tex_flavor='latex'                      " Force .tex to mean LaTeX, not plain TeX
+" let g:Tex_AutoFolding = 0                     " Do not fold on opening file
+let g:Tex_DefaultTargetFormat = 'pdf'         " Compile to pdf by default
+"imap <leader>{ <Plug>Tex_LeftRight
