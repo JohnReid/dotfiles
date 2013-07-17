@@ -1,5 +1,5 @@
 # SVN files
-*.svn
+.svn
 
 # Compiled code
 *.pyc
@@ -9,6 +9,7 @@
 *.exe
 *.o
 *.so
+*.so.*
 
 # Packages #
 # it's better to unpack these files and commit the raw source
@@ -26,4 +27,4 @@
 *.log
 *.sql
 *.sqlite
-
+ipython_log.py
