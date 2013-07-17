@@ -80,6 +80,9 @@ map <leader>td <Plug>TaskList
 " Run pep8
 let g:pep8_map='<leader>8'
 
+" Jump to error
+let g:pymode_lint_jump = 1
+
 " run py.test's
 nmap <silent><Leader>tf <Esc>:Pytest file<CR>
 nmap <silent><Leader>tc <Esc>:Pytest class<CR>
