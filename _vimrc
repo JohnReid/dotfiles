@@ -53,9 +53,14 @@
 " ==========================================================
 set nocompatible              " Don't be compatible with vi
 let mapleader=","             " change the leader to be a comma vs slash
+let maplocalleader="\\"       " make the local leader a backslash
 
 " For R plugin
-let vimrplugin_screenplugin = 0
+"let vimrplugin_screenplugin = 0
+
+" For showmarks plugin
+let marksCloseWhenSelected = 0
+let showmarks_include = "abcdefghijklmnopqrstuvwxyz"
 
 " Seriously, guys. It's not like :W is bound to anything anyway.
 command! W :w
