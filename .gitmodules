@@ -31,3 +31,9 @@
 [submodule "_vim/bundle/latex"]
 	path = _vim/bundle/latex
 	url = git://git.code.sf.net/p/vim-latex/vim-latex
+[submodule "_vim/bundle/screen"]
+	path = _vim/bundle/screen
+	url = https://github.com/ervandew/screen.git
+[submodule "_vim/bundle/R"]
+	path = _vim/bundle/R
+	url = https://github.com/jcfaria/Vim-R-plugin.git
