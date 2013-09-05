@@ -1,0 +1,15 @@
+{
+  "control": 34664, 
+  "task": 44802, 
+  "hb_ping": 40957, 
+  "exec_key": "fb6e2168-a388-4a81-b7cb-4c40a0611d53", 
+  "mux": 40611, 
+  "hb_pong": 52781, 
+  "ssh": "", 
+  "registration": 57523, 
+  "interface": "tcp://*", 
+  "iopub": 44867, 
+  "pack": "json", 
+  "unpack": "json", 
+  "location": "193.60.86.77"
+}
