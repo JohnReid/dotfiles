@@ -53,6 +53,14 @@
 " ==========================================================
 set nocompatible              " Don't be compatible with vi
 let mapleader=","             " change the leader to be a comma vs slash
+let maplocalleader="\\"       " make the local leader a backslash
+
+" For R plugin
+"let vimrplugin_screenplugin = 0
+
+" For showmarks plugin
+let marksCloseWhenSelected = 0
+let showmarks_include = "abcdefghijklmnopqrstuvwxyz"
 
 " Seriously, guys. It's not like :W is bound to anything anyway.
 command! W :w
@@ -79,6 +87,9 @@ map <leader>td <Plug>TaskList
 
 " Run pep8
 let g:pep8_map='<leader>8'
+
+" Jump to error
+let g:pymode_lint_jump = 1
 
 " run py.test's
 nmap <silent><Leader>tf <Esc>:Pytest file<CR>
@@ -184,7 +195,7 @@ set showmatch               " Briefly jump to a paren once it's balanced
 set nowrap                  " don't wrap text
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
-set smartindent             " use smart indent if there is no indent file
+"set smartindent             " use smart indent if there is no indent file
 set tabstop=4               " <tab> inserts 4 spaces 
 set shiftwidth=4            " but an indent level is 2 spaces wide.
 set softtabstop=4           " <BS> over an autoindent deletes both spaces.

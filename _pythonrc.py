@@ -16,9 +16,9 @@ except ImportError:
 
 
 # Make this work properly in Darwin and Linux
-if 'libedit' in readline.__doc__:                                          
-    readline.parse_and_bind("bind ^I rl_complete")                         
-else:                                                                      
+if 'libedit' in readline.__doc__:
+    readline.parse_and_bind("bind ^I rl_complete")
+else:
     readline.parse_and_bind("tab: complete")
 
 class Completer(object):
@@ -56,7 +56,8 @@ class TermColors(dict):
         ("Purple"      , "0;35"),
         ("Cyan"        , "0;36"),
         ("LightGray"   , "0;37"),
-        ("DarkGray"    , "1;30"), ("LightRed"    , "1;31"),
+        ("DarkGray"    , "1;30"),
+        ("LightRed"    , "1;31"),
         ("LightGreen"  , "1;32"),
         ("Yellow"      , "1;33"),
         ("LightBlue"   , "1;34"),
@@ -183,3 +184,4 @@ c.interact(banner=WELCOME)
 # Exit the Python shell on exiting the InteractiveConsole
 import sys
 sys.exit()
+
