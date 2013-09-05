@@ -22,3 +22,15 @@
 [submodule "_vim/bundle/python-mode"]
 	path = _vim/bundle/python-mode
 	url = git://github.com/klen/python-mode.git
+[submodule "_vim/bundle/fugitive"]
+	path = _vim/bundle/fugitive
+	url = http://github.com/tpope/vim-fugitive.git
+[submodule "_vim/bundle/nerdtree"]
+	path = _vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "_vim/bundle/solarized"]
+	path = _vim/bundle/solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "_vim/bundle/surround"]
+	path = _vim/bundle/surround
+	url = https://github.com/tpope/vim-surround.git
