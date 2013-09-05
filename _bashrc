@@ -1,3 +1,21 @@
+
+#
+# Set up development environment
+#
+. $HOME/.env_fns
+LOCAL=$HOME/local
+eval $($HOME/bin/update-env \
+    --path-pre $HOME/bin \
+    --path-pre $HOME/Dev/bin \
+    --path-pre $LOCAL/bin \
+    --py-pre $HOME/local/lib/python \
+    --ld-pre $LOCAL/lib \
+    --ld-pre /usr/local/gnu/lib \
+    --ld-pre $HOME/Dev/lib \
+    --ld-pre $LOCAL/boost_1_53_0/lib \
+)
+
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -22,19 +40,6 @@ shopt -s checkwinsize
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
-
-#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-PS1='\[\033[01;31m\]\w\[\033[00m\]\n${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\u\[\033[01;32m\]@\[\033[01;34m\]\h\[\033[00m\]\$ '
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-
 
 # Set up TERM variables.
 # vt100 and xterm have no color in vim (at least on unixs), but if we call them xterm-color, they will.
@@ -227,9 +232,6 @@ BMAG="\[\033[45m\]" # background magenta
 BCYN="\[\033[46m\]" # background cyan
 BWHT="\[\033[47m\]" # background white
 
-# Personal additions should be added ABOVE this line.
-[ -f /BSU/sitewide/sys.bashrc ] && . /BSU/sitewide/sys.bashrc
-
 # >>>>>>>>>>>>>>>>>>>>>>> Enabling Biopieces if installed <<<<<<<<<<<<<<<<<<<<<<
 
 # Installation instructions:
@@ -257,4 +259,21 @@ export PERL5LIB="/home/john/local/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:
 export PATH="/home/john/local/perl5/bin:$PATH";
 ANDROID_PLATFORM_TOOLS=/home/john/src/android-sdk-linux/platform-tools
 [ -d $ANDROID_PLATFORM_TOOLS ] && PATH=$PATH:$ANDROID_PLATFORM_TOOLS
+
+
+# Personal additions should be added ABOVE this line.
+[ -f /BSU/sitewide/sys.bashrc ] && . /BSU/sitewide/sys.bashrc
+
+#PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+PS1='\[\033[01;31m\]\w\[\033[00m\]\n${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\u\[\033[01;32m\]@\[\033[01;34m\]\h\[\033[00m\]\$ '
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
 
