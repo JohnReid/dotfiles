@@ -1,0 +1,36 @@
+[submodule "_vim/bundle/acp"]
+	path = _vim/bundle/acp
+	url = https://bitbucket.org/ns9tks/vim-autocomplpop
+[submodule "_vim/bundle/command-t"]
+	path = _vim/bundle/command-t
+	url = https://github.com/wincent/Command-T.git
+[submodule "_vim/bundle/fugitive"]
+	path = fugitive
+	url = http://github.com/tpope/vim-fugitive.git
+[submodule "_vim/bundle/git"]
+	path = _vim/bundle/git
+	url = https://github.com/tpope/vim-git.git
+[submodule "_vim/bundle/gundo"]
+	path = _vim/bundle/gundo
+	url = https://github.com/sjl/gundo.vim.git
+[submodule "_vim/bundle/markdown"]
+	path = _vim/bundle/markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "_vim/bundle/nerdtree"]
+	path = nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "_vim/bundle/solarized"]
+	path = solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "_vim/bundle/surround"]
+	path = surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "_vim/bundle/tasklist"]
+	path = _vim/bundle/tasklist
+	url = https://github.com/vim-scripts/TaskList.vim.git
+[submodule "_vim/bundle/tlib"]
+	path = _vim/bundle/tlib
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "_vim/bundle/python-mode"]
+	path = _vim/bundle/python-mode
+	url = git://github.com/klen/python-mode.git
