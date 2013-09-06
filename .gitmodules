@@ -37,3 +37,6 @@
 [submodule "_vim/bundle/R"]
 	path = _vim/bundle/R
 	url = https://github.com/jcfaria/Vim-R-plugin.git
+[submodule "_vim/bundle/ipython"]
+	path = _vim/bundle/ipython
+	url = https://github.com/ivanov/vim-ipython.git
