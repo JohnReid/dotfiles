@@ -89,6 +89,7 @@ map <leader>td <Plug>TaskList
 let g:pep8_map='<leader>8'
 
 " Jump to error
+let g:pymode_lint_write = 0
 let g:pymode_lint_jump = 1
 
 " run py.test's
