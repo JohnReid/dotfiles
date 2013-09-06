@@ -46,9 +46,9 @@ c.IPEngineApp.work_dir = u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
 
 # String id to add to runtime files, to prevent name collisions when using
 # multiple clusters with a single profile simultaneously.
-# 
+#
 # When set, files will be named like: 'ipcontroller-<cluster_id>-engine.json'
-# 
+#
 # Since this is text inserted into filenames, typical recommendations apply:
 # Simple character strings are ideal, and spaces are not recommended (but should
 # generally work).
@@ -69,7 +69,7 @@ c.IPEngineApp.work_dir = u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
 # The Logging format template
 # c.IPEngineApp.log_format = '[%(name)s]%(highlevel)s %(message)s'
 
-# 
+#
 # c.IPEngineApp.url_file_name = u'ipcontroller-engine.json'
 
 # The name of the IPython directory. This directory is used for logging
@@ -104,7 +104,7 @@ c.IPEngineApp.work_dir = u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
 # user input before code is run.
 # c.ZMQInteractiveShell.ast_transformers = []
 
-# 
+#
 # c.ZMQInteractiveShell.history_length = 10000
 
 # Don't call post-execute functions that have failed in the past.
@@ -116,13 +116,13 @@ c.IPEngineApp.work_dir = u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
 # Set the color scheme (NoColor, Linux, or LightBG).
 # c.ZMQInteractiveShell.colors = 'Linux'
 
-# 
+#
 # c.ZMQInteractiveShell.separate_in = '\n'
 
 # Deprecated, use PromptManager.in2_template
 # c.ZMQInteractiveShell.prompt_in2 = '   .\\D.: '
 
-# 
+#
 # c.ZMQInteractiveShell.separate_out = ''
 
 # Deprecated, use PromptManager.in_template
@@ -144,28 +144,34 @@ c.IPEngineApp.work_dir = u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
 # no arguments are present).
 # c.ZMQInteractiveShell.autocall = 0
 
-# 
+#
 # c.ZMQInteractiveShell.separate_out2 = ''
 
 # Deprecated, use PromptManager.justify
 # c.ZMQInteractiveShell.prompts_pad_left = True
 
-# 
-# c.ZMQInteractiveShell.readline_parse_and_bind = ['tab: complete', '"\\C-l": clear-screen', 'set show-all-if-ambiguous on', '"\\C-o": tab-insert', '"\\C-r": reverse-search-history', '"\\C-s": forward-search-history', '"\\C-p": history-search-backward', '"\\C-n": history-search-forward', '"\\e[A": history-search-backward', '"\\e[B": history-search-forward', '"\\C-k": kill-line', '"\\C-u": unix-line-discard']
+#
+# c.ZMQInteractiveShell.readline_parse_and_bind = ['tab: complete',
+# '"\\C-l": clear-screen', 'set show-all-if-ambiguous on', '"\\C-o":
+# tab-insert', '"\\C-r": reverse-search-history', '"\\C-s":
+# forward-search-history', '"\\C-p": history-search-backward', '"\\C-n":
+# history-search-forward', '"\\e[A": history-search-backward', '"\\e[B":
+# history-search-forward', '"\\C-k": kill-line', '"\\C-u":
+# unix-line-discard']
 
 # Enable magic commands to be called without the leading %.
 # c.ZMQInteractiveShell.automagic = True
 
-# 
+#
 # c.ZMQInteractiveShell.debug = False
 
-# 
+#
 # c.ZMQInteractiveShell.object_info_string_level = 0
 
-# 
+#
 # c.ZMQInteractiveShell.ipython_dir = ''
 
-# 
+#
 # c.ZMQInteractiveShell.readline_remove_delims = '-/~'
 
 # Start logging to the default log file.
@@ -174,7 +180,7 @@ c.IPEngineApp.work_dir = u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
 # The name of the logfile to use.
 # c.ZMQInteractiveShell.logfile = ''
 
-# 
+#
 # c.ZMQInteractiveShell.wildcards_case_sensitive = True
 
 # Save multi-line entries as one entry in readline history
@@ -183,10 +189,10 @@ c.IPEngineApp.work_dir = u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
 # Start logging to the given file in append mode.
 # c.ZMQInteractiveShell.logappend = ''
 
-# 
+#
 # c.ZMQInteractiveShell.xmode = 'Context'
 
-# 
+#
 # c.ZMQInteractiveShell.quiet = False
 
 # Deprecated, use PromptManager.out_template
@@ -212,10 +218,10 @@ c.IPEngineApp.work_dir = u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
 #------------------------------------------------------------------------------
 
 # An object to manage the profile directory and its resources.
-# 
+#
 # The profile directory is used by all IPython applications, to manage
 # configuration, logging and security.
-# 
+#
 # This object knows how to find, create and manage these directories. This
 # should be used by any code that wants to handle profiles.
 
@@ -228,27 +234,27 @@ c.IPEngineApp.work_dir = u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
 #------------------------------------------------------------------------------
 
 # Object for handling serialization and sending of messages.
-# 
+#
 # The Session object handles building messages and sending them with ZMQ sockets
 # or ZMQStream objects.  Objects can communicate with each other over the
 # network via Session objects, and only need to work with the dict-based IPython
 # message spec. The Session will handle serialization/deserialization, security,
 # and metadata.
-# 
+#
 # Sessions support configurable serialiization via packer/unpacker traits, and
 # signing with HMAC digests via the key/keyfile traits.
-# 
+#
 # Parameters ----------
-# 
+#
 # debug : bool
 #     whether to trigger extra debugging statements
 # packer/unpacker : str : 'json', 'pickle' or import_string
 #     importstrings for methods to serialize message parts.  If just
 #     'json' or 'pickle', predefined JSON and pickle packers will be used.
 #     Otherwise, the entire importstring must be used.
-# 
+#
 #     The functions must accept at least valid JSON input, and output *bytes*.
-# 
+#
 #     For example, to use msgpack:
 #     packer = 'msgpack.packb', unpacker='msgpack.unpackb'
 # pack/unpack : callables
@@ -271,7 +277,7 @@ c.IPEngineApp.work_dir = u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
 # c.Session.copy_threshold = 65536
 
 # The maximum number of digests to remember.
-# 
+#
 # The digest history will be culled when it exceeds this value.
 # c.Session.digest_history_size = 65536
 
@@ -317,7 +323,7 @@ c.IPEngineApp.work_dir = u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
 
 # The maximum number of times a check for the heartbeat ping of a  controller
 # can be missed before shutting down the engine.
-# 
+#
 # If set to 0, the check is disabled.
 # c.EngineFactory.max_heartbeat_misses = 50
 
@@ -342,7 +348,8 @@ c.EngineFactory.ip = '*'
 
 # The class for handling displayhook. Typically
 # 'IPython.kernel.zmq.displayhook.ZMQDisplayHook'
-# c.EngineFactory.display_hook_factory = 'IPython.kernel.zmq.displayhook.ZMQDisplayHook'
+# c.EngineFactory.display_hook_factory =
+# 'IPython.kernel.zmq.displayhook.ZMQDisplayHook'
 
 # The port on which the Hub listens for registration.
 # c.EngineFactory.regport = 0
@@ -366,10 +373,10 @@ c.EngineFactory.ip = '*'
 # Kernel configuration
 #------------------------------------------------------------------------------
 
-# 
+#
 # c.Kernel._execute_sleep = 0.0005
 
-# 
+#
 # c.Kernel._poll_interval = 0.05
 
 #------------------------------------------------------------------------------
@@ -378,8 +385,11 @@ c.EngineFactory.ip = '*'
 
 # Configurable for MPI initialization
 
-# 
-# c.MPI.default_inits = {'pytrilinos': 'from PyTrilinos import Epetra\nclass SimpleStruct:\npass\nmpi = SimpleStruct()\nmpi.rank = 0\nmpi.size = 0\n', 'mpi4py': 'from mpi4py import MPI as mpi\nmpi.size = mpi.COMM_WORLD.Get_size()\nmpi.rank = mpi.COMM_WORLD.Get_rank()\n'}
+#
+# c.MPI.default_inits = {'pytrilinos': 'from PyTrilinos import
+# Epetra\nclass SimpleStruct:\npass\nmpi = SimpleStruct()\nmpi.rank =
+# 0\nmpi.size = 0\n', 'mpi4py': 'from mpi4py import MPI as mpi\nmpi.size =
+# mpi.COMM_WORLD.Get_size()\nmpi.rank = mpi.COMM_WORLD.Get_rank()\n'}
 
 # Initialization code for MPI
 # c.MPI.init_script = ''

@@ -11,15 +11,15 @@ c = get_config()
 
 # The class for launching a Controller. Change this value if you want your
 # controller to also be launched by a batch system, such as PBS,SGE,MPI,etc.
-# 
+#
 # Each launcher class has its own set of configuration options, for making sure
 # it will work in your environment.
-# 
+#
 # Note that using a batch launcher for the controller *does not* put it in the
 # same batch job as the engines, so they will still start separately.
-# 
+#
 # IPython's bundled examples include:
-# 
+#
 #     Local : start engines locally as subprocesses
 #     MPI : use mpiexec to launch the controller in an MPI universe
 #     PBS : use PBS (qsub) to submit the controller to a batch queue
@@ -27,14 +27,14 @@ c = get_config()
 #     LSF : use LSF (bsub) to submit the controller to a batch queue
 #     SSH : use SSH to start the controller
 #     WindowsHPC : use Windows HPC
-# 
+#
 # If you are using one of IPython's builtin launchers, you can specify just the
 # prefix, e.g:
-# 
+#
 c.IPClusterStart.controller_launcher_class = 'SSH'
-# 
+#
 # or:
-# 
+#
 #     ipcluster start --controller=MPI
 # c.IPClusterStart.controller_launcher_class = 'LocalControllerLauncher'
 
@@ -44,9 +44,9 @@ c.IPClusterStart.controller_launcher_class = 'SSH'
 
 # String id to add to runtime files, to prevent name collisions when using
 # multiple clusters with a single profile simultaneously.
-# 
+#
 # When set, files will be named like: 'ipcontroller-<cluster_id>-engine.json'
-# 
+#
 # Since this is text inserted into filenames, typical recommendations apply:
 # Simple character strings are ideal, and spaces are not recommended (but should
 # generally work).
@@ -65,18 +65,19 @@ c.IPClusterStart.controller_launcher_class = 'SSH'
 # c.IPClusterStart.log_level = 30
 
 # Set the working dir for the process.
-# c.IPClusterStart.work_dir = u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
+# c.IPClusterStart.work_dir =
+# u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
 
 # The class for launching a set of Engines. Change this value to use various
 # batch systems to launch your engines, such as PBS,SGE,MPI,etc. Each launcher
 # class has its own set of configuration options, for making sure it will work
 # in your environment.
-# 
+#
 # You can also write your own launcher, and specify it's absolute import path,
 # as in 'mymodule.launcher.FTLEnginesLauncher`.
-# 
+#
 # IPython's bundled examples include:
-# 
+#
 #     Local : start engines locally as subprocesses [default]
 #     MPI : use mpiexec to launch engines in an MPI environment
 #     PBS : use PBS (qsub) to submit engines to a batch queue
@@ -87,14 +88,15 @@ c.IPClusterStart.controller_launcher_class = 'SSH'
 #                 around, so you will likely have to do this manually
 #                 unless the machines are on a shared file system.
 #     WindowsHPC : use Windows HPC
-# 
+#
+
 # If you are using one of IPython's builtin launchers, you can specify just the
 # prefix, e.g:
-# 
+#
 c.IPClusterEngines.engine_launcher_class = 'SSH'
-# 
+#
 # or:
-# 
+#
 #     ipcluster start --engines=MPI
 # c.IPClusterStart.engine_launcher_class = 'LocalEngineSetLauncher'
 
@@ -153,10 +155,10 @@ c.IPClusterEngines.engine_launcher_class = 'SSH'
 #------------------------------------------------------------------------------
 
 # An object to manage the profile directory and its resources.
-# 
+#
 # The profile directory is used by all IPython applications, to manage
 # configuration, logging and security.
-# 
+#
 # This object knows how to find, create and manage these directories. This
 # should be used by any code that wants to handle profiles.
 
@@ -178,7 +180,8 @@ c.IPClusterEngines.engine_launcher_class = 'SSH'
 # c.IPClusterEngines.log_level = 30
 
 # Set the working dir for the process.
-# c.IPClusterEngines.work_dir = u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
+# c.IPClusterEngines.work_dir =
+# u'/home/john/Analysis/PWM-scanning-benchmarks/run-dir'
 
 # whether to log to a file
 # c.IPClusterEngines.log_to_file = False
@@ -194,12 +197,12 @@ c.IPClusterEngines.engine_launcher_class = 'SSH'
 # batch systems to launch your engines, such as PBS,SGE,MPI,etc. Each launcher
 # class has its own set of configuration options, for making sure it will work
 # in your environment.
-# 
+#
 # You can also write your own launcher, and specify it's absolute import path,
 # as in 'mymodule.launcher.FTLEnginesLauncher`.
-# 
+#
 # IPython's bundled examples include:
-# 
+#
 #     Local : start engines locally as subprocesses [default]
 #     MPI : use mpiexec to launch engines in an MPI environment
 #     PBS : use PBS (qsub) to submit engines to a batch queue
@@ -210,14 +213,14 @@ c.IPClusterEngines.engine_launcher_class = 'SSH'
 #                 around, so you will likely have to do this manually
 #                 unless the machines are on a shared file system.
 #     WindowsHPC : use Windows HPC
-# 
+#
 # If you are using one of IPython's builtin launchers, you can specify just the
 # prefix, e.g:
-# 
+#
 #     c.IPClusterEngines.engine_launcher_class = 'SSH'
-# 
+#
 # or:
-# 
+#
 #     ipcluster start --engines=MPI
 # c.IPClusterEngines.engine_launcher_class = 'LocalEngineSetLauncher'
 
@@ -236,9 +239,9 @@ c.IPClusterEngines.engine_launcher_class = 'SSH'
 
 # String id to add to runtime files, to prevent name collisions when using
 # multiple clusters with a single profile simultaneously.
-# 
+#
 # When set, files will be named like: 'ipcontroller-<cluster_id>-engine.json'
-# 
+#
 # Since this is text inserted into filenames, typical recommendations apply:
 # Simple character strings are ideal, and spaces are not recommended (but should
 # generally work).
@@ -279,10 +282,14 @@ c.IPClusterEngines.engine_launcher_class = 'SSH'
 # Launch a controller as a regular external process.
 
 # command-line args to pass to ipcontroller
-# c.LocalControllerLauncher.controller_args = ['--log-to-file', '--log-level=20']
+# c.LocalControllerLauncher.controller_args = ['--log-to-file',
+# '--log-level=20']
 
 # Popen command to launch ipcontroller.
-# c.LocalControllerLauncher.controller_cmd = ['/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python', '-c', 'from IPython.parallel.apps.ipcontrollerapp import launch_new_instance; launch_new_instance()']
+# c.LocalControllerLauncher.controller_cmd =
+# ['/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python',
+# '-c', 'from IPython.parallel.apps.ipcontrollerapp import
+# launch_new_instance; launch_new_instance()']
 
 #------------------------------------------------------------------------------
 # LocalEngineLauncher configuration
@@ -294,7 +301,10 @@ c.IPClusterEngines.engine_launcher_class = 'SSH'
 # c.LocalEngineLauncher.engine_args = ['--log-to-file', '--log-level=20']
 
 # command to launch the Engine.
-# c.LocalEngineLauncher.engine_cmd = ['/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python', '-c', 'from IPython.parallel.apps.ipengineapp import launch_new_instance; launch_new_instance()']
+# c.LocalEngineLauncher.engine_cmd =
+# ['/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python',
+# '-c', 'from IPython.parallel.apps.ipengineapp import
+# launch_new_instance; launch_new_instance()']
 
 #------------------------------------------------------------------------------
 # LocalEngineSetLauncher configuration
@@ -313,7 +323,10 @@ c.IPClusterEngines.engine_launcher_class = 'SSH'
 # c.LocalEngineSetLauncher.engine_args = ['--log-to-file', '--log-level=20']
 
 # command to launch the Engine.
-# c.LocalEngineSetLauncher.engine_cmd = ['/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python', '-c', 'from IPython.parallel.apps.ipengineapp import launch_new_instance; launch_new_instance()']
+# c.LocalEngineSetLauncher.engine_cmd =
+# ['/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python',
+# '-c', 'from IPython.parallel.apps.ipengineapp import
+# launch_new_instance; launch_new_instance()']
 
 #------------------------------------------------------------------------------
 # MPILauncher configuration
@@ -345,7 +358,10 @@ c.IPClusterEngines.engine_launcher_class = 'SSH'
 # c.MPIControllerLauncher.controller_args = ['--log-to-file', '--log-level=20']
 
 # Popen command to launch ipcontroller.
-# c.MPIControllerLauncher.controller_cmd = ['/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python', '-c', 'from IPython.parallel.apps.ipcontrollerapp import launch_new_instance; launch_new_instance()']
+# c.MPIControllerLauncher.controller_cmd =
+# ['/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python',
+# '-c', 'from IPython.parallel.apps.ipcontrollerapp import
+# launch_new_instance; launch_new_instance()']
 
 #------------------------------------------------------------------------------
 # MPIEngineSetLauncher configuration
@@ -365,14 +381,17 @@ c.IPClusterEngines.engine_launcher_class = 'SSH'
 # c.MPIEngineSetLauncher.engine_args = ['--log-to-file', '--log-level=20']
 
 # command to launch the Engine.
-# c.MPIEngineSetLauncher.engine_cmd = ['/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python', '-c', 'from IPython.parallel.apps.ipengineapp import launch_new_instance; launch_new_instance()']
+# c.MPIEngineSetLauncher.engine_cmd =
+# ['/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python',
+# '-c', 'from IPython.parallel.apps.ipengineapp import
+# launch_new_instance; launch_new_instance()']
 
 #------------------------------------------------------------------------------
 # SSHLauncher configuration
 #------------------------------------------------------------------------------
 
 # A minimal launcher for ssh.
-# 
+#
 # To be useful this will probably have to be extended to use the ``sshx`` idea
 # for environment variables.  There could be other things this needs as well.
 
@@ -420,7 +439,7 @@ c.SSHLauncher.to_fetch = []
 # c.SSHControllerLauncher.ssh_cmd = ['ssh']
 
 # The remote profile_dir to use.
-# 
+#
 # If not specified, use calling profile, stripping out possible leading homedir.
 # c.SSHControllerLauncher.remote_profile_dir = ''
 
@@ -428,7 +447,9 @@ c.SSHLauncher.to_fetch = []
 # c.SSHControllerLauncher.user = ''
 
 # Popen command to launch ipcontroller.
-c.SSHControllerLauncher.controller_cmd = ['/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python', '-c', 'from IPython.parallel.apps.ipcontrollerapp import launch_new_instance; launch_new_instance()']
+c.SSHControllerLauncher.controller_cmd = [
+    '/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python',
+    '-c', 'from IPython.parallel.apps.ipcontrollerapp import launch_new_instance; launch_new_instance()']
 
 # command for sending files
 # c.SSHControllerLauncher.scp_cmd = ['scp']
@@ -455,13 +476,16 @@ c.SSHControllerLauncher.controller_cmd = ['/home/john/Analysis/PWM-scanning-benc
 # c.SSHEngineLauncher.engine_args = ['--log-to-file', '--log-level=20']
 
 # command to launch the Engine.
-# c.SSHEngineLauncher.engine_cmd = ['/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python', '-c', 'from IPython.parallel.apps.ipengineapp import launch_new_instance; launch_new_instance()']
+# c.SSHEngineLauncher.engine_cmd =
+# ['/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python',
+# '-c', 'from IPython.parallel.apps.ipengineapp import
+# launch_new_instance; launch_new_instance()']
 
 # command for starting ssh
 # c.SSHEngineLauncher.ssh_cmd = ['ssh']
 
 # The remote profile_dir to use.
-# 
+#
 # If not specified, use calling profile, stripping out possible leading homedir.
 # c.SSHEngineLauncher.remote_profile_dir = ''
 
@@ -500,22 +524,21 @@ c.SSHControllerLauncher.controller_cmd = ['/home/john/Analysis/PWM-scanning-benc
 
 # dict of engines to launch.  This is a dict by hostname of ints, corresponding
 # to the number of engines to start on that host.
-c.SSHEngineSetLauncher.engines = {
-    #'dufay'   : 1,
-    'josquin' : 48,
-    'dufay'   : 48,
-    'machaut' : 48,
-}
+BSU_hosts = 'dufay', 'josquin', 'machaut'
+c.SSHEngineSetLauncher.engines = dict((host, 48) for host in BSU_hosts)
 
 # command to launch the Engine.
-c.SSHEngineSetLauncher.engine_cmd = ['/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python', '-c', 'from IPython.parallel.apps.ipengineapp import launch_new_instance; launch_new_instance()']
+c.SSHEngineSetLauncher.engine_cmd = [
+    '/home/john/Analysis/PWM-scanning-benchmarks/virtualenv/bin/python',
+    '-c',
+    'from IPython.parallel.apps.ipengineapp import launch_new_instance; launch_new_instance()']
 
 #------------------------------------------------------------------------------
 # SSHProxyEngineSetLauncher configuration
 #------------------------------------------------------------------------------
 
 # Launcher for calling `ipcluster engines` on a remote machine.
-# 
+#
 # Requires that remote profile is already configured.
 
 # SSHProxyEngineSetLauncher will inherit config from: SSHClusterLauncher,
@@ -524,14 +547,14 @@ c.SSHEngineSetLauncher.engine_cmd = ['/home/john/Analysis/PWM-scanning-benchmark
 # hostname on which to launch the program
 # c.SSHProxyEngineSetLauncher.hostname = ''
 
-# 
+#
 # c.SSHProxyEngineSetLauncher.ipcluster_cmd = ['ipcluster']
 
 # command for starting ssh
 # c.SSHProxyEngineSetLauncher.ssh_cmd = ['ssh']
 
 # The remote profile_dir to use.
-# 
+#
 # If not specified, use calling profile, stripping out possible leading homedir.
 # c.SSHProxyEngineSetLauncher.remote_profile_dir = ''
 
