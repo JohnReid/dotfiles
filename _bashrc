@@ -19,6 +19,8 @@ eval $($HOME/bin/update-env \
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+stty -ixon # disable XON/XOFF flow control
+
 #osx color terminal
 export CLICOLOR=1
 # don't put duplicate lines in the history. See bash(1) for more options
@@ -155,8 +157,8 @@ if [ -x "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
     PATH=/Applications/MacVim.app/Contents/MacOS/:$PATH
 fi
 
-PYTHONSTARTUP=~/.pythonrc.py
-export PYTHONSTARTUP
+#PYTHONSTARTUP=~/.pythonrc.py
+#export PYTHONSTARTUP
 
 parse_git_branch ()
 {
