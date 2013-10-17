@@ -63,6 +63,7 @@ c.IPClusterStart.controller_launcher_class = 'SSH'
 
 # Set the log level by value or name.
 # c.IPClusterStart.log_level = 30
+c.IPClusterStart.log_level = 0
 
 # Set the working dir for the process.
 # c.IPClusterStart.work_dir =
@@ -178,6 +179,7 @@ c.IPClusterEngines.engine_launcher_class = 'SSH'
 
 # Set the log level by value or name.
 # c.IPClusterEngines.log_level = 30
+c.IPClusterEngines.log_level = 0
 
 # Set the working dir for the process.
 # c.IPClusterEngines.work_dir =
@@ -427,7 +429,7 @@ c.SSHLauncher.to_fetch = []
 # SSHLauncher
 
 # command-line args to pass to ipcontroller
-# c.SSHControllerLauncher.controller_args = ['--log-to-file', '--log-level=20']
+c.SSHControllerLauncher.controller_args = ['--log-to-file', '--log-level=20', "--ip='*'"]
 
 # hostname on which to launch the program
 # c.SSHControllerLauncher.hostname = ''
@@ -520,11 +522,12 @@ c.SSHControllerLauncher.controller_cmd = [
 # c.SSHEngineSetLauncher.delay = 0.1
 
 # command-line arguments to pass to ipengine
-# c.SSHEngineSetLauncher.engine_args = ['--log-to-file', '--log-level=20']
+c.SSHEngineSetLauncher.engine_args = ['--log-to-file', '--log-level=0']
 
 # dict of engines to launch.  This is a dict by hostname of ints, corresponding
 # to the number of engines to start on that host.
-BSU_hosts = 'dufay', 'josquin', 'machaut'
+#BSU_hosts = 'dufay', 'josquin', 'machaut'
+BSU_hosts = 'dufay',
 c.SSHEngineSetLauncher.engines = dict((host, 48) for host in BSU_hosts)
 
 # command to launch the Engine.
