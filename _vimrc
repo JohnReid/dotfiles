@@ -57,6 +57,8 @@ let maplocalleader="\\"       " make the local leader a backslash
 
 " For R plugin
 "let vimrplugin_screenplugin = 0
+" Disable replacement of '_'- with ' <- '
+let vimrplugin_assign = 0
 
 " For showmarks plugin
 let marksCloseWhenSelected = 0
