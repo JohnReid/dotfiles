@@ -19,7 +19,10 @@ eval $($HOME/bin/update-env \
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+stty stop '' # disable XON/XOFF flow control
+stty start '' # disable XON/XOFF flow control
 stty -ixon # disable XON/XOFF flow control
+stty -ixoff # disable XON/XOFF flow control
 
 #osx color terminal
 export CLICOLOR=1
