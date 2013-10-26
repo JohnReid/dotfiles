@@ -95,25 +95,6 @@ case $TERM in
 
 esac
 
-# dircolors... make sure that we have a color terminal, dircolors exists, and ls supports it.
-if $TERM_IS_COLOR && ( dircolors --help && ls --color ) &> /dev/null; then
-  # For some reason, the unixs machines need me to use $HOME instead of ~
-  # List files from highest priority to lowest.  As soon as the loop finds one that works, it will exit.
-  for POSSIBLE_DIR_COLORS in "$HOME/.dir_colors" "/etc/DIR_COLORS"; do
-    [[ -f "$POSSIBLE_DIR_COLORS" ]] && [[ -r "$POSSIBLE_DIR_COLORS" ]] && eval `dircolors -b "$POSSIBLE_DIR_COLORS"` && break
-  done
-
-  alias ls="ls --color=auto"
-  alias ll="ls --color=auto -l"
-  alias grep='grep --color=auto'
-  alias fgrep='fgrep --color=auto'
-  alias egrep='egrep --color=auto'
-else
-  # No color, so put a slash at the end of directory names, etc. to differentiate.
-  alias ls="ls -F"
-  alias ll="ls -lF"
-fi
-
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -247,6 +228,25 @@ ANDROID_PLATFORM_TOOLS=/home/john/src/android-sdk-linux/platform-tools
 # Personal additions should be added ABOVE this line.
 [ -f /BSU/sitewide/sys.bashrc ] && . /BSU/sitewide/sys.bashrc
 
+# dircolors... make sure that we have a color terminal, dircolors exists, and ls supports it.
+if $TERM_IS_COLOR && ( dircolors --help && ls --color ) &> /dev/null; then
+  # For some reason, the unixs machines need me to use $HOME instead of ~
+  # List files from highest priority to lowest.  As soon as the loop finds one that works, it will exit.
+  for POSSIBLE_DIR_COLORS in "$HOME/.dir_colors" "/etc/DIR_COLORS"; do
+    [[ -f "$POSSIBLE_DIR_COLORS" ]] && [[ -r "$POSSIBLE_DIR_COLORS" ]] && eval `dircolors -b "$POSSIBLE_DIR_COLORS"` && break
+  done
+
+  alias ls="ls --color=auto"
+  alias ll="ls --color=auto -l"
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
+else
+  # No color, so put a slash at the end of directory names, etc. to differentiate.
+  alias ls="ls -F"
+  alias ll="ls -lF"
+fi
+
 # Change color of prompt depending on hostname
 case "$(hostname)" in
 "josquin")
@@ -298,4 +298,14 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Predictable SSH authentication socket location.
+# see: http://unix.stackexchange.com/questions/75681/why-do-i-have-to-re-set-env-vars-in-tmux-when-i-re-attach
+SOCK="/tmp/ssh-auth-sock-$USER"
+if test $SSH_AUTH_SOCK && [ $SSH_AUTH_SOCK != $SOCK ]
+then
+    # echo "Relinking $SOCK to $SSH_AUTH_SOCK"
+    rm -f $SOCK
+    ln -sf $SSH_AUTH_SOCK $SOCK
+    export SSH_AUTH_SOCK=$SOCK
+fi
 
