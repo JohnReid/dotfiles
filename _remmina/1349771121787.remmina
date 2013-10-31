@@ -1,4 +1,3 @@
-
 [remmina]
 keymap=
 ssh_auth=2
@@ -6,7 +5,7 @@ quality=0
 disableencryption=0
 ssh_charset=
 ssh_privatekey=
-server=localhost:5945
+server=localhost:5947
 username=john
 hscale=0
 disableserverinput=0
@@ -25,7 +24,7 @@ aspectscale=0
 vscale=0
 showcursor=0
 ssh_enabled=0
-window_maximize=0
+window_maximize=1
 viewmode=1
 disableclipboard=0
 colordepth=8
