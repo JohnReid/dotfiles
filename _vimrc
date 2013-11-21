@@ -1,4 +1,4 @@
-" https://github.com/sontek/dotfiles/
+" https://github.com/JohnReid/dotfiles/
 " ==========================================================
 " Dependencies - Libraries/Applications outside of vim
 " ==========================================================
@@ -8,46 +8,6 @@
 " Rake & Ruby for command-t
 " nose, django-nose
 
-" ==========================================================
-" Plugins included
-" ==========================================================
-" Pathogen
-"     Better Management of VIM plugins
-"
-" GunDo
-"     Visual Undo in vim with diff's to check the differences
-"
-" Pytest
-"     Runs your Python tests in Vim.
-"
-" Commant-T
-"     Allows easy search and opening of files within a given path
-"
-" Snipmate
-"     Configurable snippets to avoid re-typing common comands
-"
-" PyFlakes
-"     Underlines and displays errors with Python on-the-fly
-"
-" Fugitive
-"    Interface with git from vim
-"
-" Git
-"    Syntax highlighting for git config files
-"
-" Pydoc
-"    Opens up pydoc within vim
-"
-" Surround
-"    Allows you to surround text with open/close tags
-"
-" Py.test
-"    Run py.test test's from within vim
-"
-" MakeGreen
-"    Generic test runner that works with nose
-"
-"
 " ==========================================================
 " Shortcuts
 " ==========================================================
@@ -332,6 +292,6 @@ endif
 set shellslash                                " Convert backward slashes to forward ones in filename references
 set grepprg=grep\ -nH\ $*                     " Force grep to display file name even in single-file searches
 let g:tex_flavor='latex'                      " Force .tex to mean LaTeX, not plain TeX
-" let g:Tex_AutoFolding = 0                     " Do not fold on opening file
+let g:Tex_AutoFolding = 0                     " Do not fold on opening file
 let g:Tex_DefaultTargetFormat = 'pdf'         " Compile to pdf by default
 "imap <leader>{ <Plug>Tex_LeftRight
