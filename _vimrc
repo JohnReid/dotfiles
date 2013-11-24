@@ -38,6 +38,9 @@ endfu
 
 nmap <leader>sb :call SplitScroll()<CR>
 
+" Open new windows below or to right of current
+:set splitbelow
+:set splitright
 
 "<CR><C-w>l<C-f>:set scrollbind<CR>
 
