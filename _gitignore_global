@@ -30,4 +30,7 @@
 *.log
 *.sql
 *.sqlite
+
+# Python
 ipython_log.py
+*.pyc

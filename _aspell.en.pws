@@ -1,14 +1,15 @@
-personal_ws-1.1 en 651 
+personal_ws-1.1 en 663 
 CBP
 Segal
+Junion
 parameterise
 Rora
 ccp
 AGACAAGTTTCTTCGTTTT
 multi
 anr
-hela
 HeLa
+hela
 nfkb
 Tgif
 parameterisable
@@ -17,6 +18,7 @@ GitHub
 HDPM
 surprisal
 arg
+Kalay
 pluripotent
 gapped
 Dbp
@@ -31,8 +33,8 @@ chr
 rrrrrr
 Dfd
 RepeatMasker
-UniProbe
 UniPROBE
+UniProbe
 oPOSSUM
 ccrcp
 methylated
@@ -50,6 +52,7 @@ phylogenetically
 methyltransferase
 octamer
 PhyloScan
+purpuratus
 electrophoresis
 enhanceosome
 synergistically
@@ -65,8 +68,8 @@ TATAAAA
 FOXA
 bicoid
 MoAn
-Egr
 CRM
+Egr
 cro
 Foxj
 Agnostically
@@ -78,8 +81,8 @@ UCSC
 hydroxyl
 MOFA
 acetylation
-DPM
 GCC
+DPM
 Shamir's
 Hirji
 rrrr
@@ -158,6 +161,7 @@ Wasserman
 Arnosti
 quartiles
 Schliep
+Lusk
 Apriori
 MatInspector
 Kullback
@@ -189,9 +193,9 @@ surprisals
 Irf
 Motiph
 Nagarajan
+Circularized
 footprinting
 GPUs
-Circularized
 IQR
 Nishida
 RXRA
@@ -242,6 +246,7 @@ Ney
 Ensembl
 exonic
 nucleotide
+brac
 NFY
 DamID
 Touzet
@@ -259,15 +264,15 @@ Bateman
 PBM
 Hoxa
 metamotif
-PBN
 PCI
+PBN
 silico
 Staden
 Kishino
 transcriptional
 Stigler
-Nkx
 Pax
+Nkx
 Leibler
 Tsong
 Mtf
@@ -276,6 +281,7 @@ pdm
 Pbx
 Quandt
 Thijs
+Weirauch
 experimentalist
 mSS
 pseudocount
@@ -285,10 +291,12 @@ homodimers
 Phd
 beamer
 CCGAAT
+bric
 BoolNet
 ome
 intergenic
 activatory
+Strongylocentrotus
 maxhela
 Jukes
 TRANSFAC
@@ -311,8 +319,8 @@ iteratively
 nucleosome
 PubMed
 macromolecules
-REB
 rcl
+REB
 overfitting
 PMM
 TSSs
@@ -332,8 +340,8 @@ ndstad
 evalue
 REs
 enhanceosomes
-Ott
 pre
+Ott
 Pou
 intron
 Gabpa
@@ -350,13 +358,14 @@ Caenorhabditis
 Tbp
 NetBuilder
 AUCFPR
-PWM
-Tec
 ROC
+Tec
+PWM
 Partida
 reimplemented
-Teh
+Wittkopp
 sim
+Teh
 heterodimer's
 heterodimers
 PoSSuMsearch
@@ -395,6 +404,7 @@ Srf
 tll
 Winn
 ssc
+Eisen's
 Sox
 discriminative
 cmychela
@@ -444,9 +454,10 @@ Yano
 zoops
 nucleobases
 subsequences
-PoSSum
 PoSSuM
+PoSSum
 Dmrt
+Eisen
 AAAAAA
 von
 Bonferroni
@@ -457,6 +468,7 @@ Sarai
 effector
 TATATAA
 Xie
+proximal
 Tompa
 spatio
 TAAACTAGACT
@@ -472,8 +484,8 @@ thresholding
 TAAACTAAACT
 directionality
 backref
-DPMs
 DPM's
+DPMs
 Felsenstein
 IUPAC
 cfoshela
@@ -537,8 +549,8 @@ kf
 microarrays
 ki
 TAAACTAGACTAA
-kj
 kJ
+kj
 PSSM
 parallelisation
 CTCCCTTCTCT
@@ -610,11 +622,11 @@ Cebpg
 Cuellar
 DREME
 Collignon's
-wx
 wX
+wx
 Xu
-PWMs
 PWM's
+PWMs
 ChIPMunk
 ROCs
 AUCFPRs
