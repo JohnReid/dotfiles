@@ -1,3 +1,5 @@
+# echo "Executing .bashrc: $0"
+# echo "0: $(date)"
 
 #
 # Set up development environment
@@ -15,6 +17,7 @@ eval $($HOME/bin/update-env \
     --ld-pre $LOCAL/boost_1_53_0/lib \
 )
 
+# echo "1: $(date)"
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -23,6 +26,8 @@ stty stop '' # disable XON/XOFF flow control
 stty start '' # disable XON/XOFF flow control
 stty -ixon # disable XON/XOFF flow control
 stty -ixoff # disable XON/XOFF flow control
+
+# echo "2: $(date)"
 
 #osx color terminal
 export CLICOLOR=1
@@ -37,6 +42,8 @@ shopt -s histappend
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+# echo "3: $(date)"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -98,17 +105,22 @@ case $TERM in
 
 esac
 
+# echo "4: $(date)"
+
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# echo "5: $(date)"
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
+#if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    #. /etc/bash_completion
+#fi
+
 # Set $TERM for libvte terminals that set $TERM wrong (like gnome-terminal)
 {
   [ "_$TERM" = "_xterm" ] && type ldd && type grep && type tput && [ -L "/proc/$PPID/exe" ] && {
@@ -124,6 +136,8 @@ fi
   }
 } >/dev/null 2>/dev/null
 
+# echo "6: $(date)"
+
 venwrap=`type -P virtualenvwrapper.sh`
 if [ "$venwrap" != "" ]; then
     source $venwrap
@@ -133,9 +147,7 @@ vim=`type -P vim`
 if [ "$vim" == "" ]; then
     vim="gvim -v"
 fi
-
 alias vim="$vim"
-
 # osx vim
 if [ -x "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
     PATH=/Applications/MacVim.app/Contents/MacOS/:$PATH
@@ -176,6 +188,8 @@ function pdfextractpages()
        -sOutputFile=${PDF%.pdf}_p$FIRST-p$LAST.pdf \
        $PDF
 }
+
+# echo "7: $(date)"
 
 # ANSI color codes
 RS="\[\033[0m\]"    # reset
@@ -227,9 +241,12 @@ export PATH="/home/john/local/perl5/bin:$PATH";
 ANDROID_PLATFORM_TOOLS=/home/john/src/android-sdk-linux/platform-tools
 [ -d $ANDROID_PLATFORM_TOOLS ] && PATH=$PATH:$ANDROID_PLATFORM_TOOLS
 
+# echo "8: $(date)"
 
 # Personal additions should be added ABOVE this line.
 [ -f /BSU/sitewide/sys.bashrc ] && . /BSU/sitewide/sys.bashrc
+
+# echo "9: $(date)"
 
 # dircolors... make sure that we have a color terminal, dircolors exists, and ls supports it.
 if $TERM_IS_COLOR && ( dircolors --help && ls --color ) &> /dev/null; then
@@ -249,6 +266,8 @@ else
   alias ls="ls -F"
   alias ll="ls -lF"
 fi
+
+# echo "10: $(date)"
 
 # Change color of prompt depending on hostname
 case "$(hostname)" in
