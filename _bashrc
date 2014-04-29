@@ -331,3 +331,6 @@ then
     export SSH_AUTH_SOCK=$SOCK
 fi
 
+export IRONLANGUAGESDIR=/home/john/src/IronLanguages
+export IRONPYTHONPATH=$IRONLANGUAGESDIR/External.LCA_RESTRICTED/Languages/IronPython/27/Lib/:$IRONPYTHONPATH
+alias ironpy='mono $IRONLANGUAGESDIR/bin/Release/ipy.exe'
