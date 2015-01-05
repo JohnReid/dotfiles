@@ -31,7 +31,7 @@
 #backend      : GTK
 #backend      : TkAgg
 backend      : Agg
-# backend      : WXAgg
+#backend      : WXAgg
 
 # if you are runing pyplot inside a GUI and your backend choice
 # conflicts, we will automatically try and find a compatible one for

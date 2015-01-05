@@ -1,6 +1,15 @@
-options(repos=structure(c(CRAN="http://cran.ma.imperial.ac.uk/")))
+.First <- function() {
+    options(
+        repos=structure(c(CRAN="http://cran.ma.imperial.ac.uk/")),
+        browserNLdisabled = TRUE,
+        devtools.name = "John Reid",
+        devtools.desc.author = "John Reid <johnbaronreid@gmail.com> [aut, cre]",
+        devtools.desc.license = "MIT",
+        deparse.max.lines = 2)
+}
 if(interactive()){
     #library(colorout)
     library(setwidth)
     library(vimcom)
+    suppressMessages(require(devtools))
 }
