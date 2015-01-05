@@ -40,3 +40,12 @@
 [submodule "_vim/bundle/ipython"]
 	path = _vim/bundle/ipython
 	url = https://github.com/ivanov/vim-ipython.git
+[submodule "_vim/bundle/supertab"]
+	path = _vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "_vim/bundle/vim-unimpaired"]
+	path = _vim/bundle/vim-unimpaired
+	url = git://github.com/tpope/vim-unimpaired.git
+[submodule "_vim/bundle/stan"]
+	path = _vim/bundle/stan
+	url = https://github.com/maverickg/stan.vim.git
