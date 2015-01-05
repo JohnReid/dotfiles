@@ -19,6 +19,7 @@ let maplocalleader="\\"       " make the local leader a backslash
 "let vimrplugin_screenplugin = 0
 " Disable replacement of '_'- with ' <- '
 let vimrplugin_assign = 0
+let g:vimrplugin_insert_mode_cmds = 0
 
 " For showmarks plugin
 let marksCloseWhenSelected = 0
@@ -56,6 +57,7 @@ let g:pep8_map='<leader>8'
 " Jump to error
 let g:pymode_lint_write = 0
 let g:pymode_lint_jump = 1
+let g:pymode_lint_ignore = "E202,E203,E221,E272"
 
 " run py.test's
 nmap <silent><Leader>tf <Esc>:Pytest file<CR>
@@ -294,4 +296,6 @@ set grepprg=grep\ -nH\ $*                     " Force grep to display file name 
 let g:tex_flavor='latex'                      " Force .tex to mean LaTeX, not plain TeX
 let g:Tex_AutoFolding = 0                     " Do not fold on opening file
 let g:Tex_DefaultTargetFormat = 'pdf'         " Compile to pdf by default
+" let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape -interaction=nonstopmode $*' " Use pdflatex by default
+let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*' " Use xelatex by default
 "imap <leader>{ <Plug>Tex_LeftRight
