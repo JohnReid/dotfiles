@@ -1,4 +1,4 @@
-" https://github.com/sontek/dotfiles/
+" https://github.com/JohnReid/dotfiles/
 " ==========================================================
 " Dependencies - Libraries/Applications outside of vim
 " ==========================================================
@@ -9,50 +9,21 @@
 " nose, django-nose
 
 " ==========================================================
-" Plugins included
-" ==========================================================
-" Pathogen
-"     Better Management of VIM plugins
-"
-" GunDo
-"     Visual Undo in vim with diff's to check the differences
-"
-" Pytest
-"     Runs your Python tests in Vim.
-"
-" Commant-T
-"     Allows easy search and opening of files within a given path
-"
-" Snipmate
-"     Configurable snippets to avoid re-typing common comands
-"
-" PyFlakes
-"     Underlines and displays errors with Python on-the-fly
-"
-" Fugitive
-"    Interface with git from vim
-"
-" Git
-"    Syntax highlighting for git config files
-"
-" Pydoc
-"    Opens up pydoc within vim
-"
-" Surround
-"    Allows you to surround text with open/close tags
-"
-" Py.test
-"    Run py.test test's from within vim
-"
-" MakeGreen
-"    Generic test runner that works with nose
-"
-"
-" ==========================================================
 " Shortcuts
 " ==========================================================
 set nocompatible              " Don't be compatible with vi
 let mapleader=","             " change the leader to be a comma vs slash
+let maplocalleader="\\"       " make the local leader a backslash
+
+" For R plugin
+"let vimrplugin_screenplugin = 0
+" Disable replacement of '_'- with ' <- '
+let vimrplugin_assign = 0
+let g:vimrplugin_insert_mode_cmds = 0
+
+" For showmarks plugin
+let marksCloseWhenSelected = 0
+let showmarks_include = "abcdefghijklmnopqrstuvwxyz"
 
 " Seriously, guys. It's not like :W is bound to anything anyway.
 command! W :w
@@ -68,6 +39,9 @@ endfu
 
 nmap <leader>sb :call SplitScroll()<CR>
 
+" Open new windows below or to right of current
+:set splitbelow
+:set splitright
 
 "<CR><C-w>l<C-f>:set scrollbind<CR>
 
@@ -79,6 +53,11 @@ map <leader>td <Plug>TaskList
 
 " Run pep8
 let g:pep8_map='<leader>8'
+
+" Jump to error
+let g:pymode_lint_write = 0
+let g:pymode_lint_jump = 1
+let g:pymode_lint_ignore = "E202,E203,E221,E272"
 
 " run py.test's
 nmap <silent><Leader>tf <Esc>:Pytest file<CR>
@@ -184,7 +163,7 @@ set showmatch               " Briefly jump to a paren once it's balanced
 set nowrap                  " don't wrap text
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
-set smartindent             " use smart indent if there is no indent file
+"set smartindent             " use smart indent if there is no indent file
 set tabstop=4               " <tab> inserts 4 spaces 
 set shiftwidth=4            " but an indent level is 2 spaces wide.
 set softtabstop=4           " <BS> over an autoindent deletes both spaces.
@@ -315,6 +294,8 @@ endif
 set shellslash                                " Convert backward slashes to forward ones in filename references
 set grepprg=grep\ -nH\ $*                     " Force grep to display file name even in single-file searches
 let g:tex_flavor='latex'                      " Force .tex to mean LaTeX, not plain TeX
-" let g:Tex_AutoFolding = 0                     " Do not fold on opening file
+let g:Tex_AutoFolding = 0                     " Do not fold on opening file
 let g:Tex_DefaultTargetFormat = 'pdf'         " Compile to pdf by default
+" let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape -interaction=nonstopmode $*' " Use pdflatex by default
+let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*' " Use xelatex by default
 "imap <leader>{ <Plug>Tex_LeftRight

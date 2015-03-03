@@ -1,14 +1,19 @@
+# Vim files
+.*.swp
+
 # SVN files
-*.svn
+.svn
 
 # Compiled code
 *.pyc
+*.pyo
 *.com
 *.class
 *.dll
 *.exe
 *.o
 *.so
+*.so.*
 
 # Packages #
 # it's better to unpack these files and commit the raw source
@@ -27,3 +32,13 @@
 *.sql
 *.sqlite
 
+# Python
+ipython_log.py
+*.pyc
+.ropeproject
+
+# Sphinx
+_build
+
+# Vim
+.*.swo

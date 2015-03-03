@@ -1,4 +1,3 @@
-
 [remmina]
 keymap=
 ssh_auth=2
@@ -6,7 +5,7 @@ quality=0
 disableencryption=0
 ssh_charset=
 ssh_privatekey=
-window_height=1168
+window_height=1048
 server=localhost:5908
 hscale=0
 scale=0
@@ -20,8 +19,8 @@ ssh_server=
 viewonly=0
 aspectscale=0
 protocol=VNC
-window_maximize=0
-window_width=1858
+window_maximize=1
+window_width=1908
 vscale=0
 ssh_enabled=0
 username=john

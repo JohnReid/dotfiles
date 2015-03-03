@@ -1,6 +1,26 @@
+#
+# from http://stackoverflow.com/questions/3651862/better-variable-exploring-when-debugging-c-code-with-eclipse-cdt
+#
 python
 import sys
-sys.path.insert(0, '/home/john/src/gdbprinters/python')
+sys.path.insert(0, '/home/john/src/gcc-libstdc++-python')
 from libstdcxx.v6.printers import register_libstdcxx_printers
-register_libstdcxx_printers (None)
+register_libstdcxx_printers(None)
 end
+
+
+#
+# From https://github.com/ruediger/Boost-Pretty-Printer
+#
+python
+import sys
+sys.path.insert(0, '/home/john/src/Boost-Pretty-Printer')
+from boost.v1_40.printers import register_boost_printers
+register_boost_printers(None)
+end
+
+
+#
+# Allows gdb to break at points which are not loaded at program start-up
+#
+set breakpoint pending on
