@@ -8,6 +8,7 @@
 LOCAL=$HOME/local
 eval $($HOME/bin/update-env \
     --path-pre $HOME/bin \
+    --path-pre $HOME/bin/UCSC-tools \
     --path-pre $HOME/Dev/bin \
     --path-pre $LOCAL/bin \
     --py-pre $HOME/local/lib/python \
