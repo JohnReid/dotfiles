@@ -49,3 +49,9 @@
 [submodule "_vim/bundle/stan"]
 	path = _vim/bundle/stan
 	url = https://github.com/maverickg/stan.vim.git
+[submodule "_vim/bundle/acp"]
+	path = _vim/bundle/acp
+	url = git@github.com:vim-scripts/AutoComplPop.git
+[submodule "_vim/bundle/l9"]
+	path = _vim/bundle/l9
+	url = git@github.com:eparreno/vim-l9.git

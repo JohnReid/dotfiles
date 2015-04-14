@@ -30,7 +30,8 @@
 # 'module://my_backend'
 #backend      : GTK
 #backend      : TkAgg
-backend      : Agg
+#backend      : Agg
+backend      : Cairo
 # backend      : WXAgg
 
 # if you are runing pyplot inside a GUI and your backend choice
@@ -41,7 +42,7 @@ backend      : Agg
 #maskedarray : False       # True to use external maskedarray module
                            # instead of numpy.ma; this is a temporary
                            # setting for testing maskedarray.
-interactive  : True      # see http://matplotlib.sourceforge.net/interactive.html
+# interactive  : True      # see http://matplotlib.sourceforge.net/interactive.html
 #toolbar      : toolbar2   # None | classic | toolbar2
 #timezone     : UTC        # a pytz timezone string, eg US/Central or Europe/Paris
 
