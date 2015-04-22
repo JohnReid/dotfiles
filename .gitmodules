@@ -55,3 +55,6 @@
 [submodule "_vim/bundle/l9"]
 	path = _vim/bundle/l9
 	url = git@github.com:eparreno/vim-l9.git
+[submodule "_vim/bundle/flake8"]
+	path = _vim/bundle/flake8
+	url = git@github.com:nvie/vim-flake8.git
