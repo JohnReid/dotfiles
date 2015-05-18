@@ -2,6 +2,7 @@
 .*.swp
 tags
 tags-ja
+tags-te
 
 # SVN files
 .svn
