@@ -20,6 +20,7 @@ let maplocalleader="\\"       " make the local leader a backslash
 " Disable replacement of '_'- with ' <- '
 let vimrplugin_assign = 0
 let g:vimrplugin_insert_mode_cmds = 0
+let vimrplugin_vimpager = "horizontal"
 
 " For showmarks plugin
 let marksCloseWhenSelected = 0
