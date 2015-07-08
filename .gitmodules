@@ -34,9 +34,6 @@
 [submodule "_vim/bundle/screen"]
 	path = _vim/bundle/screen
 	url = https://github.com/ervandew/screen.git
-[submodule "_vim/bundle/R"]
-	path = _vim/bundle/R
-	url = https://github.com/jcfaria/Vim-R-plugin.git
 [submodule "_vim/bundle/ipython"]
 	path = _vim/bundle/ipython
 	url = https://github.com/ivanov/vim-ipython.git
@@ -61,3 +58,6 @@
 [submodule "_vim/bundle/autopep8"]
 	path = _vim/bundle/autopep8
 	url = git@github.com:tell-k/vim-autopep8.git
+[submodule "_vim/bundle/Vim-R-plugin"]
+	path = _vim/bundle/Vim-R-plugin
+	url = git@github.com:vim-scripts/Vim-R-plugin.git
