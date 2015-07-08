@@ -21,6 +21,11 @@ let maplocalleader="\\"       " make the local leader a backslash
 let vimrplugin_assign = 0
 let g:vimrplugin_insert_mode_cmds = 0
 let vimrplugin_vimpager = "horizontal"
+" Reload syntax highlighting with F12
+" See:
+" http://stackoverflow.com/questions/8674387/vim-how-to-reload-syntax-highlighting
+noremap <F12> <Esc>:syntax sync fromstart<CR>
+inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
 " For showmarks plugin
 let marksCloseWhenSelected = 0
