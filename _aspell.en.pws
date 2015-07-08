@@ -1,4 +1,4 @@
-personal_ws-1.1 en 743 
+personal_ws-1.1 en 745 
 Loess
 CBP
 Segal
@@ -75,10 +75,10 @@ phenotypes
 TATAAAA
 FOXA
 bicoid
+dendritic
 ODEs
 MoAn
 multimodal
-dendritic
 Egr
 CRM
 cro
@@ -221,6 +221,7 @@ GPUs
 IIId
 IQR
 Nishida
+deconfounding
 hyperparameter
 RXRA
 LEF
@@ -275,8 +276,8 @@ STEME's
 Mult
 mis
 MLE
-nCounter
 LPS
+nCounter
 Ney
 Ensembl
 exonic
@@ -318,6 +319,7 @@ Mtf
 neurogenic
 pdm
 PCR
+Diag
 Pbx
 Cantone
 Quandt
