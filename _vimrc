@@ -8,6 +8,8 @@
 " Rake & Ruby for command-t
 " nose, django-nose
 
+set runtimepath=~/src/dotfiles/_vim/bundle/R,~/.vim,$VIMRUNTIME,~/.vim/after
+
 " ==========================================================
 " Shortcuts
 " ==========================================================
