@@ -314,3 +314,8 @@ let g:Tex_DefaultTargetFormat = 'pdf'         " Compile to pdf by default
 " let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape -interaction=nonstopmode $*' " Use pdflatex by default
 let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*' " Use xelatex by default
 "imap <leader>{ <Plug>Tex_LeftRight
+
+" For vim-colors-solarized
+syntax enable
+set background=dark
+colorscheme solarized
