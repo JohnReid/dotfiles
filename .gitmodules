@@ -64,3 +64,9 @@
 [submodule "_vim/bundle/R-Vim-runtime"]
 	path = _vim/bundle/R-Vim-runtime
 	url = git@github.com:jalvesaq/R-Vim-runtime.git
+[submodule "_vim/bundle/commentary"]
+	path = _vim/bundle/commentary
+	url = git://github.com/tpope/vim-commentary.git
+[submodule "_vim/bundle/repeat"]
+	path = _vim/bundle/repeat
+	url = git://github.com/tpope/vim-repeat.git
