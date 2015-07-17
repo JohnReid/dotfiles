@@ -314,3 +314,9 @@ let g:Tex_DefaultTargetFormat = 'pdf'         " Compile to pdf by default
 " let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape -interaction=nonstopmode $*' " Use pdflatex by default
 let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*' " Use xelatex by default
 "imap <leader>{ <Plug>Tex_LeftRight
+
+" http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
+" Set high visibility for diff mode
+let g:solarized_diffmode="high"
+
+if &diff | syntax off | endif
