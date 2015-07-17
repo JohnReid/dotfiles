@@ -320,3 +320,8 @@ let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*' " Use xelatex 
 let g:solarized_diffmode="high"
 
 if &diff | syntax off | endif
+
+" For vim-colors-solarized
+syntax enable
+set background=dark
+colorscheme solarized
