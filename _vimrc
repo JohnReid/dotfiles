@@ -23,6 +23,7 @@ let maplocalleader="\\"       " make the local leader a backslash
 let vimrplugin_assign = 0
 let g:vimrplugin_insert_mode_cmds = 0
 let vimrplugin_vimpager = "horizontal"
+autocmd FileType r setlocal shiftwidth=2 tabstop=2
 " Reload syntax highlighting with F12
 " See:
 " http://stackoverflow.com/questions/8674387/vim-how-to-reload-syntax-highlighting
@@ -59,13 +60,20 @@ cmap W! w !sudo tee % >/dev/null
 " Toggle the tasklist
 map <leader>td <Plug>TaskList
 
+"
+" pymode
+"
+" Detect virtualenv automatically
+let g:pymode_virtualenv = 1
+"
 " Run pep8
 let g:pep8_map='<leader>8'
-
+"
 " Jump to error
 let g:pymode_lint_write = 0
 let g:pymode_lint_jump = 1
-let g:pymode_lint_ignore = "E202,E203,E221,E272"
+let g:pymode_lint_ignore = "E202,E203,E221,E272,C901"
+let g:pymode_mccabe_ignore = "C901"
 
 " run py.test's
 nmap <silent><Leader>tf <Esc>:Pytest file<CR>
@@ -119,7 +127,7 @@ map <leader>r :RopeRename<CR>
 " ==========================================================
 " Load pathogen with docs for all plugins
 filetype off
-execute pathogen#infect()
+call pathogen#infect()
 call pathogen#helptags()
 
 " ==========================================================
