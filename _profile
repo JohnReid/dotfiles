@@ -30,3 +30,6 @@ fi
 
 # Set up environment variables
 . $HOME/.env
+
+
+. /home/john/src/torch/install/bin/torch-activate

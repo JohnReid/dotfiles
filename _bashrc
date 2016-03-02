@@ -335,3 +335,16 @@ fi
 export IRONLANGUAGESDIR=/home/john/src/IronLanguages
 export IRONPYTHONPATH=$IRONLANGUAGESDIR/External.LCA_RESTRICTED/Languages/IronPython/27/Lib/:$IRONPYTHONPATH
 alias ironpy='mono $IRONLANGUAGESDIR/bin/Release/ipy.exe'
+
+
+#
+# For CUDA and torch
+. /home/john/src/torch/install/bin/torch-activate
+case "$(hostname)" in
+"schmidt")
+    export CUDA_BIN_PATH=/usr/local/cuda/
+    ;;
+"antheil")
+    export CUDA_BIN_PATH=/usr/local/cuda/
+    ;;
+esac
