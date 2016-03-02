@@ -1,14 +1,15 @@
 " https://github.com/JohnReid/dotfiles/
-" ==========================================================
-" Dependencies - Libraries/Applications outside of vim
-" ==========================================================
-" Pep8 - http://pypi.python.org/pypi/pep8
-" Pyflakes
-" Ack
-" Rake & Ruby for command-t
-" nose, django-nose
-
+"
 set runtimepath=~/src/dotfiles/_vim/bundle/R,~/.vim,$VIMRUNTIME,~/.vim/after
+
+" ==========================================================
+" Pathogen - Allows us to organize our vim plugins
+" ==========================================================
+" Load pathogen with docs for all plugins
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+
 
 " ==========================================================
 " Shortcuts
@@ -122,13 +123,6 @@ map <leader>j :RopeGotoDefinition<CR>
 
 " Rename whatever the cursor is on (including references to it)
 map <leader>r :RopeRename<CR>
-" ==========================================================
-" Pathogen - Allows us to organize our vim plugins
-" ==========================================================
-" Load pathogen with docs for all plugins
-filetype off
-call pathogen#infect()
-call pathogen#helptags()
 
 " ==========================================================
 " Basic Settings
@@ -212,7 +206,7 @@ set modelines=5             " they must be within the first or last 5 lines.
 set ffs=unix,dos,mac        " Try recognizing dos, unix, and mac line endings.
 
 """" Messages, Info, Status
-set ls=2                    " allways show status line
+set ls=2                    " always show status line
 set vb t_vb=                " Disable all bells.  I hate ringing/flashing.
 set confirm                 " Y-N-C prompt if closing with unsaved changes.
 set showcmd                 " Show incomplete normal mode commands as I type.
@@ -285,6 +279,9 @@ au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 cinwo
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
+" Call flake8 whenver we save a python file
+" autocmd BufWritePost *.py call Flake8()
+
 
 
 
@@ -313,6 +310,9 @@ endif
 "map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
 "omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 
+" Set indent for LaTeX
+autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
 " Settings for vim-latex (http://vim-latex.sourceforge.net)
 set shellslash                                " Convert backward slashes to forward ones in filename references
 set grepprg=grep\ -nH\ $*                     " Force grep to display file name even in single-file searches
@@ -335,3 +335,6 @@ set background=dark
 let g:solarized_termcolors=256
 set t_Co=256
 colorscheme solarized
+
+" For Stan files
+autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
