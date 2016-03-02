@@ -1,5 +1,6 @@
-# echo "Executing .bashrc: $0"
-# echo "0: $(date)"
+# __PROFILE__=1
+test -n "$__PROFILE__" && echo "Executing .bashrc: $0"
+test -n "$__PROFILE__" && echo "0: $(date +%T)"
 
 #
 # Set up development environment
@@ -18,7 +19,7 @@ eval $($HOME/bin/update-env \
     --ld-pre $LOCAL/boost_1_53_0/lib \
 )
 
-# echo "1: $(date)"
+test -n "$__PROFILE__" && echo "1: $(date +%T)"
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -28,7 +29,7 @@ stty start '' # disable XON/XOFF flow control
 stty -ixon # disable XON/XOFF flow control
 stty -ixoff # disable XON/XOFF flow control
 
-# echo "2: $(date)"
+test -n "$__PROFILE__" && echo "2: $(date +%T)"
 
 #osx color terminal
 export CLICOLOR=1
@@ -44,7 +45,7 @@ shopt -s histappend
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# echo "3: $(date)"
+test -n "$__PROFILE__" && echo "3: $(date +%T)"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -106,14 +107,14 @@ case $TERM in
 
 esac
 
-# echo "4: $(date)"
+test -n "$__PROFILE__" && echo "4: $(date +%T)"
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# echo "5: $(date)"
+test -n "$__PROFILE__" && echo "5: $(date +%T)"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -137,7 +138,7 @@ fi
   }
 } >/dev/null 2>/dev/null
 
-# echo "6: $(date)"
+test -n "$__PROFILE__" && echo "6: $(date +%T)"
 
 venwrap=`type -P virtualenvwrapper.sh`
 if [ "$venwrap" != "" ]; then
@@ -190,7 +191,7 @@ function pdfextractpages()
        $PDF
 }
 
-# echo "7: $(date)"
+test -n "$__PROFILE__" && echo "7: $(date +%T)"
 
 # ANSI color codes
 RS="\[\033[0m\]"    # reset
@@ -242,12 +243,12 @@ export PATH="/home/john/local/perl5/bin:$PATH";
 ANDROID_PLATFORM_TOOLS=/home/john/src/android-sdk-linux/platform-tools
 [ -d $ANDROID_PLATFORM_TOOLS ] && PATH=$PATH:$ANDROID_PLATFORM_TOOLS
 
-# echo "8: $(date)"
+test -n "$__PROFILE__" && echo "8: $(date +%T)"
 
 # Personal additions should be added ABOVE this line.
 [ -f /BSU/sitewide/sys.bashrc ] && . /BSU/sitewide/sys.bashrc
 
-# echo "9: $(date)"
+test -n "$__PROFILE__" && echo "9: $(date +%T)"
 
 # dircolors... make sure that we have a color terminal, dircolors exists, and ls supports it.
 if $TERM_IS_COLOR && ( dircolors --help && ls --color ) &> /dev/null; then
@@ -268,7 +269,7 @@ else
   alias ll="ls -lF"
 fi
 
-# echo "10: $(date)"
+test -n "$__PROFILE__" && echo "10: $(date +%T)"
 
 # Change color of prompt depending on hostname
 case "$(hostname)" in
@@ -310,7 +311,12 @@ export EDITOR="$vim"
 export GIT_EDITOR="$vim"
 
 # Add git and svn branch names
-export PS1="$PS1\$(parse_git_branch)\$(parse_svn_branch) "
+if [ 'SunOS' == $(uname -s) ]
+then
+    export PS1="$PS1\$(parse_git_branch) "
+else
+    export PS1="$PS1\$(parse_git_branch)\$(parse_svn_branch) "
+fi
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -348,3 +354,13 @@ case "$(hostname)" in
     export CUDA_BIN_PATH=/usr/local/cuda/
     ;;
 esac
+
+#
+# Source machine specific setup if it exists
+MACHINERC=.bashrc.$(hostname)
+if [ -f "$MACHINERC" ]
+then
+    source "$MACHINERC"
+fi
+
+unset __PROFILE__
