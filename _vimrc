@@ -107,8 +107,10 @@ map <c-h> <c-w>h
 "  happen as if in command mode )
 imap <C-W> <C-O><C-W>
 
-" Open NerdTree
+" Open NERDtree
 map <leader>n :NERDTreeToggle<CR>
+" Close vim if only buffer left open is NERDtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Run command-t file search
 map <leader>f :CommandT<CR>
