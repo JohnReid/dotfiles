@@ -229,18 +229,6 @@ set smarttab                " Handle tabs more intelligently
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
-"""" Display
-if has("gui_running")
-    colorscheme desert
-    " Remove menu bar
-    set guioptions-=m
-
-    " Remove toolbar
-    set guioptions-=T
-else
-    colorscheme torte
-endif
-
 " Paste from clipboard
 map <leader>p "+p
 
@@ -333,7 +321,7 @@ if &diff | syntax off | endif
 
 " For vim-colors-solarized
 syntax enable
-set background=dark
+set background=light
 let g:solarized_termcolors=256
 set t_Co=256
 colorscheme solarized
