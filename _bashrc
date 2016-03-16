@@ -345,7 +345,8 @@ alias ironpy='mono $IRONLANGUAGESDIR/bin/Release/ipy.exe'
 
 #
 # For CUDA and torch
-. /home/john/src/torch/install/bin/torch-activate
+TORCH_ACTIVATE=/home/john/src/torch/install/bin/torch-activate
+[ -f $TORCH_ACTIVATE ] && . $TORCH_ACTIVATE
 case "$(hostname)" in
 "schmidt")
     export CUDA_BIN_PATH=/usr/local/cuda/

@@ -8,8 +8,8 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-echo "Executing .profile: $0"
-echo "0: $(date +%T)"
+# echo "Executing .profile: $0"
+# echo "0: $(date +%T)"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -33,4 +33,5 @@ fi
 . $HOME/.env
 
 
-. /home/john/src/torch/install/bin/torch-activate
+TORCH_ACTIVATE=/home/john/src/torch/install/bin/torch-activate
+[ -f $TORCH_ACTIVATE ] && . $TORCH_ACTIVATE
