@@ -10,6 +10,28 @@ filetype off
 call pathogen#infect()
 call pathogen#helptags()
 
+" ==========================================================
+" Basic Settings
+" ==========================================================
+syntax on                     " syntax highlighing
+syntax enable
+filetype on                   " try to detect filetypes
+filetype plugin indent on     " enable loading indent file for filetype
+set nonumber                  " Don't display line numbers
+set numberwidth=1             " using only 1 column (and 1 space) while possible
+set background=dark           " We are using dark background in vim
+set title                     " show title in console title bar
+set wildmenu                  " Menu completion in command mode on <Tab>
+set wildmode=full             " <Tab> cycles between all matching choices.
+
+"
+" Try to fix comment indents in vim.
+" See
+" http://stackoverflow.com/questions/354097/how-to-configure-vim-to-not-put-comments-at-the-beginning-of-lines-while-editing
+"
+filetype indent on
+filetype plugin on
+
 
 " ==========================================================
 " Shortcuts
@@ -125,26 +147,6 @@ map <leader>j :RopeGotoDefinition<CR>
 
 " Rename whatever the cursor is on (including references to it)
 map <leader>r :RopeRename<CR>
-
-" ==========================================================
-" Basic Settings
-" ==========================================================
-syntax on                     " syntax highlighing
-filetype on                   " try to detect filetypes
-filetype plugin indent on     " enable loading indent file for filetype
-set nonumber                  " Don't display line numbers
-set numberwidth=1             " using only 1 column (and 1 space) while possible
-set background=dark           " We are using dark background in vim
-set title                     " show title in console title bar
-set wildmenu                  " Menu completion in command mode on <Tab>
-set wildmode=full             " <Tab> cycles between all matching choices.
-
-"
-" Try to fix comment indents in vim.
-" See
-" http://stackoverflow.com/questions/354097/how-to-configure-vim-to-not-put-comments-at-the-beginning-of-lines-while-editing
-"
-filetype indent on
 
 " don't bell or blink
 set noerrorbells
@@ -313,18 +315,38 @@ let g:Tex_DefaultTargetFormat = 'pdf'         " Compile to pdf by default
 let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*' " Use xelatex by default
 "imap <leader>{ <Plug>Tex_LeftRight
 
-" http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
-" Set high visibility for diff mode
-let g:solarized_diffmode="high"
-
 if &diff | syntax off | endif
 
-" For vim-colors-solarized
-syntax enable
-set background=light
-let g:solarized_termcolors=256
-set t_Co=256
-colorscheme solarized
+"
+" Choose a color scheme
+if !has('nvim')
+    " For vim-colors-solarized
+    set background=light
+    let g:solarized_termcolors=256
+    set t_Co=256
+    colorscheme solarized
+    "
+    " http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
+    " Set high visibility for diff mode
+    let g:solarized_diffmode="high"
+else
+    set t_Co=256
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    colorscheme evening
+    set background=dark
+endif
 
 " For Stan files
 autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+"
+" For vim to nvim transition
+if !has('nvim')
+  set ttymouse=xterm2
+endif
+
+"
+" For nvim-r
+let R_in_buffer = 0
+let R_applescript = 0
+let R_tmux_split = 1

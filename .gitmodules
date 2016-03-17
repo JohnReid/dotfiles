@@ -70,3 +70,9 @@
 [submodule "_vim/bundle/repeat"]
 	path = _vim/bundle/repeat
 	url = git://github.com/tpope/vim-repeat.git
+[submodule "_vim/bundle/Nvim"]
+	path = _vim/bundle/Nvim
+	url = https://github.com/jalvesaq/Nvim-R.git
+[submodule "_vim/bundle/oceanic-next"]
+	path = _vim/bundle/oceanic-next
+	url = https://github.com/mhartington/oceanic-next.git
