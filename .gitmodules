@@ -61,9 +61,6 @@
 [submodule "_vim/bundle/Vim-R-plugin"]
 	path = _vim/bundle/Vim-R-plugin
 	url = git@github.com:vim-scripts/Vim-R-plugin.git
-[submodule "_vim/bundle/R-Vim-runtime"]
-	path = _vim/bundle/R-Vim-runtime
-	url = git@github.com:jalvesaq/R-Vim-runtime.git
 [submodule "_vim/bundle/commentary"]
 	path = _vim/bundle/commentary
 	url = git://github.com/tpope/vim-commentary.git
