@@ -1,6 +1,6 @@
 " https://github.com/JohnReid/dotfiles/
 "
-set runtimepath=~/src/dotfiles/_vim/bundle/R,~/.vim,$VIMRUNTIME,~/.vim/after
+set runtimepath=~/.vim,$VIMRUNTIME,~/.vim/after
 
 " ==========================================================
 " Pathogen - Allows us to organize our vim plugins
@@ -350,3 +350,4 @@ endif
 let R_in_buffer = 0
 let R_applescript = 0
 let R_tmux_split = 1
+let R_pdfviewer = "evince"
