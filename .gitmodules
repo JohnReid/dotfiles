@@ -70,3 +70,6 @@
 [submodule "_vim/bundle/oceanic-next"]
 	path = _vim/bundle/oceanic-next
 	url = https://github.com/mhartington/oceanic-next.git
+[submodule "_vim/bundle/vimtex"]
+	path = _vim/bundle/vimtex
+	url = https://github.com/lervag/vimtex.git
