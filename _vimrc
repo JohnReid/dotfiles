@@ -347,6 +347,7 @@ endif
 
 "
 " For nvim-r
+let R_assign = 0  " Don't replace underscores with assignments
 let R_in_buffer = 0
 let R_applescript = 0
 let R_tmux_split = 1
