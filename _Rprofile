@@ -1,3 +1,5 @@
+#
+# Set default repository and some package options.
 .First <- function() {
     options(
         repos=structure(c(CRAN="http://cran.ma.imperial.ac.uk/")),
@@ -7,6 +9,11 @@
         devtools.desc.license = "MIT",
         deparse.max.lines = 2)
 }
+#
+# Set default graphics to SVG
+options('device'='svg')
+#
+# For communication with vim
 if(interactive()){
     library(colorout)
     library(setwidth)
