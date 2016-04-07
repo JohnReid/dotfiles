@@ -352,3 +352,16 @@ let R_in_buffer = 0
 let R_applescript = 0
 let R_tmux_split = 1
 let R_pdfviewer = "evince"
+
+"
+" For vimtex
+"
+" Can set the following to ignore common warnings
+"let g:vimtex_quickfix_ignored_warnings = [
+"            \ 'Underfull',
+"            \ 'Overfull',
+"            \ 'specifier changed to',
+"            \ ]
+" but I prefer to only open the quickfix window on errors
+let g:vimtex_quickfix_open_on_warning = 0
+
