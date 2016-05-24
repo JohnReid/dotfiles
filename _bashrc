@@ -13,6 +13,7 @@ eval $($HOME/bin/update-env \
     --ld-pre /usr/local/gnu/lib \
     --ld-pre $HOME/Dev/lib \
     --ld-pre $LOCAL/boost_1_53_0/lib \
+    --ld-pre $HOME/lib \
 )
 
 
