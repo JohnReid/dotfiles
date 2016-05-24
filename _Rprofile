@@ -1,5 +1,23 @@
+#
+# Set default repository and some package options.
+.First <- function() {
+    options(
+        repos=structure(c(CRAN="http://cran.ma.imperial.ac.uk/")),
+        browserNLdisabled = TRUE,
+        devtools.name = "John Reid",
+        devtools.desc.author = "John Reid <johnbaronreid@gmail.com> [aut, cre]",
+        devtools.desc.license = "MIT",
+        deparse.max.lines = 2)
+}
+#
+# Set default graphics to SVG
+options('device'='svg')
+#
+# For communication with vim
 if(interactive()){
-    #library(colorout)
+    library(colorout)
     library(setwidth)
+    options(vimcom.verbose = 1)
     library(vimcom)
+    suppressMessages(require(devtools))
 }

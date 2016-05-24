@@ -14,7 +14,8 @@
 [core]
     editor = vim
     pager = less -R
-    excludesfile = /home/john/.gitignore_global
+    excludesfile = ~/.gitignore_global
+	autocrlf = input
 
 [alias]
     diverges = !bash -c 'diff -u <(git rev-list --first-parent "${1}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
@@ -31,3 +32,5 @@
 
 [credential]
     helper = cache --timeout=3600
+[web]
+	browser = firefox

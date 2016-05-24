@@ -1,8 +1,15 @@
+# Vim files
+.*.swp
+tags
+tags-ja
+tags-te
+
 # SVN files
 .svn
 
 # Compiled code
 *.pyc
+*.pyo
 *.com
 *.class
 *.dll
@@ -27,4 +34,14 @@
 *.log
 *.sql
 *.sqlite
+
+# Python
 ipython_log.py
+*.pyc
+.ropeproject
+
+# Sphinx
+_build
+
+# Vim
+.*.swo

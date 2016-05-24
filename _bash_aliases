@@ -29,3 +29,5 @@ alias vnc-zemlinsky="$VNC_CMD localhost::5906"
 # NoteII MTP fuse stuff
 alias android-connect="jmtpfs /media/NoteII"
 alias android-disconnect="fusermount -u /media/NoteII"
+
+alias mrc-bsu="f5fpc --start -x -u john -t bsuremote.mrc-bsu.cam.ac.uk"

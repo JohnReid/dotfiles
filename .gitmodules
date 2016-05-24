@@ -28,15 +28,48 @@
 [submodule "_vim/bundle/python-mode"]
 	path = _vim/bundle/python-mode
 	url = https://github.com/klen/python-mode.git
-[submodule "_vim/bundle/latex"]
-	path = _vim/bundle/latex
-	url = git://git.code.sf.net/p/vim-latex/vim-latex
 [submodule "_vim/bundle/screen"]
 	path = _vim/bundle/screen
 	url = https://github.com/ervandew/screen.git
-[submodule "_vim/bundle/R"]
-	path = _vim/bundle/R
-	url = https://github.com/jcfaria/Vim-R-plugin.git
 [submodule "_vim/bundle/ipython"]
 	path = _vim/bundle/ipython
 	url = https://github.com/ivanov/vim-ipython.git
+[submodule "_vim/bundle/supertab"]
+	path = _vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "_vim/bundle/vim-unimpaired"]
+	path = _vim/bundle/vim-unimpaired
+	url = git://github.com/tpope/vim-unimpaired.git
+[submodule "_vim/bundle/stan"]
+	path = _vim/bundle/stan
+	url = https://github.com/maverickg/stan.vim.git
+[submodule "_vim/bundle/acp"]
+	path = _vim/bundle/acp
+	url = git@github.com:vim-scripts/AutoComplPop.git
+[submodule "_vim/bundle/l9"]
+	path = _vim/bundle/l9
+	url = git@github.com:eparreno/vim-l9.git
+[submodule "_vim/bundle/flake8"]
+	path = _vim/bundle/flake8
+	url = git@github.com:nvie/vim-flake8.git
+[submodule "_vim/bundle/autopep8"]
+	path = _vim/bundle/autopep8
+	url = git@github.com:tell-k/vim-autopep8.git
+[submodule "_vim/bundle/Vim-R-plugin"]
+	path = _vim/bundle/Vim-R-plugin
+	url = git@github.com:vim-scripts/Vim-R-plugin.git
+[submodule "_vim/bundle/commentary"]
+	path = _vim/bundle/commentary
+	url = git://github.com/tpope/vim-commentary.git
+[submodule "_vim/bundle/repeat"]
+	path = _vim/bundle/repeat
+	url = git://github.com/tpope/vim-repeat.git
+[submodule "_vim/bundle/Nvim"]
+	path = _vim/bundle/Nvim
+	url = https://github.com/jalvesaq/Nvim-R.git
+[submodule "_vim/bundle/oceanic-next"]
+	path = _vim/bundle/oceanic-next
+	url = https://github.com/mhartington/oceanic-next.git
+[submodule "_vim/bundle/vimtex"]
+	path = _vim/bundle/vimtex
+	url = https://github.com/lervag/vimtex.git

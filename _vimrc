@@ -1,53 +1,38 @@
-" https://github.com/sontek/dotfiles/
-" ==========================================================
-" Dependencies - Libraries/Applications outside of vim
-" ==========================================================
-" Pep8 - http://pypi.python.org/pypi/pep8
-" Pyflakes
-" Ack
-" Rake & Ruby for command-t
-" nose, django-nose
+" https://github.com/JohnReid/dotfiles/
+"
+set runtimepath=~/.vim,$VIMRUNTIME,~/.vim/after
 
 " ==========================================================
-" Plugins included
+" Pathogen - Allows us to organize our vim plugins
 " ==========================================================
-" Pathogen
-"     Better Management of VIM plugins
+" Load pathogen with docs for all plugins
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+
+" ==========================================================
+" Basic Settings
+" ==========================================================
+syntax on                     " syntax highlighing
+syntax enable
+filetype on                   " try to detect filetypes
+filetype plugin indent on     " enable loading indent file for filetype
+set nonumber                  " Don't display line numbers
+set numberwidth=1             " using only 1 column (and 1 space) while possible
+set background=dark           " We are using dark background in vim
+set title                     " show title in console title bar
+set wildmenu                  " Menu completion in command mode on <Tab>
+set wildmode=full             " <Tab> cycles between all matching choices.
+
 "
-" GunDo
-"     Visual Undo in vim with diff's to check the differences
+" Try to fix comment indents in vim.
+" See
+" http://stackoverflow.com/questions/354097/how-to-configure-vim-to-not-put-comments-at-the-beginning-of-lines-while-editing
 "
-" Pytest
-"     Runs your Python tests in Vim.
-"
-" Commant-T
-"     Allows easy search and opening of files within a given path
-"
-" Snipmate
-"     Configurable snippets to avoid re-typing common comands
-"
-" PyFlakes
-"     Underlines and displays errors with Python on-the-fly
-"
-" Fugitive
-"    Interface with git from vim
-"
-" Git
-"    Syntax highlighting for git config files
-"
-" Pydoc
-"    Opens up pydoc within vim
-"
-" Surround
-"    Allows you to surround text with open/close tags
-"
-" Py.test
-"    Run py.test test's from within vim
-"
-" MakeGreen
-"    Generic test runner that works with nose
-"
-"
+filetype indent on
+filetype plugin on
+
+
 " ==========================================================
 " Shortcuts
 " ==========================================================
@@ -57,6 +42,16 @@ let maplocalleader="\\"       " make the local leader a backslash
 
 " For R plugin
 "let vimrplugin_screenplugin = 0
+" Disable replacement of '_'- with ' <- '
+let vimrplugin_assign = 0
+let g:vimrplugin_insert_mode_cmds = 0
+let vimrplugin_vimpager = "horizontal"
+autocmd FileType r setlocal shiftwidth=2 tabstop=2
+" Reload syntax highlighting with F12
+" See:
+" http://stackoverflow.com/questions/8674387/vim-how-to-reload-syntax-highlighting
+noremap <F12> <Esc>:syntax sync fromstart<CR>
+inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
 " For showmarks plugin
 let marksCloseWhenSelected = 0
@@ -76,6 +71,9 @@ endfu
 
 nmap <leader>sb :call SplitScroll()<CR>
 
+" Open new windows below or to right of current
+:set splitbelow
+:set splitright
 
 "<CR><C-w>l<C-f>:set scrollbind<CR>
 
@@ -85,12 +83,20 @@ cmap W! w !sudo tee % >/dev/null
 " Toggle the tasklist
 map <leader>td <Plug>TaskList
 
+"
+" pymode
+"
+" Detect virtualenv automatically
+let g:pymode_virtualenv = 1
+"
 " Run pep8
 let g:pep8_map='<leader>8'
-
+"
 " Jump to error
 let g:pymode_lint_write = 0
 let g:pymode_lint_jump = 1
+let g:pymode_lint_ignore = "E202,E203,E221,E272,C901"
+let g:pymode_mccabe_ignore = "C901"
 
 " run py.test's
 nmap <silent><Leader>tf <Esc>:Pytest file<CR>
@@ -123,8 +129,10 @@ map <c-h> <c-w>h
 "  happen as if in command mode )
 imap <C-W> <C-O><C-W>
 
-" Open NerdTree
+" Open NERDtree
 map <leader>n :NERDTreeToggle<CR>
+" Close vim if only buffer left open is NERDtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Run command-t file search
 map <leader>f :CommandT<CR>
@@ -139,26 +147,6 @@ map <leader>j :RopeGotoDefinition<CR>
 
 " Rename whatever the cursor is on (including references to it)
 map <leader>r :RopeRename<CR>
-" ==========================================================
-" Pathogen - Allows us to organize our vim plugins
-" ==========================================================
-" Load pathogen with docs for all plugins
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
-" ==========================================================
-" Basic Settings
-" ==========================================================
-syntax on                     " syntax highlighing
-filetype on                   " try to detect filetypes
-filetype plugin indent on     " enable loading indent file for filetype
-set nonumber                  " Don't display line numbers
-set numberwidth=1             " using only 1 column (and 1 space) while possible
-set background=dark           " We are using dark background in vim
-set title                     " show title in console title bar
-set wildmenu                  " Menu completion in command mode on <Tab>
-set wildmode=full             " <Tab> cycles between all matching choices.
 
 " don't bell or blink
 set noerrorbells
@@ -195,7 +183,7 @@ set backspace=2             " Allow backspacing over autoindent, EOL, and BOL
 set showmatch               " Briefly jump to a paren once it's balanced
 set nowrap                  " don't wrap text
 set linebreak               " don't wrap textin the middle of a word
-set autoindent              " always set autoindenting on
+"set autoindent              " always set autoindenting on
 "set smartindent             " use smart indent if there is no indent file
 set tabstop=4               " <tab> inserts 4 spaces 
 set shiftwidth=4            " but an indent level is 2 spaces wide.
@@ -222,7 +210,7 @@ set modelines=5             " they must be within the first or last 5 lines.
 set ffs=unix,dos,mac        " Try recognizing dos, unix, and mac line endings.
 
 """" Messages, Info, Status
-set ls=2                    " allways show status line
+set ls=2                    " always show status line
 set vb t_vb=                " Disable all bells.  I hate ringing/flashing.
 set confirm                 " Y-N-C prompt if closing with unsaved changes.
 set showcmd                 " Show incomplete normal mode commands as I type.
@@ -242,18 +230,6 @@ set smartcase               " unless uppercase letters are used in the regex.
 set smarttab                " Handle tabs more intelligently 
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
-
-"""" Display
-if has("gui_running")
-    colorscheme desert
-    " Remove menu bar
-    set guioptions-=m
-
-    " Remove toolbar
-    set guioptions-=T
-else
-    colorscheme torte
-endif
 
 " Paste from clipboard
 map <leader>p "+p
@@ -291,10 +267,13 @@ autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 so
 " Python
 "au BufRead *.py compiler nose
 au FileType python set omnifunc=pythoncomplete#Complete
-au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
+" Call flake8 whenver we save a python file
+" autocmd BufWritePost *.py call Flake8()
+
 
 
 
@@ -323,10 +302,53 @@ endif
 "map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
 "omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 
+" Set indent for LaTeX
+autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
 " Settings for vim-latex (http://vim-latex.sourceforge.net)
 set shellslash                                " Convert backward slashes to forward ones in filename references
 set grepprg=grep\ -nH\ $*                     " Force grep to display file name even in single-file searches
 let g:tex_flavor='latex'                      " Force .tex to mean LaTeX, not plain TeX
-" let g:Tex_AutoFolding = 0                     " Do not fold on opening file
+let g:Tex_AutoFolding = 0                     " Do not fold on opening file
 let g:Tex_DefaultTargetFormat = 'pdf'         " Compile to pdf by default
+" let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape -interaction=nonstopmode $*' " Use pdflatex by default
+let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*' " Use xelatex by default
 "imap <leader>{ <Plug>Tex_LeftRight
+
+if &diff | syntax off | endif
+
+"
+" Choose a color scheme
+if !has('nvim')
+    " For vim-colors-solarized
+    set background=light
+    let g:solarized_termcolors=256
+    set t_Co=256
+    colorscheme solarized
+    "
+    " http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
+    " Set high visibility for diff mode
+    let g:solarized_diffmode="high"
+else
+    set t_Co=256
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    colorscheme evening
+    set background=dark
+endif
+
+" For Stan files
+autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+"
+" For vim to nvim transition
+if !has('nvim')
+  set ttymouse=xterm2
+endif
+
+"
+" For nvim-r
+let R_assign = 0  " Don't replace underscores with assignments
+let R_in_buffer = 0
+let R_applescript = 0
+let R_tmux_split = 1
+let R_pdfviewer = "evince"
