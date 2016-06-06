@@ -45,3 +45,12 @@ _build
 
 # Vim
 .*.swo
+
+# LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fls
+*.fdb_latexmk
+*.run.xml
