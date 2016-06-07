@@ -39,12 +39,14 @@ tags-te
 ipython_log.py
 *.pyc
 .ropeproject
+*.bak
 
 # Sphinx
 _build
 
 # Vim
 .*.swo
+.-rplugin~
 
 # LaTeX
 *.aux
