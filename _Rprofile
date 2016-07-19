@@ -11,7 +11,7 @@
 }
 #
 # Set default graphics to SVG
-options('device'='svg')
+# options('device'='svg')
 #
 # For communication with vim
 if(interactive()){
