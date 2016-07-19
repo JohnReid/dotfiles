@@ -56,3 +56,4 @@ _build
 *.fls
 *.fdb_latexmk
 *.run.xml
+*-blx.bib
