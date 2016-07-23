@@ -17,7 +17,7 @@
 if(interactive()){
     library(colorout)
     library(setwidth)
-    options(vimcom.verbose = 1)
-    library(vimcom)
+    # options(vimcom.verbose = 1)
+    # library(vimcom)
     suppressMessages(require(devtools))
 }
