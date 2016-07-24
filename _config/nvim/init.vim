@@ -351,23 +351,12 @@ if &diff | syntax off | endif
 
 "
 " Choose a color scheme
-if !has('nvim')
-    " For vim-colors-solarized
-    set background=light
-    let g:solarized_termcolors=256
-    set t_Co=256
-    colorscheme solarized
-    "
-    " http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
-    " Set high visibility for diff mode
-    let g:solarized_diffmode="high"
-else
-    set t_Co=256
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-    colorscheme evening
-    set background=dark
-endif
+set t_Co=256
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme solarized
+set background=dark
 
+"
 " For Stan files
 autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
