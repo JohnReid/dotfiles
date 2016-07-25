@@ -17,7 +17,10 @@
 if(interactive()){
     library(colorout)
     library(setwidth)
-    options(vimcom.verbose = 1)
-    library(vimcom)
+    # options(vimcom.verbose = 1)
+    # library(vimcom)
     suppressMessages(require(devtools))
 }
+#
+# Follow Colin's advice to set this process's affinity mask
+# system(sprintf("taskset -p 0xffffffffffff %d", Sys.getpid()))
