@@ -17,6 +17,7 @@ eval $($HOME/bin/update-env \
     --ld-pre /usr/local/gnu/lib \
     --ld-pre $HOME/Dev/lib \
     --ld-pre $LOCAL/boost_1_53_0/lib \
+    --ld-pre $HOME/lib \
 )
 
 test -n "$__PROFILE__" && echo "1: $(date +%T)"
@@ -145,11 +146,10 @@ if [ "$venwrap" != "" ]; then
     source $venwrap
 fi
 
-vim=`type -P vim`
+vim=`type -P nvim`
 if [ "$vim" == "" ]; then
     vim="gvim -v"
 fi
-alias vim="vim --servername VIM"
 # osx vim
 if [ -x "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
     PATH=/Applications/MacVim.app/Contents/MacOS/:$PATH

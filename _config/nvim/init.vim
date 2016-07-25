@@ -1,14 +1,36 @@
 " https://github.com/JohnReid/dotfiles/
 "
-set runtimepath=~/.vim,$VIMRUNTIME,~/.vim/after
 
-" ==========================================================
-" Pathogen - Allows us to organize our vim plugins
-" ==========================================================
-" Load pathogen with docs for all plugins
-filetype off
-call pathogen#infect()
-call pathogen#helptags()
+call plug#begin('~/.vim/plugged')
+Plug 'https://github.com/bfredl/nvim-ipy.git'
+Plug 'https://github.com/wincent/Command-T.git'
+Plug 'https://github.com/sjl/gundo.vim.git'
+Plug 'https://github.com/plasticboy/vim-markdown.git'
+Plug 'https://github.com/vim-scripts/TaskList.vim.git'
+Plug 'https://github.com/tomtom/tlib_vim.git'
+Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'https://github.com/altercation/vim-colors-solarized.git'
+Plug 'https://github.com/tpope/vim-surround.git'
+" Plug 'https://github.com/klen/python-mode.git'
+Plug 'https://github.com/ervandew/screen.git'
+" " Plug 'https://github.com/ivanov/vim-ipython.git'
+Plug 'https://github.com/ervandew/supertab.git'
+Plug 'git://github.com/tpope/vim-unimpaired.git'
+Plug 'https://github.com/maverickg/stan.vim.git'
+Plug 'git@github.com:vim-scripts/AutoComplPop.git'
+" " Plug 'git@github.com:eparreno/vim-l9.git'
+Plug 'git@github.com:nvie/vim-flake8.git'
+Plug 'git@github.com:tell-k/vim-autopep8.git'
+Plug 'git://github.com/tpope/vim-commentary.git'
+Plug 'git://github.com/tpope/vim-repeat.git'
+" Plug 'git@github.com:vim-scripts/Vim-R-plugin.git'
+Plug 'https://github.com/mhartington/oceanic-next.git'
+Plug 'https://github.com/lervag/vimtex.git'
+Plug 'https://github.com/jalvesaq/Nvim-R.git'
+
+" Add plugins to &runtimepath
+call plug#end()
 
 " ==========================================================
 " Basic Settings
@@ -82,6 +104,16 @@ cmap W! w !sudo tee % >/dev/null
 
 " Toggle the tasklist
 map <leader>td <Plug>TaskList
+
+"
+" nvim-ipy
+"
+let g:nvim_ipy_perform_mappings = 0
+map  <silent> <LocalLeader>l   <Plug>(IPy-Run)
+imap <silent> <LocalLeader>f   <Plug>(IPy-Complete)
+map  <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
+map  <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
+map  <silent> <LocalLeader>k   <Plug>(IPy-Terminate)
 
 "
 " pymode
@@ -319,23 +351,12 @@ if &diff | syntax off | endif
 
 "
 " Choose a color scheme
-if !has('nvim')
-    " For vim-colors-solarized
-    set background=light
-    let g:solarized_termcolors=256
-    set t_Co=256
-    colorscheme solarized
-    "
-    " http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
-    " Set high visibility for diff mode
-    let g:solarized_diffmode="high"
-else
-    set t_Co=256
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-    colorscheme evening
-    set background=dark
-endif
+set t_Co=256
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme solarized
+set background=dark
 
+"
 " For Stan files
 autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
@@ -364,4 +385,5 @@ let R_pdfviewer = "evince"
 "            \ ]
 " but I prefer to only open the quickfix window on errors
 let g:vimtex_quickfix_open_on_warning = 0
+
 

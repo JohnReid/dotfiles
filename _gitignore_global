@@ -39,9 +39,21 @@ tags-te
 ipython_log.py
 *.pyc
 .ropeproject
+*.bak
 
 # Sphinx
 _build
 
 # Vim
 .*.swo
+.-rplugin~
+
+# LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fls
+*.fdb_latexmk
+*.run.xml
+*-blx.bib

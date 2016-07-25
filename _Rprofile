@@ -11,14 +11,14 @@
 }
 #
 # Set default graphics to SVG
-options('device'='svg')
+# options('device'='svg')
 #
 # For communication with vim
 if(interactive()){
     library(colorout)
     library(setwidth)
-    options(vimcom.verbose = 1)
-    library(vimcom)
+    # options(vimcom.verbose = 1)
+    # library(vimcom)
     suppressMessages(require(devtools))
 }
 #

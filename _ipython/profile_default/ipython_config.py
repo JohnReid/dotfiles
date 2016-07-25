@@ -376,3 +376,9 @@ c.TerminalInteractiveShell.pdb = True
 
 #
 # c.PlainTextFormatter.singleton_printers = {}
+
+
+#
+# Use vi line editing mode.
+# See http://stackoverflow.com/a/38329940/959926
+c.TerminalInteractiveShell.editing_mode = 'vi'
