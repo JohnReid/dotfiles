@@ -1,7 +1,7 @@
 " https://github.com/JohnReid/dotfiles/
 "
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'https://github.com/bfredl/nvim-ipy.git'
 Plug 'https://github.com/wincent/Command-T.git'
 Plug 'https://github.com/sjl/gundo.vim.git'
@@ -65,9 +65,9 @@ let maplocalleader="\\"       " make the local leader a backslash
 " For R plugin
 "let vimrplugin_screenplugin = 0
 " Disable replacement of '_'- with ' <- '
-let vimrplugin_assign = 0
-let g:vimrplugin_insert_mode_cmds = 0
-let vimrplugin_vimpager = "horizontal"
+" let vimrplugin_assign = 0
+" let g:vimrplugin_insert_mode_cmds = 0
+" let vimrplugin_vimpager = "horizontal"
 autocmd FileType r setlocal shiftwidth=2 tabstop=2
 " Reload syntax highlighting with F12
 " See:
@@ -142,7 +142,7 @@ nmap <silent><Leader>te <Esc>:Pytest error<CR>
 map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
 
 " Reload Vimrc
-map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+" map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " open/close the quickfix window
 nmap <leader>c :copen<CR>
