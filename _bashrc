@@ -282,6 +282,9 @@ case "$(hostname)" in
 "machaut")
     PSCOLOR='33m'
     ;;
+"login-mrc-bsu")
+    PSCOLOR='35m'
+    ;;
 *)
     PSCOLOR='34m'
     ;;
@@ -358,7 +361,7 @@ esac
 
 #
 # Source machine specific setup if it exists
-MACHINERC=.bashrc.$(hostname)
+MACHINERC=$HOME/.bashrc.$(hostname)
 if [ -f "$MACHINERC" ]
 then
     source "$MACHINERC"
