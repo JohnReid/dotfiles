@@ -361,12 +361,6 @@ set background=dark
 autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 "
-" For vim to nvim transition
-if !has('nvim')
-  set ttymouse=xterm2
-endif
-
-"
 " For nvim-r
 let R_assign = 0  " Don't replace underscores with assignments
 let R_in_buffer = 0
