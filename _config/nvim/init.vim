@@ -380,4 +380,7 @@ let R_pdfviewer = "evince"
 " but I prefer to only open the quickfix window on errors
 let g:vimtex_quickfix_open_on_warning = 0
 
-
+"
+" For diff
+"
+set diffopt+=iwhite          " Ignore whitespace
