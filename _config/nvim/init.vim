@@ -10,7 +10,7 @@ Plug 'https://github.com/vim-scripts/TaskList.vim.git'
 Plug 'https://github.com/tomtom/tlib_vim.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/scrooloose/nerdtree'
-Plug 'https://github.com/altercation/vim-colors-solarized.git'
+Plug 'https://github.com/frankier/neovim-colors-solarized-truecolor-only.git'
 Plug 'https://github.com/tpope/vim-surround.git'
 " Plug 'https://github.com/klen/python-mode.git'
 Plug 'https://github.com/ervandew/screen.git'
@@ -61,19 +61,6 @@ filetype plugin on
 set nocompatible              " Don't be compatible with vi
 let mapleader=","             " change the leader to be a comma vs slash
 let maplocalleader="\\"       " make the local leader a backslash
-
-" For R plugin
-"let vimrplugin_screenplugin = 0
-" Disable replacement of '_'- with ' <- '
-" let vimrplugin_assign = 0
-" let g:vimrplugin_insert_mode_cmds = 0
-" let vimrplugin_vimpager = "horizontal"
-autocmd FileType r setlocal shiftwidth=2 tabstop=2
-" Reload syntax highlighting with F12
-" See:
-" http://stackoverflow.com/questions/8674387/vim-how-to-reload-syntax-highlighting
-noremap <F12> <Esc>:syntax sync fromstart<CR>
-inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
 " For showmarks plugin
 let marksCloseWhenSelected = 0
@@ -294,7 +281,14 @@ let g:acp_completeoptPreview=1
 " ============================================================
 " Mako/HTML
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
-autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 background=dark
+
+"
+" For Stan files
+autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 background=dark
+
+" Set indent for LaTeX
+autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 background=dark
 
 " Python
 "au BufRead *.py compiler nose
@@ -305,6 +299,19 @@ au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\
 let g:pyflakes_use_quickfix = 0
 " Call flake8 whenver we save a python file
 " autocmd BufWritePost *.py call Flake8()
+
+" For R plugin
+"let vimrplugin_screenplugin = 0
+" Disable replacement of '_'- with ' <- '
+" let vimrplugin_assign = 0
+" let g:vimrplugin_insert_mode_cmds = 0
+" let vimrplugin_vimpager = "horizontal"
+autocmd FileType r,rmd setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+" Reload syntax highlighting with F12
+" See:
+" http://stackoverflow.com/questions/8674387/vim-how-to-reload-syntax-highlighting
+noremap <F12> <Esc>:syntax sync fromstart<CR>
+inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
 
 
@@ -334,9 +341,6 @@ endif
 "map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
 "omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 
-" Set indent for LaTeX
-autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
-
 " Settings for vim-latex (http://vim-latex.sourceforge.net)
 set shellslash                                " Convert backward slashes to forward ones in filename references
 set grepprg=grep\ -nH\ $*                     " Force grep to display file name even in single-file searches
@@ -351,14 +355,9 @@ if &diff | syntax off | endif
 
 "
 " Choose a color scheme
-set t_Co=256
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
+set background=light " or dark
 colorscheme solarized
-set background=dark
-
-"
-" For Stan files
-autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 "
 " For nvim-r
