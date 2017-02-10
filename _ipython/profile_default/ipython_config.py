@@ -24,13 +24,14 @@ c = get_config()
 # Enable GUI event loop integration ('qt', 'wx', 'gtk').
 # c.TerminalIPythonApp.gui = None
 # c.TerminalIPythonApp.gui = 'wx'
+c.TerminalIPythonApp.gui = 'qt5'
 
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
 # c.TerminalIPythonApp.pylab = None
 
 # Suppress warning messages about legacy config files
-c.TerminalIPythonApp.ignore_old_config = False
+# c.TerminalIPythonApp.ignore_old_config = False
 
 # If a command or file is given via the command-line, e.g. 'ipython foo.py
 # c.TerminalIPythonApp.force_interact = False
@@ -92,11 +93,11 @@ c.TerminalIPythonApp.ignore_old_config = False
 
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
-import socket
-if 'login-mrc-bsu' == socket.gethostname():
-    c.TerminalIPythonApp.pylab = 'auto'
-else:
-    c.TerminalIPythonApp.pylab = 'qt'
+# import socket
+# if 'login-mrc-bsu' == socket.gethostname():
+    # c.TerminalIPythonApp.pylab = 'auto'
+# else:
+    # c.TerminalIPythonApp.pylab = 'auto'
 
 # Suppress warning messages about legacy config files
 # c.TerminalIPythonApp.ignore_old_config = False

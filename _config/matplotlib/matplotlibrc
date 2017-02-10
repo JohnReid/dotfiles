@@ -31,7 +31,8 @@
 #backend      : GTK
 #backend      : TkAgg
 #backend      : Agg
-backend      : Cairo
+# backend      : Cairo
+backend      : Qt5Agg
 # backend      : WXAgg
 
 # if you are runing pyplot inside a GUI and your backend choice
