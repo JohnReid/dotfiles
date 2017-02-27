@@ -28,6 +28,9 @@ Plug 'git://github.com/tpope/vim-repeat.git'
 Plug 'https://github.com/mhartington/oceanic-next.git'
 Plug 'https://github.com/lervag/vimtex.git'
 Plug 'https://github.com/jalvesaq/Nvim-R.git'
+Plug 'https://github.com/vim-pandoc/vim-pandoc.git'
+Plug 'https://github.com/vim-pandoc/vim-pandoc-syntax.git'
+Plug 'https://github.com/vim-pandoc/vim-rmarkdown.git'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -341,15 +344,15 @@ endif
 "map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
 "omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 
-" Settings for vim-latex (http://vim-latex.sourceforge.net)
-set shellslash                                " Convert backward slashes to forward ones in filename references
-set grepprg=grep\ -nH\ $*                     " Force grep to display file name even in single-file searches
-let g:tex_flavor='latex'                      " Force .tex to mean LaTeX, not plain TeX
-let g:Tex_AutoFolding = 0                     " Do not fold on opening file
-let g:Tex_DefaultTargetFormat = 'pdf'         " Compile to pdf by default
-" let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape -interaction=nonstopmode $*' " Use pdflatex by default
-let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*' " Use xelatex by default
-"imap <leader>{ <Plug>Tex_LeftRight
+" " Settings for vim-latex (http://vim-latex.sourceforge.net)
+" set shellslash                                " Convert backward slashes to forward ones in filename references
+" set grepprg=grep\ -nH\ $*                     " Force grep to display file name even in single-file searches
+" let g:tex_flavor='latex'                      " Force .tex to mean LaTeX, not plain TeX
+" let g:Tex_AutoFolding = 0                     " Do not fold on opening file
+" let g:Tex_DefaultTargetFormat = 'pdf'         " Compile to pdf by default
+" " let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape -interaction=nonstopmode $*' " Use pdflatex by default
+" let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*' " Use xelatex by default
+" "imap <leader>{ <Plug>Tex_LeftRight
 
 if &diff | syntax off | endif
 
@@ -378,6 +381,12 @@ let R_pdfviewer = "evince"
 "            \ ]
 " but I prefer to only open the quickfix window on errors
 let g:vimtex_quickfix_open_on_warning = 0
+"
+" Use Zathura
+let g:vimtex_view_general_viewer = 'zathura'
+"
+" Use synctex to synchronise vim cursor and the PDF viewer
+let g:vimtex_latexmk_options = '-synctex=1'
 
 "
 " For diff
