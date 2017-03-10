@@ -20,6 +20,11 @@ eval $($HOME/bin/update-env \
     --ld-pre $HOME/lib \
 )
 
+#
+# For virtualenvwrapper
+#
+export WORKON_HOME=$HOME/Envs
+
 test -n "$__PROFILE__" && echo "1: $(date +%T)"
 
 # If not running interactively, don't do anything
