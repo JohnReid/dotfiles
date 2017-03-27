@@ -284,7 +284,9 @@ text.usetex         : False  # use latex for all text handling. The following fo
 ### IMAGES
 #image.aspect : equal             # equal | auto | a number
 #image.interpolation  : bilinear  # see help(imshow) for options
+# image.interpolation : none
 #image.cmap   : jet               # gray | jet etc...
+# image.cmap : gray
 #image.lut    : 256               # the size of the colormap lookup table
 #image.origin : upper             # lower | upper
 #image.resample  : False

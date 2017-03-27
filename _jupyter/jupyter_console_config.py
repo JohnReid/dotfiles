@@ -343,5 +343,3 @@ class KeepAlive(ZMQExitAutocall):
         super().__call__(True)
 
 ZMQInteractiveShell.exiter = KeepAlive()
-
-print('In config')

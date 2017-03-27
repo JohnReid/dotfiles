@@ -296,7 +296,7 @@ autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 bac
 " Python
 "au BufRead *.py compiler nose
 au FileType python set omnifunc=pythoncomplete#Complete
-au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+au FileType python setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
@@ -336,6 +336,15 @@ endif
 " Load up virtualenv's vimrc if it exists
 if filereadable($VIRTUAL_ENV . '/.vimrc')
     source $VIRTUAL_ENV/.vimrc
+endif
+
+" Figure out the system Python for Neovim.
+" See https://github.com/neovim/neovim/issues/1887
+"
+if exists("$VIRTUAL_ENV")
+    let g:python_host_prog=substitute(system("which -a python3 | head -n2 | tail -n1"), '\n', '', 'g')
+else
+    let g:python_host_prog=substitute(system("which python3"), '\n', '', 'g')
 endif
 
 " set colorcolumn=79
@@ -387,6 +396,13 @@ let g:vimtex_view_general_viewer = 'zathura'
 "
 " Use synctex to synchronise vim cursor and the PDF viewer
 let g:vimtex_latexmk_options = '-synctex=1'
+
+"
+" Pandoc configuration
+"
+" let g:pandoc#modules#disabled = ["folding"]
+autocmd FileType rmd setlocal foldcolumn=0
+"set foldcolumn=0
 
 "
 " For diff
