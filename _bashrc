@@ -23,7 +23,9 @@ eval $($HOME/bin/update-env \
 #
 # For virtualenvwrapper
 #
-export WORKON_HOME=$HOME/Envs
+# VENVWRAPPERSCRIPT=/usr/share/virtualenvwrapper/virtualenvwrapper.sh
+# [ -f $VENVWRAPPERSCRIPT ] && source $VENVWRAPPERSCRIPT
+# export WORKON_HOME=$HOME/.virtualenvs
 
 test -n "$__PROFILE__" && echo "1: $(date +%T)"
 
