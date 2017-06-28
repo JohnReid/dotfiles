@@ -31,6 +31,7 @@ Plug 'https://github.com/jalvesaq/Nvim-R.git'
 Plug 'https://github.com/vim-pandoc/vim-pandoc.git'
 Plug 'https://github.com/vim-pandoc/vim-pandoc-syntax.git'
 Plug 'https://github.com/vim-pandoc/vim-rmarkdown.git'
+Plug 'https://github.com/chrisbra/csv.vim.git'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -113,6 +114,7 @@ let g:pymode_virtualenv = 1
 "
 " Run pep8
 let g:pep8_map='<leader>8'
+let g:autopep8_indent_size=2
 "
 " Jump to error
 let g:pymode_lint_write = 0
