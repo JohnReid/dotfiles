@@ -375,3 +375,8 @@ then
 fi
 
 unset __PROFILE__
+
+# added by Miniconda2 4.3.21 installer
+if [ -d "$HOME/miniconda2/bin" ]; then
+    export PATH="$HOME/miniconda2/bin:$PATH"
+fi
