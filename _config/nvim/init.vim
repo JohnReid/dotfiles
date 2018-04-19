@@ -101,6 +101,7 @@ map <leader>td <Plug>TaskList
 "
 let g:nvim_ipy_perform_mappings = 0
 map  <silent> <LocalLeader>l   <Plug>(IPy-Run)
+map  <silent> <LocalLeader>p   <Plug>(IPy-RunCell)
 imap <silent> <LocalLeader>f   <Plug>(IPy-Complete)
 map  <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
 map  <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
@@ -209,9 +210,9 @@ set nowrap                  " don't wrap text
 set linebreak               " don't wrap textin the middle of a word
 "set autoindent              " always set autoindenting on
 "set smartindent             " use smart indent if there is no indent file
-set tabstop=4               " <tab> inserts 4 spaces 
-set shiftwidth=4            " but an indent level is 2 spaces wide.
-set softtabstop=4           " <BS> over an autoindent deletes both spaces.
+set tabstop=2               " <tab> inserts 2 spaces
+set shiftwidth=2            " but an indent level is 2 spaces wide.
+set softtabstop=2           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set shiftround              " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:>         " show matching <> (html mainly) as well
@@ -298,7 +299,7 @@ autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 bac
 " Python
 "au BufRead *.py compiler nose
 au FileType python set omnifunc=pythoncomplete#Complete
-au FileType python setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+au FileType python setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 cinwords=if,elif,else,for,while,try,except,finally,def,class,with equalprg=autopep8\ -
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 0
@@ -376,9 +377,9 @@ colorscheme solarized
 "
 " For nvim-r
 let R_assign = 0  " Don't replace underscores with assignments
-let R_in_buffer = 0
+" let R_in_buffer = 1
 let R_applescript = 0
-let R_tmux_split = 1
+" let R_tmux_split = 0
 let R_pdfviewer = "evince"
 
 "
