@@ -45,7 +45,7 @@ filetype on                   " try to detect filetypes
 filetype plugin indent on     " enable loading indent file for filetype
 set nonumber                  " Don't display line numbers
 set numberwidth=1             " using only 1 column (and 1 space) while possible
-set background=dark           " We are using dark background in vim
+set background=light          " We are using light background in vim
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
 set wildmode=full             " <Tab> cycles between all matching choices.
@@ -287,14 +287,14 @@ let g:acp_completeoptPreview=1
 " ============================================================
 " Mako/HTML
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
-autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 background=dark
+autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
 "
 " For Stan files
-autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 background=dark
+autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 " Set indent for LaTeX
-autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 background=dark
+autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 " Python
 "au BufRead *.py compiler nose
@@ -371,7 +371,6 @@ if &diff | syntax off | endif
 "
 " Choose a color scheme
 set termguicolors
-set background=light " or dark
 colorscheme solarized
 
 "
