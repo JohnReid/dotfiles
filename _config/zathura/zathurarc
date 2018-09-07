@@ -1,7 +1,6 @@
 # zathurarc
 
-# toggle_fullscreen
-# set adjust_window width
+set adjust-open width
 
 # colors
 set statusbar-bg black
