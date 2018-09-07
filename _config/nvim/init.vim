@@ -2,36 +2,56 @@
 "
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'https://github.com/bfredl/nvim-ipy.git'
-Plug 'https://github.com/wincent/Command-T.git'
-Plug 'https://github.com/sjl/gundo.vim.git'
-Plug 'https://github.com/plasticboy/vim-markdown.git'
-Plug 'https://github.com/vim-scripts/TaskList.vim.git'
-Plug 'https://github.com/tomtom/tlib_vim.git'
-Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'https://github.com/scrooloose/nerdtree'
-Plug 'https://github.com/frankier/neovim-colors-solarized-truecolor-only.git'
-Plug 'https://github.com/tpope/vim-surround.git'
-" Plug 'https://github.com/klen/python-mode.git'
-Plug 'https://github.com/ervandew/screen.git'
-" " Plug 'https://github.com/ivanov/vim-ipython.git'
-Plug 'https://github.com/ervandew/supertab.git'
-Plug 'git://github.com/tpope/vim-unimpaired.git'
-Plug 'https://github.com/maverickg/stan.vim.git'
-Plug 'git@github.com:vim-scripts/AutoComplPop.git'
-" " Plug 'git@github.com:eparreno/vim-l9.git'
+"
+" Filetypes
+"
+" Plug 'https://github.com/bfredl/nvim-ipy.git'
+Plug 'https://github.com/JohnReid/nvim-ipy.git'
 Plug 'git@github.com:nvie/vim-flake8.git'
 Plug 'git@github.com:tell-k/vim-autopep8.git'
-Plug 'git://github.com/tpope/vim-commentary.git'
-Plug 'git://github.com/tpope/vim-repeat.git'
+" Plug 'https://github.com/klen/python-mode.git'
+" Plug 'https://github.com/ivanov/vim-ipython.git'
 " Plug 'git@github.com:vim-scripts/Vim-R-plugin.git'
-Plug 'https://github.com/mhartington/oceanic-next.git'
-Plug 'https://github.com/lervag/vimtex.git'
 Plug 'https://github.com/jalvesaq/Nvim-R.git'
+Plug 'https://github.com/lervag/vimtex.git'
 Plug 'https://github.com/vim-pandoc/vim-pandoc.git'
 Plug 'https://github.com/vim-pandoc/vim-pandoc-syntax.git'
 Plug 'https://github.com/vim-pandoc/vim-rmarkdown.git'
+Plug 'https://github.com/plasticboy/vim-markdown.git'
+Plug 'https://github.com/maverickg/stan.vim.git'
+"
+" tpope
+"
+Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'git://github.com/tpope/vim-unimpaired.git'
+Plug 'git://github.com/tpope/vim-commentary.git'
+Plug 'git://github.com/tpope/vim-repeat.git'
+Plug 'https://github.com/tpope/vim-surround.git'
+"
+" Miscellaneous
+"
+Plug 'https://github.com/wincent/Command-T.git'
+Plug 'https://github.com/sjl/gundo.vim.git'
+Plug 'https://github.com/vim-scripts/TaskList.vim.git'
+Plug 'https://github.com/tomtom/tlib_vim.git'
+Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'https://github.com/frankier/neovim-colors-solarized-truecolor-only.git'
+Plug 'https://github.com/ervandew/screen.git'
+Plug 'https://github.com/ervandew/supertab.git'
+" Plug 'git@github.com:vim-scripts/AutoComplPop.git'
+" Plug 'git@github.com:eparreno/vim-l9.git'
+Plug 'https://github.com/mhartington/oceanic-next.git'
 Plug 'https://github.com/chrisbra/csv.vim.git'
+" Plug 'https://github.com/Shougo/deoplete.nvim.git'
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'  " Required by ncm2
+"
+" Following 4 for snipmate
+"
+Plug 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
+Plug 'https://github.com/tomtom/tlib_vim.git'
+Plug 'https://github.com/garbas/vim-snipmate.git'
+Plug 'https://github.com/honza/vim-snippets.git'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -41,6 +61,7 @@ call plug#end()
 " ==========================================================
 syntax on                     " syntax highlighing
 syntax enable
+nmap <silent><F5> :syntax sync fromstart<CR>
 filetype on                   " try to detect filetypes
 filetype plugin indent on     " enable loading indent file for filetype
 set nonumber                  " Don't display line numbers
@@ -102,6 +123,7 @@ map <leader>td <Plug>TaskList
 let g:nvim_ipy_perform_mappings = 0
 map  <silent> <LocalLeader>l   <Plug>(IPy-Run)
 map  <silent> <LocalLeader>p   <Plug>(IPy-RunCell)
+map  <silent> <LocalLeader>a   <Plug>(IPy-RunAll)
 imap <silent> <LocalLeader>f   <Plug>(IPy-Complete)
 map  <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
 map  <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
@@ -293,8 +315,8 @@ autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 so
 " For Stan files
 autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
-" Set indent for LaTeX
-autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+" Set options for LaTeX
+autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 wrap
 
 " Python
 "au BufRead *.py compiler nose
@@ -302,7 +324,7 @@ au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 cinwords=if,elif,else,for,while,try,except,finally,def,class,with equalprg=autopep8\ -
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
-let g:pyflakes_use_quickfix = 0
+let g:pyflakes_use_quickfix = 1
 " Call flake8 whenver we save a python file
 " autocmd BufWritePost *.py call Flake8()
 
