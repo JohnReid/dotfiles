@@ -321,12 +321,46 @@ autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 wra
 " Python
 "au BufRead *.py compiler nose
 au FileType python set omnifunc=pythoncomplete#Complete
-au FileType python setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 cinwords=if,elif,else,for,while,try,except,finally,def,class,with equalprg=autopep8\ -
+au FileType python setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+au FileType python setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class,with equalprg=autopep8\ -
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 " Don't let pyflakes use the quickfix window
 let g:pyflakes_use_quickfix = 1
 " Call flake8 whenver we save a python file
 " autocmd BufWritePost *.py call Flake8()
+"
+" Indent Python in the Google way.
+" From: https://github.com/google/styleguide/blob/gh-pages/google_python_style.vim
+au Filetype python setlocal indentexpr=GetGooglePythonIndent(v:lnum)
+au Filetype python let s:maxoff = 50 " maximum number of lines to look backwards.
+au Filetype python let pyindent_nested_paren="&sw*2"
+au Filetype python let pyindent_open_paren="&sw*2"
+
+function GetGooglePythonIndent(lnum)
+  " Indent inside parens.
+  " Align with the open paren unless it is at the end of the line.
+  " E.g.
+  "   open_paren_not_at_EOL(100,
+  "                         (200,
+  "                          300),
+  "                         400)
+  "   open_paren_at_EOL(
+  "       100, 200, 300, 400)
+  call cursor(a:lnum, 1)
+  let [par_line, par_col] = searchpairpos('(\|{\|\[', '', ')\|}\|\]', 'bW',
+        \ "line('.') < " . (a:lnum - s:maxoff) . " ? dummy :"
+        \ . " synIDattr(synID(line('.'), col('.'), 1), 'name')"
+        \ . " =~ '\\(Comment\\|String\\)$'")
+  if par_line > 0
+    call cursor(par_line, 1)
+    if par_col != col("$") - 1
+      return par_col
+    endif
+  endif
+  " Delegate the rest to the original function.
+  return GetPythonIndent(a:lnum)
+endfunction
+
 
 " For R plugin
 "let vimrplugin_screenplugin = 0
