@@ -5,8 +5,8 @@ call plug#begin('~/.config/nvim/plugged')
 "
 " Filetypes
 "
-" Plug 'https://github.com/bfredl/nvim-ipy.git'
-Plug 'https://github.com/JohnReid/nvim-ipy.git'
+Plug 'https://github.com/bfredl/nvim-ipy.git'
+" Plug 'https://github.com/JohnReid/nvim-ipy.git'
 Plug 'git@github.com:nvie/vim-flake8.git'
 Plug 'git@github.com:tell-k/vim-autopep8.git'
 " Plug 'https://github.com/klen/python-mode.git'
