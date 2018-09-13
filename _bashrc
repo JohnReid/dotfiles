@@ -367,6 +367,3 @@ then
 fi
 
 unset __PROFILE__
-
-# added by Miniconda2 4.3.21 installer
-# export PATH="/home/jer15/miniconda2/bin:$PATH"
