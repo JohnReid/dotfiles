@@ -10,14 +10,6 @@ LOCAL=$HOME/local
 eval $($HOME/bin/update-env \
     --path-pre $HOME/bin \
     --path-pre $HOME/bin/UCSC-tools \
-    --path-pre $HOME/Dev/bin \
-    --path-pre $LOCAL/bin \
-    --py-pre $HOME/local/lib/python \
-    --ld-pre $LOCAL/lib \
-    --ld-pre /usr/local/gnu/lib \
-    --ld-pre $HOME/Dev/lib \
-    --ld-pre $LOCAL/boost_1_53_0/lib \
-    --ld-pre $HOME/lib \
 )
 
 #
@@ -375,3 +367,6 @@ then
 fi
 
 unset __PROFILE__
+
+# added by Miniconda2 4.3.21 installer
+# export PATH="/home/jer15/miniconda2/bin:$PATH"
