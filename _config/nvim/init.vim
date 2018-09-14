@@ -1,3 +1,5 @@
+"
+" John's vim configuration
 " https://github.com/JohnReid/dotfiles/
 "
 
@@ -404,7 +406,7 @@ let g:tagbar_type_r = {
         \ 'v:FunctionVariables',
     \ ]
 \ }
-"let vimrplugin_screenplugin = 0
+" let vimrplugin_screenplugin = 0
 " Disable replacement of '_'- with ' <- '
 " let vimrplugin_assign = 0
 " let g:vimrplugin_insert_mode_cmds = 0
@@ -421,7 +423,7 @@ let R_assign = 0  " Don't replace underscores with assignments
 " let R_in_buffer = 1
 let R_applescript = 0
 " let R_tmux_split = 0
-let R_pdfviewer = "evince"
+let R_pdfviewer = "zathura"
 
 
 " ==========================================================
