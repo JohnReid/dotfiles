@@ -424,6 +424,7 @@ let R_assign = 0  " Don't replace underscores with assignments
 let R_applescript = 0
 " let R_tmux_split = 0
 let R_pdfviewer = "zathura"
+let rout_follow_colorscheme = 1  " Highlight R output with the current colorscheme
 
 
 " ==========================================================
