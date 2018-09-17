@@ -115,6 +115,10 @@ set colorcolumn=119
 " Choose a color scheme
 set termguicolors
 colorscheme solarized
+" Reload syntax highlighting with F12
+" From: http://stackoverflow.com/questions/8674387/vim-how-to-reload-syntax-highlighting
+noremap <F12> <Esc>:syntax sync fromstart<CR>
+inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
 
 " ==========================================================
@@ -251,6 +255,15 @@ set tags=./tags;/
 
 
 " ==========================================================
+" Diff
+" ==========================================================
+set diffopt+=iwhite          " Ignore whitespace
+"
+" Change highlighting in diff??
+if &diff | syntax off | endif
+
+
+" ==========================================================
 " Showmarks plugin
 " ==========================================================
 let marksCloseWhenSelected = 0
@@ -269,18 +282,6 @@ au BufRead *.js set makeprg=jslint\ %
 let g:acp_completeoptPreview=1
 
 
-" ===========================================================
-" Mako/HTML
-" ============================================================
-autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
-
-
-" ===========================================================
-" Stan
-" ===========================================================
-autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
-
-
 " ==========================================================
 " Python
 " ==========================================================
@@ -295,13 +296,13 @@ map  <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
 map  <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
 map  <silent> <LocalLeader>k   <Plug>(IPy-Terminate)
 "
-" pymode
-" Detect virtualenv automatically
-let g:pymode_virtualenv = 1
-"
 " Run pep8
 let g:pep8_map='<leader>8'
 let g:autopep8_indent_size=2
+"
+" pymode
+" Detect virtualenv automatically
+let g:pymode_virtualenv = 1
 "
 " Jump to error
 let g:pymode_lint_write = 0
@@ -412,11 +413,7 @@ let g:tagbar_type_r = {
 " let g:vimrplugin_insert_mode_cmds = 0
 " let vimrplugin_vimpager = "horizontal"
 autocmd FileType r,rmd setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-" Reload syntax highlighting with F12
-" See:
-" http://stackoverflow.com/questions/8674387/vim-how-to-reload-syntax-highlighting
-noremap <F12> <Esc>:syntax sync fromstart<CR>
-inoremap <F12> <C-o>:syntax sync fromstart<CR>
+autocmd FileType rmd setlocal foldcolumn=0
 "
 " For nvim-r
 let R_assign = 0  " Don't replace underscores with assignments
@@ -463,18 +460,20 @@ let g:vimtex_latexmk_options = '-synctex=1'
 "omap lp ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>//-1<CR>.<CR>
 
 
+" ===========================================================
+" Mako/HTML
+" ============================================================
+autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
+
+
+" ===========================================================
+" Stan
+" ===========================================================
+autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+
 " ==========================================================
-" Pandoc configuration
+" Pandoc
 " ==========================================================
 " let g:pandoc#modules#disabled = ["folding"]
-autocmd FileType rmd setlocal foldcolumn=0
 "set foldcolumn=0
-
-
-" ==========================================================
-" Diff
-" ==========================================================
-set diffopt+=iwhite          " Ignore whitespace
-"
-" Change highlighting in diff??
-if &diff | syntax off | endif
