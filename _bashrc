@@ -359,6 +359,11 @@ case "$(hostname)" in
 esac
 
 #
+# For mosek
+export PKG_MOSEKHOME=/home/john/Analysis/Tabula-Muris-2017/opt/mosek/8/tools/platform/linux64x86/bin
+export PKG_MOSEKLIB=mosek64
+
+#
 # Source machine specific setup if it exists
 MACHINERC=$HOME/.bashrc.$(hostname)
 if [ -f "$MACHINERC" ]
