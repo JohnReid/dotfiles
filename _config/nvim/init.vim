@@ -23,6 +23,7 @@ Plug 'https://github.com/lervag/vimtex.git'
 Plug 'https://github.com/vim-pandoc/vim-pandoc.git'
 Plug 'https://github.com/vim-pandoc/vim-pandoc-syntax.git'
 Plug 'https://github.com/vim-pandoc/vim-rmarkdown.git'
+Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'https://github.com/plasticboy/vim-markdown.git'
 Plug 'https://github.com/maverickg/stan.vim.git'
 "
@@ -41,7 +42,6 @@ Plug 'https://github.com/sjl/gundo.vim.git'
 Plug 'https://github.com/vim-scripts/TaskList.vim.git'
 Plug 'https://github.com/tomtom/tlib_vim.git'
 Plug 'https://github.com/scrooloose/nerdtree'
-Plug 'https://github.com/frankier/neovim-colors-solarized-truecolor-only.git'
 Plug 'https://github.com/ervandew/screen.git'
 Plug 'https://github.com/ervandew/supertab.git'
 " Plug 'git@github.com:vim-scripts/AutoComplPop.git'
@@ -51,6 +51,12 @@ Plug 'https://github.com/chrisbra/csv.vim.git'
 " Plug 'https://github.com/Shougo/deoplete.nvim.git'
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'  " Required by ncm2
+"
+" Color schemes
+"
+Plug 'https://github.com/frankier/neovim-colors-solarized-truecolor-only.git'
+Plug 'haishanh/night-owl.vim'
+Plug 'tjammer/blayu.vim'
 "
 " Following 4 for snipmate
 "
@@ -232,6 +238,19 @@ nnoremap <leader><space> :nohlsearch<cr>
 nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 " Select the item in the list with enter
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"
+" Damian Conway's Die Blinkënmatchen: highlight matches
+" From: https://vi.stackexchange.com/a/2770
+" nnoremap <silent> n n:call HLNext(0.1)<cr>
+" nnoremap <silent> N N:call HLNext(0.1)<cr>
+" function! HLNext (blinktime)
+"   let target_pat = '\c\%#'.@/
+"   let ring = matchadd('ErrorMsg', target_pat, 101)
+"   redraw
+"   exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+"   call matchdelete(ring)
+"   redraw
+" endfunction
 
 
 " ==========================================================
@@ -477,3 +496,12 @@ autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 " ==========================================================
 " let g:pandoc#modules#disabled = ["folding"]
 "set foldcolumn=0
+
+
+" ==========================================================
+" Pandoc
+" ==========================================================
+let g:vim_markdown_folding_level = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_new_list_item_indent = 2
