@@ -37,6 +37,7 @@ Plug 'https://github.com/tpope/vim-surround.git'
 "
 " Miscellaneous
 "
+Plug 'timakro/vim-searchant'
 Plug 'https://github.com/wincent/Command-T.git'
 Plug 'https://github.com/sjl/gundo.vim.git'
 Plug 'https://github.com/vim-scripts/TaskList.vim.git'
@@ -56,7 +57,9 @@ Plug 'roxma/nvim-yarp'  " Required by ncm2
 "
 Plug 'https://github.com/frankier/neovim-colors-solarized-truecolor-only.git'
 Plug 'haishanh/night-owl.vim'
+Plug 'ErichDonGubler/vim-sublime-monokai'
 Plug 'tjammer/blayu.vim'
+Plug 'Jimeno0/vim-chito'
 "
 " Following 4 for snipmate
 "
