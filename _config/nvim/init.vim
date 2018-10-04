@@ -201,6 +201,14 @@ inoremap # #
 " close preview window automatically when we move around
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" Paste from clipboard
+map <leader>p "+p
+"
+" For toggling paste mode
+" From: http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 
 " ==========================================================
@@ -231,8 +239,6 @@ set smartcase               " unless uppercase letters are used in the regex.
 set smarttab                " Handle tabs more intelligently 
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
-" Paste from clipboard
-map <leader>p "+p
 " Quit window on <leader>q
 nnoremap <leader>q :q<CR>
 " hide matches on <leader>space
