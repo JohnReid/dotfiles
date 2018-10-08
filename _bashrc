@@ -360,7 +360,9 @@ esac
 
 #
 # For mosek
-export PKG_MOSEKHOME=/home/john/Analysis/Tabula-Muris-2017/opt/mosek/8/tools/platform/linux64x86
+export MOSEK_ROOT=$HOME/Analysis/Tabula-Muris-2017/opt/mosek
+export PATH=$PATH:$MOSEK_ROOT/8/tools/platform/linux64x86/bin
+export PKG_MOSEKHOME=$MOSEK_ROOT/8/tools/platform/linux64x86
 export PKG_MOSEKLIB=mosek64
 
 #
