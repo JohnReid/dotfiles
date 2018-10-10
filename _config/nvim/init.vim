@@ -37,6 +37,7 @@ Plug 'https://github.com/tpope/vim-surround.git'
 "
 " Miscellaneous
 "
+Plug 'vim-syntastic/syntastic'  " For lintr R syntax integration
 Plug 'timakro/vim-searchant'
 Plug 'https://github.com/wincent/Command-T.git'
 Plug 'https://github.com/sjl/gundo.vim.git'
@@ -292,6 +293,19 @@ if &diff | syntax off | endif
 
 
 " ==========================================================
+" Syntastic
+" ==========================================================
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+"
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+" ==========================================================
 " Showmarks plugin
 " ==========================================================
 let marksCloseWhenSelected = 0
@@ -424,6 +438,11 @@ endif
 " R
 " ==========================================================
 "
+" Lintr
+let g:syntastic_enable_r_lintr_checker = 0
+let g:syntastic_r_checkers = ['lintr']
+let g:syntastic_r_lintr_linters = "with_defaults(commas_linter = NULL, commented_code_linter = NULL, line_length_linter(120))"
+"
 " For tags to work with R
 " From: http://tinyheero.github.io/2017/05/13/r-vim-ctags.html
 "
@@ -505,11 +524,6 @@ autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 " ==========================================================
 " let g:pandoc#modules#disabled = ["folding"]
 "set foldcolumn=0
-
-
-" ==========================================================
-" Pandoc
-" ==========================================================
 let g:vim_markdown_folding_level = 1
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
