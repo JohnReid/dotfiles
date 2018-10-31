@@ -468,6 +468,7 @@ let R_assign = 0  " Don't replace underscores with assignments
 let R_applescript = 0
 " let R_tmux_split = 0
 let R_pdfviewer = "zathura"
+let R_nvimpager = "tab"
 let rout_follow_colorscheme = 1  " Highlight R output with the current colorscheme
 
 
@@ -517,6 +518,13 @@ autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
 " Stan
 " ===========================================================
 autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
+
+" ===========================================================
+" XML
+" ===========================================================
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
 
 
 " ==========================================================
