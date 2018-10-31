@@ -373,4 +373,8 @@ then
     source "$MACHINERC"
 fi
 
+#
+# getgist
+export GETGIST_USER=JohnReid
+
 unset __PROFILE__
