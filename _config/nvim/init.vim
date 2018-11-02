@@ -487,6 +487,12 @@ autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 wra
 " but I prefer to only open the quickfix window on errors
 let g:vimtex_quickfix_open_on_warning = 0
 "
+" from: https://github.com/lervag/vimtex/issues/835 to enable Synctex
+let g:vimtex_compiler_progname = "nvr"
+let g:vimtex_view_method = "zathura"
+let g:vimtex_latexmk_progname = "nvr"
+let g:tex_flavor = 'latex'
+"
 " Use Zathura
 let g:vimtex_view_general_viewer = 'zathura'
 "
