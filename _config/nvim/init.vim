@@ -329,14 +329,18 @@ let g:acp_completeoptPreview=1
 " ==========================================================
 "
 " nvim-ipy
+" Ask nvim-ipy not to make its own mappings
 let g:nvim_ipy_perform_mappings = 0
-map  <silent> <LocalLeader>l   <Plug>(IPy-Run)
-map  <silent> <LocalLeader>p   <Plug>(IPy-RunCell)
-map  <silent> <LocalLeader>a   <Plug>(IPy-RunAll)
-imap <silent> <LocalLeader>f   <Plug>(IPy-Complete)
-map  <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
-map  <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
-map  <silent> <LocalLeader>k   <Plug>(IPy-Terminate)
+" Set up our own mappings
+au FileType python map  <buffer> <silent> <LocalLeader>l   <Plug>(IPy-Run)
+au FileType python map  <buffer> <silent> <LocalLeader>p   <Plug>(IPy-RunCell)
+au FileType python map  <buffer> <silent> <LocalLeader>a   <Plug>(IPy-RunAll)
+au FileType python imap <buffer> <silent> <LocalLeader>f   <Plug>(IPy-Complete)
+au FileType python map  <buffer> <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
+au FileType python map  <buffer> <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
+au FileType python map  <buffer> <silent> <LocalLeader>k   <Plug>(IPy-Terminate)
+" Empty lines define start and end of cells
+let g:ipy_celldef = '^$'
 "
 " Run pep8
 let g:pep8_map='<leader>8'
@@ -353,12 +357,12 @@ let g:pymode_lint_ignore = "E202,E203,E221,E272,C901"
 let g:pymode_mccabe_ignore = "C901"
 "
 " run py.tests
-nmap <silent><Leader>tf <Esc>:Pytest file<CR>
-nmap <silent><Leader>tc <Esc>:Pytest class<CR>
-nmap <silent><Leader>tm <Esc>:Pytest method<CR>
-nmap <silent><Leader>tn <Esc>:Pytest next<CR>
-nmap <silent><Leader>tp <Esc>:Pytest previous<CR>
-nmap <silent><Leader>te <Esc>:Pytest error<CR>
+au FileType python nmap <silent><LocalLeader>tf <Esc>:Pytest file<CR>
+au FileType python nmap <silent><LocalLeader>tc <Esc>:Pytest class<CR>
+au FileType python nmap <silent><LocalLeader>tm <Esc>:Pytest method<CR>
+au FileType python nmap <silent><LocalLeader>tn <Esc>:Pytest next<CR>
+au FileType python nmap <silent><LocalLeader>tp <Esc>:Pytest previous<CR>
+au FileType python nmap <silent><LocalLeader>te <Esc>:Pytest error<CR>
 "
 " Run django tests
 map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
