@@ -13,6 +13,7 @@ call plug#begin('~/.config/nvim/plugged')
 "
 Plug 'https://github.com/bfredl/nvim-ipy.git'
 " Plug 'https://github.com/JohnReid/nvim-ipy.git'
+" Plug '/home/john/src/nvim-ipy'
 Plug 'git@github.com:nvie/vim-flake8.git'
 Plug 'git@github.com:tell-k/vim-autopep8.git'
 " Plug 'https://github.com/klen/python-mode.git'
@@ -446,6 +447,11 @@ endif
 let g:syntastic_enable_r_lintr_checker = 0
 let g:syntastic_r_checkers = ['lintr']
 let g:syntastic_r_lintr_linters = "with_defaults(commas_linter = NULL, commented_code_linter = NULL, line_length_linter(120))"
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_jump = 0
 "
 " For tags to work with R
 " From: http://tinyheero.github.io/2017/05/13/r-vim-ctags.html
