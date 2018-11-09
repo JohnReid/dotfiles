@@ -11,9 +11,9 @@ call plug#begin('~/.config/nvim/plugged')
 "
 " Filetypes
 "
-Plug 'https://github.com/bfredl/nvim-ipy.git'
+" Plug 'https://github.com/bfredl/nvim-ipy.git'
 " Plug 'https://github.com/JohnReid/nvim-ipy.git'
-" Plug '/home/john/src/nvim-ipy'
+Plug '/home/john/src/nvim-ipy'
 Plug 'git@github.com:nvie/vim-flake8.git'
 Plug 'git@github.com:tell-k/vim-autopep8.git'
 " Plug 'https://github.com/klen/python-mode.git'
@@ -93,6 +93,10 @@ set wildmode=full             " <Tab> cycles between all matching choices.
 set nocompatible              " Don't be compatible with vi
 let mapleader=","             " change the leader to be a comma vs slash
 let maplocalleader="\\"       " make the local leader a backslash
+"
+" Use GB English for spell checking when it is turned on
+set spelllang=en_gb
+set spellfile=~/.config/nvim/spell/en.utf-8.add
 "
 " Reload Vimrc
 " map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
@@ -306,6 +310,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 
+
 " ==========================================================
 " Showmarks plugin
 " ==========================================================
@@ -334,6 +339,7 @@ let g:acp_completeoptPreview=1
 let g:nvim_ipy_perform_mappings = 0
 " Set up our own mappings
 au FileType python map  <buffer> <silent> <LocalLeader>l   <Plug>(IPy-Run)
+au FileType python map  <buffer> <silent> <LocalLeader>w   <Plug>(IPy-Word)
 au FileType python map  <buffer> <silent> <LocalLeader>p   <Plug>(IPy-RunCell)
 au FileType python map  <buffer> <silent> <LocalLeader>a   <Plug>(IPy-RunAll)
 au FileType python imap <buffer> <silent> <LocalLeader>f   <Plug>(IPy-Complete)
@@ -488,6 +494,7 @@ let rout_follow_colorscheme = 1  " Highlight R output with the current colorsche
 "
 " LaTeX
 autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 wrap
+autocmd FileType tex setlocal spell
 " Can set the following to ignore common warnings
 "let g:vimtex_quickfix_ignored_warnings = [
 "            \ 'Underfull',
