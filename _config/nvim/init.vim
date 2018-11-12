@@ -21,6 +21,9 @@ Plug 'git@github.com:tell-k/vim-autopep8.git'
 " Plug 'git@github.com:vim-scripts/Vim-R-plugin.git'
 Plug 'https://github.com/jalvesaq/Nvim-R.git'
 Plug 'https://github.com/lervag/vimtex.git'
+Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex
+" Plug 'JohnReid/vim-textobj-latex'  " LaTeX text objects
+Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
 Plug 'https://github.com/vim-pandoc/vim-pandoc.git'
 Plug 'https://github.com/vim-pandoc/vim-pandoc-syntax.git'
 Plug 'https://github.com/vim-pandoc/vim-rmarkdown.git'
