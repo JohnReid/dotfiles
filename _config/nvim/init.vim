@@ -38,6 +38,7 @@ Plug 'git://github.com/tpope/vim-unimpaired.git'
 Plug 'git://github.com/tpope/vim-commentary.git'
 Plug 'git://github.com/tpope/vim-repeat.git'
 Plug 'https://github.com/tpope/vim-surround.git'
+Plug 'tpope/vim-scriptease'
 "
 " Miscellaneous
 "
@@ -57,6 +58,8 @@ Plug 'https://github.com/chrisbra/csv.vim.git'
 " Plug 'https://github.com/Shougo/deoplete.nvim.git'
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'  " Required by ncm2
+Plug 'junegunn/goyo.vim'  " Distraction-free writing
+Plug 'junegunn/limelight.vim'  " Hyperfocus writing
 "
 " Color schemes
 "
@@ -312,6 +315,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
+" ==========================================================
+" Goyo / Limelight
+" ==========================================================
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 
 " ==========================================================
