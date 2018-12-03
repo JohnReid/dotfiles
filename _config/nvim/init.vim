@@ -568,6 +568,7 @@ au FileType xml setlocal foldmethod=syntax
 " let g:pandoc#modules#disabled = ["folding"]
 "set foldcolumn=0
 let g:vim_markdown_folding_level = 1
+let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_new_list_item_indent = 2
