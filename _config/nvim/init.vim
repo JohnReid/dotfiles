@@ -13,7 +13,8 @@ call plug#begin('~/.config/nvim/plugged')
 "
 " Plug 'https://github.com/bfredl/nvim-ipy.git'
 " Plug 'https://github.com/JohnReid/nvim-ipy.git'
-Plug '/home/john/src/nvim-ipy'
+" Plug '/home/john/src/nvim-ipy'
+Plug 'git@github.com:bfredl/nvim-ipy.git'
 Plug 'git@github.com:nvie/vim-flake8.git'
 Plug 'git@github.com:tell-k/vim-autopep8.git'
 " Plug 'https://github.com/klen/python-mode.git'
@@ -26,7 +27,7 @@ Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex
 Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
 Plug 'https://github.com/vim-pandoc/vim-pandoc.git'
 Plug 'https://github.com/vim-pandoc/vim-pandoc-syntax.git'
-Plug 'https://github.com/vim-pandoc/vim-rmarkdown.git'
+" Plug 'https://github.com/vim-pandoc/vim-rmarkdown.git'
 Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'https://github.com/plasticboy/vim-markdown.git'
 Plug 'https://github.com/maverickg/stan.vim.git'
@@ -42,6 +43,8 @@ Plug 'tpope/vim-scriptease'
 "
 " Miscellaneous
 "
+Plug 'mattn/webapi-vim'  " For gists
+Plug 'mattn/gist-vim'  " For gists
 Plug 'vim-syntastic/syntastic'  " For lintr R syntax integration
 Plug 'timakro/vim-searchant'
 Plug 'https://github.com/wincent/Command-T.git'
@@ -64,6 +67,7 @@ Plug 'junegunn/limelight.vim'  " Hyperfocus writing
 " Color schemes
 "
 Plug 'https://github.com/frankier/neovim-colors-solarized-truecolor-only.git'
+Plug 'morhetz/gruvbox'
 Plug 'haishanh/night-owl.vim'
 Plug 'ErichDonGubler/vim-sublime-monokai'
 Plug 'tjammer/blayu.vim'
@@ -116,7 +120,7 @@ nnoremap <leader>. :lcd %:p:h<CR>
 " ==========================================================
 set nonumber                " Don't display line numbers
 set numberwidth=1           " using only 1 column (and 1 space) while possible
-set background=light        " We are using light background in vim
+set background=dark         " We are using dark background in vim
 set title                   " show title in console title bar
 set ls=2                    " always show status line
 set noerrorbells
@@ -135,7 +139,8 @@ set list
 set colorcolumn=119
 " Choose a color scheme
 set termguicolors
-colorscheme solarized
+" colorscheme solarized
+colorscheme gruvbox
 " Reload syntax highlighting with F12
 " From: http://stackoverflow.com/questions/8674387/vim-how-to-reload-syntax-highlighting
 noremap <F12> <Esc>:syntax sync fromstart<CR>
