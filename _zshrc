@@ -63,12 +63,19 @@ ZSH_THEME="robbyrussell"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+
+# Tmux
+# 
+ZSH_TMUX_AUTOSTART="true"  # Automatically starts tmux (default: false)
+ZSH_TMUX_AUTOCONNECT="false"  # Automatically connect to a previous session if it exits (default: true)
+
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git tmux vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,3 +104,42 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+bindkey -v  # Vim bindings: https://www.reddit.com/r/vim/comments/7wj81e/you_can_get_vim_bindings_in_zsh_and_bash/
+bindkey "^R" history-incremental-search-backward  # https://unix.stackexchange.com/a/44118/319002
+
+#
+# Better Vi mode in zsh: http://stratus3d.com/blog/2017/10/26/better-vi-mode-in-zshell/
+#
+# Better searching in command mode
+bindkey -M vicmd '?' history-incremental-search-backward
+bindkey -M vicmd '/' history-incremental-search-forward
+#
+# Beginning search with arrow keys
+bindkey "^[OA" up-line-or-beginning-search
+bindkey "^[OB" down-line-or-beginning-search
+bindkey -M vicmd "k" up-line-or-beginning-search
+bindkey -M vicmd "j" down-line-or-beginning-search
+
+#
+# Source machine specific setup if it exists
+MACHINERC=$HOME/.zshrc.$(hostname)
+if [ -f "$MACHINERC" ]
+then
+    source "$MACHINERC"
+fi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/john/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/john/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/john/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/john/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
