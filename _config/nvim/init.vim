@@ -15,7 +15,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Plug 'https://github.com/JohnReid/nvim-ipy.git'
 " Plug '/home/john/src/nvim-ipy'
 Plug 'git@github.com:bfredl/nvim-ipy.git'
-Plug 'git@github.com:nvie/vim-flake8.git'
+" Plug 'git@github.com:nvie/vim-flake8.git'
 Plug 'git@github.com:tell-k/vim-autopep8.git'
 " Plug 'https://github.com/klen/python-mode.git'
 " Plug 'https://github.com/ivanov/vim-ipython.git'
@@ -89,6 +89,12 @@ call plug#end()
 " ==========================================================
 syntax on                     " syntax highlighing
 syntax enable
+" Reload syntax highlighting with F12
+" From: http://stackoverflow.com/questions/8674387/vim-how-to-reload-syntax-highlighting
+noremap <F12> <Esc>:syntax sync fromstart<CR>
+inoremap <F12> <C-o>:syntax sync fromstart<CR>
+" Refresh syntax from top
+nmap <silent><F5> :syntax sync fromstart<CR>
 " Try to fix comment indents in vim.
 " See
 " http://stackoverflow.com/questions/354097/how-to-configure-vim-to-not-put-comments-at-the-beginning-of-lines-while-editing
@@ -141,10 +147,6 @@ set colorcolumn=119
 set termguicolors
 " colorscheme solarized
 colorscheme gruvbox
-" Reload syntax highlighting with F12
-" From: http://stackoverflow.com/questions/8674387/vim-how-to-reload-syntax-highlighting
-noremap <F12> <Esc>:syntax sync fromstart<CR>
-inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
 
 " ==========================================================
@@ -153,8 +155,6 @@ inoremap <F12> <C-o>:syntax sync fromstart<CR>
 " Disable the colorcolumn when switching modes.  Make sure this is the
 " first autocmd for the filetype here
 "autocmd FileType * setlocal colorcolumn=0
-" Refresh syntax from top
-nmap <silent><F5> :syntax sync fromstart<CR>
 "<CR><C-w>l<C-f>:set scrollbind<CR>
 " Toggle the tasklist
 map <leader>td <Plug>TaskList
@@ -316,9 +316,10 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 "
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_jump = 0
 
 
 " ==========================================================
@@ -396,9 +397,10 @@ au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 au FileType python setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class,with equalprg=autopep8\ -
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-" Don't let pyflakes use the quickfix window
+" Does pyflakes use the quickfix window?
 let g:pyflakes_use_quickfix = 1
-" Call flake8 whenver we save a python file
+" Call flake8 whenver we save a python file - this only works when vim-flake8
+" plugin is loaded.
 " autocmd BufWritePost *.py call Flake8()
 "
 " Indent Python in the Google way.
@@ -470,11 +472,6 @@ endif
 let g:syntastic_enable_r_lintr_checker = 0
 let g:syntastic_r_checkers = ['lintr']
 let g:syntastic_r_lintr_linters = "with_defaults(commas_linter = NULL, commented_code_linter = NULL, line_length_linter(120))"
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_auto_jump = 0
 "
 " For tags to work with R
 " From: http://tinyheero.github.io/2017/05/13/r-vim-ctags.html
