@@ -22,3 +22,7 @@ map + zoom in
 map - zoom out
 
 map <C-w> quit
+
+#
+# Show only filename in title
+set window-title-basename true

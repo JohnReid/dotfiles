@@ -17,7 +17,7 @@
 # For communication with vim
 if(interactive()){
     library(colorout)
-    library(setwidth)
+    # library(setwidth)
     # options(vimcom.verbose = 1)
     # library(vimcom)
     suppressMessages(require(devtools))
