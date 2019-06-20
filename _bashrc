@@ -234,11 +234,11 @@ fi
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-export PERL_LOCAL_LIB_ROOT="/home/john/local/perl5";
-export PERL_MB_OPT="--install_base /home/john/local/perl5";
-export PERL_MM_OPT="INSTALL_BASE=/home/john/local/perl5";
-export PERL5LIB="/home/john/local/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/john/local/perl5/lib/perl5";
-export PATH="/home/john/local/perl5/bin:$PATH";
+# export PERL_LOCAL_LIB_ROOT="/home/john/local/perl5";
+# export PERL_MB_OPT="--install_base /home/john/local/perl5";
+# export PERL_MM_OPT="INSTALL_BASE=/home/john/local/perl5";
+# export PERL5LIB="/home/john/local/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/john/local/perl5/lib/perl5";
+# export PATH="/home/john/local/perl5/bin:$PATH";
 ANDROID_PLATFORM_TOOLS=/home/john/src/android-sdk-linux/platform-tools
 [ -d $ANDROID_PLATFORM_TOOLS ] && PATH=$PATH:$ANDROID_PLATFORM_TOOLS
 
@@ -346,16 +346,13 @@ alias ironpy='mono $IRONLANGUAGESDIR/bin/Release/ipy.exe'
 
 
 #
-# For CUDA and torch
-TORCH_ACTIVATE=/home/john/src/torch/install/bin/torch-activate
-[ -f $TORCH_ACTIVATE ] && . $TORCH_ACTIVATE
+# For CUDA
 case "$(hostname)" in
-"schmidt")
-    export CUDA_BIN_PATH=/usr/local/cuda/
-    ;;
-"antheil")
-    export CUDA_BIN_PATH=/usr/local/cuda/
-    ;;
+"Ubuntu-XPS-15")
+  export CUDA_PATH=/usr/local/cuda-10.1/
+  export PATH=${CUDA_PATH}/bin:${CUDA_PATH}/NsightCompute-2019.1${PATH:+:${PATH}}
+  export LD_LIBRARY_PATH=${CUDA_PATH}/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+  ;;
 esac
 
 #
