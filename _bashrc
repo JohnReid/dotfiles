@@ -230,17 +230,7 @@ export BP_LOG="$BP_DATA/log"     # Required log directory.
 
 if [ -f "$BP_DIR/bp_conf/bashrc" ]; then
     source "$BP_DIR/bp_conf/bashrc"
-fi  
-
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-export PERL_LOCAL_LIB_ROOT="/home/john/local/perl5";
-export PERL_MB_OPT="--install_base /home/john/local/perl5";
-export PERL_MM_OPT="INSTALL_BASE=/home/john/local/perl5";
-export PERL5LIB="/home/john/local/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/john/local/perl5/lib/perl5";
-export PATH="/home/john/local/perl5/bin:$PATH";
-ANDROID_PLATFORM_TOOLS=/home/john/src/android-sdk-linux/platform-tools
-[ -d $ANDROID_PLATFORM_TOOLS ] && PATH=$PATH:$ANDROID_PLATFORM_TOOLS
+fi
 
 test -n "$__PROFILE__" && echo "8: $(date +%T)"
 
@@ -270,24 +260,8 @@ fi
 
 test -n "$__PROFILE__" && echo "10: $(date +%T)"
 
-# Change color of prompt depending on hostname
-case "$(hostname)" in
-"josquin")
-    PSCOLOR='36m'
-    ;;
-"dufay")
-    PSCOLOR='32m'
-    ;;
-"machaut")
-    PSCOLOR='33m'
-    ;;
-"login-mrc-bsu")
-    PSCOLOR='35m'
-    ;;
-*)
-    PSCOLOR='34m'
-    ;;
-esac
+# Default prompt color
+PSCOLOR='34m'
 
 #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 #PS1='\[\033[01;31m\]\w\[\033[00m\]\n${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\u\[\033[01;32m\]@\[\033[01;34m\]\h\[\033[00m\]\$ '
@@ -339,31 +313,6 @@ then
     ln -sf $SSH_AUTH_SOCK $SOCK
     export SSH_AUTH_SOCK=$SOCK
 fi
-
-export IRONLANGUAGESDIR=/home/john/src/IronLanguages
-export IRONPYTHONPATH=$IRONLANGUAGESDIR/External.LCA_RESTRICTED/Languages/IronPython/27/Lib/:$IRONPYTHONPATH
-alias ironpy='mono $IRONLANGUAGESDIR/bin/Release/ipy.exe'
-
-
-#
-# For CUDA and torch
-TORCH_ACTIVATE=/home/john/src/torch/install/bin/torch-activate
-[ -f $TORCH_ACTIVATE ] && . $TORCH_ACTIVATE
-case "$(hostname)" in
-"schmidt")
-    export CUDA_BIN_PATH=/usr/local/cuda/
-    ;;
-"antheil")
-    export CUDA_BIN_PATH=/usr/local/cuda/
-    ;;
-esac
-
-#
-# For mosek
-export MOSEK_ROOT=$HOME/Analysis/Tabula-Muris-2017/opt/mosek
-export PATH=$PATH:$MOSEK_ROOT/8/tools/platform/linux64x86/bin
-export PKG_MOSEKHOME=$MOSEK_ROOT/8/tools/platform/linux64x86
-export PKG_MOSEKLIB=mosek64
 
 #
 # Source machine specific setup if it exists

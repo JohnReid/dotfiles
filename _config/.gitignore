@@ -1,12 +1,12 @@
-Slack/
-gnome-initial-setup-done
 Acorah\ Software\ Products/
 DjVuLibre/
 QtProject.conf
 RStudio
 Skype/
+Slack/
 Synology
 Trolltech.conf
+Upmpd.org/
 VirtualBox/
 autostart/
 banshee-1/
@@ -16,6 +16,7 @@ chromium/
 compiz-1/
 compiz/
 dconf/
+easytag/
 enchant/
 eog/
 evince/
@@ -23,6 +24,7 @@ evolution/
 gedit/
 geeqie/
 gnome-control-center/
+gnome-initial-setup-done
 goa-1.0/
 google-chrome/
 gpick/
@@ -38,6 +40,7 @@ libaccounts-glib/
 libreoffice/
 menus/
 mimeapps.list
+monitors-v1-backup.xml
 monitors.xml
 nautilus/
 pavucontrol.ini
@@ -46,11 +49,12 @@ puddletag/
 pulse/
 rubyripper/
 signond/
-software-center/
 skypeforlinux/
+software-center/
 tomboy/
 totem/
 ubuntuone/
+unity-monitors.xml
 unity/
 update-notifier/
 upstart/
