@@ -194,7 +194,6 @@ map <c-h> <c-w>h
 imap <C-W> <C-O><C-W>
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
-set cursorline              " have a line indicate the cursor location
 set ruler                   " show the cursor position all the time
 set nostartofline           " Avoid moving cursor to BOL when jumping around
 set virtualedit=block       " Let cursor move past the last char in <C-v> mode
