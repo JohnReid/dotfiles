@@ -26,3 +26,8 @@ map <C-w> quit
 #
 # Show only filename in title
 set window-title-basename true
+
+#
+# Use clipboard for selection
+# https://unix.stackexchange.com/a/339488/319002
+set selection-clipboard clipboard
