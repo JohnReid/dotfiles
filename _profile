@@ -30,7 +30,9 @@ if [ -d "$HOME/lib" ] ; then
 fi
 
 # Set up environment variables
-. $HOME/.env
+if [ -f "$HOME/.env" ]; then
+    . $HOME/.env
+fi
 
 
 TORCH_ACTIVATE=/home/john/src/torch/install/bin/torch-activate
