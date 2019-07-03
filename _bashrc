@@ -5,7 +5,9 @@ test -n "$__PROFILE__" && echo "0: $(date +%T)"
 #
 # Set up development environment
 #
-. $HOME/.env_fns
+if [ -f ~/.env_fns ]; then
+    . $HOME/.env_fns
+fi
 LOCAL=$HOME/local
 eval $($HOME/bin/update-env \
     --path-pre $HOME/bin \
