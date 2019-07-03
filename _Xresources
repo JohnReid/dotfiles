@@ -25,7 +25,7 @@ dtterm*background:	white
 *printCommand:	lpr
 
 XTerm*faceName: Inconsolata
-XTerm*faceSize: 10 
+XTerm*faceSize: 18 
 XTerm*faceSize1: 8 
 XTerm*faceSize2: 9 
 XTerm*faceSize3: 10 
