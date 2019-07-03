@@ -1,0 +1,33 @@
+# zathurarc
+
+set adjust-open width
+
+# colors
+set statusbar-bg black
+set statusbar-fg white
+
+# settings
+# set window-height 1024
+# set window-width 768
+# set adjust-open width
+
+# use sqlite as bookmarks database backend
+# set database sqlite
+
+# key bindings
+map <PageUp> navigate previous
+map <PageDown> navigate next
+
+map + zoom in
+map - zoom out
+
+map <C-w> quit
+
+#
+# Show only filename in title
+set window-title-basename true
+
+#
+# Use clipboard for selection
+# https://unix.stackexchange.com/a/339488/319002
+set selection-clipboard clipboard

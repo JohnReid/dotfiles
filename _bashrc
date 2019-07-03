@@ -12,14 +12,6 @@ LOCAL=$HOME/local
 eval $($HOME/bin/update-env \
     --path-pre $HOME/bin \
     --path-pre $HOME/bin/UCSC-tools \
-    --path-pre $HOME/Dev/bin \
-    --path-pre $LOCAL/bin \
-    --py-pre $HOME/local/lib/python \
-    --ld-pre $LOCAL/lib \
-    --ld-pre /usr/local/gnu/lib \
-    --ld-pre $HOME/Dev/lib \
-    --ld-pre $LOCAL/boost_1_53_0/lib \
-    --ld-pre $HOME/lib \
 )
 
 #
@@ -240,17 +232,7 @@ export BP_LOG="$BP_DATA/log"     # Required log directory.
 
 if [ -f "$BP_DIR/bp_conf/bashrc" ]; then
     source "$BP_DIR/bp_conf/bashrc"
-fi  
-
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-export PERL_LOCAL_LIB_ROOT="/home/john/local/perl5";
-export PERL_MB_OPT="--install_base /home/john/local/perl5";
-export PERL_MM_OPT="INSTALL_BASE=/home/john/local/perl5";
-export PERL5LIB="/home/john/local/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/john/local/perl5/lib/perl5";
-export PATH="/home/john/local/perl5/bin:$PATH";
-ANDROID_PLATFORM_TOOLS=/home/john/src/android-sdk-linux/platform-tools
-[ -d $ANDROID_PLATFORM_TOOLS ] && PATH=$PATH:$ANDROID_PLATFORM_TOOLS
+fi
 
 test -n "$__PROFILE__" && echo "8: $(date +%T)"
 
@@ -280,24 +262,8 @@ fi
 
 test -n "$__PROFILE__" && echo "10: $(date +%T)"
 
-# Change color of prompt depending on hostname
-case "$(hostname)" in
-"josquin")
-    PSCOLOR='36m'
-    ;;
-"dufay")
-    PSCOLOR='32m'
-    ;;
-"machaut")
-    PSCOLOR='33m'
-    ;;
-"login-mrc-bsu")
-    PSCOLOR='35m'
-    ;;
-*)
-    PSCOLOR='34m'
-    ;;
-esac
+# Default prompt color
+PSCOLOR='34m'
 
 #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 #PS1='\[\033[01;31m\]\w\[\033[00m\]\n${debian_chroot:+($debian_chroot)}\[\033[01;34m\]\u\[\033[01;32m\]@\[\033[01;34m\]\h\[\033[00m\]\$ '
@@ -350,24 +316,6 @@ then
     export SSH_AUTH_SOCK=$SOCK
 fi
 
-export IRONLANGUAGESDIR=/home/john/src/IronLanguages
-export IRONPYTHONPATH=$IRONLANGUAGESDIR/External.LCA_RESTRICTED/Languages/IronPython/27/Lib/:$IRONPYTHONPATH
-alias ironpy='mono $IRONLANGUAGESDIR/bin/Release/ipy.exe'
-
-
-#
-# For CUDA and torch
-TORCH_ACTIVATE=/home/john/src/torch/install/bin/torch-activate
-[ -f $TORCH_ACTIVATE ] && . $TORCH_ACTIVATE
-case "$(hostname)" in
-"schmidt")
-    export CUDA_BIN_PATH=/usr/local/cuda/
-    ;;
-"antheil")
-    export CUDA_BIN_PATH=/usr/local/cuda/
-    ;;
-esac
-
 #
 # Source machine specific setup if it exists
 MACHINERC=$HOME/.bashrc.$(hostname)
@@ -375,5 +323,9 @@ if [ -f "$MACHINERC" ]
 then
     source "$MACHINERC"
 fi
+
+#
+# getgist
+export GETGIST_USER=JohnReid
 
 unset __PROFILE__
