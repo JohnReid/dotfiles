@@ -324,6 +324,13 @@ map <F7> :SyntasticCheck <CR>
 
 
 " ==========================================================
+" Gist
+" ==========================================================
+let g:gist_edit_with_buffers = 1
+let g:gist_list_vsplit = 1
+
+
+" ==========================================================
 " Goyo / Limelight
 " ==========================================================
 autocmd! User GoyoEnter Limelight
@@ -379,7 +386,7 @@ let g:pymode_virtualenv = 1
 " Jump to error
 let g:pymode_lint_write = 0
 let g:pymode_lint_jump = 1
-let g:pymode_lint_ignore = "E202,E203,E221,E272,C901"
+let g:pymode_lint_ignore = "E111,E202,E203,E221,E272,C901"
 let g:pymode_mccabe_ignore = "C901"
 "
 " run py.tests
