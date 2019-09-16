@@ -1512,3 +1512,10 @@ PatchMatch
 MetroPatchMatch
 softmax
 MH
+ECE
+MCE
+NLL
+Platt
+multiclass
+printbibliography
+interpretability
