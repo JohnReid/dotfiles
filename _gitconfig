@@ -31,8 +31,10 @@
     ls = ls-files
 
 [credential]
-	helper = cache --timeout=360000
+    helper = cache --timeout=360000
+
 [web]
-	browser = firefox
+    browser = firefox
+
 [github]
-	user = JohnReid
+    user = JohnReid
