@@ -131,14 +131,16 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/john/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+ANACONDAROOT=$HOME/anaconda3
+CONDA=$ANACONDAROOT/bin/conda
+__conda_setup="$($CONDA 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/john/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/john/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "$ANACONDAROOT/etc/profile.d/conda.sh" ]; then
+        . "$ANACONDAROOT/etc/profile.d/conda.sh"
     else
-        export PATH="/home/john/anaconda3/bin:$PATH"
+        export PATH="$ANACONDAROOT/bin:$PATH"
     fi
 fi
 unset __conda_setup
