@@ -39,6 +39,7 @@ Plug 'git://github.com/tpope/vim-unimpaired.git'
 Plug 'git://github.com/tpope/vim-commentary.git'
 Plug 'git://github.com/tpope/vim-repeat.git'
 Plug 'https://github.com/tpope/vim-surround.git'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-scriptease'
 "
 " Miscellaneous
