@@ -1,0 +1,7 @@
+#
+# Source machine specific setup if it exists
+MACHINEPROFILE=$HOME/.zprofile.$(hostname)
+if [ -f "$MACHINEPROFILE" ]
+then
+    source "$MACHINEPROFILE"
+fi
