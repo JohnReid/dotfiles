@@ -1,0 +1,4 @@
+count = False
+ignore = E226,E302,E41,E265,E111,E114
+max-line-length = 120
+statistics = True

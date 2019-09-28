@@ -361,6 +361,8 @@ let g:acp_completeoptPreview=1
 " Python
 " ==========================================================
 "
+" Syntastic
+let g:syntastic_python_checkers = ["pycodestyle", "pyflakes"]
 " nvim-ipy
 " Ask nvim-ipy not to make its own mappings
 let g:nvim_ipy_perform_mappings = 0
