@@ -363,6 +363,7 @@ let g:acp_completeoptPreview=1
 "
 " Syntastic
 let g:syntastic_python_checkers = ["pycodestyle", "pyflakes"]
+"
 " nvim-ipy
 " Ask nvim-ipy not to make its own mappings
 let g:nvim_ipy_perform_mappings = 0
@@ -402,12 +403,13 @@ au FileType python nmap <silent><LocalLeader>te <Esc>:Pytest error<CR>
 "
 " Run django tests
 map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
-
+"
 "au BufRead *.py compiler nose
 au FileType python set omnifunc=pythoncomplete#Complete
 au FileType python setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 au FileType python setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class,with equalprg=autopep8\ -
 au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+"
 " Does pyflakes use the quickfix window?
 let g:pyflakes_use_quickfix = 1
 " Call flake8 whenver we save a python file - this only works when vim-flake8
