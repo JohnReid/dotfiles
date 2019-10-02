@@ -31,3 +31,8 @@ set window-title-basename true
 # Use clipboard for selection
 # https://unix.stackexchange.com/a/339488/319002
 set selection-clipboard clipboard
+
+#
+# Change scroll speed
+set scroll-step 5
+set smooth-scroll "true"
