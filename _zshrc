@@ -67,7 +67,16 @@ ZSH_THEME="robbyrussell"
 # Tmux
 # 
 ZSH_TMUX_AUTOSTART="true"  # Automatically starts tmux (default: false)
-ZSH_TMUX_AUTOCONNECT="false"  # Automatically connect to a previous session if it exits (default: true)
+ZSH_TMUX_AUTOCONNECT="true"  # Automatically connect to a previous session if it exits (default: true)
+
+
+#
+# Source machine specific setup if it exists
+MACHINERC=$HOME/.zshrc.$(hostname)
+if [ -f "$MACHINERC" ]
+then
+    source "$MACHINERC"
+fi
 
 
 # Which plugins would you like to load?
@@ -120,14 +129,6 @@ bindkey "^[OA" up-line-or-beginning-search
 bindkey "^[OB" down-line-or-beginning-search
 bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
-
-#
-# Source machine specific setup if it exists
-MACHINERC=$HOME/.zshrc.$(hostname)
-if [ -f "$MACHINERC" ]
-then
-    source "$MACHINERC"
-fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
