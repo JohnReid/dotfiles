@@ -70,6 +70,15 @@ ZSH_TMUX_AUTOSTART="true"  # Automatically starts tmux (default: false)
 ZSH_TMUX_AUTOCONNECT="true"  # Automatically connect to a previous session if it exits (default: true)
 
 
+#
+# Source machine specific setup if it exists
+MACHINERC=$HOME/.zshrc.$(hostname)
+if [ -f "$MACHINERC" ]
+then
+    source "$MACHINERC"
+fi
+
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -105,29 +114,18 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Vim key bindings
 bindkey -v  # Vim bindings: https://www.reddit.com/r/vim/comments/7wj81e/you_can_get_vim_bindings_in_zsh_and_bash/
 bindkey "^R" history-incremental-search-backward  # https://unix.stackexchange.com/a/44118/319002
-
-#
 # Better Vi mode in zsh: http://stratus3d.com/blog/2017/10/26/better-vi-mode-in-zshell/
-#
 # Better searching in command mode
 bindkey -M vicmd '?' history-incremental-search-backward
 bindkey -M vicmd '/' history-incremental-search-forward
-#
 # Beginning search with arrow keys
 bindkey "^[OA" up-line-or-beginning-search
 bindkey "^[OB" down-line-or-beginning-search
 bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
-
-#
-# Source machine specific setup if it exists
-MACHINERC=$HOME/.zshrc.$(hostname)
-if [ -f "$MACHINERC" ]
-then
-    source "$MACHINERC"
-fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
