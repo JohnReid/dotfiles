@@ -67,7 +67,7 @@ ZSH_THEME="robbyrussell"
 # Tmux
 # 
 ZSH_TMUX_AUTOSTART="true"  # Automatically starts tmux (default: false)
-ZSH_TMUX_AUTOCONNECT="false"  # Automatically connect to a previous session if it exits (default: true)
+ZSH_TMUX_AUTOCONNECT="true"  # Automatically connect to a previous session if it exits (default: true)
 
 
 # Which plugins would you like to load?
