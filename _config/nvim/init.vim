@@ -125,7 +125,9 @@ nnoremap <leader>. :lcd %:p:h<CR>
 " ==========================================================
 " Messages, Info, Status, Appearance
 " ==========================================================
-set nonumber                " Don't display line numbers
+set relativenumber          " Display relative line numbers
+set number                  " Display line numbers
+set number relativenumber   " Display current and relative line numbers
 set numberwidth=1           " using only 1 column (and 1 space) while possible
 set background=dark         " We are using dark background in vim
 set title                   " show title in console title bar
