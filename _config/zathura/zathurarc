@@ -35,4 +35,4 @@ set selection-clipboard clipboard
 #
 # Change scroll speed
 set scroll-step 5
-set smooth-scroll "true"
+# set smooth-scroll "true"  # Apparently an "unknown option"
