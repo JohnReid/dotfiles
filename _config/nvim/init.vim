@@ -363,6 +363,12 @@ let g:acp_completeoptPreview=1
 " Python
 " ==========================================================
 "
+" Set up python interpreter for neovim
+let hostname = substitute(system('hostname'), '\n', '', '')
+if hostname == "BPEU318.local"
+  let g:python3_host_prog = '/Users/johnreid/anaconda3/envs/neovim/bin/python'
+endif
+"
 " Syntastic
 let g:syntastic_python_checkers = ["pycodestyle", "pyflakes"]
 "
