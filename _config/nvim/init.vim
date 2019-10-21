@@ -3,7 +3,6 @@
 " https://github.com/JohnReid/dotfiles/
 "
 
-
 " ==========================================================
 " Plugins
 " ==========================================================
@@ -108,8 +107,11 @@ set wildmode=full             " <Tab> cycles between all matching choices.
 "
 " Shortcuts
 set nocompatible              " Don't be compatible with vi
-let mapleader=","             " change the leader to be a comma vs slash
-let maplocalleader="\\"       " make the local leader a backslash
+let mapleader=" "             " change the leader to be a space
+let maplocalleader=","        " make the local leader a comma
+"
+" Set encoding as recommended by: https://danielmiessler.com/study/vim/
+set encoding=utf-8
 "
 " Use GB English for spell checking when it is turned on
 set spelllang=en_gb
@@ -125,7 +127,9 @@ nnoremap <leader>. :lcd %:p:h<CR>
 " ==========================================================
 " Messages, Info, Status, Appearance
 " ==========================================================
-set nonumber                " Don't display line numbers
+set relativenumber          " Display relative line numbers
+set number                  " Display line numbers
+set number relativenumber   " Display current and relative line numbers
 set numberwidth=1           " using only 1 column (and 1 space) while possible
 set background=dark         " We are using dark background in vim
 set title                   " show title in console title bar
@@ -159,6 +163,8 @@ colorscheme gruvbox
 "<CR><C-w>l<C-f>:set scrollbind<CR>
 " Toggle the tasklist
 map <leader>td <Plug>TaskList
+" Map jk to exit insert mode. From https://danielmiessler.com/study/vim/
+inoremap jk <ESC>
 " open/close the quickfix window
 nmap <leader>c :copen<CR>
 nmap <leader>cc :cclose<CR>
@@ -360,6 +366,12 @@ let g:acp_completeoptPreview=1
 " ==========================================================
 " Python
 " ==========================================================
+"
+" Set up python interpreter for neovim
+let hostname = substitute(system('hostname'), '\n', '', '')
+if hostname == "BPEU318.local"
+  let g:python3_host_prog = '/Users/johnreid/anaconda3/envs/neovim/bin/python'
+endif
 "
 " Syntastic
 let g:syntastic_python_checkers = ["pycodestyle", "pyflakes"]

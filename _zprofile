@@ -1,3 +1,6 @@
+path+=($HOME/bin $path)
+export PATH
+
 #
 # Source machine specific setup if it exists
 MACHINEPROFILE=$HOME/.zprofile.$(hostname)
