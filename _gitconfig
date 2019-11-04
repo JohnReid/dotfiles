@@ -1,46 +1,49 @@
 [user]
-    name = JohnReid
-    email = johnbaronreid@netscape.net
+  name = JohnReid
+  email = johnbaronreid@netscape.net
 
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+  ui = auto
 
 [push]
-    default = matching
+  default = matching
 
 [core]
-    editor = nvim
-    pager = less -R
-    excludesfile = ~/.gitignore_global
-    autocrlf = input
+  editor = nvim
+  pager = less -R
+  excludesfile = ~/.gitignore_global
+  autocrlf = input
 
 [alias]
-    diverges = !bash -c 'diff -u <(git rev-list --first-parent "${1}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
-    st = status
-    ci = commit
-    br = branch
-    co = checkout
-    df = diff
-    lg = log -p
-    up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
-    lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-    ls = ls-files
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  diverges = !bash -c 'diff -u <(git rev-list --first-parent "${1}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
+  up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  ls = ls-files
+  # Files which have changed since REVIEW_BASE
+  # REVIEW_BASE defaults to 'master' in my zshrc
+  stat = !git diff --stat $(git merge-base HEAD "${REVIEW_BASE}")
 
 [credential]
-    helper = cache --timeout=360000
+  helper = cache --timeout=360000
 
 [web]
-    browser = firefox
+  browser = firefox
 
 [github]
-    user = JohnReid
+  user = JohnReid
 
 [filter "lfs"]
-    clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-    required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
