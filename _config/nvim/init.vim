@@ -148,10 +148,12 @@ set listchars=tab:>-,trail:-,precedes:<,extends:>
 set list
 " Highlight column
 set colorcolumn=119
-" Choose a color scheme
+" Try to use 24 bit colors
 set termguicolors
-" colorscheme solarized
-colorscheme gruvbox
+" Choose a color scheme
+colorscheme solarized
+" colorscheme gruvbox
+" colorscheme night-owl
 
 
 " ==========================================================
@@ -531,9 +533,15 @@ let rout_follow_colorscheme = 1  " Highlight R output with the current colorsche
 " LaTeX
 " ==========================================================
 "
-" LaTeX
 autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 wrap
 autocmd FileType tex setlocal spell
+autocmd FileType tex colorscheme night-owl
+" Colour TeX templates like TeX
+au BufReadPost *.tex.template setlocal filetype=tex
+" Turn off error highlighting in templates
+au BufReadPost *.tex.template highlight! link Error Normal
+" Add a custom surround
+au BufReadPost *.tex.template let b:surround_45 = "\\TEXT{ \"\r\" }"
 " Can set the following to ignore common warnings
 "let g:vimtex_quickfix_ignored_warnings = [
 "            \ 'Underfull',
@@ -592,6 +600,7 @@ au FileType xml setlocal foldmethod=syntax
 " ==========================================================
 " Pandoc
 " ==========================================================
+au FileType pandoc colorscheme solarized
 " let g:pandoc#modules#disabled = ["folding"]
 "set foldcolumn=0
 let g:vim_markdown_folding_level = 1
