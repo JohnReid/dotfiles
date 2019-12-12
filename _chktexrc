@@ -1,1 +1,1 @@
-Cmdline=-v
+CmdLine { -v0 }
