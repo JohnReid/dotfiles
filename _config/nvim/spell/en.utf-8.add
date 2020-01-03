@@ -1,6 +1,9 @@
 3EG
 A4
 AAAAAA
+AAAI
+AAMAS
+AAMAS'19
 AAT
 ABB
 ABBYY
@@ -56,6 +59,8 @@ Apriori
 Arabidopsis
 Arce
 Arnosti
+AskHR
+Async
 Atf
 Audic
 Autoencoder
@@ -63,6 +68,7 @@ Autoregression
 B
 B2B
 BBLS
+BDR
 BEA's
 BFGS
 BG
@@ -73,6 +79,8 @@ BLEU
 BLS
 BMC
 BMI
+BPA
+BPC
 BSU
 BUPA
 Badis
@@ -123,11 +131,15 @@ CAGI5
 CB2
 CBP
 CCGAAT
+CDF
+CDFs
 CDIP
 CFTR
 CHICAS
 CHUFT
 CI
+CIFAR10
+CIFAR100
 CLR
 CMD
 CNNs
@@ -151,10 +163,12 @@ CatBoost
 Cebpa
 Cebpg
 CellNetAnalyzer
+Celonis
 Center
 ChIP
 ChIP'ed
 ChIPMunk
+CharGrid
 Chenling
 Cholesky
 Circularized
@@ -162,6 +176,7 @@ Cister
 Claritas
 Claverie
 Clusternomics
+CoderByte
 Collignon
 Collignon's
 Colo829
@@ -180,6 +195,7 @@ Cyclebase
 Cédric
 D
 DNA's
+DNNs
 DNase
 DPM
 DPM's
@@ -187,6 +203,7 @@ DPMMS
 DPMs
 DREME
 DREME's
+DST
 DamID
 DanQ
 Das
@@ -204,6 +221,7 @@ DeepSEA
 DeepSEA's
 DeepSea
 Deisenroth
+Dempster
 Derrington
 Detectron
 Deutsche
@@ -222,6 +240,7 @@ DynLearn
 E
 EBI
 ECE
+EDL
 ELBO
 EMBL
 EMSA
@@ -236,6 +255,7 @@ Eisen
 Eisen's
 Ensembl
 Epigenome
+Erhan
 Esrrb
 Ets
 Evelina
@@ -252,6 +272,7 @@ FP
 FPR
 FPRs
 FPs
+FashionMNIST
 Felsenfeld
 Felsenstein
 Felsner
@@ -273,9 +294,11 @@ Fumitaka
 GABP
 GATA1
 GBM
+GBS
 GC
 GCAT
 GCC
+GDPR
 GDashboard
 GFS
 GGGG
@@ -300,6 +323,8 @@ GUIs
 GWAS
 Gabasova
 Gabpa
+Ganesh
+Ganesh's
 Gaussians
 Gb
 Georgi
@@ -312,6 +337,7 @@ GitHub
 GitLab
 Gliobla
 GloVe
+Gneiting
 Goldfarb
 Goodhill
 Gu
@@ -321,6 +347,7 @@ Gurdon
 Gyre
 Gzf
 Gönen
+H
 HAC
 HAIS
 HD
@@ -333,9 +360,11 @@ HK
 HKY
 HMC
 HPOLib
+HR
 HYPOCOTYL
 HaCaT
 Hacky
+Haiby
 Halil
 Halpern
 Hannenhalli
@@ -346,14 +375,17 @@ Hippel
 Hirji
 Hivep
 Hnf
+Holborn
 Honkela
 Horowicz
+Houghton
 Hoxa
 HudsonAlpha
 Hypatos
 IC
 ICA
 ICDAR
+IDs
 IIIb
 IIIc
 IIId
@@ -371,6 +403,7 @@ Ingham
 Inoue
 Instabase
 Institut
+Integra
 Irf
 Ish
 ItalicFont
@@ -378,6 +411,7 @@ JASPAR
 JASPAR's
 JC
 JMS
+JSON
 Jaynes
 Jeffreys
 JohnReid
@@ -387,6 +421,7 @@ K562
 KEGG
 KPCA
 Kalay
+Kamesh
 Karlebach
 Kauffman
 Kayseri
@@ -418,12 +453,14 @@ LHY
 LIFFE
 LLR
 LMKK
+LOA
 LPS
 LSTM
 LaTeXTemplates
 LabGenius
 Laplacian
 Lato
+LeNet5
 Leibler
 Lhx
 Li's
@@ -455,6 +492,7 @@ MKKC
 MKL
 MKs
 MLE
+MNIST
 MNN
 MOFA
 MONKEY's
@@ -467,12 +505,14 @@ MaaloeAuxiliaryDeepGenerative2016
 Magda
 Mahalanobis
 Makevars
+Marengo
 Margolin
 MatInd
 MatInspector
 MatchLowercase
 Matern
 McDavid
+McEwan
 MetroPatchMatch
 Microfluidics
 Middleware
@@ -494,6 +534,7 @@ Multilabel
 Myc
 N16
 N4
+NBN
 NFY
 NHEK
 NLL
@@ -514,6 +555,7 @@ Neohellenic
 NestedMICA
 NestedMICA's
 NetBuilder
+Neta
 Newcombe
 Ney
 Nfya
@@ -527,9 +569,14 @@ OCRopy
 OCT4
 ODEs
 ONKC
+Ok
+Ok's
+Oliehoek
 Omics
+OoD
 Othmer
 Ott
+PAH
 PBM
 PBMs
 PBN
@@ -538,6 +585,7 @@ PCI
 PCR
 PDF
 PDFs
+PDT
 PFM
 PGC
 PGCLC
@@ -545,6 +593,7 @@ PGCLCs
 PGM
 PIF3
 PILCO
+PLEVIN
 PLoS
 PMA
 PMM
@@ -556,6 +605,7 @@ PSSMs
 PWM
 PWM's
 PWMs
+PacMan
 Pagella
 PanIslets
 ParaMEME
@@ -588,9 +638,11 @@ PubLayNet
 PubMed
 PyPI
 PyTorch
+QA
 QFAST
 Quandt
 R
+RBC
 RBF
 REB
 REMC
@@ -603,8 +655,11 @@ RNNs
 RO
 ROC
 ROCs
+ROI
+RPA
 RVL
 RXRA
+Raftery
 Rajewsky
 Raleway
 Rashid
@@ -612,14 +667,17 @@ Rasmussen
 ReLU
 ReLUs
 ReMoDiscovery
+Redbond
 RefSeq
 RegIta
 Reidy
 Rela
 RepeatMasker
 RequirePackage
+RetinaNet
 Riemannian
 Roadmap
+Robiquity
 Rora
 Rosca
 Rossum
@@ -653,6 +711,7 @@ SVD
 SVM
 Saccharomyces
 Sadler
+Sajot
 Saliency
 Sandelin
 Sarai
@@ -670,6 +729,7 @@ Shalek
 Shamir
 Shamir's
 Shanno
+Shapley
 Shendure
 Shmulevich
 SingleCellExperiment
@@ -714,6 +774,7 @@ TATAWAW
 TCF
 TCP
 TCVAE
+TD
 TERT
 TF
 TF's
@@ -754,8 +815,11 @@ Tcfcp
 TeX
 Tec
 Teh
+Telstra
 TensorFlow
 Tesseract
+TestDome
+Tetris
 Textract
 Tgif
 Th2
@@ -763,6 +827,7 @@ Theano
 Thijs
 Thoughtonomy
 TikZ
+TimelinePi
 Tischler
 Tompa
 Touzet
@@ -780,11 +845,13 @@ UFE
 UFEs
 UI
 UKenglish
+UiPath
 UniPROBE
 UniProbe
 Universit
 Unnormalised
 UsoskinUnbiasedclassificationsensory2015
+V2
 VAE
 VAEs
 VMS
@@ -793,12 +860,14 @@ Vdr
 Veliz
 Vigorito
 W1T
+W8BEN
 WS
 WaVE
 WarningFilter
 Wasserman
 WebLogic
 Weirauch
+Weiwei
 Wellcome
 Wernisch
 Wikipedia
@@ -806,6 +875,7 @@ Wilcoxon
 Windram
 Winn
 Winn's
+Wireframer
 Wittkopp
 Wnt
 Wolfson
@@ -832,6 +902,7 @@ ZeiselCelltypesmouse2015
 Zeng
 Zeste
 Zfx
+Zhang
 Zhao
 Zhengmix4eq
 Zhengmix8eq
@@ -850,6 +921,7 @@ allowframebreaks
 amino
 amssymb
 amsthm
+analytics
 ananassae
 andrewgelman
 anr
@@ -859,7 +931,9 @@ arev
 arg
 argmax
 argmin
+arxiv
 astrocytes
+auai
 autoencode
 autoencoder
 autoencoders
@@ -908,6 +982,7 @@ cas
 castor
 catabolite
 catenin
+ccccc
 ccfonts
 ccp
 ccrcp
@@ -918,6 +993,7 @@ centred
 cerevisiae
 cfos
 cfoshela
+checkboxes
 chktex
 chr
 cinerea
@@ -977,6 +1053,7 @@ devel
 diag
 diff
 differentially
+digamma
 dimensionality
 dinucleotide
 directionality
@@ -1124,6 +1201,7 @@ ionocytes
 irlba
 iteratively
 ive
+javascript
 jiamings's
 johnbaronreid
 jpg
@@ -1162,6 +1240,7 @@ lipopolysaccharide
 llll
 lloyd
 llr
+logits
 lrccc
 lymphopoiesis
 lysine
@@ -1206,6 +1285,7 @@ minibatch
 miniframes
 minipage
 mis
+misclassifications
 misregulation
 mit
 mitochondrion
@@ -1217,6 +1297,7 @@ mojavensis
 monocytic
 monomethylation
 multi
+multiagent
 multiclass
 multimodal
 multimodality
@@ -1249,6 +1330,7 @@ nolinebreak
 noncoding
 nonlinear
 nonparametric
+notMNIST
 novo
 nrsf
 nuclease
@@ -1293,6 +1375,7 @@ patat
 pathmorphing
 patser
 pcs
+pdf
 pdfauthor
 pdfcreator
 pdfkeywords
@@ -1313,11 +1396,13 @@ phylogenetic
 phylogenetically
 pid
 pifont
+pignistic
 pil
 pkg
 plos
 pluripotency
 pluripotent
+pmf
 polyglossia
 polymerase
 polymorphisms
@@ -1429,6 +1514,7 @@ simulans
 snoek
 snowyowl
 softmax
+softplus
 softwares
 spatio
 specificities
@@ -1487,11 +1573,14 @@ transposable
 transversion
 travis
 truthed
+tudelft
 u
+uai2018
 ubuntu
 uk
 uller
 unannotated
+unary
 uncharacterised
 underdetermined
 underflows

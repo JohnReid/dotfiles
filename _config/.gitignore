@@ -1,15 +1,13 @@
-Thunar/
-smplayer/
-xfce4/
-copyq/
 Acorah\ Software\ Products/
 DjVuLibre/
+GIMP/
 MusicBrainz/
 QtProject.conf
 RStudio
 Skype/
 Slack/
 Synology
+Thunar/
 Trolltech.conf
 Upmpd.org/
 VirtualBox/
@@ -20,6 +18,7 @@ calendar-indicator/
 chromium/
 compiz-1/
 compiz/
+copyq/
 dask/
 dconf/
 easytag/
@@ -56,6 +55,7 @@ pulse/
 rubyripper/
 signond/
 skypeforlinux/
+smplayer/
 software-center/
 tomboy/
 totem/
@@ -68,5 +68,6 @@ user-dirs.dirs
 user-dirs.locale
 vlc/
 xbuild/
+xfce4/
 yelp/
 zoomus.conf

@@ -151,10 +151,12 @@ set listchars=tab:>-,trail:-,precedes:<,extends:>
 set list
 " Highlight column
 set colorcolumn=119
-" Choose a color scheme
+" Try to use 24 bit colors
 set termguicolors
-" colorscheme solarized
-colorscheme gruvbox
+" Choose a color scheme
+colorscheme solarized
+" colorscheme gruvbox
+" colorscheme night-owl
 
 
 " ==========================================================
@@ -369,10 +371,10 @@ let g:acp_completeoptPreview=1
 " ==========================================================
 "
 " Set up python interpreter for neovim
-let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname == "BPEU318.local"
-  let g:python3_host_prog = '/Users/johnreid/anaconda3/envs/neovim/bin/python'
-endif
+" let hostname = substitute(system('hostname'), '\n', '', '')
+" if hostname == "BPEU318.local"
+"   let g:python3_host_prog = '/Users/johnreid/anaconda3/envs/neovim/bin/python'
+" endif
 "
 " Syntastic
 let g:syntastic_python_checkers = ["pycodestyle", "pyflakes"]
@@ -532,9 +534,15 @@ let rout_follow_colorscheme = 1  " Highlight R output with the current colorsche
 " LaTeX
 " ==========================================================
 "
-" LaTeX
 autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 wrap
 autocmd FileType tex setlocal spell
+autocmd FileType tex colorscheme night-owl
+" Colour TeX templates like TeX
+au BufReadPost *.tex.template setlocal filetype=tex
+" Turn off error highlighting in templates
+au BufReadPost *.tex.template highlight! link Error Normal
+" Add a custom surround
+au BufReadPost *.tex.template let b:surround_45 = "\\TEXT{ \"\r\" }"
 " Can set the following to ignore common warnings
 "let g:vimtex_quickfix_ignored_warnings = [
 "            \ 'Underfull',
@@ -543,6 +551,10 @@ autocmd FileType tex setlocal spell
 "            \ ]
 " but I prefer to only open the quickfix window on errors
 let g:vimtex_quickfix_open_on_warning = 0
+"
+" More informative chktex messages
+let g:syntastic_tex_chktex_args = '-v0'
+let g:syntastic_tex_chktex_showmsgs = 0
 "
 " from: https://github.com/lervag/vimtex/issues/835 to enable Synctex
 let g:vimtex_compiler_progname = "nvr"
@@ -593,6 +605,7 @@ au FileType xml setlocal foldmethod=syntax
 " ==========================================================
 " Pandoc
 " ==========================================================
+au FileType pandoc colorscheme solarized
 " let g:pandoc#modules#disabled = ["folding"]
 "set foldcolumn=0
 let g:vim_markdown_folding_level = 1
