@@ -10,18 +10,19 @@ call plug#begin('~/.config/nvim/plugged')
 "
 " Filetypes
 "
+Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex and vim-textobj-python
 " Plug 'https://github.com/bfredl/nvim-ipy.git'
 " Plug 'https://github.com/JohnReid/nvim-ipy.git'
 " Plug '/home/john/src/nvim-ipy'
 Plug 'git@github.com:bfredl/nvim-ipy.git'
-" Plug 'git@github.com:nvie/vim-flake8.git'
 Plug 'git@github.com:tell-k/vim-autopep8.git'
+Plug 'bps/vim-textobj-python'
+" Plug 'git@github.com:nvie/vim-flake8.git'
 " Plug 'https://github.com/klen/python-mode.git'
 " Plug 'https://github.com/ivanov/vim-ipython.git'
 " Plug 'git@github.com:vim-scripts/Vim-R-plugin.git'
 Plug 'https://github.com/jalvesaq/Nvim-R.git'
 Plug 'https://github.com/lervag/vimtex.git'
-Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex
 " Plug 'JohnReid/vim-textobj-latex'  " LaTeX text objects
 Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
 Plug 'https://github.com/vim-pandoc/vim-pandoc.git'
@@ -43,6 +44,8 @@ Plug 'tpope/vim-scriptease'
 "
 " Miscellaneous
 "
+Plug 'will133/vim-dirdiff'  " diff on directories
+Plug 'michaeljsmith/vim-indent-object'  " for indentation text objects
 Plug 'mattn/webapi-vim'  " For gists
 Plug 'mattn/gist-vim'  " For gists
 Plug 'vim-syntastic/syntastic'  " For lintr R syntax integration
@@ -148,10 +151,12 @@ set listchars=tab:>-,trail:-,precedes:<,extends:>
 set list
 " Highlight column
 set colorcolumn=119
-" Choose a color scheme
+" Try to use 24 bit colors
 set termguicolors
-" colorscheme solarized
-colorscheme gruvbox
+" Choose a color scheme
+colorscheme solarized
+" colorscheme gruvbox
+" colorscheme night-owl
 
 
 " ==========================================================
@@ -254,8 +259,6 @@ set ffs=unix,dos,mac        " Try recognizing dos, unix, and mac line endings.
 " ==========================================================
 " Run command-t file search
 map <leader>f :CommandT<CR>
-" Ack searching
-nmap <leader>a <Esc>:Ack!
 set grepprg=ack             " replace the default grep program with ack
 set ignorecase              " Default to using case insensitive searches,
 set smartcase               " unless uppercase letters are used in the regex.
@@ -531,9 +534,15 @@ let rout_follow_colorscheme = 1  " Highlight R output with the current colorsche
 " LaTeX
 " ==========================================================
 "
-" LaTeX
 autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 wrap
 autocmd FileType tex setlocal spell
+autocmd FileType tex colorscheme night-owl
+" Colour TeX templates like TeX
+au BufReadPost *.tex.template setlocal filetype=tex
+" Turn off error highlighting in templates
+au BufReadPost *.tex.template highlight! link Error Normal
+" Add a custom surround
+au BufReadPost *.tex.template let b:surround_45 = "\\TEXT{ \"\r\" }"
 " Can set the following to ignore common warnings
 "let g:vimtex_quickfix_ignored_warnings = [
 "            \ 'Underfull',
@@ -596,6 +605,7 @@ au FileType xml setlocal foldmethod=syntax
 " ==========================================================
 " Pandoc
 " ==========================================================
+au FileType pandoc colorscheme solarized
 " let g:pandoc#modules#disabled = ["folding"]
 "set foldcolumn=0
 let g:vim_markdown_folding_level = 1

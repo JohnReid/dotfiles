@@ -29,9 +29,20 @@
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   ls = ls-files
+
+  # list files which have changed since REVIEW_BASE
+  # (REVIEW_BASE defaults to 'master' in my zshrc)
+  files = !git diff --name-only $(git merge-base HEAD \"$REVIEW_BASE\")
+
   # Files which have changed since REVIEW_BASE
-  # REVIEW_BASE defaults to 'master' in my zshrc
+  # (REVIEW_BASE defaults to 'master' in my zshrc)
   stat = !git diff --stat $(git merge-base HEAD "${REVIEW_BASE}")
+
+  # Open all files changed since REVIEW_BASE in Vim tabs
+  # Then, run fugitive's :Gdiff in each tab, and finally
+  # tell vim-gitgutter to show +/- for changes since REVIEW_BASE
+  review = !nvim -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\"
+
 
 [credential]
   helper = cache --timeout=360000
@@ -47,3 +58,7 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+[mergetool "fugitive"]
+	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+[merge]
+	tool = fugitive
