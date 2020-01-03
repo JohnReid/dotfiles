@@ -10,18 +10,19 @@ call plug#begin('~/.config/nvim/plugged')
 "
 " Filetypes
 "
+Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex and vim-textobj-python
 " Plug 'https://github.com/bfredl/nvim-ipy.git'
 " Plug 'https://github.com/JohnReid/nvim-ipy.git'
 " Plug '/home/john/src/nvim-ipy'
 Plug 'git@github.com:bfredl/nvim-ipy.git'
-" Plug 'git@github.com:nvie/vim-flake8.git'
 Plug 'git@github.com:tell-k/vim-autopep8.git'
+Plug 'bps/vim-textobj-python'
+" Plug 'git@github.com:nvie/vim-flake8.git'
 " Plug 'https://github.com/klen/python-mode.git'
 " Plug 'https://github.com/ivanov/vim-ipython.git'
 " Plug 'git@github.com:vim-scripts/Vim-R-plugin.git'
 Plug 'https://github.com/jalvesaq/Nvim-R.git'
 Plug 'https://github.com/lervag/vimtex.git'
-Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex
 " Plug 'JohnReid/vim-textobj-latex'  " LaTeX text objects
 Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
 Plug 'https://github.com/vim-pandoc/vim-pandoc.git'
@@ -43,6 +44,8 @@ Plug 'tpope/vim-scriptease'
 "
 " Miscellaneous
 "
+Plug 'will133/vim-dirdiff'  " diff on directories
+Plug 'michaeljsmith/vim-indent-object'  " for indentation text objects
 Plug 'mattn/webapi-vim'  " For gists
 Plug 'mattn/gist-vim'  " For gists
 Plug 'vim-syntastic/syntastic'  " For lintr R syntax integration
@@ -254,8 +257,6 @@ set ffs=unix,dos,mac        " Try recognizing dos, unix, and mac line endings.
 " ==========================================================
 " Run command-t file search
 map <leader>f :CommandT<CR>
-" Ack searching
-nmap <leader>a <Esc>:Ack!
 set grepprg=ack             " replace the default grep program with ack
 set ignorecase              " Default to using case insensitive searches,
 set smartcase               " unless uppercase letters are used in the regex.
