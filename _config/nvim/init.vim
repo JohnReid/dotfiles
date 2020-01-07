@@ -377,7 +377,7 @@ let g:acp_completeoptPreview=1
 " endif
 "
 " Syntastic
-let g:syntastic_python_checkers = ["pycodestyle", "pyflakes"]
+let g:syntastic_python_checkers = ["flake8"]
 "
 " nvim-ipy
 " Ask nvim-ipy not to make its own mappings
