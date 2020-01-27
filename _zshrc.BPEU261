@@ -1,6 +1,7 @@
 export CUDA_HOME=/usr/local/cuda-10.0
 export PATH=$CUDA_HOME/bin:$CUDA_HOME/NsightCompute-1.0${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=$CUDA_HOME/extras/CUPTI/lib64${PATH:+:${LD_LIBRARY_PATH}}
+export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
 # export PATH=/usr/local/cuda-10.1/bin:/usr/local/cuda-10.1/NsightCompute-2019.1${PATH:+:${PATH}}
 #
 ZSH_THEME=theunraveler

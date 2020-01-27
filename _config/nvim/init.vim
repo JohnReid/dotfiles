@@ -3,7 +3,6 @@
 " https://github.com/JohnReid/dotfiles/
 "
 
-
 " ==========================================================
 " Plugins
 " ==========================================================
@@ -11,18 +10,19 @@ call plug#begin('~/.config/nvim/plugged')
 "
 " Filetypes
 "
+Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex and vim-textobj-python
 " Plug 'https://github.com/bfredl/nvim-ipy.git'
 " Plug 'https://github.com/JohnReid/nvim-ipy.git'
 " Plug '/home/john/src/nvim-ipy'
 Plug 'git@github.com:bfredl/nvim-ipy.git'
-" Plug 'git@github.com:nvie/vim-flake8.git'
 Plug 'git@github.com:tell-k/vim-autopep8.git'
+Plug 'bps/vim-textobj-python'
+" Plug 'git@github.com:nvie/vim-flake8.git'
 " Plug 'https://github.com/klen/python-mode.git'
 " Plug 'https://github.com/ivanov/vim-ipython.git'
 " Plug 'git@github.com:vim-scripts/Vim-R-plugin.git'
 Plug 'https://github.com/jalvesaq/Nvim-R.git'
 Plug 'https://github.com/lervag/vimtex.git'
-Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex
 " Plug 'JohnReid/vim-textobj-latex'  " LaTeX text objects
 Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
 Plug 'https://github.com/vim-pandoc/vim-pandoc.git'
@@ -44,6 +44,8 @@ Plug 'tpope/vim-scriptease'
 "
 " Miscellaneous
 "
+Plug 'will133/vim-dirdiff'  " diff on directories
+Plug 'michaeljsmith/vim-indent-object'  " for indentation text objects
 Plug 'mattn/webapi-vim'  " For gists
 Plug 'mattn/gist-vim'  " For gists
 Plug 'vim-syntastic/syntastic'  " For lintr R syntax integration
@@ -108,8 +110,11 @@ set wildmode=full             " <Tab> cycles between all matching choices.
 "
 " Shortcuts
 set nocompatible              " Don't be compatible with vi
-let mapleader=","             " change the leader to be a comma vs slash
-let maplocalleader="\\"       " make the local leader a backslash
+let mapleader=" "             " change the leader to be a space
+let maplocalleader=","        " make the local leader a comma
+"
+" Set encoding as recommended by: https://danielmiessler.com/study/vim/
+set encoding=utf-8
 "
 " Use GB English for spell checking when it is turned on
 set spelllang=en_gb
@@ -125,7 +130,9 @@ nnoremap <leader>. :lcd %:p:h<CR>
 " ==========================================================
 " Messages, Info, Status, Appearance
 " ==========================================================
-set nonumber                " Don't display line numbers
+set relativenumber          " Display relative line numbers
+set number                  " Display line numbers
+set number relativenumber   " Display current and relative line numbers
 set numberwidth=1           " using only 1 column (and 1 space) while possible
 set background=dark         " We are using dark background in vim
 set title                   " show title in console title bar
@@ -144,10 +151,12 @@ set listchars=tab:>-,trail:-,precedes:<,extends:>
 set list
 " Highlight column
 set colorcolumn=119
-" Choose a color scheme
+" Try to use 24 bit colors
 set termguicolors
-" colorscheme solarized
-colorscheme gruvbox
+" Choose a color scheme
+colorscheme solarized
+" colorscheme gruvbox
+" colorscheme night-owl
 
 
 " ==========================================================
@@ -159,6 +168,8 @@ colorscheme gruvbox
 "<CR><C-w>l<C-f>:set scrollbind<CR>
 " Toggle the tasklist
 map <leader>td <Plug>TaskList
+" Map jk to exit insert mode. From https://danielmiessler.com/study/vim/
+inoremap jk <ESC>
 " open/close the quickfix window
 nmap <leader>c :copen<CR>
 nmap <leader>cc :cclose<CR>
@@ -248,8 +259,6 @@ set ffs=unix,dos,mac        " Try recognizing dos, unix, and mac line endings.
 " ==========================================================
 " Run command-t file search
 map <leader>f :CommandT<CR>
-" Ack searching
-nmap <leader>a <Esc>:Ack!
 set grepprg=ack             " replace the default grep program with ack
 set ignorecase              " Default to using case insensitive searches,
 set smartcase               " unless uppercase letters are used in the regex.
@@ -361,8 +370,14 @@ let g:acp_completeoptPreview=1
 " Python
 " ==========================================================
 "
+" Set up python interpreter for neovim
+" let hostname = substitute(system('hostname'), '\n', '', '')
+" if hostname == "BPEU318.local"
+"   let g:python3_host_prog = '/Users/johnreid/anaconda3/envs/neovim/bin/python'
+" endif
+"
 " Syntastic
-let g:syntastic_python_checkers = ["pycodestyle", "pyflakes"]
+let g:syntastic_python_checkers = ["flake8"]
 "
 " nvim-ipy
 " Ask nvim-ipy not to make its own mappings
@@ -519,9 +534,15 @@ let rout_follow_colorscheme = 1  " Highlight R output with the current colorsche
 " LaTeX
 " ==========================================================
 "
-" LaTeX
 autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 wrap
 autocmd FileType tex setlocal spell
+autocmd FileType tex colorscheme night-owl
+" Colour TeX templates like TeX
+au BufReadPost *.tex.template setlocal filetype=tex
+" Turn off error highlighting in templates
+au BufReadPost *.tex.template highlight! link Error Normal
+" Add a custom surround
+au BufReadPost *.tex.template let b:surround_45 = "\\TEXT{ \"\r\" }"
 " Can set the following to ignore common warnings
 "let g:vimtex_quickfix_ignored_warnings = [
 "            \ 'Underfull',
@@ -530,6 +551,10 @@ autocmd FileType tex setlocal spell
 "            \ ]
 " but I prefer to only open the quickfix window on errors
 let g:vimtex_quickfix_open_on_warning = 0
+"
+" More informative chktex messages
+let g:syntastic_tex_chktex_args = '-v0'
+let g:syntastic_tex_chktex_showmsgs = 0
 "
 " from: https://github.com/lervag/vimtex/issues/835 to enable Synctex
 let g:vimtex_compiler_progname = "nvr"
@@ -580,6 +605,7 @@ au FileType xml setlocal foldmethod=syntax
 " ==========================================================
 " Pandoc
 " ==========================================================
+au FileType pandoc colorscheme solarized
 " let g:pandoc#modules#disabled = ["folding"]
 "set foldcolumn=0
 let g:vim_markdown_folding_level = 1
