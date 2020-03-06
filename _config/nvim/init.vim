@@ -396,7 +396,7 @@ let g:ipy_celldef = '^$'
 "
 " Run pep8
 let g:pep8_map='<leader>8'
-let g:autopep8_indent_size=2
+let g:autopep8_indent_size=4
 "
 " pymode
 " Detect virtualenv automatically
@@ -433,10 +433,12 @@ let g:pyflakes_use_quickfix = 1
 "
 " Indent Python in the Google way.
 " From: https://github.com/google/styleguide/blob/gh-pages/google_python_style.vim
-au Filetype python setlocal indentexpr=GetGooglePythonIndent(v:lnum)
-au Filetype python let s:maxoff = 50 " maximum number of lines to look backwards.
-au Filetype python let pyindent_nested_paren="&sw*2"
-au Filetype python let pyindent_open_paren="&sw*2"
+autocmd Filetype python setlocal indentexpr=GetGooglePythonIndent(v:lnum)
+autocmd Filetype python let s:maxoff = 50  " maximum number of lines to look backwards.
+autocmd Filetype python let pyindent_nested_paren="&sw"
+autocmd Filetype python let pyindent_open_paren="&sw"
+autocmd Filetype python let pyindent_continue="&sw"
+autocmd Filetype python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 "
 function GetGooglePythonIndent(lnum)
   " Indent inside parens.
