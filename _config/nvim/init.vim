@@ -483,15 +483,6 @@ endif
 if filereadable($VIRTUAL_ENV . '/.vimrc')
     source $VIRTUAL_ENV/.vimrc
 endif
-"
-" Figure out the system Python for Neovim.
-" See https://github.com/neovim/neovim/issues/1887
-"
-if exists("$VIRTUAL_ENV")
-    let g:python_host_prog=substitute(system("which -a python3 | head -n2 | tail -n1"), '\n', '', 'g')
-else
-    let g:python_host_prog=substitute(system("which python3"), '\n', '', 'g')
-endif
 
 
 " ==========================================================
@@ -538,7 +529,7 @@ let rout_follow_colorscheme = 1  " Highlight R output with the current colorsche
 "
 autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 wrap
 autocmd FileType tex setlocal spell
-autocmd FileType tex colorscheme night-owl
+" autocmd FileType tex colorscheme night-owl
 " Colour TeX templates like TeX
 au BufReadPost *.tex.template setlocal filetype=tex
 " Turn off error highlighting in templates
