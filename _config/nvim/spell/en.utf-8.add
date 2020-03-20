@@ -289,6 +289,7 @@ Deisenroth
 Demeester
 Dempster
 Deng
+Deoplete
 Derrington
 Desai
 DetNAS
@@ -513,13 +514,16 @@ ICDAR
 ICLR
 IDEs
 IDs
+IHaskell
 IIIb
 IIIc
 IIId
 IIT
 IJCAI
+IJulia
 IL
 IP
+IPython
 IQR
 IUPAC
 Identifiability
@@ -560,6 +564,7 @@ JohnReid
 Joshi
 Jukes
 Junion
+Jupyter
 Jure
 K562
 KEGG
@@ -580,6 +585,7 @@ Kayseri
 Kel
 Kenlay
 Keras
+Kernelspec
 KharchenkoBayesianapproachsinglecell2014
 Kheradpour
 Kilbee
@@ -764,6 +770,7 @@ Nakajima
 Nanog
 Narlikar
 Neohellenic
+Neovim
 NestedMICA
 NestedMICA's
 NetBuilder
@@ -1290,6 +1297,7 @@ argmax
 argmin
 arxiv
 astrocytes
+async
 auai
 autoencode
 autoencoder
@@ -1483,6 +1491,7 @@ f
 f1000research
 fMRI
 faTwitter
+filetype
 firstplural
 fluidic
 flushright
@@ -1580,6 +1589,7 @@ intronic
 io
 ionocyte
 ionocytes
+ipy
 irlba
 iteratively
 ive
@@ -1642,6 +1652,7 @@ mathdesign
 mathop
 mathptmx
 mathrm
+matplotlib
 max
 maxhela
 maxima
@@ -1732,6 +1743,9 @@ nucleosome
 nucleosomes
 nucleotide
 nucleotides
+nvim
+nvim's
+nvimrc
 nw
 nyu
 oPOSSUM
@@ -1795,6 +1809,7 @@ pignistic
 pil
 pkg
 plos
+plugin
 pluripotency
 pluripotent
 pmf
@@ -1819,6 +1834,7 @@ process2demo
 process2text
 productisation
 professionalfonts
+programmatically
 prokaryotic
 proximal
 pseudocount
@@ -1832,6 +1848,8 @@ punkt
 purpuratus
 px
 pybool
+python2
+python3
 qPCR
 qRT
 quartile
@@ -1848,8 +1866,10 @@ rasmussen
 rc
 rcl
 rect
+refactored
 refactoring
 regex
+regexes
 regulon
 reimplemented
 rel
@@ -1866,6 +1886,7 @@ rlccccc
 rlcccl
 rll
 rlll
+rmd
 rnaseq
 rollout
 roughnesses
@@ -1912,6 +1933,7 @@ sevenup
 sfffamily
 shapelets
 shogi
+shortcut
 showframe
 sid
 silico
@@ -1978,6 +2000,7 @@ tocdepth
 topGO
 toprule
 topsep
+tracebacks
 transcriptional
 transcriptome
 transcriptomes
@@ -2025,6 +2048,8 @@ vel
 versa
 versioned
 vertebrata
+vimrc
+vimscript
 virilis
 visualization
 vitro
