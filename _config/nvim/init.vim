@@ -11,34 +11,34 @@ call plug#begin('~/.config/nvim/plugged')
 " Filetypes
 "
 Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex and vim-textobj-python
-" Plug 'https://github.com/bfredl/nvim-ipy.git'
-" Plug 'https://github.com/JohnReid/nvim-ipy.git'
-" Plug '/home/john/src/nvim-ipy'
-Plug 'git@github.com:bfredl/nvim-ipy.git'
-Plug 'git@github.com:tell-k/vim-autopep8.git'
+" Plug 'bfredl/nvim-ipy'
+" Plug 'JohnReid/nvim-ipy'
+" Plug 'bfredl/nvim-ipy'
+Plug 'JohnReid/nvim-ipy'
+Plug 'tell-k/vim-autopep8'
 Plug 'bps/vim-textobj-python'
-" Plug 'git@github.com:nvie/vim-flake8.git'
-" Plug 'https://github.com/klen/python-mode.git'
-" Plug 'https://github.com/ivanov/vim-ipython.git'
-" Plug 'git@github.com:vim-scripts/Vim-R-plugin.git'
-Plug 'https://github.com/jalvesaq/Nvim-R.git'
-Plug 'https://github.com/lervag/vimtex.git'
+" Plug 'nvie/vim-flake8'
+" Plug 'klen/python-mode'
+" Plug 'ivanov/vim-ipython'
+" Plug 'vim-scripts/Vim-R-plugin'
+Plug 'jalvesaq/Nvim-R'
+Plug 'lervag/vimtex'
 " Plug 'JohnReid/vim-textobj-latex'  " LaTeX text objects
 Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
-Plug 'https://github.com/vim-pandoc/vim-pandoc.git'
-Plug 'https://github.com/vim-pandoc/vim-pandoc-syntax.git'
-" Plug 'https://github.com/vim-pandoc/vim-rmarkdown.git'
-Plug 'https://github.com/godlygeek/tabular.git'
-Plug 'https://github.com/plasticboy/vim-markdown.git'
-Plug 'https://github.com/maverickg/stan.vim.git'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'vim-pandoc/vim-rmarkdown'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'maverickg/stan.vim'
 "
 " tpope
 "
-Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'git://github.com/tpope/vim-unimpaired.git'
-Plug 'git://github.com/tpope/vim-commentary.git'
-Plug 'git://github.com/tpope/vim-repeat.git'
-Plug 'https://github.com/tpope/vim-surround.git'
+Plug 'tpope/vim-fugitive'
+Plug 'git://github.com/tpope/vim-unimpaired'
+Plug 'git://github.com/tpope/vim-commentary'
+Plug 'git://github.com/tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-scriptease'
 "
@@ -50,18 +50,18 @@ Plug 'mattn/webapi-vim'  " For gists
 Plug 'mattn/gist-vim'  " For gists
 Plug 'vim-syntastic/syntastic'  " For lintr R syntax integration
 Plug 'timakro/vim-searchant'
-Plug 'https://github.com/wincent/Command-T.git'
-Plug 'https://github.com/sjl/gundo.vim.git'
-Plug 'https://github.com/vim-scripts/TaskList.vim.git'
-Plug 'https://github.com/tomtom/tlib_vim.git'
-Plug 'https://github.com/scrooloose/nerdtree'
-Plug 'https://github.com/ervandew/screen.git'
-Plug 'https://github.com/ervandew/supertab.git'
-" Plug 'git@github.com:vim-scripts/AutoComplPop.git'
-" Plug 'git@github.com:eparreno/vim-l9.git'
-Plug 'https://github.com/mhartington/oceanic-next.git'
-Plug 'https://github.com/chrisbra/csv.vim.git'
-" Plug 'https://github.com/Shougo/deoplete.nvim.git'
+Plug 'wincent/Command-T'
+Plug 'sjl/gundo.vim'
+Plug 'vim-scripts/TaskList.vim'
+Plug 'tomtom/tlib_vim'
+Plug 'scrooloose/nerdtree'
+Plug 'ervandew/screen'
+Plug 'ervandew/supertab'
+" Plug 'vim-scripts/AutoComplPop'
+" Plug 'eparreno/vim-l9'
+Plug 'mhartington/oceanic-next'
+Plug 'chrisbra/csv.vim'
+" Plug 'Shougo/deoplete.nvim'
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'  " Required by ncm2
 Plug 'junegunn/goyo.vim'  " Distraction-free writing
@@ -69,7 +69,7 @@ Plug 'junegunn/limelight.vim'  " Hyperfocus writing
 "
 " Color schemes
 "
-Plug 'https://github.com/frankier/neovim-colors-solarized-truecolor-only.git'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'morhetz/gruvbox'
 Plug 'haishanh/night-owl.vim'
 Plug 'ErichDonGubler/vim-sublime-monokai'
@@ -78,10 +78,10 @@ Plug 'Jimeno0/vim-chito'
 "
 " Following 4 for snipmate
 "
-Plug 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
-Plug 'https://github.com/tomtom/tlib_vim.git'
-Plug 'https://github.com/garbas/vim-snipmate.git'
-Plug 'https://github.com/honza/vim-snippets.git'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 "
 " Add plugins to &runtimepath
 call plug#end()
@@ -385,7 +385,8 @@ let g:nvim_ipy_perform_mappings = 0
 " Set up our own mappings
 au FileType python map  <buffer> <silent> <LocalLeader>l   <Plug>(IPy-Run)
 au FileType python map  <buffer> <silent> <LocalLeader>w   <Plug>(IPy-Word)
-au FileType python map  <buffer> <silent> <LocalLeader>p   <Plug>(IPy-RunCell)
+au FileType python map  <buffer> <silent> <LocalLeader>r   <Plug>(IPy-RunRegister)
+au FileType python map  <buffer> <silent> <LocalLeader>c   <Plug>(IPy-RunCell)
 au FileType python map  <buffer> <silent> <LocalLeader>a   <Plug>(IPy-RunAll)
 au FileType python imap <buffer> <silent> <LocalLeader>f   <Plug>(IPy-Complete)
 au FileType python map  <buffer> <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
@@ -393,6 +394,8 @@ au FileType python map  <buffer> <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
 au FileType python map  <buffer> <silent> <LocalLeader>k   <Plug>(IPy-Terminate)
 " Empty lines define start and end of cells
 let g:ipy_celldef = '^$'
+" set syntax=python in IPython buffer automatically: https://github.com/bfredl/nvim-ipy/issues/43
+let g:ipy_set_ft = 1
 "
 " Run pep8
 let g:pep8_map='<leader>8'
