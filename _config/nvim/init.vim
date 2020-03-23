@@ -11,11 +11,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Filetypes
 "
 Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex and vim-textobj-python
-" Plug 'bfredl/nvim-ipy'
 " Plug 'JohnReid/nvim-ipy'
-" Plug 'bfredl/nvim-ipy'
-Plug 'JohnReid/nvim-ipy'
-Plug 'tell-k/vim-autopep8'
+Plug 'bfredl/nvim-ipy'
 Plug 'bps/vim-textobj-python'
 " Plug 'nvie/vim-flake8'
 " Plug 'klen/python-mode'
@@ -385,6 +382,7 @@ let g:nvim_ipy_perform_mappings = 0
 " Set up our own mappings
 au FileType python map  <buffer> <silent> <LocalLeader>l   <Plug>(IPy-Run)
 au FileType python map  <buffer> <silent> <LocalLeader>w   <Plug>(IPy-Word)
+au FileType python map  <buffer> <silent> <LocalLeader>o   <Plug>(IPy-RunOp)
 au FileType python map  <buffer> <silent> <LocalLeader>r   <Plug>(IPy-RunRegister)
 au FileType python map  <buffer> <silent> <LocalLeader>c   <Plug>(IPy-RunCell)
 au FileType python map  <buffer> <silent> <LocalLeader>a   <Plug>(IPy-RunAll)
