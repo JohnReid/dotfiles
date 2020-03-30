@@ -42,6 +42,8 @@
   # Then, run fugitive's :Gdiff in each tab, and finally
   # tell vim-gitgutter to show +/- for changes since REVIEW_BASE
   review = !nvim -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\"
+	unpushed = log --branches --not --remotes --no-walk --decorate --oneline
+	branch-info = for-each-ref --format=\"%(refname:short) %(push:track)\" refs/heads
 
 
 [credential]
