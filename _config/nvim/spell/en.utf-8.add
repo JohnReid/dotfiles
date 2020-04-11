@@ -59,6 +59,7 @@ Aktas
 Aldoc
 Alena
 AlignAce
+Alpayadin
 Alpaydın
 AlphaZero
 AlphaZero's
@@ -200,6 +201,7 @@ Cai
 Caltech101
 Cantone
 CaptureModelML
+Casella
 CatBoost
 Cebpa
 Cebpg
@@ -227,7 +229,9 @@ Collignon's
 Colo829
 Color
 Connor
+Cormen
 Cortes
+Coulouris
 Coupa
 Coursera
 Covid
@@ -307,8 +311,10 @@ Dmrta
 Doc2Vec
 Docucharm
 DocumentCaptureData
+Dollimore
 Drosophila
 Duvenaud's
+Duxbury
 DyNB
 DynLearn
 E
@@ -368,9 +374,11 @@ Felsenstein
 Felsner
 Ferriera
 Feynman
+Fil
 Finetti's
 Fira
 FisherVAE
+Flannery
 FlashExtract
 FlashFill
 FlashMeta
@@ -392,6 +400,7 @@ Freie
 Frobenius
 Fréchet
 Fumitaka
+Fung
 GABP
 GAN
 GANs
@@ -437,6 +446,7 @@ Ganesh's
 Gao
 Gaussians
 Gb
+Gelman
 Georgi
 Georgy
 GerpN
@@ -464,6 +474,7 @@ Guo
 Gurdon
 Gyre
 Gzf
+Générale
 Gönen
 H
 HAC
@@ -578,6 +589,7 @@ KEGG
 KGs
 KLM
 KPCA
+KYC
 Kalay
 Kalman
 Kam
@@ -595,13 +607,16 @@ Keras
 Kernelspec
 KharchenkoBayesianapproachsinglecell2014
 Kheradpour
+Kieran
 Kilbee
+Kindberg
 Kingma
 Kingsway
 Kircher
 Kishino
 Klamt
 Kleinberg
+Kleppmann
 Klf
 Kneser
 Kocasinan
@@ -628,6 +643,7 @@ LEF
 LFVI
 LGI
 LHY
+LIBOR
 LIFFE
 LLR
 LMKK
@@ -647,6 +663,7 @@ LeCun
 LeNet5
 LeakyReLU
 Leibler
+Leiserson
 Leno's
 Leskovec
 Lhx
@@ -708,16 +725,19 @@ Mahalanobis
 Makevars
 Marengo
 Margolin
+Mashreq
 MatInd
 MatInspector
 MatchLowercase
 Matern
+Mavadia
 Maximillian
 Maxout
 McCourt's
 McDavid
 McEwan
 Meetups
+Meszaros
 MetroPatchMatch
 Microfluidics
 Micropost
@@ -788,6 +808,7 @@ Neta
 NeurIPS
 Newcombe
 Ney
+Neyman
 Nfya
 Nimwegen
 Nishida
@@ -863,6 +884,7 @@ Pax
 Pbx
 Penfold
 Pengyu
+Perceptrons
 Peterhouse
 Ph
 PhD
@@ -883,6 +905,7 @@ Poincare
 Poincaré
 Poisson
 Polyvyanyy
+Pomodoro
 Pou
 PowerBI
 Ppara
@@ -892,6 +915,7 @@ ProbLog2
 Prometheus
 PubLayNet
 PubMed
+Pueyo
 Pullen
 PyPI
 PyTorch
@@ -928,6 +952,7 @@ Rainbird
 Rajewsky
 Raleway
 Ralph
+Rao
 Rashid
 Rasmussen
 ReLU
@@ -946,6 +971,7 @@ ResNet
 RetinaNet
 Rezende
 Riemannian
+Rivest
 Rizk
 Rmd
 Roadmap
@@ -964,6 +990,7 @@ Rusen's
 Ryerson
 SAGAN
 SAIL's
+SAPGUI
 SC3
 SCPD
 SDK
@@ -1041,6 +1068,7 @@ Smola
 Smola's
 Sneddon
 Snf
+Société
 Sohl
 Solaris
 Sontag
@@ -1095,6 +1123,7 @@ TGT
 THP
 TIBCO
 TIBCO's
+TJX
 TMs
 TNs
 TOC1
@@ -1113,6 +1142,7 @@ TTCCCGGAA
 TTG
 TTT
 TableBank
+TableSpy
 Tabula
 Taigman
 Takamasa
@@ -1136,6 +1166,7 @@ Tesauro's
 Tesseract
 TestDome
 Tetris
+Teukolsky
 Textract
 Tgif
 Th2
@@ -1200,11 +1231,13 @@ Varr
 Vdr
 Veblen
 Veliz
+Vetterling
 Vigorito
 Volodymyr
 W1T
 W8BEN
 WC2B
+WFH
 WGANs
 WMC
 WS
@@ -1505,6 +1538,7 @@ f1000research
 fMRI
 faTwitter
 filetype
+firecode
 firstplural
 fluidic
 flushright
@@ -1632,6 +1666,7 @@ lastupdated
 latextemplates
 lato
 leaderboard
+leetcode
 lengthscale
 lengthscales
 leucine
@@ -1831,6 +1866,7 @@ polyglossia
 polymerase
 polymorphisms
 postnote
+practicing
 pre
 precompute
 prenote
@@ -2033,6 +2069,7 @@ uk
 uller
 unannotated
 unary
+unbiasedness
 uncharacterised
 underdetermined
 underflows
@@ -2101,6 +2138,7 @@ x2
 x3
 x86
 x9
+xUnit
 xelatex
 xs
 xshift
