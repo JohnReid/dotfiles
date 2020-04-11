@@ -60,3 +60,4 @@ _build
 
 # Office temporary files
 ~$*.docx
+~$*.xlsb
