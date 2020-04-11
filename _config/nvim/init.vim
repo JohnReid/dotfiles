@@ -602,9 +602,15 @@ au FileType xml setlocal foldmethod=syntax
 au FileType pandoc colorscheme solarized
 " let g:pandoc#modules#disabled = ["folding"]
 "set foldcolumn=0
+
+
+" ==========================================================
+" vim-markdown
+" ==========================================================
+let g:tex_conceal = ""
 let g:vim_markdown_folding_level = 1
 let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_math = 1
+let g:vim_markdown_math = 0
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_new_list_item_indent = 2
 "
