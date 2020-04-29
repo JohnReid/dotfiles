@@ -60,11 +60,12 @@ Aldoc
 Alena
 AlignAce
 Alpayadin
-Alpaydın
+AlphaFold
 AlphaZero
 AlphaZero's
 Amir
 Anders
+Andrej
 Anindya
 Ankita
 Antennapedia
@@ -159,6 +160,7 @@ C3NET
 CAGATAGGTTTCTTCG
 CAGI
 CAGI5
+CASP13
 CB2
 CBP
 CCA
@@ -198,6 +200,7 @@ CUDA
 CVPR
 Caenorhabditis
 Cai
+Cali
 Caltech101
 Cantone
 CaptureModelML
@@ -215,6 +218,7 @@ Chai
 CharGrid
 Charton
 Chenling
+Chervonenkis
 Cholesky
 Circularized
 Cister
@@ -271,6 +275,7 @@ DamID
 DanQ
 Darse
 Das
+DataManager
 Dataflow
 Datalog
 Datamolino
@@ -280,6 +285,7 @@ Dayan
 Dbp
 DeLorean
 Debarghya
+Decipher's
 Deedy
 DeepChrome
 DeepDeSRT
@@ -300,6 +306,7 @@ DetNAS
 DetNet
 Detectron
 Deutsche
+DevOps
 Dfd
 Di
 Diag
@@ -313,6 +320,7 @@ Docucharm
 DocumentCaptureData
 Dollimore
 Drosophila
+Duquennoy
 Duvenaud's
 Duxbury
 DyNB
@@ -333,6 +341,7 @@ ESCs
 Ecomore
 Efthymia
 Egr
+Eigenmap
 Eisen
 Eisen's
 Emine
@@ -508,6 +517,7 @@ Hasegawa
 Hassan's
 Hawkes
 HeLa
+Heapsort
 Heiland
 HepG2
 Hinton
@@ -524,6 +534,7 @@ Hoxa
 HudsonAlpha
 Hypatos
 Hyperspectral
+IADAVision
 IC
 ICA
 ICDAR
@@ -559,11 +570,13 @@ InvNet
 Irf
 Ish
 IsoMap
+Isomap
 ItalicFont
 Ivelin
 Iwata
 JASPAR
 JASPAR's
+JAX
 JC
 JMS
 JSON
@@ -593,10 +606,12 @@ KYC
 Kalay
 Kalman
 Kam
+Kam's
 Kamesh
 Kang
 Kann
 Karlebach
+Karpathy
 Katharina
 Kathryn
 Kauffman
@@ -645,11 +660,13 @@ LGI
 LHY
 LIBOR
 LIFFE
+LLE
 LLR
 LMKK
 LOA
 LOAs
 LPS
+LR
 LSTM
 LSTMs
 LUBM
@@ -658,6 +675,8 @@ LabGenius
 Lample
 Langevin
 Laplacian
+Laplacians
+LatexGeneratedInvoices
 Lato
 LeCun
 LeNet5
@@ -705,6 +724,8 @@ MKL
 MKs
 MLCNN
 MLE
+MLP
+MLPs
 MMD
 MNIST
 MNN
@@ -715,6 +736,8 @@ MOOCs
 MPRA
 MPhil
 MRC
+MSA
+MSE
 MSRC
 MTT
 MVN
@@ -723,6 +746,7 @@ MaaloeAuxiliaryDeepGenerative2016
 Magda
 Mahalanobis
 Makevars
+Malik
 Marengo
 Margolin
 Mashreq
@@ -736,6 +760,7 @@ Maxout
 McCourt's
 McDavid
 McEwan
+McNemar's
 Meetups
 Meszaros
 MetroPatchMatch
@@ -771,6 +796,7 @@ Mtf
 Mult
 Multilabel
 Multipurpose
+Murat
 Murat's
 Myc
 N16
@@ -810,6 +836,8 @@ Newcombe
 Ney
 Neyman
 Nfya
+Ng
+Ng's
 Nimwegen
 Nishida
 Nkx
@@ -830,6 +858,7 @@ Ok's
 Okudono
 Oliehoek
 Omics
+Onfido
 OoD
 OpenAI's
 Othmer
@@ -843,6 +872,7 @@ PBN
 PCA
 PCI
 PCR
+PDB
 PDF
 PDFs
 PDT
@@ -924,6 +954,7 @@ QFAST
 Qianli
 Quandt
 Query2Box
+Quicksort
 R
 RBC
 RBF
@@ -1056,6 +1087,7 @@ Shapley
 Shawe
 Shen
 Shendure
+Shi
 Shin'ya
 Shmulevich
 SingleCellExperiment
@@ -1107,6 +1139,7 @@ TATAAAA
 TATATAA
 TATATAT
 TATAWAW
+TBM
 TCF
 TCP
 TCV
@@ -1227,6 +1260,7 @@ VM
 VMS
 VOC
 VSG
+Vapnik
 Varr
 Vdr
 Veblen
@@ -1239,6 +1273,7 @@ W8BEN
 WC2B
 WFH
 WGANs
+WIP
 WMC
 WS
 WaVE
@@ -1334,6 +1369,7 @@ anr
 anyfontepackage
 apa
 app
+approximator
 apps
 arXiv
 arccosine
@@ -1507,6 +1543,8 @@ edu
 effector
 efficiencies
 eigendecomposition
+eigenmaps
+eigenproblem
 electrophoresis
 electrophoretic
 elegans
@@ -1579,6 +1617,7 @@ handstad
 hb
 hbox
 hdesm
+heapsort
 hela
 helvet
 hemberg
@@ -1796,6 +1835,7 @@ nvim's
 nvimrc
 nw
 nyu
+o
 oPOSSUM
 octamer
 ome
@@ -1839,6 +1879,7 @@ pdfproducer
 pdftitle
 pdm
 pearson
+perceptron
 perceptual
 peri
 personal_ws-1.1 en 855 
@@ -1865,6 +1906,7 @@ podcast
 polyglossia
 polymerase
 polymorphisms
+polytrees
 postnote
 practicing
 pre
@@ -1903,6 +1945,7 @@ qPCR
 qRT
 quartile
 quartiles
+quicksort
 quin
 r
 rMonkey
@@ -1927,6 +1970,7 @@ renewcommand
 reparameterisation
 reparameterisations
 repressor
+resampling
 resp
 rgb
 ribonucleic
@@ -2047,6 +2091,8 @@ titlenote
 tll
 toc
 tocdepth
+toolkit
+toolsets
 topGO
 toprule
 topsep
@@ -2144,6 +2190,7 @@ xs
 xshift
 yakuba
 yshift
+z
 zero
 zhihu
 zhuanlan
