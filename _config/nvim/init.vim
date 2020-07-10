@@ -154,6 +154,17 @@ set termguicolors
 colorscheme solarized
 " colorscheme gruvbox
 " colorscheme night-owl
+" Diff highlighting colours: https://github.com/tpope/vim-fugitive/issues/1501#issuecomment-602141438
+hi DiffChange guibg=#5f005f
+hi DiffAdd    guibg=#00005f
+hi DiffRemove guibg=#005f5f
+hi DiffText   guibg=#5f0000
+if &t_Co == 256
+  hi DiffChange ctermbg=53
+  hi DiffAdd    ctermbg=17
+  hi DiffDelete ctermbg=23
+  hi DiffText   ctermbg=52
+endif
 
 
 " ==========================================================
@@ -548,7 +559,7 @@ let g:vimtex_quickfix_open_on_warning = 0
 "
 " More informative chktex messages
 let g:syntastic_tex_chktex_args = '-v0'
-let g:syntastic_tex_chktex_showmsgs = 0
+let g:syntastic_tex_chktex_showmsgs = 1
 "
 " from: https://github.com/lervag/vimtex/issues/835 to enable Synctex
 let g:vimtex_compiler_progname = "nvr"
