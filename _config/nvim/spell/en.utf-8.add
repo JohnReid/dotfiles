@@ -1,3 +1,4 @@
+3E3
 3EG
 6NH
 A4
@@ -23,6 +24,7 @@ ALiPy
 AMRO
 APAC
 API
+APIs
 APLAS
 ARD
 ARI
@@ -59,7 +61,7 @@ Aktas
 Aldoc
 Alena
 AlignAce
-Alpayadin
+Alpaydin
 AlphaFold
 AlphaZero
 AlphaZero's
@@ -101,6 +103,7 @@ BPAI
 BPC
 BPM
 BPMers
+BPW
 BSU
 BTL
 BUPA
@@ -168,6 +171,7 @@ CCGAAT
 CDF
 CDFs
 CDIP
+CERMINE
 CFTR
 CGD
 CHICAS
@@ -373,6 +377,7 @@ FPR
 FPRs
 FPs
 FTFX
+FUNSD
 Facebook
 FashionMNIST
 Fasshauer
@@ -397,6 +402,7 @@ FlexGrid
 FlexiCapture
 FlexiLayout
 FlexiLayouts
+FoUn
 Fodor
 Fordyce
 Forvie
@@ -440,6 +446,7 @@ GPml
 GPs
 GPy
 GPyOpt
+GROTOAP2
 GSE
 GTGT
 GTT
@@ -462,6 +469,7 @@ GerpN
 GerpRS
 Ghevaert
 Giacomantonio
+Gini
 GitHub
 GitLab
 Gitlab
@@ -540,6 +548,7 @@ ICA
 ICDAR
 ICLR
 IDEs
+IDP
 IDs
 IHaskell
 IIIb
@@ -600,6 +609,7 @@ Jure
 K562
 KEGG
 KGs
+KKT
 KLM
 KPCA
 KYC
@@ -612,6 +622,7 @@ Kang
 Kann
 Karlebach
 Karpathy
+Karush
 Katharina
 Kathryn
 Kauffman
@@ -653,11 +664,14 @@ Kunarso
 Kutta
 Kynaston
 L2
+L5R
 LAPACK
 LEF
+LFS
 LFVI
 LGI
 LHY
+LIATE
 LIBOR
 LIFFE
 LLE
@@ -674,11 +688,13 @@ LaTeXTemplates
 LabGenius
 Lample
 Langevin
+Langrangian
 Laplacian
 Laplacians
 LatexGeneratedInvoices
 Lato
 LeCun
+LeNet
 LeNet5
 LeakyReLU
 Leibler
@@ -697,6 +713,7 @@ Liu
 Liu's
 Lloyds
 LoF
+Lockdown
 Loess
 Lopezdeepgenerativemodel2017
 LuaLaTeX
@@ -710,6 +727,7 @@ MAXCHAIN
 MC
 MCE
 MCMC
+MCTS
 MDMM
 MDS
 MEME's
@@ -749,6 +767,7 @@ Makevars
 Malik
 Marengo
 Margolin
+Marr's
 Mashreq
 MatInd
 MatInspector
@@ -778,6 +797,7 @@ MoCo
 Mobisys
 Mohamad
 Moiseeva
+Moivre's
 Monidipa
 Monod
 Montoro
@@ -804,6 +824,7 @@ N4
 NAAF
 NAS
 NBN
+NCE
 NDA
 NER
 NFY
@@ -892,6 +913,7 @@ PLoS
 PMA
 PMM
 PMMs
+POs
 PREM
 PRImA
 PSSM
@@ -957,10 +979,12 @@ Query2Box
 Quicksort
 R
 RBC
+RBC's
 RBF
 RBMs
 REB
 REMC
+RESTful
 REs
 RMI
 RMSE
@@ -996,6 +1020,7 @@ RefSeq
 RegIta
 Reidy
 Rela
+Renyi
 RepeatMasker
 RequirePackage
 ResNet
@@ -1049,6 +1074,7 @@ SSL
 SSN
 STEME's
 SUGILITE
+SUT
 SVAE
 SVAEs
 SVCCA
@@ -1114,6 +1140,7 @@ StarCraft
 Stegle
 Sterically
 Stigler
+Stockfish
 Stormo
 Strau�
 Strongylocentrotus
@@ -1242,6 +1269,7 @@ UKenglish
 UNLV
 USB
 USD
+UTF
 UTF8
 UW3
 UX
@@ -1357,6 +1385,7 @@ adipogenesis
 admin
 advisors
 al
+aleatoric
 alexrhhawkins
 allowframebreaks
 amino
@@ -1370,6 +1399,7 @@ anyfontepackage
 apa
 app
 approximator
+approximators
 apps
 arXiv
 arccosine
@@ -1385,6 +1415,7 @@ autoencode
 autoencoder
 autoencoders
 autoencoding
+b
 b744fe9bf7bc25241367e6a894a4bd
 babelhyphenation
 backend
@@ -1419,6 +1450,7 @@ bitbucket
 blastocyst
 blastoderm
 blog
+bm
 bmx
 boxplot
 bp
@@ -1537,6 +1569,7 @@ duvenaud
 dx
 dyad
 dyads
+e
 eQTL
 ectoderm
 edu
@@ -1721,11 +1754,13 @@ lipopolysaccharide
 llll
 lloyd
 llr
+logit
 logits
 lrccc
 lymphopoiesis
 lysine
 lysis
+m
 mSS
 macromolecule
 macromolecules
@@ -1735,6 +1770,7 @@ makeatother
 math
 mathabx
 mathbf
+mathcal
 mathdesign
 mathop
 mathptmx
@@ -2108,6 +2144,7 @@ transversion
 travis
 truthed
 tudelft
+tuples
 u
 uai2018
 ubuntu
@@ -2188,8 +2225,10 @@ xUnit
 xelatex
 xs
 xshift
+y
 yakuba
 yshift
+yxvpi
 z
 zero
 zhihu
@@ -2197,3 +2236,55 @@ zhuanlan
 zipper
 zoops
 zugzwang
+DVC
+LayoutLM
+OSCO
+ABP
+NAF
+Kleber
+Déjean
+zenodo
+Hervé
+Déjean
+Luc
+Meunier
+Stéphane
+Clinchant
+Florian
+IAPR
+Laurens
+Hernández
+Lobato
+GPseudoClust
+Sonden
+Bhavna
+Bala
+Madhusoodhanan
+PNGs
+Emmanuelle
+Alonso
+poset
+Hikvision
+Tycho
+Brahe
+Rothamsted
+DNN
+AlphaGo
+Leibniz's
+KDEs
+Submodular
+submodular
+LLNL
+composability
+TCGA
+LVM
+hackathon
+MLSS
+MRs
+RA's
+Chargrid
+IE
+subtokens
+TensorBoard
+tensorflow
+Wordgrid
