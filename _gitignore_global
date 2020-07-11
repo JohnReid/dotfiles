@@ -57,3 +57,7 @@ _build
 *.fdb_latexmk
 *.run.xml
 *-blx.bib
+
+# Office temporary files
+~$*.docx
+~$*.xlsb

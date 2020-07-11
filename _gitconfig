@@ -9,7 +9,7 @@
   ui = auto
 
 [push]
-	default = current
+  default = current
 
 [core]
   editor = nvim
@@ -42,6 +42,8 @@
   # Then, run fugitive's :Gdiff in each tab, and finally
   # tell vim-gitgutter to show +/- for changes since REVIEW_BASE
   review = !nvim -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\"
+  unpushed = log --branches --not --remotes --no-walk --decorate --oneline
+  branch-info = for-each-ref --format=\"%(refname:short) %(push:track)\" refs/heads
 
 
 [credential]
@@ -58,7 +60,10 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+
 [mergetool "fugitive"]
-	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+  cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+
 [merge]
-	tool = fugitive
+  tool = vimdiff
+  conflictstyle = diff3
