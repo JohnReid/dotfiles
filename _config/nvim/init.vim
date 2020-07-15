@@ -32,15 +32,16 @@ Plug 'maverickg/stan.vim'
 " tpope
 "
 Plug 'tpope/vim-fugitive'
-Plug 'git://github.com/tpope/vim-unimpaired'
-Plug 'git://github.com/tpope/vim-commentary'
-Plug 'git://github.com/tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-scriptease'
 "
 " Miscellaneous
 "
+Plug 'airblade/vim-gitgutter'  " show modified git chunks
 Plug 'will133/vim-dirdiff'  " diff on directories
 Plug 'michaeljsmith/vim-indent-object'  " for indentation text objects
 Plug 'mattn/webapi-vim'  " For gists
@@ -346,6 +347,30 @@ map <F7> :SyntasticCheck <CR>
 " ==========================================================
 let g:gist_edit_with_buffers = 1
 let g:gist_list_vsplit = 1
+
+
+" ==========================================================
+" airblade/gitgutter config from:
+" https://jakobgm.com/posts/vim/git-integration/#i-class-fab-fa-github-i-airblade-vim-gitgutter-i-class-fab-fa-github-i
+" ==========================================================
+" Use fontawesome icons as signs
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '<'
+" simple look
+let g:gitgutter_override_sign_column_highlight = 1
+" highlight SignColumn guibg=bg
+" highlight SignColumn ctermbg=bg
+" Update sign column every quarter second
+set updatetime=250
+" Jump between hunks
+nmap <Leader>gn <Plug>GitGutterNextHunk  " git next
+nmap <Leader>gp <Plug>GitGutterPrevHunk  " git previous
+" Hunk-add and hunk-revert for chunk staging
+nmap <Leader>ga <Plug>GitGutterStageHunk  " git add (chunk)
+nmap <Leader>gu <Plug>GitGutterUndoHunk   " git undo (chunk)
 
 
 " ==========================================================
