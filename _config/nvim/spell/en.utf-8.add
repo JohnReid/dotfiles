@@ -10,6 +10,7 @@ AAT
 ABB
 ABBYY
 ABN
+ABP
 ADVI
 AGACAAGTTTCTTCGTTTT
 AGACATGTTTCTTCG
@@ -61,8 +62,10 @@ Aktas
 Aldoc
 Alena
 AlignAce
+Alonso
 Alpaydin
 AlphaFold
+AlphaGo
 AlphaZero
 AlphaZero's
 Amir
@@ -110,6 +113,7 @@ BUPA
 Badis
 Bai
 Bais
+Bala
 Barcelo
 Barclays
 Bateman
@@ -121,6 +125,7 @@ Beltrami
 Bendall
 BenevolentAI
 Bengio
+Bhavna
 BiFA
 BiFA's
 BiFa
@@ -152,6 +157,7 @@ BotFramework
 Botrytis
 Boxplots
 Boyan's
+Brahe
 Bronstein
 Broyden
 Buettner
@@ -220,6 +226,7 @@ ChIP'ed
 ChIPMunk
 Chai
 CharGrid
+Chargrid
 Charton
 Chenling
 Chervonenkis
@@ -229,6 +236,7 @@ Cister
 Citrix
 Claritas
 Claverie
+Clinchant
 Clusternomics
 CoCoX
 CoderByte
@@ -265,6 +273,7 @@ DL
 DMM
 DNA's
 DNF
+DNN
 DNNs
 DNase
 DPM
@@ -274,6 +283,7 @@ DPMs
 DREME
 DREME's
 DST
+DVC
 Daesik
 DamID
 DanQ
@@ -311,6 +321,7 @@ DetNet
 Detectron
 Deutsche
 DevOps
+Déjean
 Dfd
 Di
 Diag
@@ -329,6 +340,7 @@ Duvenaud's
 Duxbury
 DyNB
 DynLearn
+Déjean
 E
 EBI
 EBMs
@@ -349,6 +361,7 @@ Eigenmap
 Eisen
 Eisen's
 Emine
+Emmanuelle
 Ensembl
 Epigenome
 Equivariance
@@ -402,6 +415,7 @@ FlexGrid
 FlexiCapture
 FlexiLayout
 FlexiLayouts
+Florian
 FoUn
 Fodor
 Fordyce
@@ -444,6 +458,7 @@ GPUs
 GPflow
 GPml
 GPs
+GPseudoClust
 GPy
 GPyOpt
 GROTOAP2
@@ -528,6 +543,9 @@ HeLa
 Heapsort
 Heiland
 HepG2
+Hernández
+Hervé
+Hikvision
 Hinton
 Hippel
 Hirji
@@ -543,6 +561,7 @@ HudsonAlpha
 Hypatos
 Hyperspectral
 IADAVision
+IAPR
 IC
 ICA
 ICDAR
@@ -550,6 +569,7 @@ ICLR
 IDEs
 IDP
 IDs
+IE
 IHaskell
 IIIb
 IIIc
@@ -607,6 +627,7 @@ Junion
 Jupyter
 Jure
 K562
+KDEs
 KEGG
 KGs
 KKT
@@ -641,6 +662,7 @@ Kingsway
 Kircher
 Kishino
 Klamt
+Kleber
 Kleinberg
 Kleppmann
 Klf
@@ -675,6 +697,7 @@ LIATE
 LIBOR
 LIFFE
 LLE
+LLNL
 LLR
 LMKK
 LOA
@@ -684,6 +707,7 @@ LR
 LSTM
 LSTMs
 LUBM
+LVM
 LaTeXTemplates
 LabGenius
 Lample
@@ -693,11 +717,14 @@ Laplacian
 Laplacians
 LatexGeneratedInvoices
 Lato
+Laurens
+LayoutLM
 LeCun
 LeNet
 LeNet5
 LeakyReLU
 Leibler
+Leibniz's
 Leiserson
 Leno's
 Leskovec
@@ -713,10 +740,12 @@ Liu
 Liu's
 Lloyds
 LoF
+Lobato
 Lockdown
 Loess
 Lopezdeepgenerativemodel2017
 LuaLaTeX
+Luc
 Lukas
 Luo
 Lusk
@@ -744,6 +773,7 @@ MLCNN
 MLE
 MLP
 MLPs
+MLSS
 MMD
 MNIST
 MNN
@@ -754,6 +784,7 @@ MOOCs
 MPRA
 MPhil
 MRC
+MRs
 MSA
 MSE
 MSRC
@@ -761,6 +792,7 @@ MTT
 MVN
 MVP
 MaaloeAuxiliaryDeepGenerative2016
+Madhusoodhanan
 Magda
 Mahalanobis
 Makevars
@@ -783,6 +815,7 @@ McNemar's
 Meetups
 Meszaros
 MetroPatchMatch
+Meunier
 Microfluidics
 Micropost
 Middleware
@@ -822,6 +855,7 @@ Myc
 N16
 N4
 NAAF
+NAF
 NAS
 NBN
 NCE
@@ -873,6 +907,7 @@ OKR
 OKRs
 ONKC
 OOPSLA
+OSCO
 OcrData
 Ok
 Ok's
@@ -913,6 +948,7 @@ PLoS
 PMA
 PMM
 PMMs
+PNGs
 POs
 PREM
 PRImA
@@ -978,6 +1014,7 @@ Quandt
 Query2Box
 Quicksort
 R
+RA's
 RBC
 RBC's
 RBF
@@ -1035,6 +1072,7 @@ Robiquity
 Rora
 Rosca
 Rossum
+Rothamsted
 Roughnesses
 Rui
 Runge
@@ -1129,6 +1167,7 @@ Snf
 Société
 Sohl
 Solaris
+Sonden
 Sontag
 Sox
 Spearman
@@ -1144,7 +1183,9 @@ Stockfish
 Stormo
 Strau�
 Strongylocentrotus
+Stéphane
 Su
+Submodular
 Subnetworks
 Sumer
 Sumit
@@ -1168,6 +1209,7 @@ TATATAT
 TATAWAW
 TBM
 TCF
+TCGA
 TCP
 TCV
 TCVAE
@@ -1220,6 +1262,7 @@ TeX
 Tec
 Teh
 Telstra
+TensorBoard
 TensorFlow
 Tesauro
 Tesauro's
@@ -1254,6 +1297,7 @@ TrueLearn
 TrueSkill
 Tsamoura
 Tsong
+Tycho
 U0
 U105260799
 UCL
@@ -1326,6 +1370,7 @@ Wittkopp
 Wnt
 Wolfson
 WordNet
+Wordgrid
 Wuhan
 X1
 X2
@@ -1507,6 +1552,7 @@ com
 combinatorial
 combinatorics
 comorbidity
+composability
 confounder
 confounders
 construal
@@ -1593,6 +1639,7 @@ epiblast
 epigenetic
 epigenetics
 equivariance
+equivariant
 er
 erecta
 et
@@ -1646,6 +1693,7 @@ grayscale
 grettonMeasuringStatisticalDependence2005
 grimshawi
 hPSCs
+hackathon
 handstad
 hb
 hbox
@@ -1943,6 +1991,7 @@ polyglossia
 polymerase
 polymorphisms
 polytrees
+poset
 postnote
 practicing
 pre
@@ -2090,10 +2139,12 @@ stillsansseriflarge
 strided
 structurebold
 subgraph
+submodular
 subpopulation
 subpopulations
 subsequence
 subsequences
+subtokens
 subtyping
 summarisation
 support
@@ -2107,6 +2158,7 @@ t
 tabledata
 tarazu
 tech
+tensorflow
 testbeds
 tex
 text2process
@@ -2230,61 +2282,10 @@ yakuba
 yshift
 yxvpi
 z
+zenodo
 zero
 zhihu
 zhuanlan
 zipper
 zoops
 zugzwang
-DVC
-LayoutLM
-OSCO
-ABP
-NAF
-Kleber
-Déjean
-zenodo
-Hervé
-Déjean
-Luc
-Meunier
-Stéphane
-Clinchant
-Florian
-IAPR
-Laurens
-Hernández
-Lobato
-GPseudoClust
-Sonden
-Bhavna
-Bala
-Madhusoodhanan
-PNGs
-Emmanuelle
-Alonso
-poset
-Hikvision
-Tycho
-Brahe
-Rothamsted
-DNN
-AlphaGo
-Leibniz's
-KDEs
-Submodular
-submodular
-LLNL
-composability
-TCGA
-LVM
-hackathon
-MLSS
-MRs
-RA's
-Chargrid
-IE
-subtokens
-TensorBoard
-tensorflow
-Wordgrid
