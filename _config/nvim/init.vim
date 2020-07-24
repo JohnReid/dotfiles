@@ -8,28 +8,31 @@
 " ==========================================================
 call plug#begin('~/.config/nvim/plugged')
 "
-" Filetypes
+" Text objects
 "
 Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex and vim-textobj-python
 Plug 'kana/vim-textobj-entire'  " Required for vim-textobj-latex and vim-textobj-python
+Plug 'michaeljsmith/vim-indent-object'  " for indentation text objects
+Plug 'JohnReid/vim-textobj-latex'  " LaTeX text objects
+" Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
+Plug 'bps/vim-textobj-python'
+"
+" Filetypes
+"
 " Plug 'JohnReid/nvim-ipy'
 Plug 'bfredl/nvim-ipy'
-Plug 'KKPMW/vim-sendtowindow'
-Plug 'bps/vim-textobj-python'
 " Plug 'nvie/vim-flake8'
 " Plug 'klen/python-mode'
 " Plug 'ivanov/vim-ipython'
 " Plug 'vim-scripts/Vim-R-plugin'
 Plug 'jalvesaq/Nvim-R'
 Plug 'lervag/vimtex'
-Plug 'JohnReid/vim-textobj-latex'  " LaTeX text objects
-" Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'vim-pandoc/vim-rmarkdown'
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'maverickg/stan.vim'
+Plug 'chrisbra/csv.vim'
 "
 " tpope
 "
@@ -41,34 +44,49 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-scriptease'
 "
-" Miscellaneous
+" Files
 "
-Plug 'airblade/vim-gitgutter'  " show modified git chunks
+Plug 'scrooloose/nerdtree'
+" Plug 'wincent/Command-T'  " Fuzzy file name matching
 Plug 'will133/vim-dirdiff'  " diff on directories
-Plug 'michaeljsmith/vim-indent-object'  " for indentation text objects
+"
+" Git / gists
+"
 Plug 'mattn/webapi-vim'  " For gists
 Plug 'mattn/gist-vim'  " For gists
+Plug 'airblade/vim-gitgutter'  " show modified git chunks
+"
+" Highlighting
+"
 Plug 'vim-syntastic/syntastic'  " For lintr R syntax integration
-Plug 'timakro/vim-searchant'
-" Plug 'wincent/Command-T'  " Fuzzy file name matching
+Plug 'timakro/vim-searchant'  " Improved search highlighting
+"
+" Miscellaneous
+"
+Plug 'KKPMW/vim-sendtowindow'
+Plug 'godlygeek/tabular'  " Align text
 Plug 'sjl/gundo.vim'
 Plug 'vim-scripts/TaskList.vim'
 Plug 'tomtom/tlib_vim'
-Plug 'scrooloose/nerdtree'
-Plug 'ervandew/screen'
-Plug 'ervandew/supertab'
+Plug 'ervandew/screen'  " Simulate a split shell
+" Plug 'eparreno/vim-l9'  " Vim script library
+"
+" Completion managers
+"
 " Plug 'vim-scripts/AutoComplPop'
-" Plug 'eparreno/vim-l9'
-Plug 'mhartington/oceanic-next'
-Plug 'chrisbra/csv.vim'
 " Plug 'Shougo/deoplete.nvim'
-Plug 'ncm2/ncm2'
+Plug 'ervandew/supertab'
 Plug 'roxma/nvim-yarp'  " Required by ncm2
+Plug 'ncm2/ncm2'
+"
+" Distraction-free writing
+"
 Plug 'junegunn/goyo.vim'  " Distraction-free writing
 Plug 'junegunn/limelight.vim'  " Hyperfocus writing
 "
 " Color schemes
 "
+Plug 'mhartington/oceanic-next'
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'morhetz/gruvbox'
 Plug 'haishanh/night-owl.vim'
@@ -76,7 +94,7 @@ Plug 'ErichDonGubler/vim-sublime-monokai'
 Plug 'tjammer/blayu.vim'
 Plug 'Jimeno0/vim-chito'
 "
-" Following 4 for snipmate
+" vim-snipmate
 "
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
