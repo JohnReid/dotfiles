@@ -207,10 +207,6 @@ map <leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " for when we forget to use sudo to open/edit a file
 cmap w!! w !sudo tee % >/dev/null
-" Jump to the definition of whatever the cursor is on
-map <leader>j :RopeGotoDefinition<CR>
-" Rename whatever the cursor is on (including references to it)
-map <leader>r :RopeRename<CR>
 " Not sure what this is...
 fu! SplitScroll()
     :wincmd v
