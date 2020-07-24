@@ -22,8 +22,8 @@ Plug 'bps/vim-textobj-python'
 " Plug 'vim-scripts/Vim-R-plugin'
 Plug 'jalvesaq/Nvim-R'
 Plug 'lervag/vimtex'
-" Plug 'JohnReid/vim-textobj-latex'  " LaTeX text objects
-Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
+Plug 'JohnReid/vim-textobj-latex'  " LaTeX text objects
+" Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'vim-pandoc/vim-rmarkdown'
@@ -50,7 +50,7 @@ Plug 'mattn/webapi-vim'  " For gists
 Plug 'mattn/gist-vim'  " For gists
 Plug 'vim-syntastic/syntastic'  " For lintr R syntax integration
 Plug 'timakro/vim-searchant'
-Plug 'wincent/Command-T'
+Plug 'wincent/Command-T'  " Fuzzy file name matching
 Plug 'sjl/gundo.vim'
 Plug 'vim-scripts/TaskList.vim'
 Plug 'tomtom/tlib_vim'
