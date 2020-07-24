@@ -11,6 +11,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Filetypes
 "
 Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex and vim-textobj-python
+Plug 'kana/vim-textobj-entire'  " Required for vim-textobj-latex and vim-textobj-python
 " Plug 'JohnReid/nvim-ipy'
 Plug 'bfredl/nvim-ipy'
 Plug 'KKPMW/vim-sendtowindow'
