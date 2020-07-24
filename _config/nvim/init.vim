@@ -50,7 +50,7 @@ Plug 'mattn/webapi-vim'  " For gists
 Plug 'mattn/gist-vim'  " For gists
 Plug 'vim-syntastic/syntastic'  " For lintr R syntax integration
 Plug 'timakro/vim-searchant'
-Plug 'wincent/Command-T'  " Fuzzy file name matching
+" Plug 'wincent/Command-T'  " Fuzzy file name matching
 Plug 'sjl/gundo.vim'
 Plug 'vim-scripts/TaskList.vim'
 Plug 'tomtom/tlib_vim'
