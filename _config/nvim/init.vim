@@ -8,26 +8,31 @@
 " ==========================================================
 call plug#begin('~/.config/nvim/plugged')
 "
-" Filetypes
+" Text objects
 "
 Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex and vim-textobj-python
+Plug 'kana/vim-textobj-entire'  " Required for vim-textobj-latex and vim-textobj-python
+Plug 'michaeljsmith/vim-indent-object'  " for indentation text objects
+Plug 'JohnReid/vim-textobj-latex'  " LaTeX text objects
+" Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
+Plug 'bps/vim-textobj-python'
+"
+" Filetypes
+"
 " Plug 'JohnReid/nvim-ipy'
 Plug 'bfredl/nvim-ipy'
-Plug 'bps/vim-textobj-python'
 " Plug 'nvie/vim-flake8'
 " Plug 'klen/python-mode'
 " Plug 'ivanov/vim-ipython'
 " Plug 'vim-scripts/Vim-R-plugin'
 Plug 'jalvesaq/Nvim-R'
 Plug 'lervag/vimtex'
-" Plug 'JohnReid/vim-textobj-latex'  " LaTeX text objects
-Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 " Plug 'vim-pandoc/vim-rmarkdown'
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'maverickg/stan.vim'
+Plug 'chrisbra/csv.vim'
 "
 " tpope
 "
@@ -39,34 +44,49 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-scriptease'
 "
-" Miscellaneous
+" Files
 "
-Plug 'airblade/vim-gitgutter'  " show modified git chunks
+Plug 'scrooloose/nerdtree'
+" Plug 'wincent/Command-T'  " Fuzzy file name matching
 Plug 'will133/vim-dirdiff'  " diff on directories
-Plug 'michaeljsmith/vim-indent-object'  " for indentation text objects
+"
+" Git / gists
+"
 Plug 'mattn/webapi-vim'  " For gists
 Plug 'mattn/gist-vim'  " For gists
+Plug 'airblade/vim-gitgutter'  " show modified git chunks
+"
+" Highlighting
+"
 Plug 'vim-syntastic/syntastic'  " For lintr R syntax integration
-Plug 'timakro/vim-searchant'
-Plug 'wincent/Command-T'
+Plug 'timakro/vim-searchant'  " Improved search highlighting
+"
+" Miscellaneous
+"
+Plug 'KKPMW/vim-sendtowindow'
+Plug 'godlygeek/tabular'  " Align text
 Plug 'sjl/gundo.vim'
 Plug 'vim-scripts/TaskList.vim'
 Plug 'tomtom/tlib_vim'
-Plug 'scrooloose/nerdtree'
-Plug 'ervandew/screen'
-Plug 'ervandew/supertab'
+Plug 'ervandew/screen'  " Simulate a split shell
+" Plug 'eparreno/vim-l9'  " Vim script library
+"
+" Completion managers
+"
 " Plug 'vim-scripts/AutoComplPop'
-" Plug 'eparreno/vim-l9'
-Plug 'mhartington/oceanic-next'
-Plug 'chrisbra/csv.vim'
 " Plug 'Shougo/deoplete.nvim'
-Plug 'ncm2/ncm2'
+Plug 'ervandew/supertab'
 Plug 'roxma/nvim-yarp'  " Required by ncm2
+Plug 'ncm2/ncm2'
+"
+" Distraction-free writing
+"
 Plug 'junegunn/goyo.vim'  " Distraction-free writing
 Plug 'junegunn/limelight.vim'  " Hyperfocus writing
 "
 " Color schemes
 "
+Plug 'mhartington/oceanic-next'
 Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'morhetz/gruvbox'
 Plug 'haishanh/night-owl.vim'
@@ -74,7 +94,7 @@ Plug 'ErichDonGubler/vim-sublime-monokai'
 Plug 'tjammer/blayu.vim'
 Plug 'Jimeno0/vim-chito'
 "
-" Following 4 for snipmate
+" vim-snipmate
 "
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
@@ -123,7 +143,25 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 "
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
-
+"
+" To work with :terminal (see :help terminal)
+" To map <Esc> to exit terminal-mode:
+:tnoremap <Esc> <C-\><C-n>
+" To simulate |i_CTRL-R| in terminal-mode:
+:tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+" To use `ALT+{h,j,k,l}` to navigate windows from any mode:
+:tnoremap <A-h> <C-\><C-N><C-w>h
+:tnoremap <A-j> <C-\><C-N><C-w>j
+:tnoremap <A-k> <C-\><C-N><C-w>k
+:tnoremap <A-l> <C-\><C-N><C-w>l
+:inoremap <A-h> <C-\><C-N><C-w>h
+:inoremap <A-j> <C-\><C-N><C-w>j
+:inoremap <A-k> <C-\><C-N><C-w>k
+:inoremap <A-l> <C-\><C-N><C-w>l
+:nnoremap <A-h> <C-w>h
+:nnoremap <A-j> <C-w>j
+:nnoremap <A-k> <C-w>k
+:nnoremap <A-l> <C-w>l
 
 " ==========================================================
 " Messages, Info, Status, Appearance
@@ -188,10 +226,6 @@ map <leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " for when we forget to use sudo to open/edit a file
 cmap w!! w !sudo tee % >/dev/null
-" Jump to the definition of whatever the cursor is on
-map <leader>j :RopeGotoDefinition<CR>
-" Rename whatever the cursor is on (including references to it)
-map <leader>r :RopeRename<CR>
 " Not sure what this is...
 fu! SplitScroll()
     :wincmd v
