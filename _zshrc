@@ -134,3 +134,12 @@ exists() { type -t "$1" > /dev/null 2>&1; }
 if exists rbenv; then
   eval "$(rbenv init -)"
 fi
+
+
+#
+# Source machine specific post setup if it exists
+MACHINEPOSTRC=$HOME/.zshrc.$(hostname).post
+if [ -f "$MACHINEPOSTRC" ]
+then
+    source "$MACHINEPOSTRC"
+fi
