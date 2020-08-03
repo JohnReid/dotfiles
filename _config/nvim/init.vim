@@ -170,7 +170,6 @@ set relativenumber          " Display relative line numbers
 set number                  " Display line numbers
 set number relativenumber   " Display current and relative line numbers
 set numberwidth=1           " using only 1 column (and 1 space) while possible
-set background=dark         " We are using dark background in vim
 set title                   " show title in console title bar
 set ls=2                    " always show status line
 set noerrorbells
@@ -185,12 +184,10 @@ set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
 " displays tabs with :set list & displays when a line runs off-screen
 set listchars=tab:>-,trail:-,precedes:<,extends:>
 set list
-" Highlight column
-set colorcolumn=119
-" Try to use 24 bit colors
-set termguicolors
-" Choose a color scheme
-colorscheme solarized
+set colorcolumn=119         " Highlight column
+set termguicolors           " Try to use 24 bit colors
+set background=dark         " We are using dark background in vim
+colorscheme solarized       " Note we should set tmux to use same colour scheme
 " colorscheme gruvbox
 " colorscheme night-owl
 " Diff highlighting colours: https://github.com/tpope/vim-fugitive/issues/1501#issuecomment-602141438

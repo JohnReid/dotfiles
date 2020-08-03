@@ -135,19 +135,11 @@ if exists rbenv; then
   eval "$(rbenv init -)"
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-ANACONDAROOT=$HOME/anaconda3
-CONDA=$ANACONDAROOT/bin/conda
-__conda_setup="$($CONDA 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$ANACONDAROOT/etc/profile.d/conda.sh" ]; then
-        . "$ANACONDAROOT/etc/profile.d/conda.sh"
-    else
-        export PATH="$ANACONDAROOT/bin:$PATH"
-    fi
+
+#
+# Source machine specific post setup if it exists
+MACHINEPOSTRC=$HOME/.zshrc.$(hostname).post
+if [ -f "$MACHINEPOSTRC" ]
+then
+    source "$MACHINEPOSTRC"
 fi
-unset __conda_setup
-# <<< conda initialize <<<
