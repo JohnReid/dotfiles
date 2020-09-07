@@ -87,6 +87,7 @@ AskHR
 Async
 Atf
 Audic
+Augspurger
 Autoencoder
 Autoregression
 B
@@ -488,6 +489,7 @@ Gao
 Gaussians
 Gb
 Gelman
+GeoPandas
 Georgi
 Georgy
 GerpN
@@ -495,14 +497,18 @@ GerpRS
 Ghevaert
 Giacomantonio
 Gini
+GitFlow
 GitHub
 GitLab
+Gitiquette
 Gitlab
 Gliobla
 GloVe
 Gneiting
 Goldfarb
+Gonna
 Goodhill
+Google's
 Goroshin
 Goyal
 Grathwohl
@@ -892,6 +898,7 @@ Nadav
 Nagarajan
 Nagarajan's
 Nakajima
+Namespaces
 Nanog
 Narlikar
 Neohellenic
@@ -1019,6 +1026,7 @@ PubLayNet
 PubMed
 Pueyo
 Pullen
+PyCharm's
 PyPI
 PyTorch
 QA
@@ -1066,6 +1074,7 @@ ReLU
 ReLUs
 ReMoDiscovery
 ReQU
+Rebase
 Redbond
 Redrow
 RefSeq
@@ -1127,6 +1136,8 @@ SROIE2019
 SSI
 SSL
 SSN
+STDERR
+STDOUT
 STEME's
 SUGILITE
 SUT
@@ -1201,6 +1212,7 @@ Stigler
 Stockfish
 Stormo
 Strauﬂ
+Streamlit
 Strongylocentrotus
 St√©phane
 Su
@@ -1226,6 +1238,8 @@ TATAAAA
 TATATAA
 TATATAT
 TATAWAW
+TBC
+TBD
 TBM
 TCF
 TCGA
@@ -1256,6 +1270,7 @@ TPR
 TPs
 TRANSFAC
 TREC
+TS
 TSS
 TSSs
 TTATCTATA
@@ -1384,6 +1399,7 @@ Wellcome
 Wernisch
 Whittingham
 Whye
+Wickham
 Wikipedia
 Wilcoxon
 Windram
@@ -1409,6 +1425,7 @@ Xtracta
 Xu
 Xuan
 Xuechen
+YAGNI
 YOLOv3
 YY
 Yamaguchi
@@ -1520,6 +1537,7 @@ bitbucket
 blastocyst
 blastoderm
 blog
+blueprism
 bm
 bmx
 boxplot
@@ -1547,6 +1565,7 @@ ceteris
 cfos
 cfoshela
 chatbot
+checkbox
 checkboxes
 chktex
 chr
@@ -1566,6 +1585,7 @@ clickthrough
 clusterings
 cmyc
 cmychela
+codebase
 coexpression
 cofactor
 cofactors
@@ -1599,6 +1619,7 @@ cx
 cyber
 d
 dH
+dask
 dataset
 datasets
 de
@@ -1612,6 +1633,7 @@ deoxyribonuclease
 deoxyribonucleic
 dep
 desparsifies
+dev
 devel
 diag
 diff
@@ -1637,6 +1659,7 @@ droWil
 droYak
 dropout
 dropouts
+dtypes
 duvenaud
 dx
 dyad
@@ -1709,7 +1732,9 @@ genomic
 genomics
 genotype
 genotypes
+geopandas
 github
+gitlab
 gk
 gkf
 gmail
@@ -1767,8 +1792,10 @@ informatics
 init
 initialisations
 initio
+inline
 inputenc
 instantiations
+instill
 int
 intepretable
 interdependencies
@@ -1941,6 +1968,7 @@ nucleosome
 nucleosomes
 nucleotide
 nucleotides
+numpy
 nvim
 nvim's
 nvimrc
@@ -2069,7 +2097,9 @@ raleway
 rasmussen
 rc
 rcl
+rebasing
 rect
+refactor
 refactored
 refactoring
 regex
@@ -2136,6 +2166,7 @@ setstretch
 setup
 sevenup
 sfffamily
+sha1
 shapelets
 shogi
 shortcut
@@ -2236,6 +2267,7 @@ uncharacterised
 underdetermined
 underflows
 undirected
+unmark
 unnormalised
 unregularised
 unscalable
