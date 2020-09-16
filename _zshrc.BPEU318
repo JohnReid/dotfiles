@@ -1,1 +1,8 @@
 ZSH_THEME=gnzh
+
+# From: brew install ruby
+export RUBY_VERSION=2.7.0
+export PATH="$HOME/.gem/ruby/$RUBY_VERSION/bin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/$RUBY_VERSION/bin:$PATH"
+# export LDFLAGS="-L/usr/local/opt/ruby/lib"
+# export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
