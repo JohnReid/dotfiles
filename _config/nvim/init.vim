@@ -434,10 +434,17 @@ let g:acp_completeoptPreview=1
 " ==========================================================
 " Neoterm
 " ==========================================================
+function! Chomp(string)
+    return substitute(a:string, '\n\+$', '', '')
+endfunction
 let g:neoterm_default_mod = 'belowright'        " open terminal in bottom split
 let g:neoterm_size = 16                         " terminal split size
 let g:neoterm_autoscroll = 1                    " scroll to the bottom when running a command
-let g:neoterm_repl_python = 'jupyter console'   " use Jupyter console (not working at present)
+let g:neoterm_bracketed_paste = 1               " allow multiline paste statements
+" let g:neoterm_repl_python = 'jupyter console'   " use Jupyter console (not working at present)
+" let g:neoterm_repl_python = ['conda activate PowerMethod', 'jupyter console']
+" let g:neoterm_repl_python = 'python'
+let g:neoterm_repl_python = Chomp(system('which jupyter')) . ' console'
 nnoremap <LocalLeader>ta :TREPLSendFile<CR>     " send whole file
 nnoremap <LocalLeader>tl :TREPLSendLine<CR>     " send line
 nnoremap <LocalLeader>td :TREPLSendLine<CR>j    " send line and move down
