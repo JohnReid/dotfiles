@@ -45,10 +45,6 @@
   unpushed = log --branches --not --remotes --no-walk --decorate --oneline
   branch-info = for-each-ref --format=\"%(refname:short) %(push:track)\" refs/heads
 
-
-[credential]
-  ; helper = osxkeychain
-
 [web]
   browser = firefox
 
