@@ -19,8 +19,10 @@ AI's
 AI4SI
 AIC
 AIS
+AISA
 AISTATS
 AIs
+AK
 ALiPy
 AMRO
 APAC
@@ -80,12 +82,14 @@ Apriori
 Arabidopsis
 Arce
 Arnosti
+Aroca
 Artem
 Artyom
 AskHR
 Async
 Atf
 Audic
+Augspurger
 Autoencoder
 Autoregression
 B
@@ -135,6 +139,8 @@ BiLSTM
 BibTeX
 Biblatex
 Bilgin
+Bimal
+Bimal's
 BioModels
 Biomedical
 Biomodel
@@ -243,6 +249,7 @@ Claverie
 Clinchant
 Clusternomics
 CoCoX
+CoE
 CoderByte
 Collignon
 Collignon's
@@ -338,6 +345,7 @@ Dirichlet
 Dmrt
 Dmrta
 Doc2Vec
+DocBank
 Docucharm
 DocumentCaptureData
 Dollimore
@@ -432,6 +440,7 @@ Fos
 Foxi1
 Foxj
 Foxo
+FractalReceipts
 Frechét
 Freie
 Frobenius
@@ -486,6 +495,7 @@ Gao
 Gaussians
 Gb
 Gelman
+GeoPandas
 Georgi
 Georgy
 GerpN
@@ -493,19 +503,24 @@ GerpRS
 Ghevaert
 Giacomantonio
 Gini
+GitFlow
 GitHub
 GitLab
+Gitiquette
 Gitlab
 Gliobla
 GloVe
 Gneiting
 Goldfarb
+Gonna
 Goodhill
+Google's
 Goroshin
 Goyal
 Grathwohl
 Gromov
 Gu
+Guesgen
 Guillem
 Guillem's
 Gul
@@ -610,6 +625,7 @@ Irf
 Ish
 IsoMap
 Isomap
+Issar
 ItalicFont
 Ivelin
 Iwata
@@ -890,6 +906,7 @@ Nadav
 Nagarajan
 Nagarajan's
 Nakajima
+Namespaces
 Nanog
 Narlikar
 Neohellenic
@@ -931,6 +948,7 @@ OoD
 OpenAI's
 Othmer
 Ott
+Ouellette
 Ozay
 PAH
 PBE
@@ -1016,7 +1034,9 @@ Prometheus
 PubLayNet
 PubMed
 Pueyo
+Pujol
 Pullen
+PyCharm's
 PyPI
 PyTorch
 QA
@@ -1064,6 +1084,7 @@ ReLU
 ReLUs
 ReMoDiscovery
 ReQU
+Rebase
 Redbond
 Redrow
 RefSeq
@@ -1081,6 +1102,7 @@ Riemannian
 Rivest
 Rizk
 Rmd
+RoBERTa
 Roadmap
 Robiquity
 Rora
@@ -1107,6 +1129,7 @@ SELU
 SIGMOD
 SIMLR
 SK
+SM's
 SMBL
 SMS
 SNE
@@ -1124,6 +1147,8 @@ SROIE2019
 SSI
 SSL
 SSN
+STDERR
+STDOUT
 STEME's
 SUGILITE
 SUT
@@ -1139,6 +1164,7 @@ SalesForce
 Saliency
 Samplawski
 Sandeep
+Sandeep's
 Sandelin
 Sarai
 Sascha
@@ -1197,6 +1223,7 @@ Stigler
 Stockfish
 Stormo
 Strau�
+Streamlit
 Strongylocentrotus
 Stéphane
 Su
@@ -1204,6 +1231,7 @@ Submodular
 Subnetworks
 Sumer
 Sumit
+Sunil
 SuperGlue
 Swi
 SymAtlas
@@ -1222,6 +1250,8 @@ TATAAAA
 TATATAA
 TATATAT
 TATAWAW
+TBC
+TBD
 TBM
 TCF
 TCGA
@@ -1252,6 +1282,8 @@ TPR
 TPs
 TRANSFAC
 TREC
+TRIE
+TS
 TSS
 TSSs
 TTATCTATA
@@ -1259,7 +1291,9 @@ TTCCCGGAA
 TTG
 TTT
 TableBank
+TableReader
 TableSpy
+TableSpy's
 Tabula
 Taigman
 Takamasa
@@ -1278,6 +1312,7 @@ TeX
 Tec
 Teh
 Telstra
+TemplateVersion
 TensorBoard
 TensorFlow
 Tesauro
@@ -1378,6 +1413,7 @@ Wellcome
 Wernisch
 Whittingham
 Whye
+Wickham
 Wikipedia
 Wilcoxon
 Windram
@@ -1393,6 +1429,7 @@ Wuhan
 X1
 X2
 XGBoost
+XLNet
 XML
 XeLaTeX
 XeTeX
@@ -1403,6 +1440,7 @@ Xtracta
 Xu
 Xuan
 Xuechen
+YAGNI
 YOLOv3
 YY
 Yamaguchi
@@ -1439,6 +1477,7 @@ Zhihui
 Zhiwen
 Zichang
 a4paper
+aaai
 acetylate
 acetylation
 activatory
@@ -1471,6 +1510,7 @@ arev
 arg
 argmax
 argmin
+aroca
 arxiv
 astrocytes
 async
@@ -1514,6 +1554,7 @@ bitbucket
 blastocyst
 blastoderm
 blog
+blueprism
 bm
 bmx
 boxplot
@@ -1541,7 +1582,9 @@ ceteris
 cfos
 cfoshela
 chatbot
+checkbox
 checkboxes
+cheng
 chktex
 chr
 cinerea
@@ -1560,6 +1603,7 @@ clickthrough
 clusterings
 cmyc
 cmychela
+codebase
 coexpression
 cofactor
 cofactors
@@ -1593,6 +1637,7 @@ cx
 cyber
 d
 dH
+dask
 dataset
 datasets
 de
@@ -1606,12 +1651,14 @@ deoxyribonuclease
 deoxyribonucleic
 dep
 desparsifies
+dev
 devel
 diag
 diff
 diffeomorphisms
 differentially
 digamma
+digitalexchange
 dimensionality
 dinucleotide
 directionality
@@ -1631,6 +1678,7 @@ droWil
 droYak
 dropout
 dropouts
+dtypes
 duvenaud
 dx
 dyad
@@ -1703,7 +1751,9 @@ genomic
 genomics
 genotype
 genotypes
+geopandas
 github
+gitlab
 gk
 gkf
 gmail
@@ -1750,6 +1800,7 @@ hyperparameter
 hyperparameters
 i
 iDMMPMM
+ieee
 ig
 ij
 immunoprecipitation
@@ -1761,8 +1812,10 @@ informatics
 init
 initialisations
 initio
+inline
 inputenc
 instantiations
+instill
 int
 intepretable
 interdependencies
@@ -1782,6 +1835,7 @@ iteratively
 ive
 javascript
 jiamings's
+john
 johnbaronreid
 jpg
 jr
@@ -1844,6 +1898,7 @@ mathop
 mathptmx
 mathrm
 matplotlib
+mavadia
 max
 maxhela
 maxima
@@ -1867,6 +1922,7 @@ microarray
 microarrays
 microglia
 middleware
+miguel
 min
 minibatch
 miniframes
@@ -1919,6 +1975,7 @@ newpage
 newstest2014
 newtxmath
 nfkb
+nocopyright
 nolinebreak
 noncoding
 nonlinear
@@ -1935,6 +1992,7 @@ nucleosome
 nucleosomes
 nucleotide
 nucleotides
+numpy
 nvim
 nvim's
 nvimrc
@@ -2063,12 +2121,15 @@ raleway
 rasmussen
 rc
 rcl
+rebasing
 rect
+refactor
 refactored
 refactoring
 regex
 regexes
 regulon
+reid
 reimplemented
 rel
 removeparwhitespace
@@ -2085,6 +2146,7 @@ rlccccc
 rlcccl
 rll
 rlll
+rm
 rmd
 rnaseq
 rollout
@@ -2099,6 +2161,8 @@ runtime
 runtimes
 s
 sa
+sajot
+sandeep
 sapiens
 scGen
 scLVM
@@ -2130,6 +2194,7 @@ setstretch
 setup
 sevenup
 sfffamily
+sha1
 shapelets
 shogi
 shortcut
@@ -2184,12 +2249,14 @@ testbeds
 tex
 text2process
 textheight
+textsuperscript
 texttt
 textwidth
 th
 thaliana
 thgen
 thmtools
+thomas
 thoughtonomy
 thresholded
 thresholding
@@ -2230,6 +2297,7 @@ uncharacterised
 underdetermined
 underflows
 undirected
+unmark
 unnormalised
 unregularised
 unscalable
@@ -2272,6 +2340,7 @@ wT
 wX
 wasysym
 wb
+weiwei
 wgEncodeOpenChromDnaseColo829BaseOverlapSignal
 wgEncodeOpenChromDnaseGlioblaBaseOverlapSignal
 wgEncodeOpenChromDnaseGm12878BaseOverlapSignal

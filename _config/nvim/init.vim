@@ -21,6 +21,7 @@ Plug 'bps/vim-textobj-python'
 "
 " Plug 'JohnReid/nvim-ipy'
 Plug 'bfredl/nvim-ipy'
+Plug 'kassio/neoterm'
 " Plug 'nvie/vim-flake8'
 " Plug 'klen/python-mode'
 " Plug 'ivanov/vim-ipython'
@@ -94,7 +95,7 @@ Plug 'ErichDonGubler/vim-sublime-monokai'
 Plug 'tjammer/blayu.vim'
 Plug 'Jimeno0/vim-chito'
 "
-" vim-snipmate
+" Snippets
 "
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
@@ -428,6 +429,19 @@ au BufRead *.js set makeprg=jslint\ %
 "autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
 "
 let g:acp_completeoptPreview=1
+
+
+" ==========================================================
+" Neoterm
+" ==========================================================
+let g:neoterm_default_mod = 'belowright'        " open terminal in bottom split
+let g:neoterm_size = 16                         " terminal split size
+let g:neoterm_autoscroll = 1                    " scroll to the bottom when running a command
+let g:neoterm_repl_python = 'jupyter console'   " use Jupyter console (not working at present)
+nnoremap <LocalLeader>ta :TREPLSendFile<CR>     " send whole file
+nnoremap <LocalLeader>tl :TREPLSendLine<CR>     " send line
+nnoremap <LocalLeader>td :TREPLSendLine<CR>j    " send line and move down
+nmap <LocalLeader>to <Plug>(neoterm-repl-send)  " send text object or motion
 
 
 " ==========================================================

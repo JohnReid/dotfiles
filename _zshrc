@@ -75,7 +75,7 @@ ZSH_TMUX_AUTOCONNECT="true"  # Automatically connect to a previous session if it
 
 #
 # Source machine specific setup if it exists
-MACHINERC=$HOME/.zshrc.$(hostname)
+MACHINERC=$HOME/.zshrc.$(hostname -s)
 if [ -f "$MACHINERC" ]
 then
     source "$MACHINERC"
@@ -138,7 +138,7 @@ fi
 
 #
 # Source machine specific post setup if it exists
-MACHINEPOSTRC=$HOME/.zshrc.$(hostname).post
+MACHINEPOSTRC=$HOME/.zshrc.$(hostname -s).post
 if [ -f "$MACHINEPOSTRC" ]
 then
     source "$MACHINEPOSTRC"
