@@ -47,7 +47,7 @@
 
 
 [credential]
-	helper = osxkeychain
+  ; helper = osxkeychain
 
 [web]
   browser = firefox
