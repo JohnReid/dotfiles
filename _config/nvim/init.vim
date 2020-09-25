@@ -72,10 +72,12 @@ Plug 'tomtom/tlib_vim'
 Plug 'ervandew/screen'  " Simulate a split shell
 " Plug 'eparreno/vim-l9'  " Vim script library
 "
-" Completion managers
+" Completion managers / refactoring
 "
 " Plug 'vim-scripts/AutoComplPop'
 " Plug 'Shougo/deoplete.nvim'
+Plug 'davidhalter/jedi-vim'  " autocomplete
+" Plug 'python-rope/ropevim'  " refactoring
 Plug 'ervandew/supertab'
 Plug 'roxma/nvim-yarp'  " Required by ncm2
 Plug 'ncm2/ncm2'
@@ -456,10 +458,12 @@ nmap <LocalLeader>to <Plug>(neoterm-repl-send)  " send text object or motion
 " ==========================================================
 "
 " Set up python interpreter for neovim
-" let hostname = substitute(system('hostname'), '\n', '', '')
-" if hostname == "BPEU318.local"
-"   let g:python3_host_prog = '/Users/johnreid/anaconda3/envs/neovim/bin/python'
-" endif
+let hostname = Chomp(system('hostname'))
+if hostname == "BPEU318.local"
+  let g:python3_host_prog = '/Users/johnreid/anaconda3/envs/neovim/bin/python'
+elseif hostname == 'Ubuntu-XPS-15'
+  let g:python_host_prog = '/home/john/miniconda3/envs/Python2/bin/python'
+endif
 "
 " Syntastic
 let g:syntastic_python_checkers = ["flake8"]
@@ -640,15 +644,11 @@ let g:syntastic_tex_chktex_showmsgs = 1
 "
 " from: https://github.com/lervag/vimtex/issues/835 to enable Synctex
 let g:vimtex_compiler_progname = "nvr"
-let g:vimtex_latexmk_progname = "nvr"
 let g:vimtex_view_method = "zathura"
 let g:tex_flavor = 'latex'
 "
 " Use Zathura
 let g:vimtex_view_general_viewer = 'zathura'
-"
-" Use synctex to synchronise vim cursor and the PDF viewer
-let g:vimtex_latexmk_options = '-synctex=1'
 "
 " " Settings for vim-latex (http://vim-latex.sourceforge.net)
 " set shellslash                                " Convert backward slashes to forward ones in filename references
