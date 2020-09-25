@@ -76,8 +76,8 @@ Plug 'ervandew/screen'  " Simulate a split shell
 "
 " Plug 'vim-scripts/AutoComplPop'
 " Plug 'Shougo/deoplete.nvim'
-Plug 'davidhalter/jedi-vim'  " autocomplete
-" Plug 'python-rope/ropevim'  " refactoring
+" Plug 'davidhalter/jedi-vim'  " autocomplete
+" Plug 'python-rope/ropevim'   " refactoring
 Plug 'ervandew/supertab'
 Plug 'roxma/nvim-yarp'  " Required by ncm2
 Plug 'ncm2/ncm2'
