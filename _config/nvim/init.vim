@@ -48,7 +48,6 @@ Plug 'tpope/vim-scriptease'
 " Files
 "
 Plug 'scrooloose/nerdtree'
-" Plug 'wincent/Command-T'  " Fuzzy file name matching
 Plug 'will133/vim-dirdiff'  " diff on directories
 "
 " Git / gists
@@ -301,7 +300,6 @@ set ffs=unix,dos,mac        " Try recognizing dos, unix, and mac line endings.
 " Searching and Patterns
 " ==========================================================
 " Run command-t file search
-map <leader>f :CommandT<CR>
 set grepprg=ack             " replace the default grep program with ack
 set ignorecase              " Default to using case insensitive searches,
 set smartcase               " unless uppercase letters are used in the regex.
