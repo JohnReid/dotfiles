@@ -95,6 +95,7 @@ Plug 'haishanh/night-owl.vim'
 Plug 'ErichDonGubler/vim-sublime-monokai'
 Plug 'tjammer/blayu.vim'
 Plug 'Jimeno0/vim-chito'
+Plug 'junegunn/seoul256.vim'
 "
 " Snippets
 "
@@ -189,9 +190,10 @@ set list
 set colorcolumn=119         " Highlight column
 set termguicolors           " Try to use 24 bit colors
 set background=dark         " We are using dark background in vim
-colorscheme solarized       " Note we should set tmux to use same colour scheme
+" colorscheme solarized       " Note we should set tmux to use same colour scheme
 " colorscheme gruvbox
 " colorscheme night-owl
+colorscheme seoul256
 " Diff highlighting colours: https://github.com/tpope/vim-fugitive/issues/1501#issuecomment-602141438
 hi DiffChange guibg=#5f005f
 hi DiffAdd    guibg=#00005f
