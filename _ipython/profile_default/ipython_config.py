@@ -1,4 +1,5 @@
 # Configuration file for ipython.
+# flake8: noqa
 
 c = get_config()
 
