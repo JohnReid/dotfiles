@@ -219,8 +219,11 @@ inoremap jk <ESC>
 " open/close the quickfix window
 nmap <leader>c :copen<CR>
 nmap <leader>cc :cclose<CR>
-" Open NERDtree
+"
+" NERDtree
+"
 map <leader>n :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']    " ignore some files
 " Close vim if only buffer left open is NERDtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " for when we forget to use sudo to open/edit a file
