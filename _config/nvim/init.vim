@@ -95,6 +95,7 @@ Plug 'haishanh/night-owl.vim'
 Plug 'ErichDonGubler/vim-sublime-monokai'
 Plug 'tjammer/blayu.vim'
 Plug 'Jimeno0/vim-chito'
+Plug 'junegunn/seoul256.vim'
 "
 " Snippets
 "
@@ -189,9 +190,10 @@ set list
 set colorcolumn=119         " Highlight column
 set termguicolors           " Try to use 24 bit colors
 set background=dark         " We are using dark background in vim
-colorscheme solarized       " Note we should set tmux to use same colour scheme
+" colorscheme solarized       " Note we should set tmux to use same colour scheme
 " colorscheme gruvbox
 " colorscheme night-owl
+colorscheme seoul256
 " Diff highlighting colours: https://github.com/tpope/vim-fugitive/issues/1501#issuecomment-602141438
 hi DiffChange guibg=#5f005f
 hi DiffAdd    guibg=#00005f
@@ -224,6 +226,11 @@ nmap <leader>cc :cclose<CR>
 "
 map <leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']    " ignore some files
+" Have NERDtree open automatically when nvim opens on a directory or if no
+" files specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Close vim if only buffer left open is NERDtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " for when we forget to use sudo to open/edit a file
@@ -237,6 +244,9 @@ fu! SplitScroll()
     :wincmd w
     :set scrollbind
 endfu
+"
+" Splits
+"
 nmap <leader>sb :call SplitScroll()<CR>
 " Open new windows below or to right of current
 :set splitbelow
@@ -246,12 +256,14 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-" and lets make these all work in insert mode too ( <C-O> makes next cmd
-"  happen as if in command mode )
+" and lets make these all work in insert mode too (<C-O> makes next cmd
+" happen as if in command mode)
 imap <C-W> <C-O><C-W>
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
 set ruler                   " show the cursor position all the time
+set cursorline              " show the cursor line
+set cursorcolumn            " show the cursor column
 set nostartofline           " Avoid moving cursor to BOL when jumping around
 set virtualedit=block       " Let cursor move past the last char in <C-v> mode
 set scrolloff=3             " Keep 3 context lines above and below the cursor
