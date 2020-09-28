@@ -242,6 +242,9 @@ fu! SplitScroll()
     :wincmd w
     :set scrollbind
 endfu
+"
+" Splits
+"
 nmap <leader>sb :call SplitScroll()<CR>
 " Open new windows below or to right of current
 :set splitbelow
@@ -251,12 +254,14 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-" and lets make these all work in insert mode too ( <C-O> makes next cmd
-"  happen as if in command mode )
+" and lets make these all work in insert mode too (<C-O> makes next cmd
+" happen as if in command mode)
 imap <C-W> <C-O><C-W>
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
 set ruler                   " show the cursor position all the time
+set cursorline              " show the cursor line
+set cursorcolumn            " show the cursor column
 set nostartofline           " Avoid moving cursor to BOL when jumping around
 set virtualedit=block       " Let cursor move past the last char in <C-v> mode
 set scrolloff=3             " Keep 3 context lines above and below the cursor
