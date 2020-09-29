@@ -220,12 +220,20 @@ inoremap jk <ESC>
 " open/close the quickfix window
 nmap <leader>c :copen<CR>
 nmap <leader>cc :cclose<CR>
-" Open NERDtree
+"
+" NERDtree
+"
 map <leader>n :NERDTreeToggle<CR>
+<<<<<<< HEAD
+" Have NERDtree open automatically when nvim opens on a directory
+||||||| 4db071b
+" Have NERDtree open automatically when nvim opens on a directory or if no
+" files specified
+=======
+let NERDTreeIgnore = ['\.pyc$']    " ignore some files
 " Have NERDtree open automatically when nvim opens on a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-" Have NERDtree open if no files spec
 " Close vim if only buffer left open is NERDtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " for when we forget to use sudo to open/edit a file
