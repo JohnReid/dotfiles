@@ -19,11 +19,7 @@ Plug 'bps/vim-textobj-python'
 "
 " Filetypes
 "
-" Plug 'kassio/neoterm'
-" Plug 'hkupty/iron.nvim', '33d80db'
 " Plug 'nvie/vim-flake8'
-" Plug 'klen/python-mode'
-" Plug 'ivanov/vim-ipython'
 " Plug 'JohnReid/nvim-ipy'
 " Plug 'bfredl/nvim-ipy'
 " Plug 'vim-scripts/Vim-R-plugin'
@@ -447,23 +443,8 @@ let g:acp_completeoptPreview=1
 
 
 " ==========================================================
-" Neoterm
-" ==========================================================
-function! Chomp(string)
-    return substitute(a:string, '\n\+$', '', '')
-endfunction
-" let g:neoterm_default_mod = 'belowright'        " open terminal in bottom split
-" let g:neoterm_size = 16                         " terminal split size
-" let g:neoterm_autoscroll = 1                    " scroll to the bottom when running a command
-" let g:neoterm_bracketed_paste = 1               " allow multiline paste statements
-" let g:neoterm_repl_python = Chomp(system('which jupyter')) . ' console'
-" nnoremap <LocalLeader>ta :TREPLSendFile<CR>     " send whole file
-" nnoremap <LocalLeader>tl :TREPLSendLine<CR>     " send line
-" nnoremap <LocalLeader>td :TREPLSendLine<CR>j    " send line and move down
-" nmap <LocalLeader>to <Plug>(neoterm-repl-send)  " send text object or motion
-
-
 " Send to window
+" ==========================================================
 let g:sendtowindow_use_defaults=0
 nmap <LocalLeader>l <Plug>SendRight
 xmap <LocalLeader>l <Plug>SendRightV
@@ -474,23 +455,15 @@ xmap <LocalLeader>k <Plug>SendUpV
 nmap <LocalLeader>j <Plug>SendDown
 xmap <LocalLeader>j <Plug>SendDownV
 
-" Iron
-" luafile $HOME/.config/nvim/iron.lua
-" nmap <localleader>pm    <Plug>(iron-send-motion)
-" nmap <localleader>pa    <Plug>(iron-send-motion)ae
-" vmap <localleader>pv    <Plug>(iron-visual-send)
-" nmap <localleader>pr    <Plug>(iron-repeat-cmd)
-" nmap <localleader>pl    <Plug>(iron-send-line)
-" nmap <localleader>p<CR> <Plug>(iron-cr)
-" nmap <localleader>pi    <plug>(iron-interrupt)
-" nmap <localleader>pq    <Plug>(iron-exit)
-" nmap <localleader>pc    <Plug>(iron-clear)
 
 " ==========================================================
 " Python
 " ==========================================================
 "
 " Set up python interpreter for neovim
+function! Chomp(string)
+    return substitute(a:string, '\n\+$', '', '')
+endfunction
 let hostname = Chomp(system('hostname'))
 if hostname == "BPEU318.local"
   let g:python3_host_prog = '/Users/johnreid/anaconda3/envs/neovim/bin/python'
