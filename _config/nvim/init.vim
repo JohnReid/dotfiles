@@ -19,12 +19,13 @@ Plug 'bps/vim-textobj-python'
 "
 " Filetypes
 "
-" Plug 'JohnReid/nvim-ipy'
-Plug 'bfredl/nvim-ipy'
-Plug 'kassio/neoterm'
+" Plug 'kassio/neoterm'
+" Plug 'hkupty/iron.nvim', '33d80db'
 " Plug 'nvie/vim-flake8'
 " Plug 'klen/python-mode'
 " Plug 'ivanov/vim-ipython'
+" Plug 'JohnReid/nvim-ipy'
+" Plug 'bfredl/nvim-ipy'
 " Plug 'vim-scripts/Vim-R-plugin'
 Plug 'jalvesaq/Nvim-R'
 Plug 'lervag/vimtex'
@@ -63,7 +64,7 @@ Plug 'timakro/vim-searchant'  " Improved search highlighting
 "
 " Miscellaneous
 "
-Plug 'KKPMW/vim-sendtowindow'
+Plug 'karoliskoncevicius/vim-sendtowindow'
 Plug 'godlygeek/tabular'  " Align text
 Plug 'sjl/gundo.vim'
 Plug 'vim-scripts/TaskList.vim'
@@ -169,8 +170,6 @@ nnoremap <leader>. :lcd %:p:h<CR>
 " ==========================================================
 " Messages, Info, Status, Appearance
 " ==========================================================
-set relativenumber          " Display relative line numbers
-set number                  " Display line numbers
 set number relativenumber   " Display current and relative line numbers
 set numberwidth=1           " using only 1 column (and 1 space) while possible
 set title                   " show title in console title bar
@@ -223,11 +222,9 @@ nmap <leader>c :copen<CR>
 nmap <leader>cc :cclose<CR>
 " Open NERDtree
 map <leader>n :NERDTreeToggle<CR>
-" Have NERDtree open automatically when nvim opens on a directory or if no
-" files specified
+" Have NERDtree open automatically when nvim opens on a directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Have NERDtree open if no files spec
 " Close vim if only buffer left open is NERDtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -277,6 +274,9 @@ set softtabstop=2           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set shiftround              " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:>         " show matching <> (html mainly) as well
+"
+" Folding
+"
 set foldmethod=indent       " allow us to fold on indents
 set foldlevel=99            " don't fold by default
 " don't outdent hashes
@@ -450,19 +450,39 @@ let g:acp_completeoptPreview=1
 function! Chomp(string)
     return substitute(a:string, '\n\+$', '', '')
 endfunction
-let g:neoterm_default_mod = 'belowright'        " open terminal in bottom split
-let g:neoterm_size = 16                         " terminal split size
-let g:neoterm_autoscroll = 1                    " scroll to the bottom when running a command
-let g:neoterm_bracketed_paste = 1               " allow multiline paste statements
-" let g:neoterm_repl_python = 'jupyter console'   " use Jupyter console (not working at present)
-" let g:neoterm_repl_python = ['conda activate PowerMethod', 'jupyter console']
-" let g:neoterm_repl_python = 'python'
-let g:neoterm_repl_python = Chomp(system('which jupyter')) . ' console'
-nnoremap <LocalLeader>ta :TREPLSendFile<CR>     " send whole file
-nnoremap <LocalLeader>tl :TREPLSendLine<CR>     " send line
-nnoremap <LocalLeader>td :TREPLSendLine<CR>j    " send line and move down
-nmap <LocalLeader>to <Plug>(neoterm-repl-send)  " send text object or motion
+" let g:neoterm_default_mod = 'belowright'        " open terminal in bottom split
+" let g:neoterm_size = 16                         " terminal split size
+" let g:neoterm_autoscroll = 1                    " scroll to the bottom when running a command
+" let g:neoterm_bracketed_paste = 1               " allow multiline paste statements
+" let g:neoterm_repl_python = Chomp(system('which jupyter')) . ' console'
+" nnoremap <LocalLeader>ta :TREPLSendFile<CR>     " send whole file
+" nnoremap <LocalLeader>tl :TREPLSendLine<CR>     " send line
+" nnoremap <LocalLeader>td :TREPLSendLine<CR>j    " send line and move down
+" nmap <LocalLeader>to <Plug>(neoterm-repl-send)  " send text object or motion
 
+
+" Send to window
+let g:sendtowindow_use_defaults=0
+nmap <LocalLeader>l <Plug>SendRight
+xmap <LocalLeader>l <Plug>SendRightV
+nmap <LocalLeader>h <Plug>SendLeft
+xmap <LocalLeader>h <Plug>SendLeftV
+nmap <LocalLeader>k <Plug>SendUp
+xmap <LocalLeader>k <Plug>SendUpV
+nmap <LocalLeader>j <Plug>SendDown
+xmap <LocalLeader>j <Plug>SendDownV
+
+" Iron
+" luafile $HOME/.config/nvim/iron.lua
+" nmap <localleader>pm    <Plug>(iron-send-motion)
+" nmap <localleader>pa    <Plug>(iron-send-motion)ae
+" vmap <localleader>pv    <Plug>(iron-visual-send)
+" nmap <localleader>pr    <Plug>(iron-repeat-cmd)
+" nmap <localleader>pl    <Plug>(iron-send-line)
+" nmap <localleader>p<CR> <Plug>(iron-cr)
+" nmap <localleader>pi    <plug>(iron-interrupt)
+" nmap <localleader>pq    <Plug>(iron-exit)
+" nmap <localleader>pc    <Plug>(iron-clear)
 
 " ==========================================================
 " Python
@@ -483,16 +503,16 @@ let g:syntastic_python_checkers = ["flake8"]
 " Ask nvim-ipy not to make its own mappings
 let g:nvim_ipy_perform_mappings = 0
 " Set up our own mappings
-au FileType python map  <buffer> <silent> <LocalLeader>l   <Plug>(IPy-Run)
-au FileType python map  <buffer> <silent> <LocalLeader>w   <Plug>(IPy-Word)
-au FileType python map  <buffer> <silent> <LocalLeader>o   <Plug>(IPy-RunOp)
-au FileType python map  <buffer> <silent> <LocalLeader>r   <Plug>(IPy-RunRegister)
-au FileType python map  <buffer> <silent> <LocalLeader>c   <Plug>(IPy-RunCell)
-au FileType python map  <buffer> <silent> <LocalLeader>a   <Plug>(IPy-RunAll)
-au FileType python imap <buffer> <silent> <LocalLeader>f   <Plug>(IPy-Complete)
-au FileType python map  <buffer> <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
-au FileType python map  <buffer> <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
-au FileType python map  <buffer> <silent> <LocalLeader>k   <Plug>(IPy-Terminate)
+" au FileType python map  <buffer> <silent> <LocalLeader>l   <Plug>(IPy-Run)
+" au FileType python map  <buffer> <silent> <LocalLeader>w   <Plug>(IPy-Word)
+" au FileType python map  <buffer> <silent> <LocalLeader>o   <Plug>(IPy-RunOp)
+" au FileType python map  <buffer> <silent> <LocalLeader>r   <Plug>(IPy-RunRegister)
+" au FileType python map  <buffer> <silent> <LocalLeader>c   <Plug>(IPy-RunCell)
+" au FileType python map  <buffer> <silent> <LocalLeader>a   <Plug>(IPy-RunAll)
+" au FileType python imap <buffer> <silent> <LocalLeader>f   <Plug>(IPy-Complete)
+" au FileType python map  <buffer> <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
+" au FileType python map  <buffer> <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
+" au FileType python map  <buffer> <silent> <LocalLeader>k   <Plug>(IPy-Terminate)
 " Empty lines define start and end of cells
 let g:ipy_celldef = '^$'
 " set syntax=python in IPython buffer automatically: https://github.com/bfredl/nvim-ipy/issues/43
@@ -513,12 +533,12 @@ let g:pymode_lint_ignore = "E111,E202,E203,E221,E272,C901"
 let g:pymode_mccabe_ignore = "C901"
 "
 " run py.tests
-au FileType python nmap <silent><LocalLeader>tf <Esc>:Pytest file<CR>
-au FileType python nmap <silent><LocalLeader>tc <Esc>:Pytest class<CR>
-au FileType python nmap <silent><LocalLeader>tm <Esc>:Pytest method<CR>
-au FileType python nmap <silent><LocalLeader>tn <Esc>:Pytest next<CR>
-au FileType python nmap <silent><LocalLeader>tp <Esc>:Pytest previous<CR>
-au FileType python nmap <silent><LocalLeader>te <Esc>:Pytest error<CR>
+" au FileType python nmap <silent><LocalLeader>tf <Esc>:Pytest file<CR>
+" au FileType python nmap <silent><LocalLeader>tc <Esc>:Pytest class<CR>
+" au FileType python nmap <silent><LocalLeader>tm <Esc>:Pytest method<CR>
+" au FileType python nmap <silent><LocalLeader>tn <Esc>:Pytest next<CR>
+" au FileType python nmap <silent><LocalLeader>tp <Esc>:Pytest previous<CR>
+" au FileType python nmap <silent><LocalLeader>te <Esc>:Pytest error<CR>
 "
 " Run django tests
 map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
