@@ -224,12 +224,6 @@ nmap <leader>cc :cclose<CR>
 " NERDtree
 "
 map <leader>n :NERDTreeToggle<CR>
-<<<<<<< HEAD
-" Have NERDtree open automatically when nvim opens on a directory
-||||||| 4db071b
-" Have NERDtree open automatically when nvim opens on a directory or if no
-" files specified
-=======
 let NERDTreeIgnore = ['\.pyc$']    " ignore some files
 " Have NERDtree open automatically when nvim opens on a directory
 autocmd StdinReadPre * let s:std_in=1
