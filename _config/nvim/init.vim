@@ -449,17 +449,17 @@ let g:acp_completeoptPreview=1
 " Send to window
 " ==========================================================
 let g:sendtowindow_use_defaults=0  " turn off default mappings
-nnoremap <Leader>l <Plug>SendRight
-xnoremap <Leader>l <Plug>SendRightV
-nnoremap <Leader>h <Plug>SendLeft
-xnoremap <Leader>h <Plug>SendLeftV
-nnoremap <Leader>k <Plug>SendUp
-xnoremap <Leader>k <Plug>SendUpV
-nnoremap <Leader>j <Plug>SendDown
-xnoremap <Leader>j <Plug>SendDownV
-nnoremap <Leader>d <Plug>SendDown-<c-d>
-nnoremap <Leader><CR> <Plug>SendDown-<CR>
-nnoremap <Leader>p <Plug>(SendDown)ip
+nmap <Leader>l <Plug>SendRight
+xmap <Leader>l <Plug>SendRightV
+nmap <Leader>h <Plug>SendLeft
+xmap <Leader>h <Plug>SendLeftV
+nmap <Leader>k <Plug>SendUp
+xmap <Leader>k <Plug>SendUpV
+nmap <Leader>j <Plug>SendDown
+xmap <Leader>j <Plug>SendDownV
+nmap <Leader>d <Plug>SendDown-<c-d>
+nmap <Leader><CR> <Plug>SendDown<CR>
+nmap <Leader>p <Plug>SendDownip
 
 
 " ==========================================================
@@ -484,16 +484,19 @@ let g:syntastic_python_checkers = ["flake8"]
 " Ask nvim-ipy not to make its own mappings
 let g:nvim_ipy_perform_mappings = 0
 " Set up our own mappings
-" autocmd FileType python map  <buffer> <silent> <LocalLeader>l   <Plug>(IPy-Run)
-" autocmd FileType python map  <buffer> <silent> <LocalLeader>w   <Plug>(IPy-Word)
-" autocmd FileType python map  <buffer> <silent> <LocalLeader>o   <Plug>(IPy-RunOp)
-" autocmd FileType python map  <buffer> <silent> <LocalLeader>r   <Plug>(IPy-RunRegister)
-" autocmd FileType python map  <buffer> <silent> <LocalLeader>c   <Plug>(IPy-RunCell)
-" autocmd FileType python map  <buffer> <silent> <LocalLeader>a   <Plug>(IPy-RunAll)
-" autocmd FileType python imap <buffer> <silent> <LocalLeader>f   <Plug>(IPy-Complete)
-" autocmd FileType python map  <buffer> <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
-" autocmd FileType python map  <buffer> <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
-" autocmd FileType python map  <buffer> <silent> <LocalLeader>k   <Plug>(IPy-Terminate)
+" augroup IPy
+"   autocmd!
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>l   <Plug>(IPy-Run)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>w   <Plug>(IPy-Word)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>o   <Plug>(IPy-RunOp)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>r   <Plug>(IPy-RunRegister)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>c   <Plug>(IPy-RunCell)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>a   <Plug>(IPy-RunAll)
+"   autocmd FileType python imap <buffer> <silent> <LocalLeader>f   <Plug>(IPy-Complete)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>k   <Plug>(IPy-Terminate)
+" augroup END
 " Empty lines define start and end of cells
 let g:ipy_celldef = '^$'
 " set syntax=python in IPython buffer automatically: https://github.com/bfredl/nvim-ipy/issues/43
@@ -514,12 +517,15 @@ let g:pymode_lint_ignore = "E111,E202,E203,E221,E272,C901"
 let g:pymode_mccabe_ignore = "C901"
 "
 " run py.tests
-" autocmd FileType python nmap <silent><LocalLeader>tf <Esc>:Pytest file<CR>
-" autocmd FileType python nmap <silent><LocalLeader>tc <Esc>:Pytest class<CR>
-" autocmd FileType python nmap <silent><LocalLeader>tm <Esc>:Pytest method<CR>
-" autocmd FileType python nmap <silent><LocalLeader>tn <Esc>:Pytest next<CR>
-" autocmd FileType python nmap <silent><LocalLeader>tp <Esc>:Pytest previous<CR>
-" autocmd FileType python nmap <silent><LocalLeader>te <Esc>:Pytest error<CR>
+" augroup pytests
+"   autocmd!
+"   autocmd FileType python nmap <silent><LocalLeader>tf <Esc>:Pytest file<CR>
+"   autocmd FileType python nmap <silent><LocalLeader>tc <Esc>:Pytest class<CR>
+"   autocmd FileType python nmap <silent><LocalLeader>tm <Esc>:Pytest method<CR>
+"   autocmd FileType python nmap <silent><LocalLeader>tn <Esc>:Pytest next<CR>
+"   autocmd FileType python nmap <silent><LocalLeader>tp <Esc>:Pytest previous<CR>
+"   autocmd FileType python nmap <silent><LocalLeader>te <Esc>:Pytest error<CR>
+" augroup END
 "
 augroup python
   autocmd!
