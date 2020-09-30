@@ -2,7 +2,7 @@
 
 ### Creating source files
 
-Any file (or directory) in this top-level directory which matches the shell
+Any dot-file (or directory) in this top-level directory which matches the shell
 glob `_*` will be linked into `${HOME}` as a symbolic link with the first `_`
 replaced with a `.`
 
@@ -17,13 +17,14 @@ is linked to from
 
 ### Installing source files
 
-Installation  of the dot files to `${HOME}` is as simple as running:
+Installation of the dot files to `${HOME}` is as simple as running:
 
 ```console
 ./install.sh
 ```
 
-in this top-level directory.
+in this top-level directory. This should also be done whenever a new dot-file
+is created.
 
 
 ## Requirements
