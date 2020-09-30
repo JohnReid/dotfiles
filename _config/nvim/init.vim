@@ -138,11 +138,14 @@ set encoding=utf-8
 set spelllang=en_gb
 set spellfile=~/.config/nvim/spell/en.utf-8.add
 "
-" Reload Vimrc
-" map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+" Vimrc
+"
+" Edit and source vim configuration
+:nnoremap <Leader>ev :split $MYVIMRC<CR>
+:nnoremap <Leader>sv :source $MYVIMRC<CR>:echo 'vim configuration ($MYVIMRC) reloaded'<CR>
 "
 " Set working directory
-nnoremap <leader>. :lcd %:p:h<CR>
+nnoremap <Leader>. :lcd %:p:h<CR>
 "
 " To work with :terminal (see :help terminal)
 " To map <Esc> to exit terminal-mode:
@@ -210,22 +213,28 @@ endif
 "autocmd FileType * setlocal colorcolumn=0
 "<CR><C-w>l<C-f>:set scrollbind<CR>
 " Toggle the tasklist
-map <leader>td <Plug>TaskList
+map <Leader>td <Plug>TaskList
 " Map jk to exit insert mode. From https://danielmiessler.com/study/vim/
+" and 'Learn vimscript the hard way'
 inoremap jk <ESC>
+" Also map Escape to a no-operation
+inoremap <esc> <nop>
 " open/close the quickfix window
-nmap <leader>c :copen<CR>
-nmap <leader>cc :cclose<CR>
+nmap <Leader>c :copen<CR>
+nmap <Leader>cc :cclose<CR>
 "
 " NERDtree
 "
-map <leader>n :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']    " ignore some files
-" Have NERDtree open automatically when nvim opens on a directory
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-" Close vim if only buffer left open is NERDtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+augroup NERDtree
+  " Have NERDtree open automatically when nvim opens on a directory
+  autocmd!
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+  " Close vim if only buffer left open is NERDtree
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+augroup END
 " for when we forget to use sudo to open/edit a file
 cmap w!! w !sudo tee % >/dev/null
 " Not sure what this is...
@@ -240,7 +249,7 @@ endfu
 "
 " Splits
 "
-nmap <leader>sb :call SplitScroll()<CR>
+nmap <Leader>sb :call SplitScroll()<CR>
 " Open new windows below or to right of current
 :set splitbelow
 :set splitright
@@ -253,7 +262,7 @@ map <c-h> <c-w>h
 " happen as if in command mode)
 imap <C-W> <C-O><C-W>
 " Load the Gundo window
-map <leader>g :GundoToggle<CR>
+map <Leader>g :GundoToggle<CR>
 set ruler                   " show the cursor position all the time
 set cursorline              " show the cursor line
 set cursorcolumn            " show the cursor column
@@ -279,11 +288,14 @@ set foldmethod=indent       " allow us to fold on indents
 set foldlevel=99            " don't fold by default
 " don't outdent hashes
 inoremap # #
-" close preview window automatically when we move around
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+augroup preview
+  autocmd!
+  " close preview window automatically when we move around
+  autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+  autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+augroup END
 " Paste from clipboard
-map <leader>p "+p
+map <Leader>p "+p
 "
 " For toggling paste mode
 " From: http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
@@ -317,12 +329,12 @@ set smartcase               " unless uppercase letters are used in the regex.
 set smarttab                " Handle tabs more intelligently 
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
-" Quit window on <leader>q
-nnoremap <leader>q :q<CR>
-" hide matches on <leader>space
-nnoremap <leader><space> :nohlsearch<cr>
-" Remove trailing whitespace on <leader>S
-nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
+" Quit window on <Leader>q
+nnoremap <Leader>q :q<CR>
+" hide matches on <Leader>space
+nnoremap <Leader><space> :nohlsearch<cr>
+" Remove trailing whitespace on <Leader>S
+nnoremap <Leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 " Select the item in the list with enter
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 "
@@ -419,8 +431,11 @@ nmap <Leader>gu <Plug>GitGutterUndoHunk   " git undo (chunk)
 " ==========================================================
 " Goyo / Limelight
 " ==========================================================
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+augroup goyo
+  autocmd!
+  autocmd! User GoyoEnter Limelight
+  autocmd! User GoyoLeave Limelight!
+augroup END
 
 
 " ==========================================================
@@ -433,11 +448,17 @@ let showmarks_include = "abcdefghijklmnopqrstuvwxyz"
 " ==========================================================
 " Javascript
 " ==========================================================
-au BufRead *.js set makeprg=jslint\ %
+augroup javascript
+  autocmd!
+  autocmd BufRead *.js set makeprg=jslint\ %
+augroup END
 "
 " Use tab to scroll through autocomplete menus
-"autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
-"autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
+" augroup autocomplete
+"   autocmd!
+"   autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
+"   autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
+" augroup END
 "
 let g:acp_completeoptPreview=1
 
@@ -445,15 +466,18 @@ let g:acp_completeoptPreview=1
 " ==========================================================
 " Send to window
 " ==========================================================
-let g:sendtowindow_use_defaults=0
-nmap <LocalLeader>l <Plug>SendRight
-xmap <LocalLeader>l <Plug>SendRightV
-nmap <LocalLeader>h <Plug>SendLeft
-xmap <LocalLeader>h <Plug>SendLeftV
-nmap <LocalLeader>k <Plug>SendUp
-xmap <LocalLeader>k <Plug>SendUpV
-nmap <LocalLeader>j <Plug>SendDown
-xmap <LocalLeader>j <Plug>SendDownV
+let g:sendtowindow_use_defaults=0  " turn off default mappings
+nnoremap <Leader>l <Plug>SendRight
+xnoremap <Leader>l <Plug>SendRightV
+nnoremap <Leader>h <Plug>SendLeft
+xnoremap <Leader>h <Plug>SendLeftV
+nnoremap <Leader>k <Plug>SendUp
+xnoremap <Leader>k <Plug>SendUpV
+nnoremap <Leader>j <Plug>SendDown
+xnoremap <Leader>j <Plug>SendDownV
+nnoremap <Leader>d <Plug>SendDown-<c-d>
+nnoremap <Leader><CR> <Plug>SendDown-<CR>
+nnoremap <Leader>p <Plug>(SendDown)ip
 
 
 " ==========================================================
@@ -478,23 +502,23 @@ let g:syntastic_python_checkers = ["flake8"]
 " Ask nvim-ipy not to make its own mappings
 let g:nvim_ipy_perform_mappings = 0
 " Set up our own mappings
-" au FileType python map  <buffer> <silent> <LocalLeader>l   <Plug>(IPy-Run)
-" au FileType python map  <buffer> <silent> <LocalLeader>w   <Plug>(IPy-Word)
-" au FileType python map  <buffer> <silent> <LocalLeader>o   <Plug>(IPy-RunOp)
-" au FileType python map  <buffer> <silent> <LocalLeader>r   <Plug>(IPy-RunRegister)
-" au FileType python map  <buffer> <silent> <LocalLeader>c   <Plug>(IPy-RunCell)
-" au FileType python map  <buffer> <silent> <LocalLeader>a   <Plug>(IPy-RunAll)
-" au FileType python imap <buffer> <silent> <LocalLeader>f   <Plug>(IPy-Complete)
-" au FileType python map  <buffer> <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
-" au FileType python map  <buffer> <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
-" au FileType python map  <buffer> <silent> <LocalLeader>k   <Plug>(IPy-Terminate)
+" autocmd FileType python map  <buffer> <silent> <LocalLeader>l   <Plug>(IPy-Run)
+" autocmd FileType python map  <buffer> <silent> <LocalLeader>w   <Plug>(IPy-Word)
+" autocmd FileType python map  <buffer> <silent> <LocalLeader>o   <Plug>(IPy-RunOp)
+" autocmd FileType python map  <buffer> <silent> <LocalLeader>r   <Plug>(IPy-RunRegister)
+" autocmd FileType python map  <buffer> <silent> <LocalLeader>c   <Plug>(IPy-RunCell)
+" autocmd FileType python map  <buffer> <silent> <LocalLeader>a   <Plug>(IPy-RunAll)
+" autocmd FileType python imap <buffer> <silent> <LocalLeader>f   <Plug>(IPy-Complete)
+" autocmd FileType python map  <buffer> <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
+" autocmd FileType python map  <buffer> <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
+" autocmd FileType python map  <buffer> <silent> <LocalLeader>k   <Plug>(IPy-Terminate)
 " Empty lines define start and end of cells
 let g:ipy_celldef = '^$'
 " set syntax=python in IPython buffer automatically: https://github.com/bfredl/nvim-ipy/issues/43
 let g:ipy_set_ft = 1
 "
 " Run pep8
-let g:pep8_map='<leader>8'
+let g:pep8_map='<Leader>8'
 let g:autopep8_indent_size=4
 "
 " pymode
@@ -508,21 +532,24 @@ let g:pymode_lint_ignore = "E111,E202,E203,E221,E272,C901"
 let g:pymode_mccabe_ignore = "C901"
 "
 " run py.tests
-" au FileType python nmap <silent><LocalLeader>tf <Esc>:Pytest file<CR>
-" au FileType python nmap <silent><LocalLeader>tc <Esc>:Pytest class<CR>
-" au FileType python nmap <silent><LocalLeader>tm <Esc>:Pytest method<CR>
-" au FileType python nmap <silent><LocalLeader>tn <Esc>:Pytest next<CR>
-" au FileType python nmap <silent><LocalLeader>tp <Esc>:Pytest previous<CR>
-" au FileType python nmap <silent><LocalLeader>te <Esc>:Pytest error<CR>
+" autocmd FileType python nmap <silent><LocalLeader>tf <Esc>:Pytest file<CR>
+" autocmd FileType python nmap <silent><LocalLeader>tc <Esc>:Pytest class<CR>
+" autocmd FileType python nmap <silent><LocalLeader>tm <Esc>:Pytest method<CR>
+" autocmd FileType python nmap <silent><LocalLeader>tn <Esc>:Pytest next<CR>
+" autocmd FileType python nmap <silent><LocalLeader>tp <Esc>:Pytest previous<CR>
+" autocmd FileType python nmap <silent><LocalLeader>te <Esc>:Pytest error<CR>
 "
 " Run django tests
-map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
+map <Leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
 "
-"au BufRead *.py compiler nose
-au FileType python set omnifunc=pythoncomplete#Complete
-au FileType python setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-au FileType python setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class,with equalprg=autopep8\ -
-au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+augroup python
+  autocmd!
+  "autocmd BufRead *.py compiler nose
+  autocmd FileType python set omnifunc=pythoncomplete#Complete
+  autocmd FileType python setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType python setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class,with equalprg=autopep8\ -
+  autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+augroup END
 "
 " Does pyflakes use the quickfix window?
 let g:pyflakes_use_quickfix = 1
@@ -532,12 +559,15 @@ let g:pyflakes_use_quickfix = 1
 "
 " Indent Python in the Google way.
 " From: https://github.com/google/styleguide/blob/gh-pages/google_python_style.vim
-autocmd Filetype python setlocal indentexpr=GetGooglePythonIndent(v:lnum)
-autocmd Filetype python let s:maxoff = 50  " maximum number of lines to look backwards.
-autocmd Filetype python let pyindent_nested_paren="&sw"
-autocmd Filetype python let pyindent_open_paren="&sw"
-autocmd Filetype python let pyindent_continue="&sw"
-autocmd Filetype python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+augroup pythonindent
+  autocmd!
+  autocmd Filetype python setlocal indentexpr=GetGooglePythonIndent(v:lnum)
+  autocmd Filetype python let s:maxoff = 50  " maximum number of lines to look backwards.
+  autocmd Filetype python let pyindent_nested_paren="&sw"
+  autocmd Filetype python let pyindent_open_paren="&sw"
+  autocmd Filetype python let pyindent_continue="&sw"
+  autocmd Filetype python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+augroup END
 "
 function GetGooglePythonIndent(lnum)
   " Indent inside parens.
@@ -609,8 +639,11 @@ let g:tagbar_type_r = {
 " let vimrplugin_assign = 0
 " let g:vimrplugin_insert_mode_cmds = 0
 " let vimrplugin_vimpager = "horizontal"
-autocmd FileType r,rmd setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType rmd setlocal foldcolumn=0
+augroup R
+  autocmd!
+  autocmd FileType r,rmd setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType rmd setlocal foldcolumn=0
+augroup END
 "
 " For nvim-r
 let R_assign = 0  " Don't replace underscores with assignments
@@ -626,15 +659,18 @@ let rout_follow_colorscheme = 1  " Highlight R output with the current colorsche
 " LaTeX
 " ==========================================================
 "
-autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 wrap
-autocmd FileType tex setlocal spell
-" autocmd FileType tex colorscheme night-owl
-" Colour TeX templates like TeX
-au BufReadPost *.tex.template setlocal filetype=tex
-" Turn off error highlighting in templates
-au BufReadPost *.tex.template highlight! link Error Normal
-" Add a custom surround
-au BufReadPost *.tex.template let b:surround_45 = "\\TEXT{ \"\r\" }"
+augroup LaTeX
+  autocmd!
+  autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 wrap
+  autocmd FileType tex setlocal spell
+  " autocmd FileType tex colorscheme night-owl
+  " Colour TeX templates like TeX
+  autocmd BufReadPost *.tex.template setlocal filetype=tex
+  " Turn off error highlighting in templates
+  autocmd BufReadPost *.tex.template highlight! link Error Normal
+  " Add a custom surround
+  autocmd BufReadPost *.tex.template let b:surround_45 = "\\TEXT{ \"\r\" }"
+augroup END
 " Can set the following to ignore common warnings
 "let g:vimtex_quickfix_ignored_warnings = [
 "            \ 'Underfull',
@@ -643,16 +679,13 @@ au BufReadPost *.tex.template let b:surround_45 = "\\TEXT{ \"\r\" }"
 "            \ ]
 " but I prefer to only open the quickfix window on errors
 let g:vimtex_quickfix_open_on_warning = 0
-"
 " More informative chktex messages
 let g:syntastic_tex_chktex_args = '-v0'
 let g:syntastic_tex_chktex_showmsgs = 1
-"
 " from: https://github.com/lervag/vimtex/issues/835 to enable Synctex
 let g:vimtex_compiler_progname = "nvr"
 let g:vimtex_view_method = "zathura"
 let g:tex_flavor = 'latex'
-"
 " Use Zathura
 let g:vimtex_view_general_viewer = 'zathura'
 "
@@ -664,7 +697,7 @@ let g:vimtex_view_general_viewer = 'zathura'
 " let g:Tex_DefaultTargetFormat = 'pdf'         " Compile to pdf by default
 " " let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape -interaction=nonstopmode $*' " Use pdflatex by default
 " let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*' " Use xelatex by default
-" "imap <leader>{ <Plug>Tex_LeftRight
+" "imap <Leader>{ <Plug>Tex_LeftRight
 "
 " Mappings for LaTeX paragraph formatting
 "map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
@@ -674,26 +707,38 @@ let g:vimtex_view_general_viewer = 'zathura'
 " ===========================================================
 " Mako/HTML
 " ============================================================
-autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
+augroup HTML
+  autocmd!
+  autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
+augroup END
 
 
 " ===========================================================
 " Stan
 " ===========================================================
-autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+augroup Stan
+  autocmd!
+  autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+augroup END
 
 
 " ===========================================================
 " XML
 " ===========================================================
 let g:xml_syntax_folding=1
-au FileType xml setlocal foldmethod=syntax
+augroup XML
+  autocmd!
+  autocmd FileType xml setlocal foldmethod=syntax
+augroup END
 
 
 " ==========================================================
 " Pandoc
 " ==========================================================
-au FileType pandoc colorscheme solarized
+augroup pandoc
+  autocmd!
+  autocmd FileType pandoc colorscheme solarized
+augroup END
 " let g:pandoc#modules#disabled = ["folding"]
 "set foldcolumn=0
 
