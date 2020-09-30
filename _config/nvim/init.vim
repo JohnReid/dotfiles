@@ -10,24 +10,19 @@ call plug#begin('~/.config/nvim/plugged')
 "
 " Text objects
 "
-Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex and vim-textobj-python
-Plug 'kana/vim-textobj-entire'  " Required for vim-textobj-latex and vim-textobj-python
-Plug 'michaeljsmith/vim-indent-object'  " for indentation text objects
-Plug 'JohnReid/vim-textobj-latex'  " LaTeX text objects
+Plug 'kana/vim-textobj-user'               " Required for vim-textobj-latex and vim-textobj-python
+Plug 'kana/vim-textobj-entire'             " Required for vim-textobj-latex and vim-textobj-python
+Plug 'michaeljsmith/vim-indent-object'     " for indentation text objects
+Plug 'JohnReid/vim-textobj-latex'          " LaTeX text objects
 " Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
 Plug 'bps/vim-textobj-python'
 "
 " Filetypes
 "
-" Plug 'nvie/vim-flake8'
-" Plug 'JohnReid/nvim-ipy'
-" Plug 'bfredl/nvim-ipy'
-" Plug 'vim-scripts/Vim-R-plugin'
 Plug 'jalvesaq/Nvim-R'
 Plug 'lervag/vimtex'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-" Plug 'vim-pandoc/vim-rmarkdown'
 Plug 'plasticboy/vim-markdown'
 Plug 'maverickg/stan.vim'
 Plug 'chrisbra/csv.vim'
@@ -63,18 +58,9 @@ Plug 'timakro/vim-searchant'  " Improved search highlighting
 Plug 'karoliskoncevicius/vim-sendtowindow'
 Plug 'godlygeek/tabular'  " Align text
 Plug 'sjl/gundo.vim'
-Plug 'vim-scripts/TaskList.vim'
-Plug 'tomtom/tlib_vim'
-Plug 'ervandew/screen'  " Simulate a split shell
-" Plug 'eparreno/vim-l9'  " Vim script library
 "
 " Completion managers / refactoring
 "
-" Plug 'vim-scripts/AutoComplPop'
-" Plug 'Shougo/deoplete.nvim'
-" Plug 'davidhalter/jedi-vim'  " autocomplete
-" Plug 'python-rope/ropevim'   " refactoring
-Plug 'ervandew/supertab'
 Plug 'roxma/nvim-yarp'  " Required by ncm2
 Plug 'ncm2/ncm2'
 "
@@ -96,8 +82,8 @@ Plug 'junegunn/seoul256.vim'
 "
 " Snippets
 "
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'  " Required for vim-snipmate
+Plug 'tomtom/tlib_vim'               " Required for vim-snipmate
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 "
@@ -212,13 +198,9 @@ endif
 " first autocmd for the filetype here
 "autocmd FileType * setlocal colorcolumn=0
 "<CR><C-w>l<C-f>:set scrollbind<CR>
-" Toggle the tasklist
-map <Leader>td <Plug>TaskList
 " Map jk to exit insert mode. From https://danielmiessler.com/study/vim/
 " and 'Learn vimscript the hard way'
 inoremap jk <ESC>
-" Also map Escape to a no-operation
-inoremap <esc> <nop>
 " open/close the quickfix window
 nmap <Leader>c :copen<CR>
 nmap <Leader>cc :cclose<CR>
@@ -332,16 +314,16 @@ set incsearch               " Incrementally search while typing a /regex
 " Quit window on <Leader>q
 nnoremap <Leader>q :q<CR>
 " hide matches on <Leader>space
-nnoremap <Leader><space> :nohlsearch<cr>
+nnoremap <Leader><space> :nohlsearch<CR>
 " Remove trailing whitespace on <Leader>S
-nnoremap <Leader>S :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <Leader>S :%s/\s\+$//<CR>:let @/=''<CR>
 " Select the item in the list with enter
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 "
 " Damian Conway's Die Blinkënmatchen: highlight matches
 " From: https://vi.stackexchange.com/a/2770
-" nnoremap <silent> n n:call HLNext(0.1)<cr>
-" nnoremap <silent> N N:call HLNext(0.1)<cr>
+" nnoremap <silent> n n:call HLNext(0.1)<CR>
+" nnoremap <silent> N N:call HLNext(0.1)<CR>
 " function! HLNext (blinktime)
 "   let target_pat = '\c\%#'.@/
 "   let ring = matchadd('ErrorMsg', target_pat, 101)
@@ -538,9 +520,6 @@ let g:pymode_mccabe_ignore = "C901"
 " autocmd FileType python nmap <silent><LocalLeader>tn <Esc>:Pytest next<CR>
 " autocmd FileType python nmap <silent><LocalLeader>tp <Esc>:Pytest previous<CR>
 " autocmd FileType python nmap <silent><LocalLeader>te <Esc>:Pytest error<CR>
-"
-" Run django tests
-map <Leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
 "
 augroup python
   autocmd!
@@ -757,5 +736,5 @@ let g:vim_markdown_new_list_item_indent = 2
 command! -nargs=* RunSilent
       \ | execute ':silent !'.'<args>'
       \ | execute ':redraw!'
-nmap <Leader>pc :RunSilent pandoc -o /tmp/vim-pandoc-out.pdf %<CR>
-nmap <Leader>pp :RunSilent xdg-open /tmp/vim-pandoc-out.pdf<CR>
+nmap <LocalLeader>pc :RunSilent pandoc -o /tmp/vim-pandoc-out.pdf %<CR>
+nmap <LocalLeader>pp :RunSilent xdg-open /tmp/vim-pandoc-out.pdf<CR>
