@@ -196,7 +196,8 @@ c.InteractiveShellApp.pylab_import_all = False
 # c.TerminalInteractiveShell.colors = 'Linux'
 
 # Autoindent IPython code entered interactively.
-# c.TerminalInteractiveShell.autoindent = True
+c.TerminalInteractiveShell.autoindent = False
+c.InteractiveShell.autoindent = False
 
 #
 # c.TerminalInteractiveShell.readline_omit__names = 2
