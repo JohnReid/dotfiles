@@ -151,6 +151,11 @@ nnoremap <Leader>. :lcd %:p:h<CR>
 :nnoremap <A-j> <C-w>j
 :nnoremap <A-k> <C-w>k
 :nnoremap <A-l> <C-w>l
+" Keep terminal open when buffer hidden
+augroup terminal
+    autocmd!
+    autocmd TermOpen * setlocal bufhidden=hide
+augroup END
 
 " ==========================================================
 " Messages, Info, Status, Appearance
@@ -457,7 +462,7 @@ nmap <Leader>k <Plug>SendUp
 xmap <Leader>k <Plug>SendUpV
 nmap <Leader>j <Plug>SendDown
 xmap <Leader>j <Plug>SendDownV
-nmap <Leader>d <Plug>SendDown-<c-d>
+nmap <Leader>d <Plug>(SendDown)<c-d>
 nmap <Leader><CR> <Plug>SendDown<CR>
 nmap <Leader>p <Plug>SendDownip
 
