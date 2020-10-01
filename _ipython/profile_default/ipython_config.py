@@ -53,7 +53,7 @@ c.InteractiveShellApp.pylab_import_all = False
 # c.TerminalIPythonApp.quick = False
 
 # A list of dotted module names of IPython extensions to load.
-# c.TerminalIPythonApp.extensions = []
+c.TerminalIPythonApp.extensions = ['autoreload']
 
 # Whether to install the default config files into the profile dir. If a new
 # profile is being created, and IPython contains config files for that profile,
