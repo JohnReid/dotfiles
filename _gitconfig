@@ -9,7 +9,7 @@
   ui = auto
 
 [push]
-	default = current
+  default = current
 
 [core]
   editor = nvim
@@ -55,10 +55,10 @@
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
+  smudge = git-lfs smudge --skip -- %f
+  process = git-lfs filter-process --skip
   required = true
 [mergetool "fugitive"]
-	cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+  cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 [merge]
-	tool = fugitive
+  tool = fugitive
