@@ -1,7 +1,3 @@
-[user]
-  name = JohnReid
-  email = johnbaronreid@netscape.net
-
 [color]
   diff = auto
   status = auto
@@ -42,10 +38,8 @@
   # Then, run fugitive's :Gdiff in each tab, and finally
   # tell vim-gitgutter to show +/- for changes since REVIEW_BASE
   review = !nvim -p $(git files) +\"tabdo Gdiff $REVIEW_BASE\"
-
-
-[credential]
-  helper = cache --timeout=360000
+  unpushed = log --branches --not --remotes --no-walk --decorate --oneline
+  branch-info = for-each-ref --format=\"%(refname:short) %(push:track)\" refs/heads
 
 [web]
   browser = firefox
@@ -58,7 +52,16 @@
   smudge = git-lfs smudge --skip -- %f
   process = git-lfs filter-process --skip
   required = true
+
 [mergetool "fugitive"]
   cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+
 [merge]
-  tool = fugitive
+  tool = vimdiff
+  conflictstyle = diff3
+
+[pull]
+  rebase = false
+
+[include]
+  path = .gitconfig.local

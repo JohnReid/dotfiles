@@ -1,1 +1,4 @@
+# Better error/warning messages
 CmdLine { -v0 }
+# Exclude these environments from syntax checking
+VerbEnvir { pgfpicture tikzpicture addbibresource myfootcite }

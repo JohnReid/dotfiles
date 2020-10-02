@@ -1,4 +1,5 @@
 # Configuration file for ipython.
+# flake8: noqa
 
 c = get_config()
 
@@ -29,6 +30,9 @@ c.TerminalIPythonApp.gui = 'qt5'
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
 c.TerminalIPythonApp.pylab = 'auto'
+c.TerminalIPythonApp.pylab_import_all = False
+c.InteractiveShellApp.pylab = 'auto'
+c.InteractiveShellApp.pylab_import_all = False
 
 # Suppress warning messages about legacy config files
 # c.TerminalIPythonApp.ignore_old_config = False
@@ -49,7 +53,7 @@ c.TerminalIPythonApp.pylab = 'auto'
 # c.TerminalIPythonApp.quick = False
 
 # A list of dotted module names of IPython extensions to load.
-# c.TerminalIPythonApp.extensions = []
+c.TerminalIPythonApp.extensions = ['autoreload']
 
 # Whether to install the default config files into the profile dir. If a new
 # profile is being created, and IPython contains config files for that profile,
@@ -192,7 +196,8 @@ c.TerminalIPythonApp.pylab = 'auto'
 # c.TerminalInteractiveShell.colors = 'Linux'
 
 # Autoindent IPython code entered interactively.
-# c.TerminalInteractiveShell.autoindent = True
+c.TerminalInteractiveShell.autoindent = False
+c.InteractiveShell.autoindent = False
 
 #
 # c.TerminalInteractiveShell.readline_omit__names = 2
