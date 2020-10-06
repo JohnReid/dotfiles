@@ -672,6 +672,7 @@ let g:vimtex_quickfix_open_on_warning = 0
 " More informative chktex messages
 let g:syntastic_tex_chktex_args = '-v0'
 let g:syntastic_tex_chktex_showmsgs = 1
+let g:syntastic_tex_lacheck_quiet_messages = { 'regex': '\Vpossible unwanted space at' }
 " from: https://github.com/lervag/vimtex/issues/835 to enable Synctex
 let g:vimtex_compiler_progname = "nvr"
 let g:vimtex_view_method = "zathura"

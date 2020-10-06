@@ -87,6 +87,7 @@ Artem
 Artyom
 AskHR
 Async
+AtBeginSection
 Atf
 Audic
 Augspurger
@@ -1508,6 +1509,7 @@ andrewgelman
 anr
 anyfontepackage
 apa
+apalike
 app
 approximator
 approximators
@@ -1640,6 +1642,7 @@ crrcc
 csquotes
 ctan
 cubically
+currentsection
 cutset
 cx
 cyber
@@ -2250,6 +2253,7 @@ syn
 synergistically
 t
 tabledata
+tableofcontents
 tarazu
 tech
 tensorflow
