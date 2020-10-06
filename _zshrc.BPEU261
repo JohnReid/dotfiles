@@ -6,6 +6,7 @@ export SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
 #
 ZSH_THEME=theunraveler
 
+export FZF_DIR=$HOME/src/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # >>> conda initialize >>>
