@@ -25,13 +25,13 @@ c = get_config()
 # Enable GUI event loop integration ('qt', 'wx', 'gtk').
 # c.TerminalIPythonApp.gui = None
 # c.TerminalIPythonApp.gui = 'wx'
-c.TerminalIPythonApp.gui = 'qt5'
+c.TerminalIPythonApp.gui = None
 
 # Pre-load matplotlib and numpy for interactive use, selecting a particular
 # matplotlib backend and loop integration.
-c.TerminalIPythonApp.pylab = 'auto'
+c.TerminalIPythonApp.pylab = None
 c.TerminalIPythonApp.pylab_import_all = False
-c.InteractiveShellApp.pylab = 'auto'
+c.InteractiveShellApp.pylab = None
 c.InteractiveShellApp.pylab_import_all = False
 
 # Suppress warning messages about legacy config files
