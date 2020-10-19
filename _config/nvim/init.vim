@@ -19,6 +19,7 @@ Plug 'bps/vim-textobj-python'
 "
 " Filetypes
 "
+Plug 'JohnReid/vim-shebang'                " Detect filetypes from shebang lines
 Plug 'jalvesaq/Nvim-R'
 Plug 'lervag/vimtex'
 Plug 'vim-pandoc/vim-pandoc'
