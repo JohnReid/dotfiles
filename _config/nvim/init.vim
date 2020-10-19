@@ -55,6 +55,8 @@ Plug 'timakro/vim-searchant'  " Improved search highlighting
 "
 " Miscellaneous
 "
+Plug 'machakann/vim-highlightedyank'  " Make the yanked region apparent
+Plug 'urbainvaes/vim-ripple'  " Send code to a REPL
 Plug 'karoliskoncevicius/vim-sendtowindow'
 Plug 'godlygeek/tabular'  " Align text
 Plug 'sjl/gundo.vim'
@@ -468,6 +470,24 @@ nmap <Leader>p <Plug>SendDownip
 
 
 " ==========================================================
+" Vim ripple
+" ==========================================================
+let newline = "\<cr>"
+let g:ripple_enable_mappings = 0
+let g:ripple_winpos = 'below'
+nmap <LocalLeader>ro <Plug>(ripple_open_repl)
+vmap <LocalLeader>rs <Plug>(ripple_send_selection)
+nmap <LocalLeader>rm <Plug>(ripple_send_motion)
+nmap <LocalLeader>rp <Plug>(ripple_send_previous)
+nmap <LocalLeader>a <Plug>(ripple_send_motion)ae
+nmap <LocalLeader>p <Plug>(ripple_send_motion)ap
+nmap <LocalLeader>l <Plug>(ripple_send_motion)_
+nmap <LocalLeader><CR> :call ripple#command(0, 0, newline)<CR>
+nmap <LocalLeader>w <Plug>(ripple_send_motion)iw
+" nmap <LocalLeader>w <Plug>(ripple_send_motion)iw
+
+
+" ==========================================================
 " Python
 " ==========================================================
 "
@@ -721,17 +741,6 @@ augroup XML
   autocmd!
   autocmd FileType xml setlocal foldmethod=syntax
 augroup END
-
-
-" ==========================================================
-" Pandoc
-" ==========================================================
-augroup pandoc
-  autocmd!
-  autocmd FileType pandoc colorscheme solarized
-augroup END
-" let g:pandoc#modules#disabled = ["folding"]
-"set foldcolumn=0
 
 
 " ==========================================================
