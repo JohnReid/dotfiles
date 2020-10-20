@@ -1,3 +1,6 @@
+# MacOS files
+.DS_Store
+
 # Vim files
 .*.swp
 tags
@@ -57,3 +60,7 @@ _build
 *.fdb_latexmk
 *.run.xml
 *-blx.bib
+
+# Office temporary files
+~$*.docx
+~$*.xlsb

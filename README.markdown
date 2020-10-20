@@ -1,33 +1,32 @@
-## Files
-.vim
-    directory of file type configurations and plugins
-.vimrc
-    my vim configuration
-.screenrc
-    my screen configuration
-.weechat
-    my configuration for weechat, a great irc client
-.gimp
-    my tweaks/additions to gimp (fonts, brushes, etc)
+## Use
 
-## Instructions
 ### Creating source files
-Any file which matches the shell glob `_*` will be linked into `$HOME` as a symlink with the first `_`  replaced with a `.`
+
+Any dot-file (or directory) in this top-level directory which matches the shell
+glob `_*` will be linked into `${HOME}` as a symbolic link with the first `_`
+replaced with a `.`
 
 For example:
 
     _bashrc
 
-becomes
+is linked to from
 
     ${HOME}/.bashrc
 
+
 ### Installing source files
-It's as simple as running:
 
-    ./install.sh
+Installation of the dot files to `${HOME}` is as simple as running:
 
-From this top-level directory.
+```console
+./install.sh
+```
+
+in this top-level directory. This should also be done whenever a new dot-file
+is created.
+
 
 ## Requirements
-* bash
+
+* `bash`

@@ -329,3 +329,5 @@ fi
 export GETGIST_USER=JohnReid
 
 unset __PROFILE__
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

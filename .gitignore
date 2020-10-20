@@ -1,6 +1,5 @@
 *logs*
 *.log
 *~
-_vim/ropevim/src*
-_vim/ropevim/pylibs*
-_jupyter/
+_config/configstore/
+_jupyter/migrated

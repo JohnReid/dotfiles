@@ -8,80 +8,87 @@
 " ==========================================================
 call plug#begin('~/.config/nvim/plugged')
 "
+" Text objects
+"
+Plug 'kana/vim-textobj-user'               " Required for vim-textobj-latex and vim-textobj-python
+Plug 'kana/vim-textobj-entire'             " Required for vim-textobj-latex and vim-textobj-python
+Plug 'michaeljsmith/vim-indent-object'     " for indentation text objects
+Plug 'JohnReid/vim-textobj-latex'          " LaTeX text objects
+" Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
+Plug 'bps/vim-textobj-python'
+"
 " Filetypes
 "
-Plug 'kana/vim-textobj-user'  " Required for vim-textobj-latex and vim-textobj-python
-" Plug 'https://github.com/bfredl/nvim-ipy.git'
-" Plug 'https://github.com/JohnReid/nvim-ipy.git'
-" Plug '/home/john/src/nvim-ipy'
-Plug 'git@github.com:bfredl/nvim-ipy.git'
-Plug 'git@github.com:tell-k/vim-autopep8.git'
-Plug 'bps/vim-textobj-python'
-" Plug 'git@github.com:nvie/vim-flake8.git'
-" Plug 'https://github.com/klen/python-mode.git'
-" Plug 'https://github.com/ivanov/vim-ipython.git'
-" Plug 'git@github.com:vim-scripts/Vim-R-plugin.git'
-Plug 'https://github.com/jalvesaq/Nvim-R.git'
-Plug 'https://github.com/lervag/vimtex.git'
-" Plug 'JohnReid/vim-textobj-latex'  " LaTeX text objects
-Plug '/home/john/src/vim-textobj-latex'  " LaTeX text objects
-Plug 'https://github.com/vim-pandoc/vim-pandoc.git'
-Plug 'https://github.com/vim-pandoc/vim-pandoc-syntax.git'
-" Plug 'https://github.com/vim-pandoc/vim-rmarkdown.git'
-Plug 'https://github.com/godlygeek/tabular.git'
-Plug 'https://github.com/plasticboy/vim-markdown.git'
-Plug 'https://github.com/maverickg/stan.vim.git'
+Plug 'JohnReid/vim-shebang'                " Detect filetypes from shebang lines
+Plug 'jalvesaq/Nvim-R'
+Plug 'lervag/vimtex'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'plasticboy/vim-markdown'
+Plug 'maverickg/stan.vim'
+Plug 'chrisbra/csv.vim'
 "
 " tpope
 "
-Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'git://github.com/tpope/vim-unimpaired.git'
-Plug 'git://github.com/tpope/vim-commentary.git'
-Plug 'git://github.com/tpope/vim-repeat.git'
-Plug 'https://github.com/tpope/vim-surround.git'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-scriptease'
 "
-" Miscellaneous
+" Files
 "
+Plug 'scrooloose/nerdtree'
 Plug 'will133/vim-dirdiff'  " diff on directories
-Plug 'michaeljsmith/vim-indent-object'  " for indentation text objects
+"
+" Git / gists
+"
 Plug 'mattn/webapi-vim'  " For gists
 Plug 'mattn/gist-vim'  " For gists
+Plug 'airblade/vim-gitgutter'  " show modified git chunks
+"
+" Highlighting
+"
 Plug 'vim-syntastic/syntastic'  " For lintr R syntax integration
-Plug 'timakro/vim-searchant'
-Plug 'https://github.com/wincent/Command-T.git'
-Plug 'https://github.com/sjl/gundo.vim.git'
-Plug 'https://github.com/vim-scripts/TaskList.vim.git'
-Plug 'https://github.com/tomtom/tlib_vim.git'
-Plug 'https://github.com/scrooloose/nerdtree'
-Plug 'https://github.com/ervandew/screen.git'
-Plug 'https://github.com/ervandew/supertab.git'
-" Plug 'git@github.com:vim-scripts/AutoComplPop.git'
-" Plug 'git@github.com:eparreno/vim-l9.git'
-Plug 'https://github.com/mhartington/oceanic-next.git'
-Plug 'https://github.com/chrisbra/csv.vim.git'
-" Plug 'https://github.com/Shougo/deoplete.nvim.git'
-Plug 'ncm2/ncm2'
+Plug 'timakro/vim-searchant'  " Improved search highlighting
+"
+" Miscellaneous
+"
+Plug 'machakann/vim-highlightedyank'  " Make the yanked region apparent
+Plug 'urbainvaes/vim-ripple'  " Send code to a REPL
+Plug 'karoliskoncevicius/vim-sendtowindow'
+Plug 'godlygeek/tabular'  " Align text
+Plug 'sjl/gundo.vim'
+"
+" Completion managers / refactoring
+"
 Plug 'roxma/nvim-yarp'  " Required by ncm2
+Plug 'ncm2/ncm2'
+"
+" Distraction-free writing
+"
 Plug 'junegunn/goyo.vim'  " Distraction-free writing
 Plug 'junegunn/limelight.vim'  " Hyperfocus writing
 "
 " Color schemes
 "
-Plug 'https://github.com/frankier/neovim-colors-solarized-truecolor-only.git'
+Plug 'mhartington/oceanic-next'
+Plug 'frankier/neovim-colors-solarized-truecolor-only'
 Plug 'morhetz/gruvbox'
 Plug 'haishanh/night-owl.vim'
 Plug 'ErichDonGubler/vim-sublime-monokai'
 Plug 'tjammer/blayu.vim'
 Plug 'Jimeno0/vim-chito'
+Plug 'junegunn/seoul256.vim'
 "
-" Following 4 for snipmate
+" Snippets
 "
-Plug 'https://github.com/MarcWeber/vim-addon-mw-utils.git'
-Plug 'https://github.com/tomtom/tlib_vim.git'
-Plug 'https://github.com/garbas/vim-snipmate.git'
-Plug 'https://github.com/honza/vim-snippets.git'
+Plug 'MarcWeber/vim-addon-mw-utils'  " Required for vim-snipmate
+Plug 'tomtom/tlib_vim'               " Required for vim-snipmate
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 "
 " Add plugins to &runtimepath
 call plug#end()
@@ -120,21 +127,44 @@ set encoding=utf-8
 set spelllang=en_gb
 set spellfile=~/.config/nvim/spell/en.utf-8.add
 "
-" Reload Vimrc
-" map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+" Vimrc
+"
+" Edit and source vim configuration
+:nnoremap <Leader>ev :split $MYVIMRC<CR>
+:nnoremap <Leader>sv :source $MYVIMRC<CR>:echo 'vim configuration ($MYVIMRC) reloaded'<CR>
 "
 " Set working directory
-nnoremap <leader>. :lcd %:p:h<CR>
-
+nnoremap <Leader>. :lcd %:p:h<CR>
+"
+" To work with :terminal (see :help terminal)
+" To map <Esc> to exit terminal-mode:
+:tnoremap <Esc> <C-\><C-n>
+" To simulate |i_CTRL-R| in terminal-mode:
+:tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+" To use `ALT+{h,j,k,l}` to navigate windows from any mode:
+:tnoremap <A-h> <C-\><C-N><C-w>h
+:tnoremap <A-j> <C-\><C-N><C-w>j
+:tnoremap <A-k> <C-\><C-N><C-w>k
+:tnoremap <A-l> <C-\><C-N><C-w>l
+:inoremap <A-h> <C-\><C-N><C-w>h
+:inoremap <A-j> <C-\><C-N><C-w>j
+:inoremap <A-k> <C-\><C-N><C-w>k
+:inoremap <A-l> <C-\><C-N><C-w>l
+:nnoremap <A-h> <C-w>h
+:nnoremap <A-j> <C-w>j
+:nnoremap <A-k> <C-w>k
+:nnoremap <A-l> <C-w>l
+" Keep terminal open when buffer hidden
+augroup terminal
+    autocmd!
+    autocmd TermOpen * setlocal bufhidden=hide
+augroup END
 
 " ==========================================================
 " Messages, Info, Status, Appearance
 " ==========================================================
-set relativenumber          " Display relative line numbers
-set number                  " Display line numbers
 set number relativenumber   " Display current and relative line numbers
 set numberwidth=1           " using only 1 column (and 1 space) while possible
-set background=dark         " We are using dark background in vim
 set title                   " show title in console title bar
 set ls=2                    " always show status line
 set noerrorbells
@@ -149,14 +179,24 @@ set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
 " displays tabs with :set list & displays when a line runs off-screen
 set listchars=tab:>-,trail:-,precedes:<,extends:>
 set list
-" Highlight column
-set colorcolumn=119
-" Try to use 24 bit colors
-set termguicolors
-" Choose a color scheme
-colorscheme solarized
+set colorcolumn=119         " Highlight column
+set termguicolors           " Try to use 24 bit colors
+set background=dark         " We are using dark background in vim
+" colorscheme solarized       " Note we should set tmux to use same colour scheme
 " colorscheme gruvbox
 " colorscheme night-owl
+colorscheme seoul256
+" Diff highlighting colours: https://github.com/tpope/vim-fugitive/issues/1501#issuecomment-602141438
+hi DiffChange guibg=#5f005f
+hi DiffAdd    guibg=#00005f
+hi DiffRemove guibg=#005f5f
+hi DiffText   guibg=#5f0000
+if &t_Co == 256
+  hi DiffChange ctermbg=53
+  hi DiffAdd    ctermbg=17
+  hi DiffDelete ctermbg=23
+  hi DiffText   ctermbg=52
+endif
 
 
 " ==========================================================
@@ -166,23 +206,27 @@ colorscheme solarized
 " first autocmd for the filetype here
 "autocmd FileType * setlocal colorcolumn=0
 "<CR><C-w>l<C-f>:set scrollbind<CR>
-" Toggle the tasklist
-map <leader>td <Plug>TaskList
 " Map jk to exit insert mode. From https://danielmiessler.com/study/vim/
+" and 'Learn vimscript the hard way'
 inoremap jk <ESC>
 " open/close the quickfix window
-nmap <leader>c :copen<CR>
-nmap <leader>cc :cclose<CR>
-" Open NERDtree
-map <leader>n :NERDTreeToggle<CR>
-" Close vim if only buffer left open is NERDtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+nmap <Leader>c :copen<CR>
+nmap <Leader>cc :cclose<CR>
+"
+" NERDtree
+"
+map <Leader>n :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']    " ignore some files
+augroup NERDtree
+  " Have NERDtree open automatically when nvim opens on a directory
+  autocmd!
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+  " Close vim if only buffer left open is NERDtree
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+augroup END
 " for when we forget to use sudo to open/edit a file
 cmap w!! w !sudo tee % >/dev/null
-" Jump to the definition of whatever the cursor is on
-map <leader>j :RopeGotoDefinition<CR>
-" Rename whatever the cursor is on (including references to it)
-map <leader>r :RopeRename<CR>
 " Not sure what this is...
 fu! SplitScroll()
     :wincmd v
@@ -192,7 +236,10 @@ fu! SplitScroll()
     :wincmd w
     :set scrollbind
 endfu
-nmap <leader>sb :call SplitScroll()<CR>
+"
+" Splits
+"
+nmap <Leader>sb :call SplitScroll()<CR>
 " Open new windows below or to right of current
 :set splitbelow
 :set splitright
@@ -201,12 +248,14 @@ map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
-" and lets make these all work in insert mode too ( <C-O> makes next cmd
-"  happen as if in command mode )
+" and lets make these all work in insert mode too (<C-O> makes next cmd
+" happen as if in command mode)
 imap <C-W> <C-O><C-W>
 " Load the Gundo window
-map <leader>g :GundoToggle<CR>
+map <Leader>g :GundoToggle<CR>
 set ruler                   " show the cursor position all the time
+set cursorline              " show the cursor line
+set cursorcolumn            " show the cursor column
 set nostartofline           " Avoid moving cursor to BOL when jumping around
 set virtualedit=block       " Let cursor move past the last char in <C-v> mode
 set scrolloff=3             " Keep 3 context lines above and below the cursor
@@ -222,15 +271,21 @@ set softtabstop=2           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set shiftround              " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:>         " show matching <> (html mainly) as well
+"
+" Folding
+"
 set foldmethod=indent       " allow us to fold on indents
 set foldlevel=99            " don't fold by default
 " don't outdent hashes
 inoremap # #
-" close preview window automatically when we move around
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+augroup preview
+  autocmd!
+  " close preview window automatically when we move around
+  autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+  autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+augroup END
 " Paste from clipboard
-map <leader>p "+p
+map <Leader>p "+p
 "
 " For toggling paste mode
 " From: http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
@@ -258,26 +313,25 @@ set ffs=unix,dos,mac        " Try recognizing dos, unix, and mac line endings.
 " Searching and Patterns
 " ==========================================================
 " Run command-t file search
-map <leader>f :CommandT<CR>
 set grepprg=ack             " replace the default grep program with ack
 set ignorecase              " Default to using case insensitive searches,
 set smartcase               " unless uppercase letters are used in the regex.
 set smarttab                " Handle tabs more intelligently 
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
-" Quit window on <leader>q
-nnoremap <leader>q :q<CR>
-" hide matches on <leader>space
-nnoremap <leader><space> :nohlsearch<cr>
-" Remove trailing whitespace on <leader>S
-nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
+" Quit window on <Leader>q
+nnoremap <Leader>q :q<CR>
+" hide matches on <Leader>space
+nnoremap <Leader><space> :nohlsearch<CR>
+" Remove trailing whitespace on <Leader>S
+nnoremap <Leader>S :%s/\s\+$//<CR>:let @/=''<CR>
 " Select the item in the list with enter
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 "
 " Damian Conway's Die Blinkënmatchen: highlight matches
 " From: https://vi.stackexchange.com/a/2770
-" nnoremap <silent> n n:call HLNext(0.1)<cr>
-" nnoremap <silent> N N:call HLNext(0.1)<cr>
+" nnoremap <silent> n n:call HLNext(0.1)<CR>
+" nnoremap <silent> N N:call HLNext(0.1)<CR>
 " function! HLNext (blinktime)
 "   let target_pat = '\c\%#'.@/
 "   let ring = matchadd('ErrorMsg', target_pat, 101)
@@ -341,10 +395,37 @@ let g:gist_list_vsplit = 1
 
 
 " ==========================================================
+" airblade/gitgutter config from:
+" https://jakobgm.com/posts/vim/git-integration/#i-class-fab-fa-github-i-airblade-vim-gitgutter-i-class-fab-fa-github-i
+" ==========================================================
+" Use fontawesome icons as signs
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '>'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = '<'
+" simple look
+let g:gitgutter_override_sign_column_highlight = 1
+" highlight SignColumn guibg=bg
+" highlight SignColumn ctermbg=bg
+" Update sign column every quarter second
+set updatetime=250
+" Jump between hunks
+nmap <Leader>gn <Plug>GitGutterNextHunk  " git next
+nmap <Leader>gp <Plug>GitGutterPrevHunk  " git previous
+" Hunk-add and hunk-revert for chunk staging
+nmap <Leader>ga <Plug>GitGutterStageHunk  " git add (chunk)
+nmap <Leader>gu <Plug>GitGutterUndoHunk   " git undo (chunk)
+
+
+" ==========================================================
 " Goyo / Limelight
 " ==========================================================
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+augroup goyo
+  autocmd!
+  autocmd! User GoyoEnter Limelight
+  autocmd! User GoyoLeave Limelight!
+augroup END
 
 
 " ==========================================================
@@ -357,13 +438,54 @@ let showmarks_include = "abcdefghijklmnopqrstuvwxyz"
 " ==========================================================
 " Javascript
 " ==========================================================
-au BufRead *.js set makeprg=jslint\ %
+augroup javascript
+  autocmd!
+  autocmd BufRead *.js set makeprg=jslint\ %
+augroup END
 "
 " Use tab to scroll through autocomplete menus
-"autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
-"autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
+" augroup autocomplete
+"   autocmd!
+"   autocmd VimEnter * imap <expr> <Tab> pumvisible() ? "<C-N>" : "<Tab>"
+"   autocmd VimEnter * imap <expr> <S-Tab> pumvisible() ? "<C-P>" : "<S-Tab>"
+" augroup END
 "
 let g:acp_completeoptPreview=1
+
+
+" ==========================================================
+" Send to window
+" ==========================================================
+let g:sendtowindow_use_defaults=0  " turn off default mappings
+nmap <Leader>l <Plug>SendRight
+xmap <Leader>l <Plug>SendRightV
+nmap <Leader>h <Plug>SendLeft
+xmap <Leader>h <Plug>SendLeftV
+nmap <Leader>k <Plug>SendUp
+xmap <Leader>k <Plug>SendUpV
+nmap <Leader>j <Plug>SendDown
+xmap <Leader>j <Plug>SendDownV
+nmap <Leader>d <Plug>(SendDown)<c-d>
+nmap <Leader><CR> <Plug>SendDown<CR>
+nmap <Leader>p <Plug>SendDownip
+
+
+" ==========================================================
+" Vim ripple
+" ==========================================================
+let newline = "\<cr>"
+let g:ripple_enable_mappings = 0
+let g:ripple_winpos = 'below'
+nmap <LocalLeader>ro <Plug>(ripple_open_repl)
+vmap <LocalLeader>rs <Plug>(ripple_send_selection)
+nmap <LocalLeader>rm <Plug>(ripple_send_motion)
+nmap <LocalLeader>rp <Plug>(ripple_send_previous)
+nmap <LocalLeader>a <Plug>(ripple_send_motion)ae
+nmap <LocalLeader>p <Plug>(ripple_send_motion)ap
+nmap <LocalLeader>l <Plug>(ripple_send_motion)_
+nmap <LocalLeader><CR> :call ripple#command(0, 0, newline)<CR>
+nmap <LocalLeader>w <Plug>(ripple_send_motion)iw
+" nmap <LocalLeader>w <Plug>(ripple_send_motion)iw
 
 
 " ==========================================================
@@ -371,10 +493,15 @@ let g:acp_completeoptPreview=1
 " ==========================================================
 "
 " Set up python interpreter for neovim
-" let hostname = substitute(system('hostname'), '\n', '', '')
-" if hostname == "BPEU318.local"
-"   let g:python3_host_prog = '/Users/johnreid/anaconda3/envs/neovim/bin/python'
-" endif
+function! Chomp(string)
+    return substitute(a:string, '\n\+$', '', '')
+endfunction
+let hostname = Chomp(system('hostname'))
+if hostname == "BPEU318.local"
+  let g:python3_host_prog = '/Users/johnreid/anaconda3/envs/neovim/bin/python'
+elseif hostname == 'Ubuntu-XPS-15'
+  let g:python_host_prog = '/home/john/miniconda3/envs/Python2/bin/python'
+endif
 "
 " Syntastic
 let g:syntastic_python_checkers = ["flake8"]
@@ -383,20 +510,27 @@ let g:syntastic_python_checkers = ["flake8"]
 " Ask nvim-ipy not to make its own mappings
 let g:nvim_ipy_perform_mappings = 0
 " Set up our own mappings
-au FileType python map  <buffer> <silent> <LocalLeader>l   <Plug>(IPy-Run)
-au FileType python map  <buffer> <silent> <LocalLeader>w   <Plug>(IPy-Word)
-au FileType python map  <buffer> <silent> <LocalLeader>p   <Plug>(IPy-RunCell)
-au FileType python map  <buffer> <silent> <LocalLeader>a   <Plug>(IPy-RunAll)
-au FileType python imap <buffer> <silent> <LocalLeader>f   <Plug>(IPy-Complete)
-au FileType python map  <buffer> <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
-au FileType python map  <buffer> <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
-au FileType python map  <buffer> <silent> <LocalLeader>k   <Plug>(IPy-Terminate)
+" augroup IPy
+"   autocmd!
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>l   <Plug>(IPy-Run)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>w   <Plug>(IPy-Word)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>o   <Plug>(IPy-RunOp)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>r   <Plug>(IPy-RunRegister)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>c   <Plug>(IPy-RunCell)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>a   <Plug>(IPy-RunAll)
+"   autocmd FileType python imap <buffer> <silent> <LocalLeader>f   <Plug>(IPy-Complete)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>h   <Plug>(IPy-WordObjInfo)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>i   <Plug>(IPy-Interrupt)
+"   autocmd FileType python map  <buffer> <silent> <LocalLeader>k   <Plug>(IPy-Terminate)
+" augroup END
 " Empty lines define start and end of cells
 let g:ipy_celldef = '^$'
+" set syntax=python in IPython buffer automatically: https://github.com/bfredl/nvim-ipy/issues/43
+let g:ipy_set_ft = 1
 "
 " Run pep8
-let g:pep8_map='<leader>8'
-let g:autopep8_indent_size=2
+let g:pep8_map='<Leader>8'
+let g:autopep8_indent_size=4
 "
 " pymode
 " Detect virtualenv automatically
@@ -409,21 +543,24 @@ let g:pymode_lint_ignore = "E111,E202,E203,E221,E272,C901"
 let g:pymode_mccabe_ignore = "C901"
 "
 " run py.tests
-au FileType python nmap <silent><LocalLeader>tf <Esc>:Pytest file<CR>
-au FileType python nmap <silent><LocalLeader>tc <Esc>:Pytest class<CR>
-au FileType python nmap <silent><LocalLeader>tm <Esc>:Pytest method<CR>
-au FileType python nmap <silent><LocalLeader>tn <Esc>:Pytest next<CR>
-au FileType python nmap <silent><LocalLeader>tp <Esc>:Pytest previous<CR>
-au FileType python nmap <silent><LocalLeader>te <Esc>:Pytest error<CR>
+" augroup pytests
+"   autocmd!
+"   autocmd FileType python nmap <silent><LocalLeader>tf <Esc>:Pytest file<CR>
+"   autocmd FileType python nmap <silent><LocalLeader>tc <Esc>:Pytest class<CR>
+"   autocmd FileType python nmap <silent><LocalLeader>tm <Esc>:Pytest method<CR>
+"   autocmd FileType python nmap <silent><LocalLeader>tn <Esc>:Pytest next<CR>
+"   autocmd FileType python nmap <silent><LocalLeader>tp <Esc>:Pytest previous<CR>
+"   autocmd FileType python nmap <silent><LocalLeader>te <Esc>:Pytest error<CR>
+" augroup END
 "
-" Run django tests
-map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
-"
-"au BufRead *.py compiler nose
-au FileType python set omnifunc=pythoncomplete#Complete
-au FileType python setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-au FileType python setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class,with equalprg=autopep8\ -
-au BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+augroup python
+  autocmd!
+  "autocmd BufRead *.py compiler nose
+  autocmd FileType python set omnifunc=pythoncomplete#Complete
+  autocmd FileType python setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType python setlocal cinwords=if,elif,else,for,while,try,except,finally,def,class,with equalprg=autopep8\ -
+  autocmd BufRead *.py set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
+augroup END
 "
 " Does pyflakes use the quickfix window?
 let g:pyflakes_use_quickfix = 1
@@ -433,10 +570,15 @@ let g:pyflakes_use_quickfix = 1
 "
 " Indent Python in the Google way.
 " From: https://github.com/google/styleguide/blob/gh-pages/google_python_style.vim
-au Filetype python setlocal indentexpr=GetGooglePythonIndent(v:lnum)
-au Filetype python let s:maxoff = 50 " maximum number of lines to look backwards.
-au Filetype python let pyindent_nested_paren="&sw*2"
-au Filetype python let pyindent_open_paren="&sw*2"
+augroup pythonindent
+  autocmd!
+  autocmd Filetype python setlocal indentexpr=GetGooglePythonIndent(v:lnum)
+  autocmd Filetype python let s:maxoff = 50  " maximum number of lines to look backwards.
+  autocmd Filetype python let pyindent_nested_paren="&sw"
+  autocmd Filetype python let pyindent_open_paren="&sw"
+  autocmd Filetype python let pyindent_continue="&sw"
+  autocmd Filetype python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+augroup END
 "
 function GetGooglePythonIndent(lnum)
   " Indent inside parens.
@@ -481,15 +623,6 @@ endif
 if filereadable($VIRTUAL_ENV . '/.vimrc')
     source $VIRTUAL_ENV/.vimrc
 endif
-"
-" Figure out the system Python for Neovim.
-" See https://github.com/neovim/neovim/issues/1887
-"
-if exists("$VIRTUAL_ENV")
-    let g:python_host_prog=substitute(system("which -a python3 | head -n2 | tail -n1"), '\n', '', 'g')
-else
-    let g:python_host_prog=substitute(system("which python3"), '\n', '', 'g')
-endif
 
 
 " ==========================================================
@@ -517,8 +650,11 @@ let g:tagbar_type_r = {
 " let vimrplugin_assign = 0
 " let g:vimrplugin_insert_mode_cmds = 0
 " let vimrplugin_vimpager = "horizontal"
-autocmd FileType r,rmd setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType rmd setlocal foldcolumn=0
+augroup R
+  autocmd!
+  autocmd FileType r,rmd setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+  autocmd FileType rmd setlocal foldcolumn=0
+augroup END
 "
 " For nvim-r
 let R_assign = 0  " Don't replace underscores with assignments
@@ -534,15 +670,18 @@ let rout_follow_colorscheme = 1  " Highlight R output with the current colorsche
 " LaTeX
 " ==========================================================
 "
-autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 wrap
-autocmd FileType tex setlocal spell
-autocmd FileType tex colorscheme night-owl
-" Colour TeX templates like TeX
-au BufReadPost *.tex.template setlocal filetype=tex
-" Turn off error highlighting in templates
-au BufReadPost *.tex.template highlight! link Error Normal
-" Add a custom surround
-au BufReadPost *.tex.template let b:surround_45 = "\\TEXT{ \"\r\" }"
+augroup LaTeX
+  autocmd!
+  autocmd FileType tex setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2 wrap
+  autocmd FileType tex setlocal spell
+  " autocmd FileType tex colorscheme night-owl
+  " Colour TeX templates like TeX
+  autocmd BufReadPost *.tex.template setlocal filetype=tex
+  " Turn off error highlighting in templates
+  autocmd BufReadPost *.tex.template highlight! link Error Normal
+  " Add a custom surround
+  autocmd BufReadPost *.tex.template let b:surround_45 = "\\TEXT{ \"\r\" }"
+augroup END
 " Can set the following to ignore common warnings
 "let g:vimtex_quickfix_ignored_warnings = [
 "            \ 'Underfull',
@@ -551,22 +690,16 @@ au BufReadPost *.tex.template let b:surround_45 = "\\TEXT{ \"\r\" }"
 "            \ ]
 " but I prefer to only open the quickfix window on errors
 let g:vimtex_quickfix_open_on_warning = 0
-"
 " More informative chktex messages
 let g:syntastic_tex_chktex_args = '-v0'
-let g:syntastic_tex_chktex_showmsgs = 0
-"
+let g:syntastic_tex_chktex_showmsgs = 1
+let g:syntastic_tex_lacheck_quiet_messages = { 'regex': '\Vpossible unwanted space at' }
 " from: https://github.com/lervag/vimtex/issues/835 to enable Synctex
 let g:vimtex_compiler_progname = "nvr"
 let g:vimtex_view_method = "zathura"
-let g:vimtex_latexmk_progname = "nvr"
 let g:tex_flavor = 'latex'
-"
 " Use Zathura
 let g:vimtex_view_general_viewer = 'zathura'
-"
-" Use synctex to synchronise vim cursor and the PDF viewer
-let g:vimtex_latexmk_options = '-synctex=1'
 "
 " " Settings for vim-latex (http://vim-latex.sourceforge.net)
 " set shellslash                                " Convert backward slashes to forward ones in filename references
@@ -576,7 +709,7 @@ let g:vimtex_latexmk_options = '-synctex=1'
 " let g:Tex_DefaultTargetFormat = 'pdf'         " Compile to pdf by default
 " " let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape -interaction=nonstopmode $*' " Use pdflatex by default
 " let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*' " Use xelatex by default
-" "imap <leader>{ <Plug>Tex_LeftRight
+" "imap <Leader>{ <Plug>Tex_LeftRight
 "
 " Mappings for LaTeX paragraph formatting
 "map \gq ?^$\\|^\s*\(\\begin\\|\\end\\|\\label\)?1<CR>gq//-1<CR>
@@ -586,31 +719,38 @@ let g:vimtex_latexmk_options = '-synctex=1'
 " ===========================================================
 " Mako/HTML
 " ============================================================
-autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
+augroup HTML
+  autocmd!
+  autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
+augroup END
 
 
 " ===========================================================
 " Stan
 " ===========================================================
-autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+augroup Stan
+  autocmd!
+  autocmd FileType stan setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+augroup END
 
 
 " ===========================================================
 " XML
 " ===========================================================
 let g:xml_syntax_folding=1
-au FileType xml setlocal foldmethod=syntax
+augroup XML
+  autocmd!
+  autocmd FileType xml setlocal foldmethod=syntax
+augroup END
 
 
 " ==========================================================
-" Pandoc
+" vim-markdown
 " ==========================================================
-au FileType pandoc colorscheme solarized
-" let g:pandoc#modules#disabled = ["folding"]
-"set foldcolumn=0
+let g:tex_conceal = ""
 let g:vim_markdown_folding_level = 1
 let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_math = 1
+let g:vim_markdown_math = 0
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_new_list_item_indent = 2
 "
@@ -618,5 +758,5 @@ let g:vim_markdown_new_list_item_indent = 2
 command! -nargs=* RunSilent
       \ | execute ':silent !'.'<args>'
       \ | execute ':redraw!'
-nmap <Leader>pc :RunSilent pandoc -o /tmp/vim-pandoc-out.pdf %<CR>
-nmap <Leader>pp :RunSilent xdg-open /tmp/vim-pandoc-out.pdf<CR>
+nmap <LocalLeader>pc :RunSilent pandoc -o /tmp/vim-pandoc-out.pdf %<CR>
+nmap <LocalLeader>pp :RunSilent xdg-open /tmp/vim-pandoc-out.pdf<CR>

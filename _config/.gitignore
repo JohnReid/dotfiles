@@ -67,6 +67,7 @@ upstart/
 user-dirs.dirs
 user-dirs.locale
 vlc/
+wireshark/
 xbuild/
 xfce4/
 yelp/
