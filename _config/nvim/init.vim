@@ -136,24 +136,11 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 " Set working directory
 nnoremap <Leader>. :lcd %:p:h<CR>
 "
-" To work with :terminal (see :help terminal)
+" To work with :terminal (see :help terminal-input)
 " To map <Esc> to exit terminal-mode:
 :tnoremap <Esc> <C-\><C-n>
 " To simulate |i_CTRL-R| in terminal-mode:
 :tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
-" To use `ALT+{h,j,k,l}` to navigate windows from any mode:
-:tnoremap <A-h> <C-\><C-N><C-w>h
-:tnoremap <A-j> <C-\><C-N><C-w>j
-:tnoremap <A-k> <C-\><C-N><C-w>k
-:tnoremap <A-l> <C-\><C-N><C-w>l
-:inoremap <A-h> <C-\><C-N><C-w>h
-:inoremap <A-j> <C-\><C-N><C-w>j
-:inoremap <A-k> <C-\><C-N><C-w>k
-:inoremap <A-l> <C-\><C-N><C-w>l
-:nnoremap <A-h> <C-w>h
-:nnoremap <A-j> <C-w>j
-:nnoremap <A-k> <C-w>k
-:nnoremap <A-l> <C-w>l
 " Keep terminal open when buffer hidden
 augroup terminal
     autocmd!
@@ -456,18 +443,18 @@ let g:acp_completeoptPreview=1
 " ==========================================================
 " Send to window
 " ==========================================================
-let g:sendtowindow_use_defaults=0  " turn off default mappings
-nmap <Leader>l <Plug>SendRight
-xmap <Leader>l <Plug>SendRightV
-nmap <Leader>h <Plug>SendLeft
-xmap <Leader>h <Plug>SendLeftV
-nmap <Leader>k <Plug>SendUp
-xmap <Leader>k <Plug>SendUpV
-nmap <Leader>j <Plug>SendDown
-xmap <Leader>j <Plug>SendDownV
-nmap <Leader>d <Plug>(SendDown)<c-d>
-nmap <Leader><CR> <Plug>SendDown<CR>
-nmap <Leader>p <Plug>SendDownip
+" let g:sendtowindow_use_defaults=0  " turn off default mappings
+" nmap <Leader>l <Plug>SendRight
+" xmap <Leader>l <Plug>SendRightV
+" nmap <Leader>h <Plug>SendLeft
+" xmap <Leader>h <Plug>SendLeftV
+" nmap <Leader>k <Plug>SendUp
+" xmap <Leader>k <Plug>SendUpV
+" nmap <Leader>j <Plug>SendDown
+" xmap <Leader>j <Plug>SendDownV
+" nmap <Leader>d <Plug>(SendDown)<c-d>
+" nmap <Leader><CR> <Plug>SendDown<CR>
+" nmap <Leader>p <Plug>SendDownip
 
 
 " ==========================================================
@@ -760,3 +747,8 @@ command! -nargs=* RunSilent
       \ | execute ':redraw!'
 nmap <LocalLeader>pc :RunSilent pandoc -o /tmp/vim-pandoc-out.pdf %<CR>
 nmap <LocalLeader>pp :RunSilent xdg-open /tmp/vim-pandoc-out.pdf<CR>
+
+" Add '  # noqa: [flake8 code]' to end of current location (assuming it is
+" a flake8 error)
+" Trying advice: https://vi.stackexchange.com/a/27904/19227
+nnoremap <LocalLeader>f8i :lopen<CR>$yi[<CR>A  # noqa: <esc>p
