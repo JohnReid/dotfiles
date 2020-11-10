@@ -137,8 +137,8 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 nnoremap <Leader>. :lcd %:p:h<CR>
 "
 " To work with :terminal (see :help terminal-input)
-" To map <Esc> to exit terminal-mode:
-:tnoremap <Esc> <C-\><C-n>
+" Use jk to exit terminal-mode:
+:tnoremap jk <C-\><C-n>
 " To simulate |i_CTRL-R| in terminal-mode:
 :tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 " Keep terminal open when buffer hidden
@@ -751,4 +751,4 @@ nmap <LocalLeader>pp :RunSilent xdg-open /tmp/vim-pandoc-out.pdf<CR>
 " Add '  # noqa: [flake8 code]' to end of current location (assuming it is
 " a flake8 error)
 " Trying advice: https://vi.stackexchange.com/a/27904/19227
-nnoremap <LocalLeader>f8i :lopen<CR>$yi[<CR>A  # noqa: <esc>p
+nnoremap <LocalLeader>f8i :lopen<CR>$yi[<CR>A  # noqa: <esc>p :lclose<CR>
