@@ -67,6 +67,11 @@ Plug 'sjl/gundo.vim'
 Plug 'roxma/nvim-yarp'  " Required by ncm2
 Plug 'ncm2/ncm2'
 "
+" Fuzzy finder
+"
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+"
 " Distraction-free writing
 "
 Plug 'junegunn/goyo.vim'  " Distraction-free writing
