@@ -209,6 +209,7 @@ nmap <Leader>cc :cclose<CR>
 "
 " From: https://github.com/euclio/vimrc/ and https://github.com/zenbro/dotfiles
 nnoremap <silent> <Leader>ff :Files<cr>
+nnoremap <silent> <Leader>fg :Rg<cr>
 nnoremap <silent> <Leader>fb :Buffers<CR>
 nnoremap <silent> <Leader>fh :History<CR>
 nnoremap <silent> <Leader>f/ :History/<CR>
