@@ -205,6 +205,21 @@ inoremap jk <ESC>
 nmap <Leader>c :copen<CR>
 nmap <Leader>cc :cclose<CR>
 "
+" Fzf
+"
+" From: https://github.com/euclio/vimrc/ and https://github.com/zenbro/dotfiles
+nnoremap <silent> <Leader>ff :Files<cr>
+nnoremap <silent> <Leader>fb :Buffers<CR>
+nnoremap <silent> <Leader>fh :History<CR>
+nnoremap <silent> <Leader>f/ :History/<CR>
+nnoremap <silent> <Leader>f: :History:<CR>
+augroup fzf
+  autocmd!
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+augroup END
+"
 " NERDtree
 "
 map <Leader>n :NERDTreeToggle<CR>
