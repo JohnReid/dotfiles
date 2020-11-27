@@ -264,6 +264,7 @@ Color
 Composable
 Connor
 Cormen
+Corniche
 Cortes
 Coulouris
 Coupa
@@ -622,6 +623,7 @@ IL
 IP
 IPython
 IQR
+IR
 IUPAC
 Identifiability
 Ikzf
@@ -671,11 +673,13 @@ Junion
 Jupyter
 Jure
 K562
+KDA
 KDEs
 KEGG
 KGs
 KKT
 KLM
+KNN
 KPCA
 KYC
 Kalay
@@ -733,6 +737,7 @@ Kynaston
 L2
 L5R
 LAPACK
+LDA
 LEF
 LFS
 LFVI
@@ -1148,6 +1153,7 @@ Ryerson
 SAGAN
 SAIL's
 SAPGUI
+SBI
 SC3
 SCPD
 SDK
@@ -1232,6 +1238,7 @@ Smola's
 Sneddon
 Snf
 Snowie
+Snyk
 Société
 Sohl
 Solaris
@@ -2385,6 +2392,7 @@ wgEncodeOpenChromDnaseNhekBaseOverlapSignal
 wgEncodeOpenChromDnasePanisletsBaseOverlapSignal
 whitespace
 widthof
+wiki
 williston
 wilson
 withpage
