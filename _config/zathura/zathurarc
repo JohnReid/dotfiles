@@ -34,5 +34,6 @@ set selection-clipboard clipboard
 
 #
 # Change scroll speed
-set scroll-step 5
+set scroll-step 100
 # set smooth-scroll "true"  # Apparently an "unknown option"
+# (not used following girara update: https://unix.stackexchange.com/a/546408/319002)
