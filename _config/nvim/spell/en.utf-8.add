@@ -11,6 +11,7 @@ ABB
 ABBYY
 ABN
 ABP
+ACL
 ADVI
 AGACAAGTTTCTTCGTTTT
 AGACATGTTTCTTCG
@@ -64,6 +65,7 @@ Akaike
 Aktas
 Aldoc
 Alena
+AlibabaPAI
 AlignAce
 Alonso
 Alpaydin
@@ -101,6 +103,7 @@ BAM
 BBLS
 BDR
 BEA's
+BERTgrid
 BFGS
 BG
 BIOMD0000000055
@@ -116,6 +119,7 @@ BPC
 BPM
 BPMers
 BPW
+BROS
 BSU
 BTL
 BUPA
@@ -141,6 +145,7 @@ BiFa
 BiLSTM
 BibTeX
 Biblatex
+BigQuery
 Bilgin
 Bimal
 Bimal's
@@ -156,6 +161,7 @@ Blei
 Blei's
 Blogs
 Bluethgen
+BoW
 Bogatyreva
 BoldFont
 BoldItalicFont
@@ -288,6 +294,7 @@ D
 D2P
 DEU
 DEs
+DFDs
 DGX
 DL
 DMM
@@ -302,6 +309,7 @@ DPMMS
 DPMs
 DREME
 DREME's
+DRR
 DST
 DVC
 Daesik
@@ -352,10 +360,13 @@ Dickstein
 Dickstein's
 Diffeomorphism
 Dirichlet
+Distill
+Distill's
 Dmrt
 Dmrta
 Doc2Vec
 DocBank
+DocEng
 Docucharm
 DocumentCaptureData
 Dollimore
@@ -370,6 +381,7 @@ Déjean
 E
 EBI
 EBMs
+ECCV
 ECE
 EDL
 EKFAC
@@ -401,6 +413,7 @@ Evertsz
 Evie
 Evolutionarily
 ExtraLight
+F1
 F1000Research
 FAC
 FAIRE
@@ -454,7 +467,9 @@ Foxi1
 Foxj
 Foxo
 FractalReceipts
+Frazier's
 Frechét
+FreeDOM
 Freie
 Freivalds
 Frobenius
@@ -484,6 +499,7 @@ GNNs
 GPDS
 GPLVM
 GPLVMs
+GPT
 GPU
 GPUs
 GPflow
@@ -531,7 +547,9 @@ Goodhill
 Google's
 Goroshin
 Goyal
+GraphIE
 Grathwohl
+Griffiths
 Gromov
 Gu
 Guesgen
@@ -606,8 +624,11 @@ IADAVision
 IAPR
 IC
 ICA
+ICCV
 ICDAR
+ICDM
 ICLR
+ICPR
 IDEs
 IDP
 IDs
@@ -618,6 +639,7 @@ IIIc
 IIId
 IIT
 IJCAI
+IJDAR
 IJulia
 IL
 IP
@@ -652,9 +674,11 @@ JASPAR's
 JAX
 JC
 JDCR
+JLR
 JMS
 JSON
 Jaro
+Jarod
 Jayaraman
 Jaynes
 Jeffreys
@@ -723,6 +747,7 @@ Koivisto
 Kornblith
 Kouno
 Kovachev
+Krasser's
 Kreiman
 Krioukov
 Krishnan
@@ -738,6 +763,7 @@ L2
 L5R
 LAPACK
 LDA
+LDSJC
 LEF
 LFS
 LFVI
@@ -816,6 +842,7 @@ MDS
 MEME's
 MF
 MFC
+MFCN
 MH
 MIMOmics
 MIN6
@@ -868,7 +895,9 @@ McCourt's
 McDavid
 McEwan
 McNemar's
+MedForm
 Meetups
+Meghana
 Meszaros
 MetroPatchMatch
 Meunier
@@ -980,6 +1009,7 @@ Ott
 Ouellette
 Ozay
 PAH
+PAMI
 PBE
 PBM
 PBMs
@@ -1012,6 +1042,7 @@ POs
 PPI
 PREM
 PRImA
+PRL
 PSSM
 PSSMs
 PWCCA
@@ -1031,6 +1062,7 @@ Paulius's
 Pax
 Paypal
 Pbx
+Pearce's
 Penfold
 Pengyu
 Perceptrons
@@ -1057,6 +1089,7 @@ Polyvyanyy
 Pomodoro
 Pou
 PowerBI
+PowerPoint
 Ppara
 Pparg
 Prdm
@@ -1112,6 +1145,7 @@ Rao
 Rashid
 Raskutti
 Rasmussen
+Ravikumar's
 ReLU
 ReLUs
 ReMoDiscovery
@@ -1137,6 +1171,7 @@ Rmd
 RoBERTa
 Roadmap
 Robiquity
+Roelant's
 Rora
 Rosca
 Rossum
@@ -1155,6 +1190,7 @@ SAIL's
 SAPGUI
 SBI
 SC3
+SCPA
 SCPD
 SDK
 SELEX
@@ -1175,7 +1211,9 @@ SORT1
 SOTA
 SOX2
 SPD
+SPRC
 SQL
+SROIE
 SROIE2019
 SSI
 SSL
@@ -1209,6 +1247,7 @@ Schraudolph
 Schwarzer
 Schölkopf
 Scikit
+Secondmind
 Segal
 Sejnowski's
 SeqAn
@@ -1243,6 +1282,7 @@ Société
 Sohl
 Solaris
 Sonden
+Sonden's
 Sontag
 Sox
 Spearman
@@ -1318,6 +1358,7 @@ TRANSFAC
 TREC
 TRIE
 TS
+TSNE
 TSS
 TSSs
 TTATCTATA
@@ -1414,6 +1455,7 @@ UsoskinUnbiasedclassificationsensory2015
 V2
 VAE
 VAEs
+VBO
 VCG
 VM
 VMS
@@ -1538,6 +1580,7 @@ anyfontepackage
 apa
 apalike
 app
+appman
 approximator
 approximators
 apps
@@ -1702,6 +1745,7 @@ directionality
 discretisation
 discretised
 discriminative
+django
 dm
 doc2vec
 docstrings
@@ -1739,6 +1783,7 @@ english
 enhanceosome
 enhanceosomes
 ensembling
+entrykey
 enumerative
 epiblast
 epigenetic
@@ -1927,6 +1972,7 @@ macromolecules
 macrophages
 makeatletter
 makeatother
+markup
 math
 mathabx
 mathbf
@@ -1942,6 +1988,7 @@ maxhela
 maxima
 maxout
 medskipamount
+meetup
 megabase
 megakaryocyte
 megakaryocytes
@@ -2004,6 +2051,7 @@ natbib
 nc
 ndstad
 necrotrophic
+neuro
 neurochemists
 neurogenesis
 neurogenic
