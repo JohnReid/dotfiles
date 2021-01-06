@@ -178,17 +178,6 @@ set background=dark         " We are using dark background in vim
 " colorscheme gruvbox
 " colorscheme night-owl
 colorscheme seoul256
-" Diff highlighting colours: https://github.com/tpope/vim-fugitive/issues/1501#issuecomment-602141438
-hi DiffChange guibg=#5f005f
-hi DiffAdd    guibg=#00005f
-hi DiffRemove guibg=#005f5f
-hi DiffText   guibg=#5f0000
-if &t_Co == 256
-  hi DiffChange ctermbg=53
-  hi DiffAdd    ctermbg=17
-  hi DiffDelete ctermbg=23
-  hi DiffText   ctermbg=52
-endif
 
 
 " ==========================================================
@@ -201,9 +190,13 @@ endif
 " Map jk to exit insert mode. From https://danielmiessler.com/study/vim/
 " and 'Learn vimscript the hard way'
 inoremap jk <ESC>
+inoremap JK <ESC>
 " open/close the quickfix window
-nmap <Leader>c :copen<CR>
+nmap <Leader>co :copen<CR>
 nmap <Leader>cc :cclose<CR>
+" open/close the location list
+nmap <Leader>lo :lopen<CR>
+nmap <Leader>lc :lclose<CR>
 "
 " Fzf
 "
@@ -368,15 +361,6 @@ set wildignore+=*.egg-info/**
 " ==========================================================
 " Look for tags up to root: https://stackoverflow.com/a/741486/959926
 set tags=./tags;/
-
-
-" ==========================================================
-" Diff
-" ==========================================================
-set diffopt+=iwhite          " Ignore whitespace
-"
-" Change highlighting in diff??
-if &diff | syntax off | endif
 
 
 " ==========================================================
@@ -773,3 +757,24 @@ nmap <LocalLeader>pp :RunSilent xdg-open /tmp/vim-pandoc-out.pdf<CR>
 " a flake8 error)
 " Trying advice: https://vi.stackexchange.com/a/27904/19227
 nnoremap <LocalLeader>f8i :lopen<CR>$yi[<CR>A  # noqa: <esc>p :lclose<CR>
+
+
+" ==========================================================
+" Diff
+" ==========================================================
+set diffopt+=iwhite          " Ignore whitespace
+"
+" Changing the highlight colours should be done after setting the colorscheme
+" Change highlighting in diff??
+if &diff | syntax off | endif
+" Diff highlighting colours: https://github.com/tpope/vim-fugitive/issues/1501#issuecomment-602141438
+" hi DiffChange guibg=#5f005f
+" hi DiffAdd    guibg=#00005f
+" hi DiffRemove guibg=#005f5f
+" hi DiffText   guibg=#5f0000
+" if &t_Co == 256
+"   hi DiffChange ctermbg=53
+"   hi DiffAdd    ctermbg=17
+"   hi DiffDelete ctermbg=23
+"   hi DiffText   ctermbg=52
+" endif
