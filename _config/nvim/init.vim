@@ -138,6 +138,12 @@ set spellfile=~/.config/nvim/spell/en.utf-8.add
 :nnoremap <Leader>ev :split $MYVIMRC<CR>
 :nnoremap <Leader>sv :source $MYVIMRC<CR>:echo 'vim configuration ($MYVIMRC) reloaded'<CR>
 "
+" Aspell spelling
+"
+" Edit and source vim configuration
+" ~/.config/nvim/spell/en.utf-8.add
+:nnoremap <Leader>es :split $HOME/.config/nvim/spell/en.utf-8.add<CR>
+"
 " Set working directory
 nnoremap <Leader>. :lcd %:p:h<CR>
 "
@@ -197,6 +203,8 @@ nmap <Leader>cc :cclose<CR>
 " open/close the location list
 nmap <Leader>lo :lopen<CR>
 nmap <Leader>lc :lclose<CR>
+" tab creation
+nmap <Leader>tt :tabnew<CR>
 "
 " Fzf
 "
